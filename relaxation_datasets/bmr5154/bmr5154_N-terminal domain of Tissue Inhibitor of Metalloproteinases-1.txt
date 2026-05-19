@@ -1,0 +1,19 @@
+CORRECTION:
+Rates units seem wrongly assigned to s-1 . 
+
+Title: Tissue Inhibitor of Metalloproteinases-1 undergoes Microsecond to Millisecond 
+Motions at sites of Matrix Metalloproteinase-induced fit
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: N-terminal domain of Tissue Inhibitor of Metalloproteinases-1
+Date: 2001-09-16
+Work Authors: Gao, Semenchenko, Arumugam, Van Doren
+
+======
+
+Citations:
+Gao, Semenchenko, Arumugam, Van Doren. 2000. Tissue Inhibitor of Metalloproteinases-1 undergoes Microsecond to Millisecond 
+Motions at sites of Matrix Metalloproteinase-induced fit
+.J. Mol. Biol., 301, 537-552 
+

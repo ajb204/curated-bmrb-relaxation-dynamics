@@ -1,0 +1,50 @@
+Title: Relaxation and model-free data from beta-2-microglobulin and the heavy chain of HLA-B*27:05 in complex with the peptide pVIPR
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: B2705-pVIPR
+Date: 2015-12-02
+Work Authors: Ballaschk, Ziegler, Uchanska-Ziegler, Diehl, Schmieder
+
+======
+
+Citations:
+Horne J, d Auvergne EJ, Coles M, Velkov T, Chin Y, Charman WN, et al. 
+Probing the Flexibility of the DsbA Oxidoreductase from Vibrio cholerae a 15N - 1H Heteronuclear NMR Relaxation Analysis of Oxidized and Reduced Forms of DsbA. 
+J Mol Biol. 2007 Aug;371(3):703 16.
+
+
+d'Auvergne, E. J. and Gooley, P. R. (2008). 
+Optimisation of NMR dynamic models I. Minimisation algorithms and their performance within the model-free and Brownian rotational diffusion spaces. 
+J. Biomol. NMR, 40(2), 107-119.
+
+
+d'Auvergne, E. J. and Gooley, P. R. (2008). 
+Optimisation of NMR dynamic models II. A new methodology for the dual optimisation of the model-free parameters and the Brownian rotational diffusion tensor. 
+J. Biomol. NMR, 40(2), 121-133.
+
+
+
+
+Files:
+bmr26710_3-100:
+
+Construct 1
+	Res 3-100  --- HetNoe "bn" suffix R1/R2 no suffix 
+	Subfiles: {
+		'600.18': [600.18_MHz_hetNOE_bn_1,600.18_MHz_R1_relaxation_1,  600.18_MHz_R2_relaxation_2],
+		'750.46': [750.46_MHz_hetNOE_bn_2, 750.46_MHz_R1_relaxation_3, 750.46_MHz_R2_relaxation_4]
+	 	 }
+
+
+Construct 2
+	Res 17-194 "top" suffix 
+	Subfiles: {
+		'600.18': [600.18_MHz_hetNOE_top_1,600.18_MHz_R1_relaxation_top_1,  600.18_MHz_R2_relaxation_top_2],
+	 	 }
+
+Construct 3 bmr26710_b2m_203-290
+	Res 203-290 "b2m" suffix for hetNoe and Bottom suffix for R1/R2 
+	Subfiles: {
+		'600.18': [600.18_MHz_hetNOE_b2m_1,  600.18_MHz_R1_relaxation_bottom_1, 600.18_MHz_R2_relaxation_bottom_2],
+	 	 }

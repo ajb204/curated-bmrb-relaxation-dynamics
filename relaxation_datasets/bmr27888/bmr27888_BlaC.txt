@@ -1,0 +1,19 @@
+Title: A standard numbering scheme for the Class A beta-lactamases
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: BlaC
+Date: 2019-05-02
+Work Authors: Elings, Ubbink
+
+======
+
+Citations:
+Vranken, Boucher, Stevens, Fogh, Pajon, Llinas, Ulrich, Markley, Ionides, Laue. 2005. The CCPN data model for NMR spectroscopy: Development of a software pipeline
+.Proteins, 59, 687-696 
+
+Vranken, Boucher, Stevens, Fogh, Pajon, Llinas, Ulrich, Markley, Ionides, Laue, Elings, Gaur, Blok, Timmer, van Ingen, Ubbink. 2020. Beta-Lactamase of Mycobacterium tuberculosis Shows Dynamics in the Active Site That Increase upon Inhibitor Binding
+.Antimicrob. Agents. Chemother., 64, e02025-e02025 
+
+Vranken, Boucher, Stevens, Fogh, Pajon, Llinas, Ulrich, Markley, Ionides, Laue, Elings, Gaur, Blok, Timmer, van Ingen, Ubbink, Ambler, Coulson. 1991. A standard numbering scheme for the Class A beta-lactamases
+.Biochem. J., 276, 269-272 

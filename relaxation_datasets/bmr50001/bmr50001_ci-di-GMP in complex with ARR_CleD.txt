@@ -1,0 +1,13 @@
+Title: Intercepting second-messenger signaling by rationally designed peptides sequestering c-di-GMP
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: ci-di-GMP in complex with ARR_CleD
+Date: 2019-08-16
+Work Authors: Habazettl, Grzesiek, Hee
+
+======
+
+Citations:
+Hee, Habazettl, Schmutz, Schirmer, Jenal, Grzesiek. 2020. Intercepting second-messenger signaling by rationally designed peptides sequestering c-di-GMP
+.Proc. Natl. Acad. Sci. U.S.A., 117, 17211-17220 

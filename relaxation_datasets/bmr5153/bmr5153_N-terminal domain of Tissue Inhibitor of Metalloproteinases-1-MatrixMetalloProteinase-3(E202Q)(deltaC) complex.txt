@@ -1,0 +1,17 @@
+Title: Binding of the MMP-3 catalytic domain to N-TIMP-1 is driven by a large gain in 
+entropy that includes modest contributions from the hydrophobic effect and the 
+TIMP-1 backbone
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: N-terminal domain of Tissue Inhibitor of Metalloproteinases-1-MatrixMetalloProteinase-3(E202Q)(deltaC) complex
+Date: 2001-09-16
+Work Authors: Gao, Arumugam, Van Doren
+
+======
+
+Citations:
+Gao, Arumugam, Patton, Semenchenko, Brew, Van Doren. .. Binding of the MMP-3 catalytic domain to N-TIMP-1 is driven by a large gain in 
+entropy that includes modest contributions from the hydrophobic effect and the 
+TIMP-1 backbone
+.J. Mol. Biol., ., .-. 

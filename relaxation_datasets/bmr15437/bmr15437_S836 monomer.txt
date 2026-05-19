@@ -1,0 +1,13 @@
+Title: NMR assignment of S836: a de novo protein from a designed superfamily
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: S836 monomer
+Date: 2007-08-16
+Work Authors: Go, Kim, Baum, Hecht
+
+======
+
+Citations:
+Go, Kim, Baum, Hecht. .. Structure and Dynamics of Proteins from Designed Combinatorial Libraries.Protein Sci., ., .-. 
+
+Go, Kim, Baum, Hecht, Go, Kim, Hecht, Baum. 2007. NMR assignment of S836: a de novo protein from a designed superfamily.Biomol. NMR Assignments, 1, 213-215 

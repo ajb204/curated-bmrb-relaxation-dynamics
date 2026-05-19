@@ -1,0 +1,21 @@
+Title: Assessing Potential Bias in the Determination of Rotational Correlation Times of
+ Proteins by NMR Relaxation
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: ubiquitin
+Date: 1998-10-14
+Work Authors: Lee, Wand
+
+======
+
+Citations:
+Lee, A. L. and Wand, A. J., "Assessing Potential Bias in the 
+Determination of Rotational Correlation Times of Proteins by 
+NMR Relaxation", J. Biomol. NMR, 13, 101-112 (1999).
+
+
+Wishart, D. S., Bigam, C. G., Yao, J., Abildgaard, F., Dyson, H. J.,
+Oldfield, E., Markley, J. L., and Sykes, B. D.  
+J. Biomol. NMR 6, 135-140 (1995).
+

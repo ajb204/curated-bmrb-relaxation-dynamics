@@ -1,0 +1,15 @@
+Title: Domain Flexibility in Ligand-Free and Inhibitor-Bound Escherichia coli Adenylate
+ Kinase Based on a Mode-Coupling Analysis of 15N Spin Relaxation
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: Adenylate Kinase from Escherichia coli
+Date: 2003-03-09
+Work Authors: Shapiro, Kahana, Tugarinov, Liang, Freed, Meirovitch
+
+======
+
+Citations:
+Shapiro, Kahana, Tugarinov, Liang, Freed, Meirovitch. 2002. Domain Flexibility in Ligand-Free and Inhibitor-Bound Escherichia coli Adenylate
+ Kinase Based on a Mode-Coupling Analysis of 15N Spin Relaxation
+.Biochemistry, 41, 6271-6281 

@@ -1,0 +1,11 @@
+Title: Solution structure, dynamics and binding studies of a family 11 carbohydrate-binding module from Clostridium thermocellum (CtCBM11).
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: CtCBM11
+Date: 2012-04-11
+Work Authors: Viegas, Cabrita
+
+======
+
+Citations:
+Viegas, Sardinha, Freire, Duarte, Carvalho, Fontes, Romao, Macedo, Cabrita. 2013. Solution structure, dynamics and binding studies of a family 11 carbohydrate-binding module from Clostridium thermocellum (CtCBM11)..Biochem. J., 451, 289-300 

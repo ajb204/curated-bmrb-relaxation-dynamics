@@ -1,0 +1,13 @@
+Title: Solution structure of the C1-subdomain of Bacillus stearothermophilus translation initiation factor IF2.
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: Bacillus stearothermophilus IF2-C1
+Date: 2005-04-01
+Work Authors: Wienk, Tomaselli, Bernard, Spurio, Picone, Gualerzi, Boelens
+
+======
+
+Citations:
+Wienk, Tomaselli, Bernard, Spurio, Picone, Gualerzi, Boelens. 2005. Solution structure of the C1-subdomain of Bacillus stearothermophilus translation initiation factor IF2.
+.Protein Sci., 14, 2461-2468 

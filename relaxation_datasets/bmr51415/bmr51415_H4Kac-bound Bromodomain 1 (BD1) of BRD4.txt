@@ -1,0 +1,13 @@
+Title: Bromodomain Interactions with Acetylated Histone 4 Peptides in the BRD4 Tandem Domain: Effects on Domain Dynamics and Internal Flexibility
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: H4Kac-bound Bromodomain 1 (BD1) of BRD4
+Date: 2022-04-26
+Work Authors: Wernersson, Romel, Flavell, Milbradt, Holdgate, Embrey, Akke
+
+======
+
+Citations:
+Wernersson, Bobby, Flavell, Milbradt, Holdgate, Embrey, Akke. 2022. Bromodomain Interactions with Acetylated Histone 4 Peptides in the BRD4 Tandem Domain: Effects on Domain Dynamics and Internal Flexibility
+.Biochemistry, 61, 2303-2318 

@@ -1,0 +1,15 @@
+Title: NMR Relaxation data for Protein Calmodulin in complex with the smooth muscle 
+myosin light chain kinase calmodulin binding domain
+
+Molecule Type: .
+Polymer Type: polypeptide(L)
+Assembly Name: Calmodulin
+Date: 2001-03-12
+Work Authors: Lee, Wand
+
+======
+
+Citations:
+Lee, Wand. 2001. NMR Relaxation data for Protein Calmodulin in complex with the smooth muscle 
+myosin light chain kinase calmodulin binding domain
+.Nature, 411, 501-504 

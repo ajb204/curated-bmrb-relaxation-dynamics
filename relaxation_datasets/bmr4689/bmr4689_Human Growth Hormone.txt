@@ -1,0 +1,19 @@
+Corrections:
+Added  HetNoe errors and R2 errors
+
+
+Title: NMR Studies of the Backbone Flexibility and Structure of Human Growth Hormone: A
+Comparison of high and low pH Conformations
+
+Molecule Type: .
+Polymer Type: polypeptide(L)
+Assembly Name: Human Growth Hormone
+Date: 2000-03-16
+Work Authors: Kasimova, Kristensen, Howe, Christensen, Matthiesen, Petersen, Sorensen, Led
+
+======
+
+Citations:
+Kasimova, Kristensen, Howe, Christensen, Matthiesen, Petersen, Sorensen, Led. 2002. NMR Studies of the Backbone Flexibility and Structure of Human Growth Hormone: A
+Comparison of high and low pH Conformations
+.J. Mol. Biol., 318, 679-695 

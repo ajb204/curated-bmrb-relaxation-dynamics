@@ -1,0 +1,13 @@
+Title: Backbone amide dynamics studies of apo-L75F-TrpR, a temperature sensitive mutant of the tryptophan repressor protein (TrpR): comparison with the 15N NMR relaxation profiles of wild type and A77V mutant apo-TrpR repressors
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: holoTrpR dimer
+Date: 2010-07-01
+Work Authors: Goel
+
+======
+
+Citations:
+Goel, Tripet, Tyler, Nebert, Copie. 2010. Backbone amide dynamics studies of Apo-L75F-TrpR, a temperature-sensitive mutant of the tryptophan repressor protein (TrpR): comparison with the (15)N NMR relaxation profiles of wild-type and A77V mutant Apo-TrpR repressors..Biochemistry, 49, 8006-8019 
+
+Goel, Tripet, Tyler, Nebert, Copie, Goel, Tripet, Copie. .. Backbone amide dynamics studies of apo-L75F-TrpR, a temperature sensitive mutant of the tryptophan repressor protein (TrpR): comparison with the 15N NMR relaxation profiles of wild type and A77V mutant apo-TrpR repressors.Biochemistry, ., .-. 

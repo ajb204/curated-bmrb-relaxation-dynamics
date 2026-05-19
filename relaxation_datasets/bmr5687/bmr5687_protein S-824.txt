@@ -1,0 +1,20 @@
+Title: Letter to the Editor: 1H, 13C and 15N resonance assignments of S-824, 
+a de novo four_helix bundle from a designed combinatorial library
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: protein S-824
+Date: 2003-02-04
+Work Authors: Hecht, Wei
+
+======
+
+Citations:
+Wei, Fela, Kim, Hecht, Baum. 2003. Letter to the Editor: 1H, 13C and 15N resonance assignments of S-824, 
+a de novo four_helix bundle from a designed combinatorial library
+.J. Biomol. NMR, 27, 395-396 
+
+Wei Y, Liu T, Sazinsky SL, Moffet DA, Pelczer I, Hecht MH.
+Stably folded de novo proteins from a designed combinatorial library.
+Protein Sci. 2003 Jan;12(1):92-102.
+

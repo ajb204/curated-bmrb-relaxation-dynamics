@@ -1,0 +1,15 @@
+Title: The structural and dynamic basis of Ets-1 DNA Binding 
+autoinhibition
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: Murine Ets-1 deltaN301
+Date: 2003-10-31
+Work Authors: Lee, Donaldson, Pufall, Kang, Gentile, Pot, Graves, McIntosh
+
+======
+
+Citations:
+Lee, Donaldson, Pufall, Kang, Pot, Graves, McIntosh. 2005. The structural and dynamic basis of Ets-1 DNA Binding 
+autoinhibition
+.J. Biol. Chem., 280, 7088-7099 

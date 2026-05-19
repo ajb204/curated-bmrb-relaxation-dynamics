@@ -1,0 +1,13 @@
+Title: Solution Structure of Domain 1.1 of the sigma(A) Factor from Bacillus subtilis is Preformed for Binding to the RNA Polymerase Core
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: sigma1.1 monomer
+Date: 2017-01-20
+Work Authors: Zachrdla, Padrta, Rabatinova, Sanderova, Barvik, Krasny, Zidek
+
+======
+
+Citations:
+Zachrdla, Padrta, Rabatinova, Sanderova, Barvik, Krasny, Zidek. 2017. Solution Structure of Domain 1.1 of the sigma(A) Factor from Bacillus subtilis is Preformed for Binding to the RNA Polymerase Core
+.J. Biol. Chem., 292, 11610-11617 

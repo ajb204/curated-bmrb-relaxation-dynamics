@@ -1,0 +1,11 @@
+Title: Solution structure of S. cerevisiae PDCD5-like protein and its promoting role in H(2)O(2)-induced apoptosis in yeast.
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: Ymr074cp (1-116) monomer
+Date: 2007-11-25
+Work Authors: Hong, Zhang, Liu, Shi, Wu
+
+======
+
+Citations:
+Hong, Zhang, Liu, Qin, Wu, Shi. 2009. Solution structure of S. cerevisiae PDCD5-like protein and its promoting role in H(2)O(2)-induced apoptosis in yeast..Biochemistry, 48, 6824-6834 

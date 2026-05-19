@@ -1,0 +1,16 @@
+Corrections: 
+This file had the SF field in Hz instead of MHz
+
+Title: Interplay between Conformational Entropy and Solvation Entropy in Protein-Ligand Binding.
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: Gal3C R
+Date: 2018-12-10
+Work Authors: Verteramo, Stenstrom, Misini Ignjatovic, Caldararu, Olsson, Manzoni, Leffer, Oksanen, Logan, Nilsson, Ryde, Akke
+
+======
+
+Citations:
+Verteramo, Stenstrom, Misini Ignjatovic, Caldararu, Olsson, Manzoni, Leffer, Oksanen, Logan, Nilsson, Ryde, Akke. 2019. Interplay between Conformational Entropy and Solvation Entropy in Protein-Ligand Binding.
+.J. Am. Chem. Soc., 141, 2012-2026 

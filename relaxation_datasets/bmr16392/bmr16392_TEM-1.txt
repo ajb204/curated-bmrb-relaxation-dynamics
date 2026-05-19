@@ -1,0 +1,11 @@
+Title: Backbone dynamics of TEM-1 determined by NMR: evidence for a highly ordered protein
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: TEM-1
+Date: 2009-07-02
+Work Authors: Gagne, Savard
+
+======
+
+Citations:
+Savard, Gagne. 2006. Backbone dynamics of TEM-1 determined by NMR: evidence for a highly ordered protein.Biochemistry, 45, 11414-11424 

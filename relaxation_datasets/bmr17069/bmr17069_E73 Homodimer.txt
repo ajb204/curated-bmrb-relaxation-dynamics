@@ -1,0 +1,11 @@
+Title: Structure and dynamics characterization of the E73 protein from Sulfolobus Spindle-shaped Virus Ragged Hills (SSV-RH), a hyperthermophilic crenarchaeal virus from Yellowstone National Park.
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: E73 Homodimer
+Date: 2010-07-21
+Work Authors: Goel
+
+======
+
+Citations:
+Schlenker, Goel, Tripet, Menon, Lawrence, Valerie. .. Structure and dynamics characterization of the E73 protein from Sulfolobus Spindle-shaped Virus Ragged Hills (SSV-RH), a hyperthermophilic crenarchaeal virus from Yellowstone National Park..Biochemistry, ., .-. 

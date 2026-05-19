@@ -1,0 +1,2714 @@
+data_5080
+
+#######################
+#  Entry information  #
+#######################
+
+save_entry_information
+   _Entry.Sf_category                    entry_information
+   _Entry.Sf_framecode                   entry_information
+   _Entry.ID                             5080
+   _Entry.Title                         
+;
+Backbone dynamics of the functional domain of Paracoccus denitrificans      
+Cytochrome c552 in the Oxidized state 
+;
+   _Entry.Type                           macromolecule
+   _Entry.Version_type                   original
+   _Entry.Submission_date                2001-07-14
+   _Entry.Accession_date                 2001-07-16
+   _Entry.Last_release_date              2001-10-16
+   _Entry.Original_release_date          2001-10-16
+   _Entry.Origination                    author
+   _Entry.NMR_STAR_version               3.1.1.61
+   _Entry.Original_NMR_STAR_version      2.1
+   _Entry.Experimental_method            NMR
+   _Entry.Experimental_method_subtype    .
+   _Entry.Details                        .
+   _Entry.BMRB_internal_directory_name   .
+
+   loop_
+      _Entry_author.Ordinal
+      _Entry_author.Given_name
+      _Entry_author.Family_name
+      _Entry_author.First_initial
+      _Entry_author.Middle_initials
+      _Entry_author.Family_title
+      _Entry_author.Entry_ID
+
+      1 Britta    Reincke    . .  . 5080 
+      2 Carlos    Perez      . .  . 5080 
+      3 Primoz    Pristovsek . .  . 5080 
+      4 Christian Luecke     . .  . 5080 
+      5 Christian Ludwig     . .  . 5080 
+      6 Frank     Loehr      . .  . 5080 
+      7 Vladimir  Rogov      . V. . 5080 
+      8 Bernd     Ludwig     . .  . 5080 
+      9 Heinz     Rueterjans . .  . 5080 
+
+   stop_
+
+   loop_
+      _Data_set.Type
+      _Data_set.Count
+      _Data_set.Entry_ID
+
+      heteronucl_T1_relaxation 2 5080 
+      heteronucl_T2_relaxation 2 5080 
+      heteronucl_NOEs          2 5080 
+
+   stop_
+
+   loop_
+      _Datum.Type
+      _Datum.Count
+      _Datum.Entry_ID
+
+      'T1 relaxation values' 176 5080 
+      'T2 relaxation values' 176 5080 
+
+   stop_
+
+   loop_
+      _Release.Release_number
+      _Release.Format_type
+      _Release.Format_version
+      _Release.Date
+      _Release.Submission_date
+      _Release.Type
+      _Release.Author
+      _Release.Detail
+      _Release.Entry_ID
+
+      1 . . 2001-10-16 2001-07-14 original author . 5080 
+
+   stop_
+
+   loop_
+      _Related_entries.Database_name
+      _Related_entries.Database_accession_code
+      _Related_entries.Relationship
+      _Related_entries.Entry_ID
+
+      BMRB 4471 'chemical shift assignments of reduced cytochrome c552'  5080 
+      BMRB 4777 'chemical shift assignments of oxidized cytochrome c552' 5080 
+      BMRB 5079 'cytochrome c552 reduced'                                5080 
+
+   stop_
+
+save_
+
+
+###############
+#  Citations  #
+###############
+
+save_entry_citation
+   _Citation.Sf_category                  citations
+   _Citation.Sf_framecode                 entry_citation
+   _Citation.Entry_ID                     5080
+   _Citation.ID                           1
+   _Citation.Class                       'entry citation'
+   _Citation.CAS_abstract_code            .
+   _Citation.MEDLINE_UI_code              .
+   _Citation.DOI                          .
+   _Citation.PubMed_ID                    11591150
+   _Citation.Full_citation                .
+   _Citation.Title                       
+;
+Solution Structure and Dynamics of the Functional Domain of Paracoccus      
+denitrificans Cytochrome c552 in both Redox States  
+;
+   _Citation.Status                       published
+   _Citation.Type                         journal
+   _Citation.Journal_abbrev               Biochemistry
+   _Citation.Journal_name_full            .
+   _Citation.Journal_volume               40
+   _Citation.Journal_issue                .
+   _Citation.Journal_ASTM                 .
+   _Citation.Journal_ISSN                 .
+   _Citation.Journal_CSD                  .
+   _Citation.Book_title                   .
+   _Citation.Book_chapter_title           .
+   _Citation.Book_volume                  .
+   _Citation.Book_series                  .
+   _Citation.Book_publisher               .
+   _Citation.Book_publisher_city          .
+   _Citation.Book_ISBN                    .
+   _Citation.Conference_title             .
+   _Citation.Conference_site              .
+   _Citation.Conference_state_province    .
+   _Citation.Conference_country           .
+   _Citation.Conference_start_date        .
+   _Citation.Conference_end_date          .
+   _Citation.Conference_abstract_number   .
+   _Citation.Thesis_institution           .
+   _Citation.Thesis_institution_city      .
+   _Citation.Thesis_institution_country   .
+   _Citation.WWW_URL                      .
+   _Citation.Page_first                   12312
+   _Citation.Page_last                    12320
+   _Citation.Year                         2001
+   _Citation.Details                      .
+
+   loop_
+      _Citation_author.Ordinal
+      _Citation_author.Given_name
+      _Citation_author.Family_name
+      _Citation_author.First_initial
+      _Citation_author.Middle_initials
+      _Citation_author.Family_title
+      _Citation_author.Entry_ID
+      _Citation_author.Citation_ID
+
+      1 Britta    Reincke    . .  . 5080 1 
+      2 Carlos    Perez      . .  . 5080 1 
+      3 Primoz    Pristovsek . .  . 5080 1 
+      4 Christian Luecke     . .  . 5080 1 
+      5 Christian Ludwig     . .  . 5080 1 
+      6 Frank     Loehr      . .  . 5080 1 
+      7 Vladimir  Rogov      . V. . 5080 1 
+      8 Bernd     Ludwig     . .  . 5080 1 
+      9 Heinz     Rueterjans . .  . 5080 1 
+
+   stop_
+
+   loop_
+      _Citation_keyword.Keyword
+      _Citation_keyword.Entry_ID
+      _Citation_keyword.Citation_ID
+
+       cytochromes                 5080 1 
+      'electron-transfer pathways' 5080 1 
+
+   stop_
+
+save_
+
+
+save_ref_1
+   _Citation.Sf_category                  citations
+   _Citation.Sf_framecode                 ref_1
+   _Citation.Entry_ID                     5080
+   _Citation.ID                           2
+   _Citation.Class                       'reference citation'
+   _Citation.CAS_abstract_code            .
+   _Citation.MEDLINE_UI_code              .
+   _Citation.DOI                          .
+   _Citation.PubMed_ID                    11200533
+   _Citation.Full_citation               
+;
+Luecke, C., Reincke, B., Loehr, F., Pristovsek, P., Ludwig, B. & Rueterjans, H. 
+(2000). Complete 1H, 15N and 13C assignment of the functional domain of 
+Paracoccus denitrificans cytochrome c552 in the oxidized state. 
+J. Biomol. NMR, 18, 365-366.
+;
+   _Citation.Title                       'Complete 1H, 15N and 13C assignment of the functional domain of Paracoccus denitrificans cytochrome c552 in the oxidized state.'
+   _Citation.Status                       published
+   _Citation.Type                         journal
+   _Citation.Journal_abbrev              'J. Biomol. NMR'
+   _Citation.Journal_name_full           'Journal of biomolecular NMR'
+   _Citation.Journal_volume               18
+   _Citation.Journal_issue                4
+   _Citation.Journal_ASTM                 .
+   _Citation.Journal_ISSN                 0925-2738
+   _Citation.Journal_CSD                  .
+   _Citation.Book_title                   .
+   _Citation.Book_chapter_title           .
+   _Citation.Book_volume                  .
+   _Citation.Book_series                  .
+   _Citation.Book_publisher               .
+   _Citation.Book_publisher_city          .
+   _Citation.Book_ISBN                    .
+   _Citation.Conference_title             .
+   _Citation.Conference_site              .
+   _Citation.Conference_state_province    .
+   _Citation.Conference_country           .
+   _Citation.Conference_start_date        .
+   _Citation.Conference_end_date          .
+   _Citation.Conference_abstract_number   .
+   _Citation.Thesis_institution           .
+   _Citation.Thesis_institution_city      .
+   _Citation.Thesis_institution_country   .
+   _Citation.WWW_URL                      .
+   _Citation.Page_first                   365
+   _Citation.Page_last                    366
+   _Citation.Year                         2000
+   _Citation.Details                      .
+
+   loop_
+      _Citation_author.Ordinal
+      _Citation_author.Given_name
+      _Citation_author.Family_name
+      _Citation_author.First_initial
+      _Citation_author.Middle_initials
+      _Citation_author.Family_title
+      _Citation_author.Entry_ID
+      _Citation_author.Citation_ID
+
+      1 C. Luecke     C. . . 5080 2 
+      2 B. Reincke    B. . . 5080 2 
+      3 F. Lohr       F. . . 5080 2 
+      4 P. Pristovsek P. . . 5080 2 
+      5 B. Ludwig     B. . . 5080 2 
+      6 H. Ruterjans  H. . . 5080 2 
+
+   stop_
+
+save_
+
+
+save_ref_2
+   _Citation.Sf_category                  citations
+   _Citation.Sf_framecode                 ref_2
+   _Citation.Entry_ID                     5080
+   _Citation.ID                           3
+   _Citation.Class                       'reference citation'
+   _Citation.CAS_abstract_code            .
+   _Citation.MEDLINE_UI_code              .
+   _Citation.DOI                          .
+   _Citation.PubMed_ID                    10216157
+   _Citation.Full_citation               
+;
+Reincke, B., Thoeny-Meyer, L., Dannehl, C., Odenwald, A., Aidim, M., Witt, H., 
+Rueterjans, H. & Ludwig, B. (1999) Heterologous expression of soluble fragments 
+of cytochrome c552 acting as electron donor to the Paracoccus denitrificans 
+cytochrome c oxidase. 
+Biochim. Biophys. Acta, 1441, 114-120.
+;
+   _Citation.Title                       'Heterologous expression of soluble fragments of cytochrome c552 acting as electron donor to the Paracoccus denitrificans cytochrome c oxidase.'
+   _Citation.Status                       published
+   _Citation.Type                         journal
+   _Citation.Journal_abbrev              'Biochim. Biophys. Acta'
+   _Citation.Journal_name_full           'Biochimica et biophysica acta'
+   _Citation.Journal_volume               1411
+   _Citation.Journal_issue                1
+   _Citation.Journal_ASTM                 .
+   _Citation.Journal_ISSN                 0006-3002
+   _Citation.Journal_CSD                  .
+   _Citation.Book_title                   .
+   _Citation.Book_chapter_title           .
+   _Citation.Book_volume                  .
+   _Citation.Book_series                  .
+   _Citation.Book_publisher               .
+   _Citation.Book_publisher_city          .
+   _Citation.Book_ISBN                    .
+   _Citation.Conference_title             .
+   _Citation.Conference_site              .
+   _Citation.Conference_state_province    .
+   _Citation.Conference_country           .
+   _Citation.Conference_start_date        .
+   _Citation.Conference_end_date          .
+   _Citation.Conference_abstract_number   .
+   _Citation.Thesis_institution           .
+   _Citation.Thesis_institution_city      .
+   _Citation.Thesis_institution_country   .
+   _Citation.WWW_URL                      .
+   _Citation.Page_first                   114
+   _Citation.Page_last                    120
+   _Citation.Year                         1999
+   _Citation.Details                     
+;
+A membrane-bound c-type cytochrome, c552, acts as the electron mediator between
+the cytochrome bc1 complex and cytochrome c oxidase in the branched respiratory
+chain of the bacterium Paracoccus denitrificans. Unlike in mitochondria where a
+soluble cytochrome c interacts with both complexes, the bacterial c552, the
+product of the cycM gene, shows a tripartite structure, with an N-terminal
+membrane anchor separated from a typical class I cytochrome domain by a highly
+charged region. Two derivative fragments, lacking either only the membrane
+spanning region or both N-terminal domains, were constructed on the genetic
+level, and expressed in Escherichia coli cotransformed with the ccm gene
+cluster encoding host-specific cytochrome c maturation factors. High levels of
+cytochromes c were expressed and located in the periplasm as holo-proteins;
+both these purified c552 fragments are functional in electron transport to
+oxidase, as ascertained by kinetic measurements, and will prove useful for
+future structural studies of complex formation by NMR and X-ray diffraction.
+;
+
+   loop_
+      _Citation_author.Ordinal
+      _Citation_author.Given_name
+      _Citation_author.Family_name
+      _Citation_author.First_initial
+      _Citation_author.Middle_initials
+      _Citation_author.Family_title
+      _Citation_author.Entry_ID
+      _Citation_author.Citation_ID
+
+      1 B. Reincke     B. . . 5080 3 
+      2 L. Thony-Meyer L. . . 5080 3 
+      3 C. Dannehl     C. . . 5080 3 
+      4 A. Odenwald    A. . . 5080 3 
+      5 M. Aidim       M. . . 5080 3 
+      6 H. Witt        H. . . 5080 3 
+      7 H. Ruterjans   H. . . 5080 3 
+      8 B. Ludwig      B. . . 5080 3 
+
+   stop_
+
+save_
+
+
+save_ref_3
+   _Citation.Sf_category                  citations
+   _Citation.Sf_framecode                 ref_3
+   _Citation.Entry_ID                     5080
+   _Citation.ID                           4
+   _Citation.Class                       'reference citation'
+   _Citation.CAS_abstract_code            .
+   _Citation.MEDLINE_UI_code              .
+   _Citation.DOI                          .
+   _Citation.PubMed_ID                    7628479
+   _Citation.Full_citation               
+;
+Turba, A., Jetzek, M. & Ludwig, B. (1995) Purification of Paracoccus 
+denitrificans cytochrome c552 and sequence analysis of the gene. Eur. J. 
+Biochem., 231, 259-265.
+;
+   _Citation.Title                       'Purification of Paracoccus denitrificans cytochrome c552 and sequence analysis of the gene.'
+   _Citation.Status                       published
+   _Citation.Type                         journal
+   _Citation.Journal_abbrev              'Eur. J. Biochem.'
+   _Citation.Journal_name_full           'European journal of biochemistry / FEBS'
+   _Citation.Journal_volume               231
+   _Citation.Journal_issue                1
+   _Citation.Journal_ASTM                 .
+   _Citation.Journal_ISSN                 0014-2956
+   _Citation.Journal_CSD                  .
+   _Citation.Book_title                   .
+   _Citation.Book_chapter_title           .
+   _Citation.Book_volume                  .
+   _Citation.Book_series                  .
+   _Citation.Book_publisher               .
+   _Citation.Book_publisher_city          .
+   _Citation.Book_ISBN                    .
+   _Citation.Conference_title             .
+   _Citation.Conference_site              .
+   _Citation.Conference_state_province    .
+   _Citation.Conference_country           .
+   _Citation.Conference_start_date        .
+   _Citation.Conference_end_date          .
+   _Citation.Conference_abstract_number   .
+   _Citation.Thesis_institution           .
+   _Citation.Thesis_institution_city      .
+   _Citation.Thesis_institution_country   .
+   _Citation.WWW_URL                      .
+   _Citation.Page_first                   259
+   _Citation.Page_last                    265
+   _Citation.Year                         1995
+   _Citation.Details                     
+;
+Unlike mitochondria, many bacteria use a large repertoire of c-type cytochromes
+in different branches of their electron transport system. Among the many
+cytochromes c present in the soil bacterium Paracoccus denitrificans, a
+membrane-bound cytochrome (c552) has been suggested to mediate the electron
+transport between the cytochrome bc1 complex and cytochrome-c oxidase [Berry,
+E. A. & Trumpower, B. L. (1985) J. Biol. Chem. 260, 2458-2467]. We have
+purified this cytochrome from cytoplasmic membranes, and cloned and sequenced
+its gene, cycM. Sequence analysis reveals that, while its C-terminal portion is
+highly similar to type-I cytochromes c, its N-terminal part contains a
+hydrophobic segment providing membrane attachment. In addition, we present
+immunological evidence for its functional role in respiration.
+;
+
+   loop_
+      _Citation_author.Ordinal
+      _Citation_author.Given_name
+      _Citation_author.Family_name
+      _Citation_author.First_initial
+      _Citation_author.Middle_initials
+      _Citation_author.Family_title
+      _Citation_author.Entry_ID
+      _Citation_author.Citation_ID
+
+      1 A. Turba  A. . . 5080 4 
+      2 M. Jetzek M. . . 5080 4 
+      3 B. Ludwig B. . . 5080 4 
+
+   stop_
+
+save_
+
+
+#############################################
+#  Molecular system (assembly) description  #
+#############################################
+
+save_system_cyt_c552
+   _Assembly.Sf_category                       assembly
+   _Assembly.Sf_framecode                      system_cyt_c552
+   _Assembly.Entry_ID                          5080
+   _Assembly.ID                                1
+   _Assembly.Name                             'cytochrome c552'
+   _Assembly.BMRB_code                         .
+   _Assembly.Number_of_components              .
+   _Assembly.Organic_ligands                   .
+   _Assembly.Metal_ions                        .
+   _Assembly.Non_standard_bonds                .
+   _Assembly.Ambiguous_conformational_states   .
+   _Assembly.Ambiguous_chem_comp_sites         .
+   _Assembly.Molecules_in_chemical_exchange    .
+   _Assembly.Paramagnetic                      yes
+   _Assembly.Thiol_state                      'all other bound'
+   _Assembly.Molecular_mass                    .
+   _Assembly.Enzyme_commission_number          .
+   _Assembly.Details                          
+;
+       SWISS-PROT  P54820 'CYTOCHROME C-552' 
+This deposit represents the soluble fragment containing the  
+functional domain which starts at position 78 and is preceded  
+by an additional Met residue.  
+;
+   _Assembly.DB_query_date                     .
+   _Assembly.DB_query_revised_last_date        .
+
+   loop_
+      _Assembly_type.Type
+      _Assembly_type.Entry_ID
+      _Assembly_type.Assembly_ID
+
+      monomer 5080 1 
+
+   stop_
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+      1 'cyt c552' 1 $cyt_c552 . . . native . . . . . 5080 1 
+      2  HEC_ox    2 $HEM      . . . native . . . . . 5080 1 
+
+   stop_
+
+   loop_
+      _Bond.ID
+      _Bond.Type
+      _Bond.Value_order
+      _Bond.Assembly_atom_ID_1
+      _Bond.Entity_assembly_ID_1
+      _Bond.Entity_assembly_name_1
+      _Bond.Entity_ID_1
+      _Bond.Comp_ID_1
+      _Bond.Comp_index_ID_1
+      _Bond.Seq_ID_1
+      _Bond.Atom_ID_1
+      _Bond.Assembly_atom_ID_2
+      _Bond.Entity_assembly_ID_2
+      _Bond.Entity_assembly_name_2
+      _Bond.Entity_ID_2
+      _Bond.Comp_ID_2
+      _Bond.Comp_index_ID_2
+      _Bond.Seq_ID_2
+      _Bond.Atom_ID_2
+      _Bond.Auth_entity_assembly_ID_1
+      _Bond.Auth_entity_assembly_name_1
+      _Bond.Auth_seq_ID_1
+      _Bond.Auth_comp_ID_1
+      _Bond.Auth_atom_ID_1
+      _Bond.Auth_entity_assembly_ID_2
+      _Bond.Auth_entity_assembly_name_2
+      _Bond.Auth_seq_ID_2
+      _Bond.Auth_comp_ID_2
+      _Bond.Auth_atom_ID_2
+      _Bond.Entry_ID
+      _Bond.Assembly_ID
+
+      1  thioether           single . 2 . 2 HEM 1 1 CAB . 1 . 1 CYS 14 14 SG  . . . . . . . . . . 5080 1 
+      2  thioether           single . 2 . 2 HEM 1 1 CAC . 1 . 1 CYS 17 17 SG  . . . . . . . . . . 5080 1 
+      3 'metal coordination' single . 2 . 2 HEM 1 1 FE  . 1 . 1 HIS 18 18 NE2 . . . . . . . . . . 5080 1 
+      4 'metal coordination' single . 2 . 2 HEM 1 1 FE  . 1 . 1 MET 78 78 SD  . . . . . . . . . . 5080 1 
+
+   stop_
+
+   loop_
+      _Assembly_db_link.Author_supplied
+      _Assembly_db_link.Database_code
+      _Assembly_db_link.Accession_code
+      _Assembly_db_link.Entry_mol_code
+      _Assembly_db_link.Entry_mol_name
+      _Assembly_db_link.Entry_experimental_method
+      _Assembly_db_link.Entry_structure_resolution
+      _Assembly_db_link.Entry_relation_type
+      _Assembly_db_link.Entry_details
+      _Assembly_db_link.Entry_ID
+      _Assembly_db_link.Assembly_ID
+
+      yes SWISS-PROT P54820 . 'CYTOCHROME C-552' . . . 
+;
+This deposit represents the soluble fragment containing the  
+functional domain which starts at position 78 and is preceded  
+by an additional Met residue.  
+; 5080 1 
+      yes PDB        1I6E   .  .                 . . . 'solution structure of oxidized cytochrome c552' 5080 1 
+      yes PDB        1I6D   .  .                 . . . 'solution structure of reduced cytochrome c552'  5080 1 
+
+   stop_
+
+   loop_
+      _Assembly_common_name.Name
+      _Assembly_common_name.Type
+      _Assembly_common_name.Entry_ID
+      _Assembly_common_name.Assembly_ID
+
+      'cytochrome c552' system       5080 1 
+      'cyt c552'        abbreviation 5080 1 
+
+   stop_
+
+   loop_
+      _Assembly_bio_function.Biological_function
+      _Assembly_bio_function.Entry_ID
+      _Assembly_bio_function.Assembly_ID
+
+      'electron-transfer mediator in bacterial respiratory chain' 5080 1 
+
+   stop_
+
+save_
+
+
+    ####################################
+    #  Biological polymers and ligands #
+    ####################################
+
+save_cyt_c552
+   _Entity.Sf_category                       entity
+   _Entity.Sf_framecode                      cyt_c552
+   _Entity.Entry_ID                          5080
+   _Entity.ID                                1
+   _Entity.BMRB_code                         .
+   _Entity.Name                             'Paracoccus denitrificans cytochrome c552, soluble fragment'
+   _Entity.Type                              polymer
+   _Entity.Polymer_common_type               .
+   _Entity.Polymer_type                      polypeptide(L)
+   _Entity.Polymer_type_details              .
+   _Entity.Polymer_strand_ID                 .
+   _Entity.Polymer_seq_one_letter_code_can   .
+   _Entity.Polymer_seq_one_letter_code      
+;
+MADPAAGEKVFGKCKACHKL
+DGNDGVGPHLNGVVGRTVAG
+VDGFNYSDPMKAHGGDWTPE
+ALQEFLTNPKAVVKGTKMAF
+AGLPKIEDRANLIAYLEGQQ
+;
+   _Entity.Target_identifier                 .
+   _Entity.Polymer_author_defined_seq        .
+   _Entity.Polymer_author_seq_details        .
+   _Entity.Ambiguous_conformational_states   .
+   _Entity.Ambiguous_chem_comp_sites         .
+   _Entity.Nstd_monomer                      .
+   _Entity.Nstd_chirality                    .
+   _Entity.Nstd_linkage                      .
+   _Entity.Nonpolymer_comp_ID                .
+   _Entity.Nonpolymer_comp_label             .
+   _Entity.Number_of_monomers                100
+   _Entity.Number_of_nonpolymer_components   .
+   _Entity.Paramagnetic                      .
+   _Entity.Thiol_state                      'all other bound'
+   _Entity.Src_method                        .
+   _Entity.Parent_entity_ID                  1
+   _Entity.Fragment                          .
+   _Entity.Mutation                          .
+   _Entity.EC_number                         .
+   _Entity.Calc_isoelectric_point            .
+   _Entity.Formula_weight                    10528
+   _Entity.Formula_weight_exptl              .
+   _Entity.Formula_weight_exptl_meth         .
+   _Entity.Details                           .
+   _Entity.DB_query_date                     .
+   _Entity.DB_query_revised_last_date        2015-01-28
+
+   loop_
+      _Entity_db_link.Ordinal
+      _Entity_db_link.Author_supplied
+      _Entity_db_link.Database_code
+      _Entity_db_link.Accession_code
+      _Entity_db_link.Entry_mol_code
+      _Entity_db_link.Entry_mol_name
+      _Entity_db_link.Entry_experimental_method
+      _Entity_db_link.Entry_structure_resolution
+      _Entity_db_link.Entry_relation_type
+      _Entity_db_link.Entry_details
+      _Entity_db_link.Chimera_segment_ID
+      _Entity_db_link.Seq_query_to_submitted_percent
+      _Entity_db_link.Seq_subject_length
+      _Entity_db_link.Seq_identity
+      _Entity_db_link.Seq_positive
+      _Entity_db_link.Seq_homology_expectation_val
+      _Entity_db_link.Seq_align_begin
+      _Entity_db_link.Seq_align_end
+      _Entity_db_link.Seq_difference_details
+      _Entity_db_link.Seq_alignment_details
+      _Entity_db_link.Entry_ID
+      _Entity_db_link.Entity_ID
+
+       1 no BMRB         4471 .  cyt_c552                                                                                                           . . . . . 100.00 100 100.00 100.00 2.35e-66 . . . . 5080 1 
+       2 no BMRB         4777 .  cyt_c552                                                                                                           . . . . . 100.00 100 100.00 100.00 2.35e-66 . . . . 5080 1 
+       3 no BMRB         5079 .  cyt_c552                                                                                                           . . . . . 100.00 100 100.00 100.00 2.35e-66 . . . . 5080 1 
+       4 no PDB  1C7M          . "Solution Structure Of The Functional Domain Of Paracoccus Denitrificans Cytochrome C552 In The Reduced State"      . . . . . 100.00 100 100.00 100.00 2.35e-66 . . . . 5080 1 
+       5 no PDB  1I6D          . "Solution Structure Of The Functional Domain Of Paracoccus Denitrificans Cytochrome C552 In The Reduced State"      . . . . . 100.00 100 100.00 100.00 2.35e-66 . . . . 5080 1 
+       6 no PDB  1I6E          . "Solution Structure Of The Functional Domain Of Paracoccus Denitrificans Cytochrome C552 In The Oxidized State"     . . . . . 100.00 100 100.00 100.00 2.35e-66 . . . . 5080 1 
+       7 no PDB  1QL3          . "Structure Of The Soluble Domain Of Cytochrome C552 From Paracoccus Denitrificans In The Reduced State"             . . . . .  99.00  99 100.00 100.00 1.68e-65 . . . . 5080 1 
+       8 no PDB  1QL4          . "Structure Of The Soluble Domain Of Cytochrome C552 From Paracoccus Denitrificans In The Oxidised State"            . . . . .  99.00  99 100.00 100.00 1.68e-65 . . . . 5080 1 
+       9 no PDB  3M97          . "Structure Of The Soluble Domain Of Cytochrome C552 With Its Flexible Linker Segment From Paracoccus Denitrificans" . . . . .  99.00 140 100.00 100.00 1.65e-65 . . . . 5080 1 
+      10 no EMBL CAA49830      . "cytochrome C552 [Paracoccus denitrificans]"                                                                        . . . . .  99.00 176 100.00 100.00 1.22e-65 . . . . 5080 1 
+      11 no GB   ABL69905      . "cytochrome c, class I [Paracoccus denitrificans PD1222]"                                                           . . . . .  99.00 176 100.00 100.00 1.09e-65 . . . . 5080 1 
+      12 no REF  WP_011748102  . "cytochrome C [Paracoccus denitrificans]"                                                                           . . . . .  99.00 176 100.00 100.00 1.09e-65 . . . . 5080 1 
+      13 no REF  YP_915601     . "cytochrome c, class I [Paracoccus denitrificans PD1222]"                                                           . . . . .  99.00 176 100.00 100.00 1.09e-65 . . . . 5080 1 
+      14 no SP   P54820        . "RecName: Full=Cytochrome c-552; AltName: Full=Cytochrome c552 [Paracoccus denitrificans]"                          . . . . .  99.00 176 100.00 100.00 1.22e-65 . . . . 5080 1 
+
+   stop_
+
+   loop_
+      _Entity_common_name.Name
+      _Entity_common_name.Type
+      _Entity_common_name.Entry_ID
+      _Entity_common_name.Entity_ID
+
+      'Paracoccus denitrificans cytochrome c552, soluble fragment' common       5080 1 
+      'cyt c552'                                                   abbreviation 5080 1 
+
+   stop_
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+        1 . MET . 5080 1 
+        2 . ALA . 5080 1 
+        3 . ASP . 5080 1 
+        4 . PRO . 5080 1 
+        5 . ALA . 5080 1 
+        6 . ALA . 5080 1 
+        7 . GLY . 5080 1 
+        8 . GLU . 5080 1 
+        9 . LYS . 5080 1 
+       10 . VAL . 5080 1 
+       11 . PHE . 5080 1 
+       12 . GLY . 5080 1 
+       13 . LYS . 5080 1 
+       14 . CYS . 5080 1 
+       15 . LYS . 5080 1 
+       16 . ALA . 5080 1 
+       17 . CYS . 5080 1 
+       18 . HIS . 5080 1 
+       19 . LYS . 5080 1 
+       20 . LEU . 5080 1 
+       21 . ASP . 5080 1 
+       22 . GLY . 5080 1 
+       23 . ASN . 5080 1 
+       24 . ASP . 5080 1 
+       25 . GLY . 5080 1 
+       26 . VAL . 5080 1 
+       27 . GLY . 5080 1 
+       28 . PRO . 5080 1 
+       29 . HIS . 5080 1 
+       30 . LEU . 5080 1 
+       31 . ASN . 5080 1 
+       32 . GLY . 5080 1 
+       33 . VAL . 5080 1 
+       34 . VAL . 5080 1 
+       35 . GLY . 5080 1 
+       36 . ARG . 5080 1 
+       37 . THR . 5080 1 
+       38 . VAL . 5080 1 
+       39 . ALA . 5080 1 
+       40 . GLY . 5080 1 
+       41 . VAL . 5080 1 
+       42 . ASP . 5080 1 
+       43 . GLY . 5080 1 
+       44 . PHE . 5080 1 
+       45 . ASN . 5080 1 
+       46 . TYR . 5080 1 
+       47 . SER . 5080 1 
+       48 . ASP . 5080 1 
+       49 . PRO . 5080 1 
+       50 . MET . 5080 1 
+       51 . LYS . 5080 1 
+       52 . ALA . 5080 1 
+       53 . HIS . 5080 1 
+       54 . GLY . 5080 1 
+       55 . GLY . 5080 1 
+       56 . ASP . 5080 1 
+       57 . TRP . 5080 1 
+       58 . THR . 5080 1 
+       59 . PRO . 5080 1 
+       60 . GLU . 5080 1 
+       61 . ALA . 5080 1 
+       62 . LEU . 5080 1 
+       63 . GLN . 5080 1 
+       64 . GLU . 5080 1 
+       65 . PHE . 5080 1 
+       66 . LEU . 5080 1 
+       67 . THR . 5080 1 
+       68 . ASN . 5080 1 
+       69 . PRO . 5080 1 
+       70 . LYS . 5080 1 
+       71 . ALA . 5080 1 
+       72 . VAL . 5080 1 
+       73 . VAL . 5080 1 
+       74 . LYS . 5080 1 
+       75 . GLY . 5080 1 
+       76 . THR . 5080 1 
+       77 . LYS . 5080 1 
+       78 . MET . 5080 1 
+       79 . ALA . 5080 1 
+       80 . PHE . 5080 1 
+       81 . ALA . 5080 1 
+       82 . GLY . 5080 1 
+       83 . LEU . 5080 1 
+       84 . PRO . 5080 1 
+       85 . LYS . 5080 1 
+       86 . ILE . 5080 1 
+       87 . GLU . 5080 1 
+       88 . ASP . 5080 1 
+       89 . ARG . 5080 1 
+       90 . ALA . 5080 1 
+       91 . ASN . 5080 1 
+       92 . LEU . 5080 1 
+       93 . ILE . 5080 1 
+       94 . ALA . 5080 1 
+       95 . TYR . 5080 1 
+       96 . LEU . 5080 1 
+       97 . GLU . 5080 1 
+       98 . GLY . 5080 1 
+       99 . GLN . 5080 1 
+      100 . GLN . 5080 1 
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+      . MET   1   1 5080 1 
+      . ALA   2   2 5080 1 
+      . ASP   3   3 5080 1 
+      . PRO   4   4 5080 1 
+      . ALA   5   5 5080 1 
+      . ALA   6   6 5080 1 
+      . GLY   7   7 5080 1 
+      . GLU   8   8 5080 1 
+      . LYS   9   9 5080 1 
+      . VAL  10  10 5080 1 
+      . PHE  11  11 5080 1 
+      . GLY  12  12 5080 1 
+      . LYS  13  13 5080 1 
+      . CYS  14  14 5080 1 
+      . LYS  15  15 5080 1 
+      . ALA  16  16 5080 1 
+      . CYS  17  17 5080 1 
+      . HIS  18  18 5080 1 
+      . LYS  19  19 5080 1 
+      . LEU  20  20 5080 1 
+      . ASP  21  21 5080 1 
+      . GLY  22  22 5080 1 
+      . ASN  23  23 5080 1 
+      . ASP  24  24 5080 1 
+      . GLY  25  25 5080 1 
+      . VAL  26  26 5080 1 
+      . GLY  27  27 5080 1 
+      . PRO  28  28 5080 1 
+      . HIS  29  29 5080 1 
+      . LEU  30  30 5080 1 
+      . ASN  31  31 5080 1 
+      . GLY  32  32 5080 1 
+      . VAL  33  33 5080 1 
+      . VAL  34  34 5080 1 
+      . GLY  35  35 5080 1 
+      . ARG  36  36 5080 1 
+      . THR  37  37 5080 1 
+      . VAL  38  38 5080 1 
+      . ALA  39  39 5080 1 
+      . GLY  40  40 5080 1 
+      . VAL  41  41 5080 1 
+      . ASP  42  42 5080 1 
+      . GLY  43  43 5080 1 
+      . PHE  44  44 5080 1 
+      . ASN  45  45 5080 1 
+      . TYR  46  46 5080 1 
+      . SER  47  47 5080 1 
+      . ASP  48  48 5080 1 
+      . PRO  49  49 5080 1 
+      . MET  50  50 5080 1 
+      . LYS  51  51 5080 1 
+      . ALA  52  52 5080 1 
+      . HIS  53  53 5080 1 
+      . GLY  54  54 5080 1 
+      . GLY  55  55 5080 1 
+      . ASP  56  56 5080 1 
+      . TRP  57  57 5080 1 
+      . THR  58  58 5080 1 
+      . PRO  59  59 5080 1 
+      . GLU  60  60 5080 1 
+      . ALA  61  61 5080 1 
+      . LEU  62  62 5080 1 
+      . GLN  63  63 5080 1 
+      . GLU  64  64 5080 1 
+      . PHE  65  65 5080 1 
+      . LEU  66  66 5080 1 
+      . THR  67  67 5080 1 
+      . ASN  68  68 5080 1 
+      . PRO  69  69 5080 1 
+      . LYS  70  70 5080 1 
+      . ALA  71  71 5080 1 
+      . VAL  72  72 5080 1 
+      . VAL  73  73 5080 1 
+      . LYS  74  74 5080 1 
+      . GLY  75  75 5080 1 
+      . THR  76  76 5080 1 
+      . LYS  77  77 5080 1 
+      . MET  78  78 5080 1 
+      . ALA  79  79 5080 1 
+      . PHE  80  80 5080 1 
+      . ALA  81  81 5080 1 
+      . GLY  82  82 5080 1 
+      . LEU  83  83 5080 1 
+      . PRO  84  84 5080 1 
+      . LYS  85  85 5080 1 
+      . ILE  86  86 5080 1 
+      . GLU  87  87 5080 1 
+      . ASP  88  88 5080 1 
+      . ARG  89  89 5080 1 
+      . ALA  90  90 5080 1 
+      . ASN  91  91 5080 1 
+      . LEU  92  92 5080 1 
+      . ILE  93  93 5080 1 
+      . ALA  94  94 5080 1 
+      . TYR  95  95 5080 1 
+      . LEU  96  96 5080 1 
+      . GLU  97  97 5080 1 
+      . GLY  98  98 5080 1 
+      . GLN  99  99 5080 1 
+      . GLN 100 100 5080 1 
+
+   stop_
+
+save_
+
+
+save_HEM
+   _Entity.Sf_category                       entity
+   _Entity.Sf_framecode                      HEM
+   _Entity.Entry_ID                          5080
+   _Entity.ID                                2
+   _Entity.BMRB_code                         .
+   _Entity.Name                              HEM
+   _Entity.Type                              non-polymer
+   _Entity.Polymer_common_type               .
+   _Entity.Polymer_type                      .
+   _Entity.Polymer_type_details              .
+   _Entity.Polymer_strand_ID                 .
+   _Entity.Polymer_seq_one_letter_code_can   .
+   _Entity.Polymer_seq_one_letter_code       .
+   _Entity.Target_identifier                 .
+   _Entity.Polymer_author_defined_seq        .
+   _Entity.Polymer_author_seq_details        .
+   _Entity.Ambiguous_conformational_states   no
+   _Entity.Ambiguous_chem_comp_sites         no
+   _Entity.Nstd_monomer                      .
+   _Entity.Nstd_chirality                    no
+   _Entity.Nstd_linkage                      no
+   _Entity.Nonpolymer_comp_ID                HEM
+   _Entity.Nonpolymer_comp_label            $chem_comp_HEM
+   _Entity.Number_of_monomers                .
+   _Entity.Number_of_nonpolymer_components   .
+   _Entity.Paramagnetic                      .
+   _Entity.Thiol_state                       .
+   _Entity.Src_method                        .
+   _Entity.Parent_entity_ID                  2
+   _Entity.Fragment                          .
+   _Entity.Mutation                          .
+   _Entity.EC_number                         .
+   _Entity.Calc_isoelectric_point            .
+   _Entity.Formula_weight                    .
+   _Entity.Formula_weight_exptl              .
+   _Entity.Formula_weight_exptl_meth         .
+   _Entity.Details                           .
+   _Entity.DB_query_date                     .
+   _Entity.DB_query_revised_last_date        .
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+      1 . HEM . 5080 2 
+
+   stop_
+
+save_
+
+
+    ####################
+    #  Natural source  #
+    ####################
+
+save_natural_source
+   _Entity_natural_src_list.Sf_category    natural_source
+   _Entity_natural_src_list.Sf_framecode   natural_source
+   _Entity_natural_src_list.Entry_ID       5080
+   _Entity_natural_src_list.ID             1
+
+   loop_
+      _Entity_natural_src.ID
+      _Entity_natural_src.Entity_ID
+      _Entity_natural_src.Entity_label
+      _Entity_natural_src.Entity_chimera_segment_ID
+      _Entity_natural_src.NCBI_taxonomy_ID
+      _Entity_natural_src.Type
+      _Entity_natural_src.Common
+      _Entity_natural_src.Organism_name_scientific
+      _Entity_natural_src.Organism_name_common
+      _Entity_natural_src.Organism_acronym
+      _Entity_natural_src.ICTVdb_decimal_code
+      _Entity_natural_src.Superkingdom
+      _Entity_natural_src.Kingdom
+      _Entity_natural_src.Genus
+      _Entity_natural_src.Species
+      _Entity_natural_src.Strain
+      _Entity_natural_src.Variant
+      _Entity_natural_src.Subvariant
+      _Entity_natural_src.Organ
+      _Entity_natural_src.Tissue
+      _Entity_natural_src.Tissue_fraction
+      _Entity_natural_src.Cell_line
+      _Entity_natural_src.Cell_type
+      _Entity_natural_src.ATCC_number
+      _Entity_natural_src.Organelle
+      _Entity_natural_src.Cellular_location
+      _Entity_natural_src.Fragment
+      _Entity_natural_src.Fraction
+      _Entity_natural_src.Secretion
+      _Entity_natural_src.Plasmid
+      _Entity_natural_src.Plasmid_details
+      _Entity_natural_src.Gene_mnemonic
+      _Entity_natural_src.Dev_stage
+      _Entity_natural_src.Details
+      _Entity_natural_src.Citation_ID
+      _Entity_natural_src.Citation_label
+      _Entity_natural_src.Entry_ID
+      _Entity_natural_src.Entity_natural_src_list_ID
+
+      1 1 $cyt_c552 . 266 organism . 'Paracoccus denitrificans' . . . Eubacteria . Paracoccus denitrificans . . . . . . . . 13543 . . . . . . . . . . . . 5080 1 
+
+   stop_
+
+save_
+
+
+    #########################
+    #  Experimental source  #
+    #########################
+
+save_experimental_source
+   _Entity_experimental_src_list.Sf_category    experimental_source
+   _Entity_experimental_src_list.Sf_framecode   experimental_source
+   _Entity_experimental_src_list.Entry_ID       5080
+   _Entity_experimental_src_list.ID             1
+
+   loop_
+      _Entity_experimental_src.ID
+      _Entity_experimental_src.Entity_ID
+      _Entity_experimental_src.Entity_label
+      _Entity_experimental_src.Entity_chimera_segment_ID
+      _Entity_experimental_src.Production_method
+      _Entity_experimental_src.Host_org_scientific_name
+      _Entity_experimental_src.Host_org_name_common
+      _Entity_experimental_src.Host_org_details
+      _Entity_experimental_src.Host_org_NCBI_taxonomy_ID
+      _Entity_experimental_src.Host_org_genus
+      _Entity_experimental_src.Host_org_species
+      _Entity_experimental_src.Host_org_strain
+      _Entity_experimental_src.Host_org_variant
+      _Entity_experimental_src.Host_org_subvariant
+      _Entity_experimental_src.Host_org_organ
+      _Entity_experimental_src.Host_org_tissue
+      _Entity_experimental_src.Host_org_tissue_fraction
+      _Entity_experimental_src.Host_org_cell_line
+      _Entity_experimental_src.Host_org_cell_type
+      _Entity_experimental_src.Host_org_cellular_location
+      _Entity_experimental_src.Host_org_organelle
+      _Entity_experimental_src.Host_org_gene
+      _Entity_experimental_src.Host_org_culture_collection
+      _Entity_experimental_src.Host_org_ATCC_number
+      _Entity_experimental_src.Vector_type
+      _Entity_experimental_src.PDBview_host_org_vector_name
+      _Entity_experimental_src.PDBview_plasmid_name
+      _Entity_experimental_src.Vector_name
+      _Entity_experimental_src.Vector_details
+      _Entity_experimental_src.Vendor_name
+      _Entity_experimental_src.Host_org_dev_stage
+      _Entity_experimental_src.Details
+      _Entity_experimental_src.Citation_ID
+      _Entity_experimental_src.Citation_label
+      _Entity_experimental_src.Entry_ID
+      _Entity_experimental_src.Entity_experimental_src_list_ID
+
+      1 1 $cyt_c552 . 'recombinant technology' 'Escherichia coli' 'E. coli' . . Escherichia coli BL21(DE3) . . . . . . . . . . . . plasmid . . pET-22b(+) . . . . . . 5080 1 
+
+   stop_
+
+save_
+
+
+    #################################
+    #  Polymer residues and ligands #
+    #################################
+
+save_chem_comp_HEM
+   _Chem_comp.Sf_category                       chem_comp
+   _Chem_comp.Sf_framecode                      chem_comp_HEM
+   _Chem_comp.Entry_ID                          5080
+   _Chem_comp.ID                                HEM
+   _Chem_comp.Provenance                        .
+   _Chem_comp.Name                             'PROTOPORPHYRIN IX CONTAINING FE'
+   _Chem_comp.Type                              non-polymer
+   _Chem_comp.BMRB_code                         .
+   _Chem_comp.PDB_code                          HEM
+   _Chem_comp.Ambiguous_flag                    yes
+   _Chem_comp.Initial_date                      1999-07-08
+   _Chem_comp.Modified_date                     2009-08-11
+   _Chem_comp.Release_status                    REL
+   _Chem_comp.Replaced_by                       .
+   _Chem_comp.Replaces                          MHM
+   _Chem_comp.One_letter_code                   .
+   _Chem_comp.Three_letter_code                 HEM
+   _Chem_comp.Number_atoms_all                  .
+   _Chem_comp.Number_atoms_nh                   .
+   _Chem_comp.PubChem_code                      .
+   _Chem_comp.Subcomponent_list                 .
+   _Chem_comp.InChI_code                        .
+   _Chem_comp.Mon_nstd_flag                     .
+   _Chem_comp.Mon_nstd_class                    .
+   _Chem_comp.Mon_nstd_details                  .
+   _Chem_comp.Mon_nstd_parent                   .
+   _Chem_comp.Mon_nstd_parent_comp_ID           .
+   _Chem_comp.Std_deriv_one_letter_code         .
+   _Chem_comp.Std_deriv_three_letter_code       .
+   _Chem_comp.Std_deriv_BMRB_code               .
+   _Chem_comp.Std_deriv_PDB_code                .
+   _Chem_comp.Std_deriv_chem_comp_name          .
+   _Chem_comp.Synonyms                          HEME
+   _Chem_comp.Formal_charge                     0
+   _Chem_comp.Paramagnetic                      .
+   _Chem_comp.Aromatic                          yes
+   _Chem_comp.Formula                          'C34 H32 Fe N4 O4'
+   _Chem_comp.Formula_weight                    616.487
+   _Chem_comp.Formula_mono_iso_wt_nat           .
+   _Chem_comp.Formula_mono_iso_wt_13C           .
+   _Chem_comp.Formula_mono_iso_wt_15N           .
+   _Chem_comp.Formula_mono_iso_wt_13C_15N       .
+   _Chem_comp.Image_file_name                   .
+   _Chem_comp.Image_file_format                 .
+   _Chem_comp.Topo_file_name                    .
+   _Chem_comp.Topo_file_format                  .
+   _Chem_comp.Struct_file_name                  .
+   _Chem_comp.Struct_file_format                .
+   _Chem_comp.Stereochem_param_file_name        .
+   _Chem_comp.Stereochem_param_file_format      .
+   _Chem_comp.Model_details                     .
+   _Chem_comp.Model_erf                         .
+   _Chem_comp.Model_source                      .
+   _Chem_comp.Model_coordinates_details         .
+   _Chem_comp.Model_coordinates_missing_flag    no
+   _Chem_comp.Ideal_coordinates_details         .
+   _Chem_comp.Ideal_coordinates_missing_flag    .
+   _Chem_comp.Model_coordinates_db_code         3IA3
+   _Chem_comp.Processing_site                   RCSB
+   _Chem_comp.Vendor                            .
+   _Chem_comp.Vendor_product_code               .
+   _Chem_comp.Details                          
+;
+Information obtained from PDB's Chemical Component Dictionary
+at http://wwpdb-remediation.rutgers.edu/downloads.html
+Downloaded on Wed Jul 20 15:50:33 2011
+;
+   _Chem_comp.DB_query_date                     .
+   _Chem_comp.DB_last_query_revised_last_date   .
+
+   loop_
+      _Chem_comp_descriptor.Descriptor
+      _Chem_comp_descriptor.Type
+      _Chem_comp_descriptor.Program
+      _Chem_comp_descriptor.Program_version
+      _Chem_comp_descriptor.Entry_ID
+      _Chem_comp_descriptor.Comp_ID
+
+      O=C(O)CCc5c(c2nc5cc1nc(C(=C1CCC(=O)O)C)cc4c(c(c(cc3nc(c2)C(=C3\C=C)C)n4)C)\C=C)C                                                                                                                                                                                        SMILES            ACDLabs                11.02  5080 HEM 
+      InChI=1S/C34H34N4O4/c1-7-21-17(3)25-13-26-19(5)23(9-11-33(39)40)31(37-26)16-32-24(10-12-34(41)42)20(6)28(38-32)15-30-22(8-2)18(4)27(36-30)14-29(21)35-25/h7-8,13-16,36-37H,1-2,9-12H2,3-6H3,(H,39,40)(H,41,42)/b25-13-,26-13-,27-14-,28-15-,29-14-,30-15-,31-16-,32-16- InChI             InChI                   1.02  5080 HEM 
+      FEDYMSUPMFCVOD-UJJXFSCMSA-N                                                                                                                                                                                                                                             InChIKey          InChI                   1.02  5080 HEM 
+      Cc1c2[nH]c(cc3nc(cc4[nH]c(cc5nc(c2)c(C)c5C=C)c(C)c4C=C)c(C)c3CCC(O)=O)c1CCC(O)=O                                                                                                                                                                                        SMILES_CANONICAL  CACTVS                  3.352 5080 HEM 
+      Cc1c2[nH]c(cc3nc(cc4[nH]c(cc5nc(c2)c(C)c5C=C)c(C)c4C=C)c(C)c3CCC(O)=O)c1CCC(O)=O                                                                                                                                                                                        SMILES            CACTVS                  3.352 5080 HEM 
+      Cc1c2/cc/3\nc(/cc\4/c(c(/c(/[nH]4)c/c5n/c(c\c(c1CCC(=O)O)[nH]2)/C(=C5C)CCC(=O)O)C=C)C)C(=C3C)C=C                                                                                                                                                                        SMILES_CANONICAL 'OpenEye OEToolkits' 1.7.0     5080 HEM 
+      Cc1c2cc3nc(cc4c(c(c([nH]4)cc5nc(cc(c1CCC(=O)O)[nH]2)C(=C5C)CCC(=O)O)C=C)C)C(=C3C)C=C                                                                                                                                                                                    SMILES           'OpenEye OEToolkits' 1.7.0     5080 HEM 
+
+   stop_
+
+   loop_
+      _Chem_comp_identifier.Identifier
+      _Chem_comp_identifier.Type
+      _Chem_comp_identifier.Program
+      _Chem_comp_identifier.Program_version
+      _Chem_comp_identifier.Entry_ID
+      _Chem_comp_identifier.Comp_ID
+
+      '3,3'-(7,12-diethenyl-3,8,13,17-tetramethylporphyrin-2,18-diyl)dipropanoic acid'                                             'SYSTEMATIC NAME'  ACDLabs                11.02 5080 HEM 
+      '3-[(5Z,10Z,14Z,19Z)-18-(2-carboxyethyl)-8,13-bis(ethenyl)-3,7,12,17-tetramethyl-21,23-dihydroporphyrin-2-yl]propanoic acid' 'SYSTEMATIC NAME' 'OpenEye OEToolkits' 1.6.1    5080 HEM 
+
+   stop_
+
+   loop_
+      _Chem_comp_atom.Atom_ID
+      _Chem_comp_atom.BMRB_code
+      _Chem_comp_atom.PDB_atom_ID
+      _Chem_comp_atom.Alt_atom_ID
+      _Chem_comp_atom.Auth_atom_ID
+      _Chem_comp_atom.Type_symbol
+      _Chem_comp_atom.Isotope_number
+      _Chem_comp_atom.Chirality
+      _Chem_comp_atom.Stereo_config
+      _Chem_comp_atom.Charge
+      _Chem_comp_atom.Partial_charge
+      _Chem_comp_atom.Oxidation_number
+      _Chem_comp_atom.Unpaired_electron_number
+      _Chem_comp_atom.Align
+      _Chem_comp_atom.Aromatic_flag
+      _Chem_comp_atom.Leaving_atom_flag
+      _Chem_comp_atom.Substruct_code
+      _Chem_comp_atom.Ionizable
+      _Chem_comp_atom.Drawing_2D_coord_x
+      _Chem_comp_atom.Drawing_2D_coord_y
+      _Chem_comp_atom.Model_Cartn_x
+      _Chem_comp_atom.Model_Cartn_x_esd
+      _Chem_comp_atom.Model_Cartn_y
+      _Chem_comp_atom.Model_Cartn_y_esd
+      _Chem_comp_atom.Model_Cartn_z
+      _Chem_comp_atom.Model_Cartn_z_esd
+      _Chem_comp_atom.Model_Cartn_x_ideal
+      _Chem_comp_atom.Model_Cartn_y_ideal
+      _Chem_comp_atom.Model_Cartn_z_ideal
+      _Chem_comp_atom.PDBX_ordinal
+      _Chem_comp_atom.Details
+      _Chem_comp_atom.Entry_ID
+      _Chem_comp_atom.Comp_ID
+
+      CHA  . CHA  . . C  . . N 0 . . . . yes no . . . .  2.748 . -19.531 . 39.896 . -2.161 -0.125  0.490  1 . 5080 HEM 
+      CHB  . CHB  . . C  . . N 0 . . . . yes no . . . .  3.258 . -17.744 . 35.477 .  1.458 -3.419  0.306  2 . 5080 HEM 
+      CHC  . CHC  . . C  . . N 0 . . . . yes no . . . .  1.703 . -21.900 . 33.637 .  4.701  0.169 -0.069  3 . 5080 HEM 
+      CHD  . CHD  . . C  . . N 0 . . . . yes no . . . .  1.149 . -23.677 . 38.059 .  1.075  3.460  0.018  4 . 5080 HEM 
+      C1A  . C1A  . . C  . . N 0 . . . . yes no . . . .  3.031 . -18.673 . 38.872 . -1.436 -1.305  0.380  5 . 5080 HEM 
+      C2A  . C2A  . . C  . . N 0 . . . . yes no . . . .  3.578 . -17.325 . 39.013 . -2.015 -2.587  0.320  6 . 5080 HEM 
+      C3A  . C3A  . . C  . . N 0 . . . . yes no . . . .  3.705 . -16.820 . 37.785 . -1.009 -3.500  0.270  7 . 5080 HEM 
+      C4A  . C4A  . . C  . . N 0 . . . . yes no . . . .  3.256 . -17.863 . 36.862 .  0.216 -2.803  0.298  8 . 5080 HEM 
+      CMA  . CMA  . . C  . . N 0 . . . . no  no . . . .  4.227 . -15.469 . 37.393 . -1.175 -4.996  0.197  9 . 5080 HEM 
+      CAA  . CAA  . . C  . . N 0 . . . . no  no . . . .  3.945 . -16.670 . 40.296 . -3.490 -2.893  0.314 10 . 5080 HEM 
+      CBA  . CBA  . . C  . . N 0 . . . . no  no . . . .  5.391 . -17.138 . 40.581 . -3.998 -2.926 -1.129 11 . 5080 HEM 
+      CGA  . CGA  . . C  . . N 0 . . . . no  no . . . .  6.095 . -16.663 . 41.825 . -5.473 -3.232 -1.136 12 . 5080 HEM 
+      O1A  . O1A  . . O  . . N 0 . . . . no  no . . . .  7.098 . -15.928 . 41.683 . -6.059 -3.405 -0.094 13 . 5080 HEM 
+      O2A  . O2A  . . O  . . N 0 . . . . no  no . . . .  5.657 . -17.040 . 42.940 . -6.137 -3.311 -2.300 14 . 5080 HEM 
+      C1B  . C1B  . . C  . . N 0 . . . . yes no . . . .  2.888 . -18.698 . 34.579 .  2.664 -2.707  0.308 15 . 5080 HEM 
+      C2B  . C2B  . . C  . . N 0 . . . . yes no . . . .  2.933 . -18.535 . 33.146 .  3.937 -3.328  0.418 16 . 5080 HEM 
+      C3B  . C3B  . . C  . . N 0 . . . . yes no . . . .  2.499 . -19.716 . 32.632 .  4.874 -2.341  0.314 17 . 5080 HEM 
+      C4B  . C4B  . . C  . . N 0 . . . . yes no . . . .  2.187 . -20.580 . 33.743 .  4.117 -1.079  0.139 18 . 5080 HEM 
+      CMB  . CMB  . . C  . . N 0 . . . . no  no . . . .  3.391 . -17.290 . 32.422 .  4.203 -4.798  0.613 19 . 5080 HEM 
+      CAB  . CAB  . . C  . . N 0 . . . . no  no . . . .  2.345 . -20.140 . 31.217 .  6.339 -2.497  0.365 20 . 5080 HEM 
+      CBB  . CBB  . . C  . . N 0 . . . . no  no . . . .  1.755 . -19.492 . 30.233 .  6.935 -3.419 -0.385 21 . 5080 HEM 
+      C1C  . C1C  . . C  . . N 0 . . . . yes no . . . .  1.395 . -22.786 . 34.659 .  3.964  1.345 -0.174 22 . 5080 HEM 
+      C2C  . C2C  . . C  . . N 0 . . . . yes no . . . .  0.854 . -24.130 . 34.500 .  4.531  2.601 -0.445 23 . 5080 HEM 
+      C3C  . C3C  . . C  . . N 0 . . . . yes no . . . .  0.689 . -24.626 . 35.757 .  3.510  3.536 -0.437 24 . 5080 HEM 
+      C4C  . C4C  . . C  . . N 0 . . . . yes no . . . .  1.139 . -23.583 . 36.674 .  2.304  2.846 -0.139 25 . 5080 HEM 
+      CMC  . CMC  . . C  . . N 0 . . . . no  no . . . .  0.550 . -24.782 . 33.175 .  5.991  2.880 -0.697 26 . 5080 HEM 
+      CAC  . CAC  . . C  . . N 0 . . . . no  no . . . .  0.164 . -25.943 . 36.196 .  3.649  4.981 -0.692 27 . 5080 HEM 
+      CBC  . CBC  . . C  . . N 0 . . . . no  no . . . .  0.498 . -27.158 . 35.750 .  4.201  5.407 -1.823 28 . 5080 HEM 
+      C1D  . C1D  . . C  . . N 0 . . . . yes no . . . .  1.550 . -22.718 . 38.980 . -0.102  2.753  0.298 29 . 5080 HEM 
+      C2D  . C2D  . . C  . . N 0 . . . . yes no . . . .  1.513 . -22.879 . 40.415 . -1.382  3.388  0.641 30 . 5080 HEM 
+      C3D  . C3D  . . C  . . N 0 . . . . yes no . . . .  1.951 . -21.691 . 40.929 . -2.283  2.389  0.774 31 . 5080 HEM 
+      C4D  . C4D  . . C  . . N 0 . . . . yes no . . . .  2.277 . -20.826 . 39.811 . -1.561  1.137  0.511 32 . 5080 HEM 
+      CMD  . CMD  . . C  . . N 0 . . . . no  no . . . .  1.055 . -24.094 . 41.156 . -1.639  4.863  0.811 33 . 5080 HEM 
+      CAD  . CAD  . . C  . . N 0 . . . . no  no . . . .  2.048 . -21.326 . 42.352 . -3.741  2.532  1.123 34 . 5080 HEM 
+      CBD  . CBD  . . C  . . N 0 . . . . no  no . . . .  0.741 . -20.498 . 42.530 . -4.573  2.563 -0.160 35 . 5080 HEM 
+      CGD  . CGD  . . C  . . N 0 . . . . no  no . . . .  0.578 . -19.987 . 43.892 . -6.032  2.706  0.189 36 . 5080 HEM 
+      O1D  . O1D  . . O  . . N 0 . . . . no  no . . . .  1.387 . -19.103 . 44.303 . -6.372  2.776  1.347 37 . 5080 HEM 
+      O2D  . O2D  . . O  . . N 0 . . . . no  no . . . . -0.401 . -20.468 . 44.537 . -6.954  2.755 -0.785 38 . 5080 HEM 
+      NA   . NA   . . N  . . N 0 . . . . yes no . . . .  2.863 . -18.969 . 37.554 . -0.068 -1.456  0.321 39 . 5080 HEM 
+      NB   . NB   . . N  . . N 0 . . . . yes no . . . .  2.439 . -19.944 . 34.911 .  2.820 -1.386  0.207 40 . 5080 HEM 
+      NC   . NC   . . N  . . N 0 . . . . yes no . . . .  1.537 . -22.509 . 35.976 .  2.604  1.506 -0.033 41 . 5080 HEM 
+      ND   . ND   . . N  . . N 0 . . . . yes no . . . .  2.008 . -21.465 . 38.663 . -0.276  1.431  0.298 42 . 5080 HEM 
+      FE   . FE   . . FE . . S 0 . . . . no  no . . . .  2.196 . -20.749 . 36.814 .  1.010  0.157 -0.060 43 . 5080 HEM 
+      HHB  . HHB  . . H  . . N 0 . . . . no  no . . . .  3.587 . -16.798 . 35.072 .  1.498 -4.508  0.309 44 . 5080 HEM 
+      HHC  . HHC  . . H  . . N 0 . . . . no  no . . . .  1.553 . -22.268 . 32.633 .  5.786  0.229 -0.153 45 . 5080 HEM 
+      HHD  . HHD  . . H  . . N 0 . . . . no  no . . . .  0.802 . -24.613 . 38.472 .  1.018  4.543 -0.083 46 . 5080 HEM 
+      HMA  . HMA  . . H  . . N 0 . . . . no  no . . . .  5.316 . -15.524 . 37.249 . -1.220 -5.306 -0.847 47 . 5080 HEM 
+      HMAA . HMAA . . H  . . N 0 . . . . no  no . . . .  3.749 . -15.149 . 36.455 . -0.328 -5.480  0.683 48 . 5080 HEM 
+      HMAB . HMAB . . H  . . N 0 . . . . no  no . . . .  3.998 . -14.743 . 38.187 . -2.097 -5.285  0.702 49 . 5080 HEM 
+      HAA  . HAA  . . H  . . N 0 . . . . no  no . . . .  3.894 . -15.575 . 40.209 . -3.662 -3.862  0.782 50 . 5080 HEM 
+      HAAA . HAAA . . H  . . N 0 . . . . no  no . . . .  3.264 . -16.976 . 41.104 . -4.024 -2.121  0.869 51 . 5080 HEM 
+      HBA  . HBA  . . H  . . N 0 . . . . no  no . . . .  5.351 . -18.235 . 40.650 . -3.825 -1.956 -1.597 52 . 5080 HEM 
+      HBAA . HBAA . . H  . . N 0 . . . . no  no . . . .  5.999 . -16.792 . 39.732 . -3.464 -3.697 -1.684 53 . 5080 HEM 
+      HMB  . HMB  . . H  . . N 0 . . . . no  no . . . .  3.319 . -17.449 . 31.336 .  3.256 -5.336  0.660 54 . 5080 HEM 
+      HMBA . HMBA . . H  . . N 0 . . . . no  no . . . .  2.753 . -16.442 . 32.711 .  4.794 -5.175 -0.222 55 . 5080 HEM 
+      HMBB . HMBB . . H  . . N 0 . . . . no  no . . . .  4.435 . -17.072 . 32.692 .  4.752 -4.948  1.543 56 . 5080 HEM 
+      HAB  . HAB  . . H  . . N 0 . . . . no  no . . . .  2.770 . -21.100 . 30.963 .  6.927 -1.863  1.011 57 . 5080 HEM 
+      HBB  . HBB  . . H  . . N 0 . . . . no  no . . . .  1.719 . -19.927 . 29.245 .  7.994 -3.600 -0.277 58 . 5080 HEM 
+      HBBA . HBBA . . H  . . N 0 . . . . no  no . . . .  1.308 . -18.526 . 30.414 .  6.360 -3.987 -1.102 59 . 5080 HEM 
+      HMC  . HMC  . . H  . . N 0 . . . . no  no . . . .  1.438 . -25.328 . 32.822 .  6.554  1.949 -0.639 60 . 5080 HEM 
+      HMCA . HMCA . . H  . . N 0 . . . . no  no . . . . -0.288 . -25.484 . 33.296 .  6.110  3.316 -1.689 61 . 5080 HEM 
+      HMCB . HMCB . . H  . . N 0 . . . . no  no . . . .  0.278 . -24.010 . 32.440 .  6.362  3.578  0.053 62 . 5080 HEM 
+      HAC  . HAC  . . H  . . N 0 . . . . no  no . . . . -0.583 . -25.916 . 36.975 .  3.303  5.694  0.042 63 . 5080 HEM 
+      HBC  . HBC  . . H  . . N 0 . . . . no  no . . . .  0.027 . -28.035 . 36.169 .  4.614  4.696 -2.523 64 . 5080 HEM 
+      HBCA . HBCA . . H  . . N 0 . . . . no  no . . . .  1.239 . -27.263 . 34.971 .  4.235  6.464 -2.043 65 . 5080 HEM 
+      HMD  . HMD  . . H  . . N 0 . . . . no  no . . . .  1.142 . -23.919 . 42.238 . -0.715  5.415  0.639 66 . 5080 HEM 
+      HMDA . HMDA . . H  . . N 0 . . . . no  no . . . .  0.006 . -24.304 . 40.902 . -2.394  5.185  0.094 67 . 5080 HEM 
+      HMDB . HMDB . . H  . . N 0 . . . . no  no . . . .  1.680 . -24.954 . 40.872 . -1.994  5.055  1.824 68 . 5080 HEM 
+      HAD  . HAD  . . H  . . N 0 . . . . no  no . . . .  2.081 . -22.206 . 43.011 . -4.052  1.687  1.738 69 . 5080 HEM 
+      HADA . HADA . . H  . . N 0 . . . . no  no . . . .  2.951 . -20.739 . 42.575 . -3.893  3.459  1.677 70 . 5080 HEM 
+      HBD  . HBD  . . H  . . N 0 . . . . no  no . . . .  0.775 . -19.642 . 41.839 . -4.262  3.408 -0.775 71 . 5080 HEM 
+      HBDA . HBDA . . H  . . N 0 . . . . no  no . . . . -0.116 . -21.147 . 42.297 . -4.421  1.636 -0.714 72 . 5080 HEM 
+      H2A  . H2A  . . H  . . N 0 . . . . no  no . . . .  6.201 . -16.682 . 43.632 . -7.082 -3.510 -2.254 73 . 5080 HEM 
+      H2D  . H2D  . . H  . . N 0 . . . . no  no . . . . -0.445 . -20.063 . 45.395 . -7.877  2.847 -0.512 74 . 5080 HEM 
+      HHA  . HHA  . . H  . . N 0 . . . . no  no . . . .  2.913 . -19.150 . 40.893 . -3.246 -0.188  0.567 75 . 5080 HEM 
+
+   stop_
+
+   loop_
+      _Chem_comp_bond.ID
+      _Chem_comp_bond.Type
+      _Chem_comp_bond.Value_order
+      _Chem_comp_bond.Atom_ID_1
+      _Chem_comp_bond.Atom_ID_2
+      _Chem_comp_bond.Aromatic_flag
+      _Chem_comp_bond.Stereo_config
+      _Chem_comp_bond.Ordinal
+      _Chem_comp_bond.Details
+      _Chem_comp_bond.Entry_ID
+      _Chem_comp_bond.Comp_ID
+
+       1 . SING CHA C1A  yes N  1 . 5080 HEM 
+       2 . DOUB CHA C4D  yes N  2 . 5080 HEM 
+       3 . SING CHA HHA  no  N  3 . 5080 HEM 
+       4 . SING CHB C4A  yes N  4 . 5080 HEM 
+       5 . DOUB CHB C1B  yes N  5 . 5080 HEM 
+       6 . SING CHB HHB  no  N  6 . 5080 HEM 
+       7 . SING CHC C4B  yes N  7 . 5080 HEM 
+       8 . DOUB CHC C1C  yes N  8 . 5080 HEM 
+       9 . SING CHC HHC  no  N  9 . 5080 HEM 
+      10 . DOUB CHD C4C  yes N 10 . 5080 HEM 
+      11 . SING CHD C1D  yes N 11 . 5080 HEM 
+      12 . SING CHD HHD  no  N 12 . 5080 HEM 
+      13 . DOUB C1A C2A  yes N 13 . 5080 HEM 
+      14 . SING C1A NA   yes N 14 . 5080 HEM 
+      15 . SING C2A C3A  yes N 15 . 5080 HEM 
+      16 . SING C2A CAA  no  N 16 . 5080 HEM 
+      17 . DOUB C3A C4A  yes N 17 . 5080 HEM 
+      18 . SING C3A CMA  no  N 18 . 5080 HEM 
+      19 . SING C4A NA   yes N 19 . 5080 HEM 
+      20 . SING CMA HMA  no  N 20 . 5080 HEM 
+      21 . SING CMA HMAA no  N 21 . 5080 HEM 
+      22 . SING CMA HMAB no  N 22 . 5080 HEM 
+      23 . SING CAA CBA  no  N 23 . 5080 HEM 
+      24 . SING CAA HAA  no  N 24 . 5080 HEM 
+      25 . SING CAA HAAA no  N 25 . 5080 HEM 
+      26 . SING CBA CGA  no  N 26 . 5080 HEM 
+      27 . SING CBA HBA  no  N 27 . 5080 HEM 
+      28 . SING CBA HBAA no  N 28 . 5080 HEM 
+      29 . DOUB CGA O1A  no  N 29 . 5080 HEM 
+      30 . SING CGA O2A  no  N 30 . 5080 HEM 
+      31 . SING C1B C2B  no  N 31 . 5080 HEM 
+      32 . SING C1B NB   yes N 32 . 5080 HEM 
+      33 . DOUB C2B C3B  yes N 33 . 5080 HEM 
+      34 . SING C2B CMB  yes N 34 . 5080 HEM 
+      35 . SING C3B C4B  no  N 35 . 5080 HEM 
+      36 . SING C3B CAB  yes N 36 . 5080 HEM 
+      37 . DOUB C4B NB   no  N 37 . 5080 HEM 
+      38 . SING CMB HMB  yes N 38 . 5080 HEM 
+      39 . SING CMB HMBA no  N 39 . 5080 HEM 
+      40 . SING CMB HMBB no  N 40 . 5080 HEM 
+      41 . DOUB CAB CBB  no  N 41 . 5080 HEM 
+      42 . SING CAB HAB  no  N 42 . 5080 HEM 
+      43 . SING CBB HBB  no  N 43 . 5080 HEM 
+      44 . SING CBB HBBA no  N 44 . 5080 HEM 
+      45 . SING C1C C2C  no  N 45 . 5080 HEM 
+      46 . SING C1C NC   yes N 46 . 5080 HEM 
+      47 . DOUB C2C C3C  yes N 47 . 5080 HEM 
+      48 . SING C2C CMC  yes N 48 . 5080 HEM 
+      49 . SING C3C C4C  no  N 49 . 5080 HEM 
+      50 . SING C3C CAC  yes N 50 . 5080 HEM 
+      51 . SING C4C NC   no  N 51 . 5080 HEM 
+      52 . SING CMC HMC  yes N 52 . 5080 HEM 
+      53 . SING CMC HMCA no  N 53 . 5080 HEM 
+      54 . SING CMC HMCB no  N 54 . 5080 HEM 
+      55 . DOUB CAC CBC  no  N 55 . 5080 HEM 
+      56 . SING CAC HAC  no  N 56 . 5080 HEM 
+      57 . SING CBC HBC  no  N 57 . 5080 HEM 
+      58 . SING CBC HBCA no  N 58 . 5080 HEM 
+      59 . SING C1D C2D  no  N 59 . 5080 HEM 
+      60 . DOUB C1D ND   yes N 60 . 5080 HEM 
+      61 . DOUB C2D C3D  yes N 61 . 5080 HEM 
+      62 . SING C2D CMD  yes N 62 . 5080 HEM 
+      63 . SING C3D C4D  no  N 63 . 5080 HEM 
+      64 . SING C3D CAD  yes N 64 . 5080 HEM 
+      65 . SING C4D ND   no  N 65 . 5080 HEM 
+      66 . SING CMD HMD  yes N 66 . 5080 HEM 
+      67 . SING CMD HMDA no  N 67 . 5080 HEM 
+      68 . SING CMD HMDB no  N 68 . 5080 HEM 
+      69 . SING CAD CBD  no  N 69 . 5080 HEM 
+      70 . SING CAD HAD  no  N 70 . 5080 HEM 
+      71 . SING CAD HADA no  N 71 . 5080 HEM 
+      72 . SING CBD CGD  no  N 72 . 5080 HEM 
+      73 . SING CBD HBD  no  N 73 . 5080 HEM 
+      74 . SING CBD HBDA no  N 74 . 5080 HEM 
+      75 . DOUB CGD O1D  no  N 75 . 5080 HEM 
+      76 . SING CGD O2D  no  N 76 . 5080 HEM 
+      77 . SING O2A H2A  no  N 77 . 5080 HEM 
+      78 . SING O2D H2D  no  N 78 . 5080 HEM 
+      79 . SING FE  NA   no  N 79 . 5080 HEM 
+      80 . SING FE  NB   no  N 80 . 5080 HEM 
+      81 . SING FE  NC   no  N 81 . 5080 HEM 
+      82 . SING FE  ND   no  N 82 . 5080 HEM 
+
+   stop_
+
+save_
+
+
+#####################################
+#  Sample contents and methodology  #
+#####################################
+	 
+    ########################
+    #  Sample description  #
+    ########################
+
+save_sample_1
+   _Sample.Sf_category                      sample
+   _Sample.Sf_framecode                     sample_1
+   _Sample.Entry_ID                         5080
+   _Sample.ID                               1
+   _Sample.Type                             solution
+   _Sample.Sub_type                         .
+   _Sample.Details                          .
+   _Sample.Aggregate_sample_number          .
+   _Sample.Solvent_system                   .
+   _Sample.Preparation_date                 .
+   _Sample.Preparation_expiration_date      .
+   _Sample.Polycrystallization_protocol     .
+   _Sample.Single_crystal_protocol          .
+   _Sample.Crystal_grow_apparatus           .
+   _Sample.Crystal_grow_atmosphere          .
+   _Sample.Crystal_grow_details             .
+   _Sample.Crystal_grow_method              .
+   _Sample.Crystal_grow_method_cit_ID       .
+   _Sample.Crystal_grow_pH                  .
+   _Sample.Crystal_grow_pH_range            .
+   _Sample.Crystal_grow_pressure            .
+   _Sample.Crystal_grow_pressure_esd        .
+   _Sample.Crystal_grow_seeding             .
+   _Sample.Crystal_grow_seeding_cit_ID      .
+   _Sample.Crystal_grow_temp                .
+   _Sample.Crystal_grow_temp_details        .
+   _Sample.Crystal_grow_temp_esd            .
+   _Sample.Crystal_grow_time                .
+   _Sample.Oriented_sample_prep_protocol    .
+   _Sample.Lyophilization_cryo_protectant   .
+   _Sample.Storage_protocol                 .
+
+   loop_
+      _Sample_component.ID
+      _Sample_component.Mol_common_name
+      _Sample_component.Isotopic_labeling
+      _Sample_component.Assembly_ID
+      _Sample_component.Assembly_label
+      _Sample_component.Entity_ID
+      _Sample_component.Entity_label
+      _Sample_component.Product_ID
+      _Sample_component.Type
+      _Sample_component.Concentration_val
+      _Sample_component.Concentration_val_min
+      _Sample_component.Concentration_val_max
+      _Sample_component.Concentration_val_units
+      _Sample_component.Concentration_val_err
+      _Sample_component.Vendor
+      _Sample_component.Vendor_product_name
+      _Sample_component.Vendor_product_code
+      _Sample_component.Entry_ID
+      _Sample_component.Sample_ID
+
+      1 'Paracoccus denitrificans cytochrome c552, soluble fragment' '[U-96% 15N]' . . 1 $cyt_c552 . .   . 1.5 4 mM . . . . 5080 1 
+      2 'PROTOPORPHYRIN IX CONTAINING FE'                             .            . . 2 $HEM      . .   . 1.5 4 mM . . . . 5080 1 
+      3 'potassium phosphate'                                         .            . .  .  .        . . 20  .   . mM . . . . 5080 1 
+      4  D2O                                                          .            . .  .  .        . .  5  .   . %  . . . . 5080 1 
+      5  H2O                                                          .            . .  .  .        . . 95  .   . %  . . . . 5080 1 
+
+   stop_
+
+save_
+
+
+#######################
+#  Sample conditions  #
+#######################
+
+save_cond_set_1
+   _Sample_condition_list.Sf_category    sample_conditions
+   _Sample_condition_list.Sf_framecode   cond_set_1
+   _Sample_condition_list.Entry_ID       5080
+   _Sample_condition_list.ID             1
+   _Sample_condition_list.Details        .
+
+   loop_
+      _Sample_condition_variable.Type
+      _Sample_condition_variable.Val
+      _Sample_condition_variable.Val_err
+      _Sample_condition_variable.Val_units
+      _Sample_condition_variable.Entry_ID
+      _Sample_condition_variable.Sample_condition_list_ID
+
+      pH            5.8 0.2 n/a 5080 1 
+      temperature 298   0.1 K   5080 1 
+
+   stop_
+
+save_
+
+
+############################
+#  Computer software used  #
+############################
+
+save_XWIN-NMR
+   _Software.Sf_category    software
+   _Software.Sf_framecode   XWIN-NMR
+   _Software.Entry_ID       5080
+   _Software.ID             1
+   _Software.Name           XWIN-NMR
+   _Software.Version        1.3
+   _Software.Details        .
+
+   loop_
+      _Vendor.Name
+      _Vendor.Address
+      _Vendor.Electronic_address
+      _Vendor.Entry_ID
+      _Vendor.Software_ID
+
+      Bruker . . 5080 1 
+
+   stop_
+
+   loop_
+      _Task.Task
+      _Task.Entry_ID
+      _Task.Software_ID
+
+      'data collection and processing' 5080 1 
+
+   stop_
+
+save_
+
+
+save_RMX
+   _Software.Sf_category    software
+   _Software.Sf_framecode   RMX
+   _Software.Entry_ID       5080
+   _Software.ID             2
+   _Software.Name           RMX
+   _Software.Version       'rev. II/1997'
+   _Software.Details        .
+
+   loop_
+      _Task.Task
+      _Task.Entry_ID
+      _Task.Software_ID
+
+      'data analysis' 5080 2 
+
+   stop_
+
+save_
+
+
+save_MODELFREE
+   _Software.Sf_category    software
+   _Software.Sf_framecode   MODELFREE
+   _Software.Entry_ID       5080
+   _Software.ID             3
+   _Software.Name           MODELFREE
+   _Software.Version        4.01
+   _Software.Details        .
+
+   loop_
+      _Task.Task
+      _Task.Entry_ID
+      _Task.Software_ID
+
+      'data analysis' 5080 3 
+
+   stop_
+
+save_
+
+
+#########################
+#  Experimental detail  #
+#########################
+
+    ##################################
+    #  NMR Spectrometer definitions  #
+    ##################################
+
+save_NMR_spectrometer_1
+   _NMR_spectrometer.Sf_category      NMR_spectrometer
+   _NMR_spectrometer.Sf_framecode     NMR_spectrometer_1
+   _NMR_spectrometer.Entry_ID         5080
+   _NMR_spectrometer.ID               1
+   _NMR_spectrometer.Details          .
+   _NMR_spectrometer.Manufacturer     Bruker
+   _NMR_spectrometer.Model            DMX
+   _NMR_spectrometer.Serial_number    .
+   _NMR_spectrometer.Field_strength   500
+
+save_
+
+
+save_NMR_spectrometer_2
+   _NMR_spectrometer.Sf_category      NMR_spectrometer
+   _NMR_spectrometer.Sf_framecode     NMR_spectrometer_2
+   _NMR_spectrometer.Entry_ID         5080
+   _NMR_spectrometer.ID               2
+   _NMR_spectrometer.Details          .
+   _NMR_spectrometer.Manufacturer     Bruker
+   _NMR_spectrometer.Model            DMX
+   _NMR_spectrometer.Serial_number    .
+   _NMR_spectrometer.Field_strength   600
+
+save_
+
+
+save_spectrometer_list
+   _NMR_spectrometer_list.Sf_category    NMR_spectrometer_list
+   _NMR_spectrometer_list.Sf_framecode   spectrometer_list
+   _NMR_spectrometer_list.Entry_ID       5080
+   _NMR_spectrometer_list.ID             1
+
+   loop_
+      _NMR_spectrometer_view.ID
+      _NMR_spectrometer_view.Name
+      _NMR_spectrometer_view.Manufacturer
+      _NMR_spectrometer_view.Model
+      _NMR_spectrometer_view.Serial_number
+      _NMR_spectrometer_view.Field_strength
+      _NMR_spectrometer_view.Details
+      _NMR_spectrometer_view.Citation_ID
+      _NMR_spectrometer_view.Citation_label
+      _NMR_spectrometer_view.Entry_ID
+      _NMR_spectrometer_view.NMR_spectrometer_list_ID
+
+      1 NMR_spectrometer_1 Bruker DMX . 500 . . . 5080 1 
+      2 NMR_spectrometer_2 Bruker DMX . 600 . . . 5080 1 
+
+   stop_
+
+save_
+
+
+    #############################
+    #  NMR applied experiments  #
+    #############################
+
+save_experiment_list
+   _Experiment_list.Sf_category    experiment_list
+   _Experiment_list.Sf_framecode   experiment_list
+   _Experiment_list.Entry_ID       5080
+   _Experiment_list.ID             1
+   _Experiment_list.Details        .
+
+   loop_
+      _Experiment.ID
+      _Experiment.Name
+      _Experiment.Raw_data_flag
+      _Experiment.NMR_spec_expt_ID
+      _Experiment.NMR_spec_expt_label
+      _Experiment.MS_expt_ID
+      _Experiment.MS_expt_label
+      _Experiment.SAXS_expt_ID
+      _Experiment.SAXS_expt_label
+      _Experiment.FRET_expt_ID
+      _Experiment.FRET_expt_label
+      _Experiment.EMR_expt_ID
+      _Experiment.EMR_expt_label
+      _Experiment.Sample_ID
+      _Experiment.Sample_label
+      _Experiment.Sample_state
+      _Experiment.Sample_volume
+      _Experiment.Sample_volume_units
+      _Experiment.Sample_condition_list_ID
+      _Experiment.Sample_condition_list_label
+      _Experiment.Sample_spinning_rate
+      _Experiment.Sample_angle
+      _Experiment.NMR_tube_type
+      _Experiment.NMR_spectrometer_ID
+      _Experiment.NMR_spectrometer_label
+      _Experiment.NMR_spectrometer_probe_ID
+      _Experiment.NMR_spectrometer_probe_label
+      _Experiment.NMR_spectral_processing_ID
+      _Experiment.NMR_spectral_processing_label
+      _Experiment.Mass_spectrometer_ID
+      _Experiment.Mass_spectrometer_label
+      _Experiment.Xray_instrument_ID
+      _Experiment.Xray_instrument_label
+      _Experiment.Fluorescence_instrument_ID
+      _Experiment.Fluorescence_instrument_label
+      _Experiment.EMR_instrument_ID
+      _Experiment.EMR_instrument_label
+      _Experiment.Chromatographic_system_ID
+      _Experiment.Chromatographic_system_label
+      _Experiment.Chromatographic_column_ID
+      _Experiment.Chromatographic_column_label
+      _Experiment.Entry_ID
+      _Experiment.Experiment_list_ID
+
+      1 . . . . . . . . . . . . 1 $sample_1 . . . 1 $cond_set_1 . . . . . . . . . . . . . . . . . . . . . 5080 1 
+
+   stop_
+
+save_
+
+
+save_NMR_spec_expt__0_1
+   _NMR_spec_expt.Sf_category                     NMR_spectrometer_expt
+   _NMR_spec_expt.Sf_framecode                    NMR_spec_expt__0_1
+   _NMR_spec_expt.Entry_ID                        5080
+   _NMR_spec_expt.ID                              1
+   _NMR_spec_expt.Name                            .
+   _NMR_spec_expt.Type                            .
+   _NMR_spec_expt.Sample_volume                   .
+   _NMR_spec_expt.Sample_volume_units             .
+   _NMR_spec_expt.NMR_tube_type                   .
+   _NMR_spec_expt.Sample_spinning_rate            .
+   _NMR_spec_expt.Sample_angle                    .
+   _NMR_spec_expt.NMR_spectrometer_ID             .
+   _NMR_spec_expt.NMR_spectrometer_label          .
+   _NMR_spec_expt.NMR_spectrometer_probe_ID       .
+   _NMR_spec_expt.NMR_spectrometer_probe_label    .
+   _NMR_spec_expt.Carrier_freq_switch_time        .
+   _NMR_spec_expt.Software_ID                     .
+   _NMR_spec_expt.Software_label                  .
+   _NMR_spec_expt.Method_ID                       .
+   _NMR_spec_expt.Method_label                    .
+   _NMR_spec_expt.Pulse_seq_accession_BMRB_code   .
+   _NMR_spec_expt.Details                         .
+
+save_
+
+
+save_NMR_spec_expt__0_2
+   _NMR_spec_expt.Sf_category                     NMR_spectrometer_expt
+   _NMR_spec_expt.Sf_framecode                    NMR_spec_expt__0_2
+   _NMR_spec_expt.Entry_ID                        5080
+   _NMR_spec_expt.ID                              2
+   _NMR_spec_expt.Name                           '15N T1'
+   _NMR_spec_expt.Type                            .
+   _NMR_spec_expt.Sample_volume                   .
+   _NMR_spec_expt.Sample_volume_units             .
+   _NMR_spec_expt.NMR_tube_type                   .
+   _NMR_spec_expt.Sample_spinning_rate            .
+   _NMR_spec_expt.Sample_angle                    .
+   _NMR_spec_expt.NMR_spectrometer_ID             .
+   _NMR_spec_expt.NMR_spectrometer_label          .
+   _NMR_spec_expt.NMR_spectrometer_probe_ID       .
+   _NMR_spec_expt.NMR_spectrometer_probe_label    .
+   _NMR_spec_expt.Carrier_freq_switch_time        .
+   _NMR_spec_expt.Software_ID                     .
+   _NMR_spec_expt.Software_label                  .
+   _NMR_spec_expt.Method_ID                       .
+   _NMR_spec_expt.Method_label                    .
+   _NMR_spec_expt.Pulse_seq_accession_BMRB_code   .
+   _NMR_spec_expt.Details                         .
+
+save_
+
+
+save_NMR_spec_expt__0_3
+   _NMR_spec_expt.Sf_category                     NMR_spectrometer_expt
+   _NMR_spec_expt.Sf_framecode                    NMR_spec_expt__0_3
+   _NMR_spec_expt.Entry_ID                        5080
+   _NMR_spec_expt.ID                              3
+   _NMR_spec_expt.Name                           '15N T2'
+   _NMR_spec_expt.Type                            .
+   _NMR_spec_expt.Sample_volume                   .
+   _NMR_spec_expt.Sample_volume_units             .
+   _NMR_spec_expt.NMR_tube_type                   .
+   _NMR_spec_expt.Sample_spinning_rate            .
+   _NMR_spec_expt.Sample_angle                    .
+   _NMR_spec_expt.NMR_spectrometer_ID             .
+   _NMR_spec_expt.NMR_spectrometer_label          .
+   _NMR_spec_expt.NMR_spectrometer_probe_ID       .
+   _NMR_spec_expt.NMR_spectrometer_probe_label    .
+   _NMR_spec_expt.Carrier_freq_switch_time        .
+   _NMR_spec_expt.Software_ID                     .
+   _NMR_spec_expt.Software_label                  .
+   _NMR_spec_expt.Method_ID                       .
+   _NMR_spec_expt.Method_label                    .
+   _NMR_spec_expt.Pulse_seq_accession_BMRB_code   .
+   _NMR_spec_expt.Details                         .
+
+save_
+
+
+save_NMR_spec_expt__0_4
+   _NMR_spec_expt.Sf_category                     NMR_spectrometer_expt
+   _NMR_spec_expt.Sf_framecode                    NMR_spec_expt__0_4
+   _NMR_spec_expt.Entry_ID                        5080
+   _NMR_spec_expt.ID                              4
+   _NMR_spec_expt.Name                           '{1H}-15N NOE'
+   _NMR_spec_expt.Type                            .
+   _NMR_spec_expt.Sample_volume                   .
+   _NMR_spec_expt.Sample_volume_units             .
+   _NMR_spec_expt.NMR_tube_type                   .
+   _NMR_spec_expt.Sample_spinning_rate            .
+   _NMR_spec_expt.Sample_angle                    .
+   _NMR_spec_expt.NMR_spectrometer_ID             .
+   _NMR_spec_expt.NMR_spectrometer_label          .
+   _NMR_spec_expt.NMR_spectrometer_probe_ID       .
+   _NMR_spec_expt.NMR_spectrometer_probe_label    .
+   _NMR_spec_expt.Carrier_freq_switch_time        .
+   _NMR_spec_expt.Software_ID                     .
+   _NMR_spec_expt.Software_label                  .
+   _NMR_spec_expt.Method_ID                       .
+   _NMR_spec_expt.Method_label                    .
+   _NMR_spec_expt.Pulse_seq_accession_BMRB_code   .
+   _NMR_spec_expt.Details                         .
+
+save_
+
+
+    ##############################
+    #  Heteronuclear NOE values  #
+    ##############################
+
+save_heteronuclear_NOE_500
+   _Heteronucl_NOE_list.Sf_category                   heteronucl_NOEs
+   _Heteronucl_NOE_list.Sf_framecode                  heteronuclear_NOE_500
+   _Heteronucl_NOE_list.Entry_ID                      5080
+   _Heteronucl_NOE_list.ID                            1
+   _Heteronucl_NOE_list.Sample_condition_list_ID      1
+   _Heteronucl_NOE_list.Sample_condition_list_label  $cond_set_1
+   _Heteronucl_NOE_list.Spectrometer_frequency_1H     500
+   _Heteronucl_NOE_list.Heteronuclear_NOE_val_type   'relative intensities'
+   _Heteronucl_NOE_list.NOE_ref_val                   .
+   _Heteronucl_NOE_list.NOE_ref_description           .
+   _Heteronucl_NOE_list.Details                       .
+   _Heteronucl_NOE_list.Text_data_format              .
+   _Heteronucl_NOE_list.Text_data                     .
+
+   loop_
+      _Heteronucl_NOE_experiment.Experiment_ID
+      _Heteronucl_NOE_experiment.Experiment_name
+      _Heteronucl_NOE_experiment.Sample_ID
+      _Heteronucl_NOE_experiment.Sample_label
+      _Heteronucl_NOE_experiment.Sample_state
+      _Heteronucl_NOE_experiment.Entry_ID
+      _Heteronucl_NOE_experiment.Heteronucl_NOE_list_ID
+
+      . . 1 $sample_1 . 5080 1 
+
+   stop_
+
+   loop_
+      _Heteronucl_NOE.ID
+      _Heteronucl_NOE.Assembly_atom_ID_1
+      _Heteronucl_NOE.Entity_assembly_ID_1
+      _Heteronucl_NOE.Entity_ID_1
+      _Heteronucl_NOE.Comp_index_ID_1
+      _Heteronucl_NOE.Seq_ID_1
+      _Heteronucl_NOE.Comp_ID_1
+      _Heteronucl_NOE.Atom_ID_1
+      _Heteronucl_NOE.Atom_type_1
+      _Heteronucl_NOE.Atom_isotope_number_1
+      _Heteronucl_NOE.Assembly_atom_ID_2
+      _Heteronucl_NOE.Entity_assembly_ID_2
+      _Heteronucl_NOE.Entity_ID_2
+      _Heteronucl_NOE.Comp_index_ID_2
+      _Heteronucl_NOE.Seq_ID_2
+      _Heteronucl_NOE.Comp_ID_2
+      _Heteronucl_NOE.Atom_ID_2
+      _Heteronucl_NOE.Atom_type_2
+      _Heteronucl_NOE.Atom_isotope_number_2
+      _Heteronucl_NOE.Val
+      _Heteronucl_NOE.Val_err
+      _Heteronucl_NOE.Resonance_ID_1
+      _Heteronucl_NOE.Resonance_ID_2
+      _Heteronucl_NOE.Auth_entity_assembly_ID_1
+      _Heteronucl_NOE.Auth_seq_ID_1
+      _Heteronucl_NOE.Auth_comp_ID_1
+      _Heteronucl_NOE.Auth_atom_ID_1
+      _Heteronucl_NOE.Auth_entity_assembly_ID_2
+      _Heteronucl_NOE.Auth_seq_ID_2
+      _Heteronucl_NOE.Auth_comp_ID_2
+      _Heteronucl_NOE.Auth_atom_ID_2
+      _Heteronucl_NOE.Entry_ID
+      _Heteronucl_NOE.Heteronucl_NOE_list_ID
+
+       1 . . .   2   2 ALA . . . . . .   2   2 ALA . . . -0.133 0.030 . . . . . . . . . . 5080 1 
+       2 . . .   3   3 ASP . . . . . .   3   3 ASP . . .  0.684 0.030 . . . . . . . . . . 5080 1 
+       3 . . .   5   5 ALA . . . . . .   5   5 ALA . . .  0.742 0.030 . . . . . . . . . . 5080 1 
+       4 . . .   6   6 ALA . . . . . .   6   6 ALA . . .  0.746 0.030 . . . . . . . . . . 5080 1 
+       5 . . .   7   7 GLY . . . . . .   7   7 GLY . . .  0.741 0.030 . . . . . . . . . . 5080 1 
+       6 . . .   8   8 GLU . . . . . .   8   8 GLU . . .  0.774 0.030 . . . . . . . . . . 5080 1 
+       7 . . .   9   9 LYS . . . . . .   9   9 LYS . . .  0.746 0.030 . . . . . . . . . . 5080 1 
+       8 . . .  10  10 VAL . . . . . .  10  10 VAL . . .  0.751 0.030 . . . . . . . . . . 5080 1 
+       9 . . .  11  11 PHE . . . . . .  11  11 PHE . . .  0.751 0.030 . . . . . . . . . . 5080 1 
+      10 . . .  12  12 GLY . . . . . .  12  12 GLY . . .  0.766 0.030 . . . . . . . . . . 5080 1 
+      11 . . .  13  13 LYS . . . . . .  13  13 LYS . . .  0.769 0.030 . . . . . . . . . . 5080 1 
+      12 . . .  14  14 CYS . . . . . .  14  14 CYS . . .  0.632 0.030 . . . . . . . . . . 5080 1 
+      13 . . .  15  15 LYS . . . . . .  15  15 LYS . . .  0.734 0.030 . . . . . . . . . . 5080 1 
+      14 . . .  16  16 ALA . . . . . .  16  16 ALA . . .  0.741 0.030 . . . . . . . . . . 5080 1 
+      15 . . .  17  17 CYS . . . . . .  17  17 CYS . . .  0.758 0.030 . . . . . . . . . . 5080 1 
+      16 . . .  18  18 HIS . . . . . .  18  18 HIS . . .  0.772 0.030 . . . . . . . . . . 5080 1 
+      17 . . .  19  19 LYS . . . . . .  19  19 LYS . . .  0.765 0.030 . . . . . . . . . . 5080 1 
+      18 . . .  20  20 LEU . . . . . .  20  20 LEU . . .  0.734 0.030 . . . . . . . . . . 5080 1 
+      19 . . .  21  21 ASP . . . . . .  21  21 ASP . . .  0.736 0.030 . . . . . . . . . . 5080 1 
+      20 . . .  22  22 GLY . . . . . .  22  22 GLY . . .  0.751 0.030 . . . . . . . . . . 5080 1 
+      21 . . .  23  23 ASN . . . . . .  23  23 ASN . . .  0.778 0.030 . . . . . . . . . . 5080 1 
+      22 . . .  24  24 ASP . . . . . .  24  24 ASP . . .  0.745 0.030 . . . . . . . . . . 5080 1 
+      23 . . .  25  25 GLY . . . . . .  25  25 GLY . . .  0.545 0.030 . . . . . . . . . . 5080 1 
+      24 . . .  26  26 VAL . . . . . .  26  26 VAL . . .  0.668 0.030 . . . . . . . . . . 5080 1 
+      25 . . .  27  27 GLY . . . . . .  27  27 GLY . . .  0.706 0.030 . . . . . . . . . . 5080 1 
+      26 . . .  29  29 HIS . . . . . .  29  29 HIS . . .  0.780 0.030 . . . . . . . . . . 5080 1 
+      27 . . .  30  30 LEU . . . . . .  30  30 LEU . . .  0.750 0.030 . . . . . . . . . . 5080 1 
+      28 . . .  32  32 GLY . . . . . .  32  32 GLY . . .  0.744 0.030 . . . . . . . . . . 5080 1 
+      29 . . .  33  33 VAL . . . . . .  33  33 VAL . . .  0.747 0.030 . . . . . . . . . . 5080 1 
+      30 . . .  34  34 VAL . . . . . .  34  34 VAL . . .  0.751 0.030 . . . . . . . . . . 5080 1 
+      31 . . .  35  35 GLY . . . . . .  35  35 GLY . . .  0.754 0.030 . . . . . . . . . . 5080 1 
+      32 . . .  36  36 ARG . . . . . .  36  36 ARG . . .  0.743 0.030 . . . . . . . . . . 5080 1 
+      33 . . .  37  37 THR . . . . . .  37  37 THR . . .  0.788 0.030 . . . . . . . . . . 5080 1 
+      34 . . .  38  38 VAL . . . . . .  38  38 VAL . . .  0.748 0.030 . . . . . . . . . . 5080 1 
+      35 . . .  39  39 ALA . . . . . .  39  39 ALA . . .  0.744 0.030 . . . . . . . . . . 5080 1 
+      36 . . .  40  40 GLY . . . . . .  40  40 GLY . . .  0.756 0.030 . . . . . . . . . . 5080 1 
+      37 . . .  41  41 VAL . . . . . .  41  41 VAL . . .  0.772 0.030 . . . . . . . . . . 5080 1 
+      38 . . .  42  42 ASP . . . . . .  42  42 ASP . . .  0.737 0.030 . . . . . . . . . . 5080 1 
+      39 . . .  43  43 GLY . . . . . .  43  43 GLY . . .  0.732 0.030 . . . . . . . . . . 5080 1 
+      40 . . .  44  44 PHE . . . . . .  44  44 PHE . . .  0.735 0.030 . . . . . . . . . . 5080 1 
+      41 . . .  45  45 ASN . . . . . .  45  45 ASN . . .  0.749 0.030 . . . . . . . . . . 5080 1 
+      42 . . .  46  46 TYR . . . . . .  46  46 TYR . . .  0.737 0.030 . . . . . . . . . . 5080 1 
+      43 . . .  47  47 SER . . . . . .  47  47 SER . . .  0.759 0.030 . . . . . . . . . . 5080 1 
+      44 . . .  48  48 ASP . . . . . .  48  48 ASP . . .  0.758 0.030 . . . . . . . . . . 5080 1 
+      45 . . .  50  50 MET . . . . . .  50  50 MET . . .  0.762 0.030 . . . . . . . . . . 5080 1 
+      46 . . .  51  51 LYS . . . . . .  51  51 LYS . . .  0.723 0.030 . . . . . . . . . . 5080 1 
+      47 . . .  52  52 ALA . . . . . .  52  52 ALA . . .  0.728 0.030 . . . . . . . . . . 5080 1 
+      48 . . .  53  53 HIS . . . . . .  53  53 HIS . . .  0.731 0.030 . . . . . . . . . . 5080 1 
+      49 . . .  54  54 GLY . . . . . .  54  54 GLY . . .  0.750 0.030 . . . . . . . . . . 5080 1 
+      50 . . .  55  55 GLY . . . . . .  55  55 GLY . . .  0.731 0.030 . . . . . . . . . . 5080 1 
+      51 . . .  56  56 ASP . . . . . .  56  56 ASP . . .  0.755 0.030 . . . . . . . . . . 5080 1 
+      52 . . .  57  57 TRP . . . . . .  57  57 TRP . . .  0.757 0.030 . . . . . . . . . . 5080 1 
+      53 . . .  58  58 THR . . . . . .  58  58 THR . . .  0.762 0.030 . . . . . . . . . . 5080 1 
+      54 . . .  60  60 GLU . . . . . .  60  60 GLU . . .  0.754 0.030 . . . . . . . . . . 5080 1 
+      55 . . .  61  61 ALA . . . . . .  61  61 ALA . . .  0.756 0.030 . . . . . . . . . . 5080 1 
+      56 . . .  62  62 LEU . . . . . .  62  62 LEU . . .  0.750 0.030 . . . . . . . . . . 5080 1 
+      57 . . .  63  63 GLN . . . . . .  63  63 GLN . . .  0.750 0.030 . . . . . . . . . . 5080 1 
+      58 . . .  64  64 GLU . . . . . .  64  64 GLU . . .  0.721 0.030 . . . . . . . . . . 5080 1 
+      59 . . .  65  65 PHE . . . . . .  65  65 PHE . . .  0.717 0.030 . . . . . . . . . . 5080 1 
+      60 . . .  66  66 LEU . . . . . .  66  66 LEU . . .  0.750 0.030 . . . . . . . . . . 5080 1 
+      61 . . .  67  67 THR . . . . . .  67  67 THR . . .  0.739 0.030 . . . . . . . . . . 5080 1 
+      62 . . .  68  68 ASN . . . . . .  68  68 ASN . . .  0.717 0.030 . . . . . . . . . . 5080 1 
+      63 . . .  70  70 LYS . . . . . .  70  70 LYS . . .  0.713 0.030 . . . . . . . . . . 5080 1 
+      64 . . .  72  72 VAL . . . . . .  72  72 VAL . . .  0.703 0.030 . . . . . . . . . . 5080 1 
+      65 . . .  73  73 VAL . . . . . .  73  73 VAL . . .  0.724 0.030 . . . . . . . . . . 5080 1 
+      66 . . .  74  74 LYS . . . . . .  74  74 LYS . . .  0.696 0.030 . . . . . . . . . . 5080 1 
+      67 . . .  75  75 GLY . . . . . .  75  75 GLY . . .  0.712 0.030 . . . . . . . . . . 5080 1 
+      68 . . .  76  76 THR . . . . . .  76  76 THR . . .  0.762 0.030 . . . . . . . . . . 5080 1 
+      69 . . .  77  77 LYS . . . . . .  77  77 LYS . . .  0.757 0.030 . . . . . . . . . . 5080 1 
+      70 . . .  78  78 MET . . . . . .  78  78 MET . . .  0.757 0.030 . . . . . . . . . . 5080 1 
+      71 . . .  79  79 ALA . . . . . .  79  79 ALA . . .  0.728 0.030 . . . . . . . . . . 5080 1 
+      72 . . .  80  80 PHE . . . . . .  80  80 PHE . . .  0.742 0.030 . . . . . . . . . . 5080 1 
+      73 . . .  81  81 ALA . . . . . .  81  81 ALA . . .  0.706 0.030 . . . . . . . . . . 5080 1 
+      74 . . .  82  82 GLY . . . . . .  82  82 GLY . . .  0.789 0.030 . . . . . . . . . . 5080 1 
+      75 . . .  83  83 LEU . . . . . .  83  83 LEU . . .  0.685 0.030 . . . . . . . . . . 5080 1 
+      76 . . .  86  86 ILE . . . . . .  86  86 ILE . . .  0.753 0.030 . . . . . . . . . . 5080 1 
+      77 . . .  87  87 GLU . . . . . .  87  87 GLU . . .  0.723 0.030 . . . . . . . . . . 5080 1 
+      78 . . .  88  88 ASP . . . . . .  88  88 ASP . . .  0.742 0.030 . . . . . . . . . . 5080 1 
+      79 . . .  89  89 ARG . . . . . .  89  89 ARG . . .  0.753 0.030 . . . . . . . . . . 5080 1 
+      80 . . .  90  90 ALA . . . . . .  90  90 ALA . . .  0.796 0.030 . . . . . . . . . . 5080 1 
+      81 . . .  91  91 ASN . . . . . .  91  91 ASN . . .  0.735 0.030 . . . . . . . . . . 5080 1 
+      82 . . .  92  92 LEU . . . . . .  92  92 LEU . . .  0.740 0.030 . . . . . . . . . . 5080 1 
+      83 . . .  94  94 ALA . . . . . .  94  94 ALA . . .  0.746 0.030 . . . . . . . . . . 5080 1 
+      84 . . .  95  95 TYR . . . . . .  95  95 TYR . . .  0.792 0.030 . . . . . . . . . . 5080 1 
+      85 . . .  97  97 GLU . . . . . .  97  97 GLU . . .  0.737 0.030 . . . . . . . . . . 5080 1 
+      86 . . .  98  98 GLY . . . . . .  98  98 GLY . . .  0.720 0.030 . . . . . . . . . . 5080 1 
+      87 . . .  99  99 GLN . . . . . .  99  99 GLN . . .  0.714 0.030 . . . . . . . . . . 5080 1 
+      88 . . . 100 100 GLN . . . . . . 100 100 GLN . . .  0.392 0.030 . . . . . . . . . . 5080 1 
+
+   stop_
+
+save_
+
+
+save_heteronuclear_NOE_600
+   _Heteronucl_NOE_list.Sf_category                   heteronucl_NOEs
+   _Heteronucl_NOE_list.Sf_framecode                  heteronuclear_NOE_600
+   _Heteronucl_NOE_list.Entry_ID                      5080
+   _Heteronucl_NOE_list.ID                            2
+   _Heteronucl_NOE_list.Sample_condition_list_ID      1
+   _Heteronucl_NOE_list.Sample_condition_list_label  $cond_set_1
+   _Heteronucl_NOE_list.Spectrometer_frequency_1H     600
+   _Heteronucl_NOE_list.Heteronuclear_NOE_val_type   'relative intensities'
+   _Heteronucl_NOE_list.NOE_ref_val                   .
+   _Heteronucl_NOE_list.NOE_ref_description           .
+   _Heteronucl_NOE_list.Details                       .
+   _Heteronucl_NOE_list.Text_data_format              .
+   _Heteronucl_NOE_list.Text_data                     .
+
+   loop_
+      _Heteronucl_NOE_experiment.Experiment_ID
+      _Heteronucl_NOE_experiment.Experiment_name
+      _Heteronucl_NOE_experiment.Sample_ID
+      _Heteronucl_NOE_experiment.Sample_label
+      _Heteronucl_NOE_experiment.Sample_state
+      _Heteronucl_NOE_experiment.Entry_ID
+      _Heteronucl_NOE_experiment.Heteronucl_NOE_list_ID
+
+      . . 1 $sample_1 . 5080 2 
+
+   stop_
+
+   loop_
+      _Heteronucl_NOE.ID
+      _Heteronucl_NOE.Assembly_atom_ID_1
+      _Heteronucl_NOE.Entity_assembly_ID_1
+      _Heteronucl_NOE.Entity_ID_1
+      _Heteronucl_NOE.Comp_index_ID_1
+      _Heteronucl_NOE.Seq_ID_1
+      _Heteronucl_NOE.Comp_ID_1
+      _Heteronucl_NOE.Atom_ID_1
+      _Heteronucl_NOE.Atom_type_1
+      _Heteronucl_NOE.Atom_isotope_number_1
+      _Heteronucl_NOE.Assembly_atom_ID_2
+      _Heteronucl_NOE.Entity_assembly_ID_2
+      _Heteronucl_NOE.Entity_ID_2
+      _Heteronucl_NOE.Comp_index_ID_2
+      _Heteronucl_NOE.Seq_ID_2
+      _Heteronucl_NOE.Comp_ID_2
+      _Heteronucl_NOE.Atom_ID_2
+      _Heteronucl_NOE.Atom_type_2
+      _Heteronucl_NOE.Atom_isotope_number_2
+      _Heteronucl_NOE.Val
+      _Heteronucl_NOE.Val_err
+      _Heteronucl_NOE.Resonance_ID_1
+      _Heteronucl_NOE.Resonance_ID_2
+      _Heteronucl_NOE.Auth_entity_assembly_ID_1
+      _Heteronucl_NOE.Auth_seq_ID_1
+      _Heteronucl_NOE.Auth_comp_ID_1
+      _Heteronucl_NOE.Auth_atom_ID_1
+      _Heteronucl_NOE.Auth_entity_assembly_ID_2
+      _Heteronucl_NOE.Auth_seq_ID_2
+      _Heteronucl_NOE.Auth_comp_ID_2
+      _Heteronucl_NOE.Auth_atom_ID_2
+      _Heteronucl_NOE.Entry_ID
+      _Heteronucl_NOE.Heteronucl_NOE_list_ID
+
+       1 . . .   2   2 ALA . . . . . .   2   2 ALA . . . -0.073 0.030 . . . . . . . . . . 5080 2 
+       2 . . .   3   3 ASP . . . . . .   3   3 ASP . . .  0.747 0.030 . . . . . . . . . . 5080 2 
+       3 . . .   5   5 ALA . . . . . .   5   5 ALA . . .  0.796 0.030 . . . . . . . . . . 5080 2 
+       4 . . .   6   6 ALA . . . . . .   6   6 ALA . . .  0.786 0.030 . . . . . . . . . . 5080 2 
+       5 . . .   7   7 GLY . . . . . .   7   7 GLY . . .  0.770 0.030 . . . . . . . . . . 5080 2 
+       6 . . .   8   8 GLU . . . . . .   8   8 GLU . . .  0.791 0.030 . . . . . . . . . . 5080 2 
+       7 . . .   9   9 LYS . . . . . .   9   9 LYS . . .  0.791 0.030 . . . . . . . . . . 5080 2 
+       8 . . .  10  10 VAL . . . . . .  10  10 VAL . . .  0.780 0.030 . . . . . . . . . . 5080 2 
+       9 . . .  11  11 PHE . . . . . .  11  11 PHE . . .  0.786 0.030 . . . . . . . . . . 5080 2 
+      10 . . .  12  12 GLY . . . . . .  12  12 GLY . . .  0.814 0.030 . . . . . . . . . . 5080 2 
+      11 . . .  13  13 LYS . . . . . .  13  13 LYS . . .  0.813 0.030 . . . . . . . . . . 5080 2 
+      12 . . .  14  14 CYS . . . . . .  14  14 CYS . . .  0.679 0.030 . . . . . . . . . . 5080 2 
+      13 . . .  15  15 LYS . . . . . .  15  15 LYS . . .  0.776 0.030 . . . . . . . . . . 5080 2 
+      14 . . .  16  16 ALA . . . . . .  16  16 ALA . . .  0.795 0.030 . . . . . . . . . . 5080 2 
+      15 . . .  17  17 CYS . . . . . .  17  17 CYS . . .  0.831 0.030 . . . . . . . . . . 5080 2 
+      16 . . .  18  18 HIS . . . . . .  18  18 HIS . . .  0.782 0.030 . . . . . . . . . . 5080 2 
+      17 . . .  19  19 LYS . . . . . .  19  19 LYS . . .  0.737 0.030 . . . . . . . . . . 5080 2 
+      18 . . .  20  20 LEU . . . . . .  20  20 LEU . . .  0.777 0.030 . . . . . . . . . . 5080 2 
+      19 . . .  21  21 ASP . . . . . .  21  21 ASP . . .  0.812 0.030 . . . . . . . . . . 5080 2 
+      20 . . .  22  22 GLY . . . . . .  22  22 GLY . . .  0.795 0.030 . . . . . . . . . . 5080 2 
+      21 . . .  23  23 ASN . . . . . .  23  23 ASN . . .  0.823 0.030 . . . . . . . . . . 5080 2 
+      22 . . .  24  24 ASP . . . . . .  24  24 ASP . . .  0.793 0.030 . . . . . . . . . . 5080 2 
+      23 . . .  25  25 GLY . . . . . .  25  25 GLY . . .  0.613 0.030 . . . . . . . . . . 5080 2 
+      24 . . .  26  26 VAL . . . . . .  26  26 VAL . . .  0.733 0.030 . . . . . . . . . . 5080 2 
+      25 . . .  27  27 GLY . . . . . .  27  27 GLY . . .  0.776 0.030 . . . . . . . . . . 5080 2 
+      26 . . .  29  29 HIS . . . . . .  29  29 HIS . . .  0.808 0.030 . . . . . . . . . . 5080 2 
+      27 . . .  30  30 LEU . . . . . .  30  30 LEU . . .  0.813 0.030 . . . . . . . . . . 5080 2 
+      28 . . .  32  32 GLY . . . . . .  32  32 GLY . . .  0.779 0.030 . . . . . . . . . . 5080 2 
+      29 . . .  33  33 VAL . . . . . .  33  33 VAL . . .  0.773 0.030 . . . . . . . . . . 5080 2 
+      30 . . .  34  34 VAL . . . . . .  34  34 VAL . . .  0.756 0.030 . . . . . . . . . . 5080 2 
+      31 . . .  35  35 GLY . . . . . .  35  35 GLY . . .  0.764 0.030 . . . . . . . . . . 5080 2 
+      32 . . .  36  36 ARG . . . . . .  36  36 ARG . . .  0.798 0.030 . . . . . . . . . . 5080 2 
+      33 . . .  37  37 THR . . . . . .  37  37 THR . . .  0.796 0.030 . . . . . . . . . . 5080 2 
+      34 . . .  38  38 VAL . . . . . .  38  38 VAL . . .  0.818 0.030 . . . . . . . . . . 5080 2 
+      35 . . .  39  39 ALA . . . . . .  39  39 ALA . . .  0.802 0.030 . . . . . . . . . . 5080 2 
+      36 . . .  40  40 GLY . . . . . .  40  40 GLY . . .  0.802 0.030 . . . . . . . . . . 5080 2 
+      37 . . .  41  41 VAL . . . . . .  41  41 VAL . . .  0.809 0.030 . . . . . . . . . . 5080 2 
+      38 . . .  42  42 ASP . . . . . .  42  42 ASP . . .  0.808 0.030 . . . . . . . . . . 5080 2 
+      39 . . .  43  43 GLY . . . . . .  43  43 GLY . . .  0.785 0.030 . . . . . . . . . . 5080 2 
+      40 . . .  44  44 PHE . . . . . .  44  44 PHE . . .  0.806 0.030 . . . . . . . . . . 5080 2 
+      41 . . .  45  45 ASN . . . . . .  45  45 ASN . . .  0.769 0.030 . . . . . . . . . . 5080 2 
+      42 . . .  46  46 TYR . . . . . .  46  46 TYR . . .  0.754 0.030 . . . . . . . . . . 5080 2 
+      43 . . .  47  47 SER . . . . . .  47  47 SER . . .  0.805 0.030 . . . . . . . . . . 5080 2 
+      44 . . .  48  48 ASP . . . . . .  48  48 ASP . . .  0.788 0.030 . . . . . . . . . . 5080 2 
+      45 . . .  50  50 MET . . . . . .  50  50 MET . . .  0.783 0.030 . . . . . . . . . . 5080 2 
+      46 . . .  51  51 LYS . . . . . .  51  51 LYS . . .  0.787 0.030 . . . . . . . . . . 5080 2 
+      47 . . .  52  52 ALA . . . . . .  52  52 ALA . . .  0.756 0.030 . . . . . . . . . . 5080 2 
+      48 . . .  53  53 HIS . . . . . .  53  53 HIS . . .  0.774 0.030 . . . . . . . . . . 5080 2 
+      49 . . .  54  54 GLY . . . . . .  54  54 GLY . . .  0.762 0.030 . . . . . . . . . . 5080 2 
+      50 . . .  55  55 GLY . . . . . .  55  55 GLY . . .  0.757 0.030 . . . . . . . . . . 5080 2 
+      51 . . .  56  56 ASP . . . . . .  56  56 ASP . . .  0.796 0.030 . . . . . . . . . . 5080 2 
+      52 . . .  57  57 TRP . . . . . .  57  57 TRP . . .  0.781 0.030 . . . . . . . . . . 5080 2 
+      53 . . .  58  58 THR . . . . . .  58  58 THR . . .  0.793 0.030 . . . . . . . . . . 5080 2 
+      54 . . .  60  60 GLU . . . . . .  60  60 GLU . . .  0.793 0.030 . . . . . . . . . . 5080 2 
+      55 . . .  61  61 ALA . . . . . .  61  61 ALA . . .  0.798 0.030 . . . . . . . . . . 5080 2 
+      56 . . .  62  62 LEU . . . . . .  62  62 LEU . . .  0.809 0.030 . . . . . . . . . . 5080 2 
+      57 . . .  63  63 GLN . . . . . .  63  63 GLN . . .  0.788 0.030 . . . . . . . . . . 5080 2 
+      58 . . .  64  64 GLU . . . . . .  64  64 GLU . . .  0.792 0.030 . . . . . . . . . . 5080 2 
+      59 . . .  65  65 PHE . . . . . .  65  65 PHE . . .  0.796 0.030 . . . . . . . . . . 5080 2 
+      60 . . .  66  66 LEU . . . . . .  66  66 LEU . . .  0.803 0.030 . . . . . . . . . . 5080 2 
+      61 . . .  67  67 THR . . . . . .  67  67 THR . . .  0.798 0.030 . . . . . . . . . . 5080 2 
+      62 . . .  68  68 ASN . . . . . .  68  68 ASN . . .  0.773 0.030 . . . . . . . . . . 5080 2 
+      63 . . .  70  70 LYS . . . . . .  70  70 LYS . . .  0.724 0.030 . . . . . . . . . . 5080 2 
+      64 . . .  72  72 VAL . . . . . .  72  72 VAL . . .  0.746 0.030 . . . . . . . . . . 5080 2 
+      65 . . .  73  73 VAL . . . . . .  73  73 VAL . . .  0.778 0.030 . . . . . . . . . . 5080 2 
+      66 . . .  74  74 LYS . . . . . .  74  74 LYS . . .  0.732 0.030 . . . . . . . . . . 5080 2 
+      67 . . .  75  75 GLY . . . . . .  75  75 GLY . . .  0.781 0.030 . . . . . . . . . . 5080 2 
+      68 . . .  76  76 THR . . . . . .  76  76 THR . . .  0.808 0.030 . . . . . . . . . . 5080 2 
+      69 . . .  77  77 LYS . . . . . .  77  77 LYS . . .  0.782 0.030 . . . . . . . . . . 5080 2 
+      70 . . .  78  78 MET . . . . . .  78  78 MET . . .  0.753 0.030 . . . . . . . . . . 5080 2 
+      71 . . .  79  79 ALA . . . . . .  79  79 ALA . . .  0.807 0.030 . . . . . . . . . . 5080 2 
+      72 . . .  80  80 PHE . . . . . .  80  80 PHE . . .  0.580 0.030 . . . . . . . . . . 5080 2 
+      73 . . .  81  81 ALA . . . . . .  81  81 ALA . . .  0.818 0.030 . . . . . . . . . . 5080 2 
+      74 . . .  82  82 GLY . . . . . .  82  82 GLY . . .  0.778 0.030 . . . . . . . . . . 5080 2 
+      75 . . .  83  83 LEU . . . . . .  83  83 LEU . . .  0.781 0.030 . . . . . . . . . . 5080 2 
+      76 . . .  86  86 ILE . . . . . .  86  86 ILE . . .  0.790 0.030 . . . . . . . . . . 5080 2 
+      77 . . .  87  87 GLU . . . . . .  87  87 GLU . . .  0.797 0.030 . . . . . . . . . . 5080 2 
+      78 . . .  88  88 ASP . . . . . .  88  88 ASP . . .  0.807 0.030 . . . . . . . . . . 5080 2 
+      79 . . .  89  89 ARG . . . . . .  89  89 ARG . . .  0.796 0.030 . . . . . . . . . . 5080 2 
+      80 . . .  90  90 ALA . . . . . .  90  90 ALA . . .  0.807 0.030 . . . . . . . . . . 5080 2 
+      81 . . .  91  91 ASN . . . . . .  91  91 ASN . . .  0.794 0.030 . . . . . . . . . . 5080 2 
+      82 . . .  92  92 LEU . . . . . .  92  92 LEU . . .  0.791 0.030 . . . . . . . . . . 5080 2 
+      83 . . .  94  94 ALA . . . . . .  94  94 ALA . . .  0.798 0.030 . . . . . . . . . . 5080 2 
+      84 . . .  95  95 TYR . . . . . .  95  95 TYR . . .  0.804 0.030 . . . . . . . . . . 5080 2 
+      85 . . .  97  97 GLU . . . . . .  97  97 GLU . . .  0.791 0.030 . . . . . . . . . . 5080 2 
+      86 . . .  98  98 GLY . . . . . .  98  98 GLY . . .  0.786 0.030 . . . . . . . . . . 5080 2 
+      87 . . .  99  99 GLN . . . . . .  99  99 GLN . . .  0.743 0.030 . . . . . . . . . . 5080 2 
+      88 . . . 100 100 GLN . . . . . . 100 100 GLN . . .  0.449 0.030 . . . . . . . . . . 5080 2 
+
+   stop_
+
+save_
+
+
+    ########################################
+    #  Heteronuclear T1 relaxation values  #
+    ########################################
+
+save_15N_T1_500
+   _Heteronucl_T1_list.Sf_category                   heteronucl_T1_relaxation
+   _Heteronucl_T1_list.Sf_framecode                  15N_T1_500
+   _Heteronucl_T1_list.Entry_ID                      5080
+   _Heteronucl_T1_list.ID                            1
+   _Heteronucl_T1_list.Sample_condition_list_ID      1
+   _Heteronucl_T1_list.Sample_condition_list_label  $cond_set_1
+   _Heteronucl_T1_list.Spectrometer_frequency_1H     500
+   _Heteronucl_T1_list.T1_coherence_type             Nz
+   _Heteronucl_T1_list.T1_val_units                  s
+   _Heteronucl_T1_list.Details                       .
+   _Heteronucl_T1_list.Text_data_format              .
+   _Heteronucl_T1_list.Text_data                     .
+
+   loop_
+      _Heteronucl_T1_experiment.Experiment_ID
+      _Heteronucl_T1_experiment.Experiment_name
+      _Heteronucl_T1_experiment.Sample_ID
+      _Heteronucl_T1_experiment.Sample_label
+      _Heteronucl_T1_experiment.Sample_state
+      _Heteronucl_T1_experiment.Entry_ID
+      _Heteronucl_T1_experiment.Heteronucl_T1_list_ID
+
+      . . 1 $sample_1 . 5080 1 
+
+   stop_
+
+   loop_
+      _T1.ID
+      _T1.Assembly_atom_ID
+      _T1.Entity_assembly_ID
+      _T1.Entity_ID
+      _T1.Comp_index_ID
+      _T1.Seq_ID
+      _T1.Comp_ID
+      _T1.Atom_ID
+      _T1.Atom_type
+      _T1.Atom_isotope_number
+      _T1.Val
+      _T1.Val_err
+      _T1.Resonance_ID
+      _T1.Auth_entity_assembly_ID
+      _T1.Auth_seq_ID
+      _T1.Auth_comp_ID
+      _T1.Auth_atom_ID
+      _T1.Entry_ID
+      _T1.Heteronucl_T1_list_ID
+
+       1 . 1 1   2   2 ALA N . . 0.854 0.093 . . . . . 5080 1 
+       2 . 1 1   3   3 ASP N . . 0.585 0.006 . . . . . 5080 1 
+       3 . 1 1   5   5 ALA N . . 0.536 0.006 . . . . . 5080 1 
+       4 . 1 1   6   6 ALA N . . 0.536 0.003 . . . . . 5080 1 
+       5 . 1 1   7   7 GLY N . . 0.520 0.008 . . . . . 5080 1 
+       6 . 1 1   8   8 GLU N . . 0.508 0.009 . . . . . 5080 1 
+       7 . 1 1   9   9 LYS N . . 0.513 0.003 . . . . . 5080 1 
+       8 . 1 1  10  10 VAL N . . 0.515 0.003 . . . . . 5080 1 
+       9 . 1 1  11  11 PHE N . . 0.498 0.002 . . . . . 5080 1 
+      10 . 1 1  12  12 GLY N . . 0.499 0.003 . . . . . 5080 1 
+      11 . 1 1  13  13 LYS N . . 0.499 0.005 . . . . . 5080 1 
+      12 . 1 1  14  14 CYS N . . 0.510 0.004 . . . . . 5080 1 
+      13 . 1 1  15  15 LYS N . . 0.533 0.004 . . . . . 5080 1 
+      14 . 1 1  16  16 ALA N . . 0.493 0.014 . . . . . 5080 1 
+      15 . 1 1  17  17 CYS N . . 0.528 0.003 . . . . . 5080 1 
+      16 . 1 1  18  18 HIS N . . 0.541 0.009 . . . . . 5080 1 
+      17 . 1 1  19  19 LYS N . . 0.558 0.007 . . . . . 5080 1 
+      18 . 1 1  20  20 LEU N . . 0.537 0.005 . . . . . 5080 1 
+      19 . 1 1  21  21 ASP N . . 0.498 0.005 . . . . . 5080 1 
+      20 . 1 1  22  22 GLY N . . 0.505 0.009 . . . . . 5080 1 
+      21 . 1 1  23  23 ASN N . . 0.522 0.004 . . . . . 5080 1 
+      22 . 1 1  24  24 ASP N . . 0.548 0.011 . . . . . 5080 1 
+      23 . 1 1  25  25 GLY N . . 0.640 0.008 . . . . . 5080 1 
+      24 . 1 1  26  26 VAL N . . 0.529 0.014 . . . . . 5080 1 
+      25 . 1 1  27  27 GLY N . . 0.495 0.006 . . . . . 5080 1 
+      26 . 1 1  29  29 HIS N . . 0.516 0.006 . . . . . 5080 1 
+      27 . 1 1  30  30 LEU N . . 0.504 0.006 . . . . . 5080 1 
+      28 . 1 1  32  32 GLY N . . 0.554 0.012 . . . . . 5080 1 
+      29 . 1 1  33  33 VAL N . . 0.507 0.004 . . . . . 5080 1 
+      30 . 1 1  34  34 VAL N . . 0.496 0.003 . . . . . 5080 1 
+      31 . 1 1  35  35 GLY N . . 0.499 0.004 . . . . . 5080 1 
+      32 . 1 1  36  36 ARG N . . 0.499 0.006 . . . . . 5080 1 
+      33 . 1 1  37  37 THR N . . 0.535 0.005 . . . . . 5080 1 
+      34 . 1 1  38  38 VAL N . . 0.484 0.001 . . . . . 5080 1 
+      35 . 1 1  39  39 ALA N . . 0.514 0.010 . . . . . 5080 1 
+      36 . 1 1  40  40 GLY N . . 0.541 0.012 . . . . . 5080 1 
+      37 . 1 1  41  41 VAL N . . 0.531 0.011 . . . . . 5080 1 
+      38 . 1 1  42  42 ASP N . . 0.560 0.007 . . . . . 5080 1 
+      39 . 1 1  43  43 GLY N . . 0.564 0.011 . . . . . 5080 1 
+      40 . 1 1  44  44 PHE N . . 0.556 0.004 . . . . . 5080 1 
+      41 . 1 1  45  45 ASN N . . 0.518 0.009 . . . . . 5080 1 
+      42 . 1 1  46  46 TYR N . . 0.591 0.008 . . . . . 5080 1 
+      43 . 1 1  47  47 SER N . . 0.526 0.005 . . . . . 5080 1 
+      44 . 1 1  48  48 ASP N . . 0.527 0.005 . . . . . 5080 1 
+      45 . 1 1  50  50 MET N . . 0.503 0.005 . . . . . 5080 1 
+      46 . 1 1  51  51 LYS N . . 0.518 0.002 . . . . . 5080 1 
+      47 . 1 1  52  52 ALA N . . 0.528 0.010 . . . . . 5080 1 
+      48 . 1 1  53  53 HIS N . . 0.529 0.005 . . . . . 5080 1 
+      49 . 1 1  54  54 GLY N . . 0.531 0.008 . . . . . 5080 1 
+      50 . 1 1  55  55 GLY N . . 0.568 0.017 . . . . . 5080 1 
+      51 . 1 1  56  56 ASP N . . 0.525 0.004 . . . . . 5080 1 
+      52 . 1 1  57  57 TRP N . . 0.532 0.004 . . . . . 5080 1 
+      53 . 1 1  58  58 THR N . . 0.522 0.003 . . . . . 5080 1 
+      54 . 1 1  60  60 GLU N . . 0.522 0.007 . . . . . 5080 1 
+      55 . 1 1  61  61 ALA N . . 0.510 0.005 . . . . . 5080 1 
+      56 . 1 1  62  62 LEU N . . 0.501 0.005 . . . . . 5080 1 
+      57 . 1 1  63  63 GLN N . . 0.509 0.006 . . . . . 5080 1 
+      58 . 1 1  64  64 GLU N . . 0.503 0.007 . . . . . 5080 1 
+      59 . 1 1  65  65 PHE N . . 0.505 0.006 . . . . . 5080 1 
+      60 . 1 1  66  66 LEU N . . 0.499 0.004 . . . . . 5080 1 
+      61 . 1 1  67  67 THR N . . 0.512 0.005 . . . . . 5080 1 
+      62 . 1 1  68  68 ASN N . . 0.551 0.004 . . . . . 5080 1 
+      63 . 1 1  70  70 LYS N . . 0.538 0.005 . . . . . 5080 1 
+      64 . 1 1  72  72 VAL N . . 0.558 0.005 . . . . . 5080 1 
+      65 . 1 1  73  73 VAL N . . 0.542 0.003 . . . . . 5080 1 
+      66 . 1 1  74  74 LYS N . . 0.553 0.002 . . . . . 5080 1 
+      67 . 1 1  75  75 GLY N . . 0.533 0.003 . . . . . 5080 1 
+      68 . 1 1  76  76 THR N . . 0.496 0.003 . . . . . 5080 1 
+      69 . 1 1  77  77 LYS N . . 0.512 0.006 . . . . . 5080 1 
+      70 . 1 1  78  78 MET N . . 0.488 0.008 . . . . . 5080 1 
+      71 . 1 1  79  79 ALA N . . 0.495 0.004 . . . . . 5080 1 
+      72 . 1 1  80  80 PHE N . . 0.590 0.023 . . . . . 5080 1 
+      73 . 1 1  81  81 ALA N . . 0.498 0.049 . . . . . 5080 1 
+      74 . 1 1  82  82 GLY N . . 0.567 0.070 . . . . . 5080 1 
+      75 . 1 1  83  83 LEU N . . 0.526 0.006 . . . . . 5080 1 
+      76 . 1 1  86  86 ILE N . . 0.508 0.004 . . . . . 5080 1 
+      77 . 1 1  87  87 GLU N . . 0.509 0.003 . . . . . 5080 1 
+      78 . 1 1  88  88 ASP N . . 0.510 0.007 . . . . . 5080 1 
+      79 . 1 1  89  89 ARG N . . 0.501 0.004 . . . . . 5080 1 
+      80 . 1 1  90  90 ALA N . . 0.507 0.004 . . . . . 5080 1 
+      81 . 1 1  91  91 ASN N . . 0.509 0.006 . . . . . 5080 1 
+      82 . 1 1  92  92 LEU N . . 0.500 0.010 . . . . . 5080 1 
+      83 . 1 1  94  94 ALA N . . 0.504 0.005 . . . . . 5080 1 
+      84 . 1 1  95  95 TYR N . . 0.505 0.004 . . . . . 5080 1 
+      85 . 1 1  97  97 GLU N . . 0.502 0.003 . . . . . 5080 1 
+      86 . 1 1  98  98 GLY N . . 0.526 0.007 . . . . . 5080 1 
+      87 . 1 1  99  99 GLN N . . 0.528 0.003 . . . . . 5080 1 
+      88 . 1 1 100 100 GLN N . . 0.686 0.007 . . . . . 5080 1 
+
+   stop_
+
+save_
+
+
+save_15N_T1_600
+   _Heteronucl_T1_list.Sf_category                   heteronucl_T1_relaxation
+   _Heteronucl_T1_list.Sf_framecode                  15N_T1_600
+   _Heteronucl_T1_list.Entry_ID                      5080
+   _Heteronucl_T1_list.ID                            2
+   _Heteronucl_T1_list.Sample_condition_list_ID      1
+   _Heteronucl_T1_list.Sample_condition_list_label  $cond_set_1
+   _Heteronucl_T1_list.Spectrometer_frequency_1H     600
+   _Heteronucl_T1_list.T1_coherence_type             Nz
+   _Heteronucl_T1_list.T1_val_units                  s
+   _Heteronucl_T1_list.Details                       .
+   _Heteronucl_T1_list.Text_data_format              .
+   _Heteronucl_T1_list.Text_data                     .
+
+   loop_
+      _Heteronucl_T1_experiment.Experiment_ID
+      _Heteronucl_T1_experiment.Experiment_name
+      _Heteronucl_T1_experiment.Sample_ID
+      _Heteronucl_T1_experiment.Sample_label
+      _Heteronucl_T1_experiment.Sample_state
+      _Heteronucl_T1_experiment.Entry_ID
+      _Heteronucl_T1_experiment.Heteronucl_T1_list_ID
+
+      . . 1 $sample_1 . 5080 2 
+
+   stop_
+
+   loop_
+      _T1.ID
+      _T1.Assembly_atom_ID
+      _T1.Entity_assembly_ID
+      _T1.Entity_ID
+      _T1.Comp_index_ID
+      _T1.Seq_ID
+      _T1.Comp_ID
+      _T1.Atom_ID
+      _T1.Atom_type
+      _T1.Atom_isotope_number
+      _T1.Val
+      _T1.Val_err
+      _T1.Resonance_ID
+      _T1.Auth_entity_assembly_ID
+      _T1.Auth_seq_ID
+      _T1.Auth_comp_ID
+      _T1.Auth_atom_ID
+      _T1.Entry_ID
+      _T1.Heteronucl_T1_list_ID
+
+       1 . 1 1   2   2 ALA N . . 0.920 0.056 . . . . . 5080 2 
+       2 . 1 1   3   3 ASP N . . 0.671 0.017 . . . . . 5080 2 
+       3 . 1 1   5   5 ALA N . . 0.623 0.008 . . . . . 5080 2 
+       4 . 1 1   6   6 ALA N . . 0.625 0.007 . . . . . 5080 2 
+       5 . 1 1   7   7 GLY N . . 0.602 0.007 . . . . . 5080 2 
+       6 . 1 1   8   8 GLU N . . 0.565 0.013 . . . . . 5080 2 
+       7 . 1 1   9   9 LYS N . . 0.602 0.003 . . . . . 5080 2 
+       8 . 1 1  10  10 VAL N . . 0.605 0.002 . . . . . 5080 2 
+       9 . 1 1  11  11 PHE N . . 0.593 0.005 . . . . . 5080 2 
+      10 . 1 1  12  12 GLY N . . 0.588 0.006 . . . . . 5080 2 
+      11 . 1 1  13  13 LYS N . . 0.602 0.011 . . . . . 5080 2 
+      12 . 1 1  14  14 CYS N . . 0.598 0.008 . . . . . 5080 2 
+      13 . 1 1  15  15 LYS N . . 0.642 0.005 . . . . . 5080 2 
+      14 . 1 1  16  16 ALA N . . 0.573 0.007 . . . . . 5080 2 
+      15 . 1 1  17  17 CYS N . . 0.636 0.009 . . . . . 5080 2 
+      16 . 1 1  18  18 HIS N . . 0.657 0.013 . . . . . 5080 2 
+      17 . 1 1  19  19 LYS N . . 0.663 0.007 . . . . . 5080 2 
+      18 . 1 1  20  20 LEU N . . 0.668 0.005 . . . . . 5080 2 
+      19 . 1 1  21  21 ASP N . . 0.593 0.010 . . . . . 5080 2 
+      20 . 1 1  22  22 GLY N . . 0.598 0.010 . . . . . 5080 2 
+      21 . 1 1  23  23 ASN N . . 0.622 0.006 . . . . . 5080 2 
+      22 . 1 1  24  24 ASP N . . 0.653 0.004 . . . . . 5080 2 
+      23 . 1 1  25  25 GLY N . . 0.746 0.009 . . . . . 5080 2 
+      24 . 1 1  26  26 VAL N . . 0.620 0.021 . . . . . 5080 2 
+      25 . 1 1  27  27 GLY N . . 0.586 0.015 . . . . . 5080 2 
+      26 . 1 1  29  29 HIS N . . 0.618 0.008 . . . . . 5080 2 
+      27 . 1 1  30  30 LEU N . . 0.602 0.011 . . . . . 5080 2 
+      28 . 1 1  32  32 GLY N . . 0.648 0.009 . . . . . 5080 2 
+      29 . 1 1  33  33 VAL N . . 0.601 0.006 . . . . . 5080 2 
+      30 . 1 1  34  34 VAL N . . 0.583 0.006 . . . . . 5080 2 
+      31 . 1 1  35  35 GLY N . . 0.589 0.003 . . . . . 5080 2 
+      32 . 1 1  36  36 ARG N . . 0.582 0.007 . . . . . 5080 2 
+      33 . 1 1  37  37 THR N . . 0.621 0.008 . . . . . 5080 2 
+      34 . 1 1  38  38 VAL N . . 0.559 0.005 . . . . . 5080 2 
+      35 . 1 1  39  39 ALA N . . 0.601 0.002 . . . . . 5080 2 
+      36 . 1 1  40  40 GLY N . . 0.664 0.030 . . . . . 5080 2 
+      37 . 1 1  41  41 VAL N . . 0.622 0.011 . . . . . 5080 2 
+      38 . 1 1  42  42 ASP N . . 0.673 0.005 . . . . . 5080 2 
+      39 . 1 1  43  43 GLY N . . 0.675 0.018 . . . . . 5080 2 
+      40 . 1 1  44  44 PHE N . . 0.644 0.007 . . . . . 5080 2 
+      41 . 1 1  45  45 ASN N . . 0.614 0.006 . . . . . 5080 2 
+      42 . 1 1  46  46 TYR N . . 0.715 0.019 . . . . . 5080 2 
+      43 . 1 1  47  47 SER N . . 0.624 0.006 . . . . . 5080 2 
+      44 . 1 1  48  48 ASP N . . 0.611 0.008 . . . . . 5080 2 
+      45 . 1 1  50  50 MET N . . 0.603 0.013 . . . . . 5080 2 
+      46 . 1 1  51  51 LYS N . . 0.606 0.007 . . . . . 5080 2 
+      47 . 1 1  52  52 ALA N . . 0.624 0.007 . . . . . 5080 2 
+      48 . 1 1  53  53 HIS N . . 0.618 0.008 . . . . . 5080 2 
+      49 . 1 1  54  54 GLY N . . 0.629 0.013 . . . . . 5080 2 
+      50 . 1 1  55  55 GLY N . . 0.670 0.005 . . . . . 5080 2 
+      51 . 1 1  56  56 ASP N . . 0.627 0.009 . . . . . 5080 2 
+      52 . 1 1  57  57 TRP N . . 0.641 0.005 . . . . . 5080 2 
+      53 . 1 1  58  58 THR N . . 0.632 0.009 . . . . . 5080 2 
+      54 . 1 1  60  60 GLU N . . 0.613 0.009 . . . . . 5080 2 
+      55 . 1 1  61  61 ALA N . . 0.580 0.011 . . . . . 5080 2 
+      56 . 1 1  62  62 LEU N . . 0.593 0.003 . . . . . 5080 2 
+      57 . 1 1  63  63 GLN N . . 0.606 0.012 . . . . . 5080 2 
+      58 . 1 1  64  64 GLU N . . 0.599 0.014 . . . . . 5080 2 
+      59 . 1 1  65  65 PHE N . . 0.595 0.004 . . . . . 5080 2 
+      60 . 1 1  66  66 LEU N . . 0.595 0.004 . . . . . 5080 2 
+      61 . 1 1  67  67 THR N . . 0.608 0.007 . . . . . 5080 2 
+      62 . 1 1  68  68 ASN N . . 0.656 0.005 . . . . . 5080 2 
+      63 . 1 1  70  70 LYS N . . 0.631 0.010 . . . . . 5080 2 
+      64 . 1 1  72  72 VAL N . . 0.658 0.003 . . . . . 5080 2 
+      65 . 1 1  73  73 VAL N . . 0.636 0.002 . . . . . 5080 2 
+      66 . 1 1  74  74 LYS N . . 0.646 0.008 . . . . . 5080 2 
+      67 . 1 1  75  75 GLY N . . 0.641 0.009 . . . . . 5080 2 
+      68 . 1 1  76  76 THR N . . 0.589 0.002 . . . . . 5080 2 
+      69 . 1 1  77  77 LYS N . . 0.605 0.015 . . . . . 5080 2 
+      70 . 1 1  78  78 MET N . . 0.579 0.008 . . . . . 5080 2 
+      71 . 1 1  79  79 ALA N . . 0.581 0.011 . . . . . 5080 2 
+      72 . 1 1  80  80 PHE N . . 0.724 0.021 . . . . . 5080 2 
+      73 . 1 1  81  81 ALA N . . 0.600 0.017 . . . . . 5080 2 
+      74 . 1 1  82  82 GLY N . . 0.685 0.064 . . . . . 5080 2 
+      75 . 1 1  83  83 LEU N . . 0.631 0.007 . . . . . 5080 2 
+      76 . 1 1  86  86 ILE N . . 0.605 0.011 . . . . . 5080 2 
+      77 . 1 1  87  87 GLU N . . 0.584 0.006 . . . . . 5080 2 
+      78 . 1 1  88  88 ASP N . . 0.601 0.008 . . . . . 5080 2 
+      79 . 1 1  89  89 ARG N . . 0.597 0.013 . . . . . 5080 2 
+      80 . 1 1  90  90 ALA N . . 0.593 0.015 . . . . . 5080 2 
+      81 . 1 1  91  91 ASN N . . 0.600 0.004 . . . . . 5080 2 
+      82 . 1 1  92  92 LEU N . . 0.579 0.012 . . . . . 5080 2 
+      83 . 1 1  94  94 ALA N . . 0.589 0.008 . . . . . 5080 2 
+      84 . 1 1  95  95 TYR N . . 0.602 0.008 . . . . . 5080 2 
+      85 . 1 1  97  97 GLU N . . 0.589 0.009 . . . . . 5080 2 
+      86 . 1 1  98  98 GLY N . . 0.609 0.009 . . . . . 5080 2 
+      87 . 1 1  99  99 GLN N . . 0.609 0.019 . . . . . 5080 2 
+      88 . 1 1 100 100 GLN N . . 0.787 0.010 . . . . . 5080 2 
+
+   stop_
+
+save_
+
+
+    ########################################
+    #  Heteronuclear T2 relaxation values  #
+    ########################################
+
+save_15N_T2_500
+   _Heteronucl_T2_list.Sf_category                   heteronucl_T2_relaxation
+   _Heteronucl_T2_list.Sf_framecode                  15N_T2_500
+   _Heteronucl_T2_list.Entry_ID                      5080
+   _Heteronucl_T2_list.ID                            1
+   _Heteronucl_T2_list.Sample_condition_list_ID      1
+   _Heteronucl_T2_list.Sample_condition_list_label  $cond_set_1
+   _Heteronucl_T2_list.Temp_calibration_method       .
+   _Heteronucl_T2_list.Temp_control_method           .
+   _Heteronucl_T2_list.Spectrometer_frequency_1H     500
+   _Heteronucl_T2_list.T2_coherence_type             Nx
+   _Heteronucl_T2_list.T2_val_units                  s
+   _Heteronucl_T2_list.Rex_units                     .
+   _Heteronucl_T2_list.Details                       .
+   _Heteronucl_T2_list.Text_data_format              .
+   _Heteronucl_T2_list.Text_data                     .
+
+   loop_
+      _Heteronucl_T2_experiment.Experiment_ID
+      _Heteronucl_T2_experiment.Experiment_name
+      _Heteronucl_T2_experiment.Sample_ID
+      _Heteronucl_T2_experiment.Sample_label
+      _Heteronucl_T2_experiment.Sample_state
+      _Heteronucl_T2_experiment.Entry_ID
+      _Heteronucl_T2_experiment.Heteronucl_T2_list_ID
+
+      . . 1 $sample_1 . 5080 1 
+
+   stop_
+
+   loop_
+      _T2.ID
+      _T2.Assembly_atom_ID
+      _T2.Entity_assembly_ID
+      _T2.Entity_ID
+      _T2.Comp_index_ID
+      _T2.Seq_ID
+      _T2.Comp_ID
+      _T2.Atom_ID
+      _T2.Atom_type
+      _T2.Atom_isotope_number
+      _T2.T2_val
+      _T2.T2_val_err
+      _T2.Rex_val
+      _T2.Rex_err
+      _T2.Resonance_ID
+      _T2.Auth_entity_assembly_ID
+      _T2.Auth_seq_ID
+      _T2.Auth_comp_ID
+      _T2.Auth_atom_ID
+      _T2.Entry_ID
+      _T2.Heteronucl_T2_list_ID
+
+       1 . 1 1   2   2 ALA N . . 0.252 0.012 . . . . . . . 5080 1 
+       2 . 1 1   3   3 ASP N . . 0.114 0.001 . . . . . . . 5080 1 
+       3 . 1 1   5   5 ALA N . . 0.109 0.001 . . . . . . . 5080 1 
+       4 . 1 1   6   6 ALA N . . 0.106 0.001 . . . . . . . 5080 1 
+       5 . 1 1   7   7 GLY N . . 0.099 0.001 . . . . . . . 5080 1 
+       6 . 1 1   8   8 GLU N . . 0.098 0.001 . . . . . . . 5080 1 
+       7 . 1 1   9   9 LYS N . . 0.097 0.001 . . . . . . . 5080 1 
+       8 . 1 1  10  10 VAL N . . 0.099 0.000 . . . . . . . 5080 1 
+       9 . 1 1  11  11 PHE N . . 0.093 0.000 . . . . . . . 5080 1 
+      10 . 1 1  12  12 GLY N . . 0.096 0.000 . . . . . . . 5080 1 
+      11 . 1 1  13  13 LYS N . . 0.097 0.000 . . . . . . . 5080 1 
+      12 . 1 1  14  14 CYS N . . 0.110 0.002 . . . . . . . 5080 1 
+      13 . 1 1  15  15 LYS N . . 0.101 0.000 . . . . . . . 5080 1 
+      14 . 1 1  16  16 ALA N . . 0.111 0.001 . . . . . . . 5080 1 
+      15 . 1 1  17  17 CYS N . . 0.104 0.001 . . . . . . . 5080 1 
+      16 . 1 1  18  18 HIS N . . 0.102 0.001 . . . . . . . 5080 1 
+      17 . 1 1  19  19 LYS N . . 0.105 0.001 . . . . . . . 5080 1 
+      18 . 1 1  20  20 LEU N . . 0.108 0.001 . . . . . . . 5080 1 
+      19 . 1 1  21  21 ASP N . . 0.092 0.001 . . . . . . . 5080 1 
+      20 . 1 1  22  22 GLY N . . 0.104 0.002 . . . . . . . 5080 1 
+      21 . 1 1  23  23 ASN N . . 0.098 0.000 . . . . . . . 5080 1 
+      22 . 1 1  24  24 ASP N . . 0.108 0.001 . . . . . . . 5080 1 
+      23 . 1 1  25  25 GLY N . . 0.136 0.001 . . . . . . . 5080 1 
+      24 . 1 1  26  26 VAL N . . 0.107 0.001 . . . . . . . 5080 1 
+      25 . 1 1  27  27 GLY N . . 0.105 0.001 . . . . . . . 5080 1 
+      26 . 1 1  29  29 HIS N . . 0.100 0.001 . . . . . . . 5080 1 
+      27 . 1 1  30  30 LEU N . . 0.099 0.001 . . . . . . . 5080 1 
+      28 . 1 1  32  32 GLY N . . 0.097 0.001 . . . . . . . 5080 1 
+      29 . 1 1  33  33 VAL N . . 0.097 0.001 . . . . . . . 5080 1 
+      30 . 1 1  34  34 VAL N . . 0.098 0.000 . . . . . . . 5080 1 
+      31 . 1 1  35  35 GLY N . . 0.096 0.001 . . . . . . . 5080 1 
+      32 . 1 1  36  36 ARG N . . 0.094 0.001 . . . . . . . 5080 1 
+      33 . 1 1  37  37 THR N . . 0.102 0.001 . . . . . . . 5080 1 
+      34 . 1 1  38  38 VAL N . . 0.098 0.001 . . . . . . . 5080 1 
+      35 . 1 1  39  39 ALA N . . 0.097 0.001 . . . . . . . 5080 1 
+      36 . 1 1  40  40 GLY N . . 0.103 0.002 . . . . . . . 5080 1 
+      37 . 1 1  41  41 VAL N . . 0.100 0.001 . . . . . . . 5080 1 
+      38 . 1 1  42  42 ASP N . . 0.107 0.000 . . . . . . . 5080 1 
+      39 . 1 1  43  43 GLY N . . 0.120 0.001 . . . . . . . 5080 1 
+      40 . 1 1  44  44 PHE N . . 0.105 0.001 . . . . . . . 5080 1 
+      41 . 1 1  45  45 ASN N . . 0.111 0.001 . . . . . . . 5080 1 
+      42 . 1 1  46  46 TYR N . . 0.113 0.001 . . . . . . . 5080 1 
+      43 . 1 1  47  47 SER N . . 0.096 0.000 . . . . . . . 5080 1 
+      44 . 1 1  48  48 ASP N . . 0.100 0.000 . . . . . . . 5080 1 
+      45 . 1 1  50  50 MET N . . 0.098 0.000 . . . . . . . 5080 1 
+      46 . 1 1  51  51 LYS N . . 0.097 0.001 . . . . . . . 5080 1 
+      47 . 1 1  52  52 ALA N . . 0.100 0.000 . . . . . . . 5080 1 
+      48 . 1 1  53  53 HIS N . . 0.105 0.000 . . . . . . . 5080 1 
+      49 . 1 1  54  54 GLY N . . 0.114 0.001 . . . . . . . 5080 1 
+      50 . 1 1  55  55 GLY N . . 0.110 0.002 . . . . . . . 5080 1 
+      51 . 1 1  56  56 ASP N . . 0.107 0.001 . . . . . . . 5080 1 
+      52 . 1 1  57  57 TRP N . . 0.107 0.001 . . . . . . . 5080 1 
+      53 . 1 1  58  58 THR N . . 0.101 0.000 . . . . . . . 5080 1 
+      54 . 1 1  60  60 GLU N . . 0.095 0.001 . . . . . . . 5080 1 
+      55 . 1 1  61  61 ALA N . . 0.097 0.001 . . . . . . . 5080 1 
+      56 . 1 1  62  62 LEU N . . 0.092 0.001 . . . . . . . 5080 1 
+      57 . 1 1  63  63 GLN N . . 0.094 0.000 . . . . . . . 5080 1 
+      58 . 1 1  64  64 GLU N . . 0.093 0.001 . . . . . . . 5080 1 
+      59 . 1 1  65  65 PHE N . . 0.092 0.001 . . . . . . . 5080 1 
+      60 . 1 1  66  66 LEU N . . 0.094 0.000 . . . . . . . 5080 1 
+      61 . 1 1  67  67 THR N . . 0.096 0.000 . . . . . . . 5080 1 
+      62 . 1 1  68  68 ASN N . . 0.101 0.000 . . . . . . . 5080 1 
+      63 . 1 1  70  70 LYS N . . 0.100 0.000 . . . . . . . 5080 1 
+      64 . 1 1  72  72 VAL N . . 0.111 0.001 . . . . . . . 5080 1 
+      65 . 1 1  73  73 VAL N . . 0.102 0.001 . . . . . . . 5080 1 
+      66 . 1 1  74  74 LYS N . . 0.114 0.002 . . . . . . . 5080 1 
+      67 . 1 1  75  75 GLY N . . 0.101 0.000 . . . . . . . 5080 1 
+      68 . 1 1  76  76 THR N . . 0.100 0.000 . . . . . . . 5080 1 
+      69 . 1 1  77  77 LYS N . . 0.096 0.001 . . . . . . . 5080 1 
+      70 . 1 1  78  78 MET N . . 0.103 0.001 . . . . . . . 5080 1 
+      71 . 1 1  79  79 ALA N . . 0.099 0.001 . . . . . . . 5080 1 
+      72 . 1 1  80  80 PHE N . . 0.134 0.004 . . . . . . . 5080 1 
+      73 . 1 1  81  81 ALA N . . 0.110 0.004 . . . . . . . 5080 1 
+      74 . 1 1  82  82 GLY N . . 0.122 0.004 . . . . . . . 5080 1 
+      75 . 1 1  83  83 LEU N . . 0.099 0.001 . . . . . . . 5080 1 
+      76 . 1 1  86  86 ILE N . . 0.101 0.000 . . . . . . . 5080 1 
+      77 . 1 1  87  87 GLU N . . 0.095 0.000 . . . . . . . 5080 1 
+      78 . 1 1  88  88 ASP N . . 0.099 0.001 . . . . . . . 5080 1 
+      79 . 1 1  89  89 ARG N . . 0.097 0.001 . . . . . . . 5080 1 
+      80 . 1 1  90  90 ALA N . . 0.094 0.000 . . . . . . . 5080 1 
+      81 . 1 1  91  91 ASN N . . 0.093 0.001 . . . . . . . 5080 1 
+      82 . 1 1  92  92 LEU N . . 0.096 0.001 . . . . . . . 5080 1 
+      83 . 1 1  94  94 ALA N . . 0.095 0.000 . . . . . . . 5080 1 
+      84 . 1 1  95  95 TYR N . . 0.095 0.001 . . . . . . . 5080 1 
+      85 . 1 1  97  97 GLU N . . 0.095 0.001 . . . . . . . 5080 1 
+      86 . 1 1  98  98 GLY N . . 0.100 0.002 . . . . . . . 5080 1 
+      87 . 1 1  99  99 GLN N . . 0.111 0.000 . . . . . . . 5080 1 
+      88 . 1 1 100 100 GLN N . . 0.169 0.004 . . . . . . . 5080 1 
+
+   stop_
+
+save_
+
+
+save_15N_T2_600
+   _Heteronucl_T2_list.Sf_category                   heteronucl_T2_relaxation
+   _Heteronucl_T2_list.Sf_framecode                  15N_T2_600
+   _Heteronucl_T2_list.Entry_ID                      5080
+   _Heteronucl_T2_list.ID                            2
+   _Heteronucl_T2_list.Sample_condition_list_ID      1
+   _Heteronucl_T2_list.Sample_condition_list_label  $cond_set_1
+   _Heteronucl_T2_list.Temp_calibration_method       .
+   _Heteronucl_T2_list.Temp_control_method           .
+   _Heteronucl_T2_list.Spectrometer_frequency_1H     600
+   _Heteronucl_T2_list.T2_coherence_type             Nx
+   _Heteronucl_T2_list.T2_val_units                  s
+   _Heteronucl_T2_list.Rex_units                     .
+   _Heteronucl_T2_list.Details                       .
+   _Heteronucl_T2_list.Text_data_format              .
+   _Heteronucl_T2_list.Text_data                     .
+
+   loop_
+      _Heteronucl_T2_experiment.Experiment_ID
+      _Heteronucl_T2_experiment.Experiment_name
+      _Heteronucl_T2_experiment.Sample_ID
+      _Heteronucl_T2_experiment.Sample_label
+      _Heteronucl_T2_experiment.Sample_state
+      _Heteronucl_T2_experiment.Entry_ID
+      _Heteronucl_T2_experiment.Heteronucl_T2_list_ID
+
+      . . 1 $sample_1 . 5080 2 
+
+   stop_
+
+   loop_
+      _T2.ID
+      _T2.Assembly_atom_ID
+      _T2.Entity_assembly_ID
+      _T2.Entity_ID
+      _T2.Comp_index_ID
+      _T2.Seq_ID
+      _T2.Comp_ID
+      _T2.Atom_ID
+      _T2.Atom_type
+      _T2.Atom_isotope_number
+      _T2.T2_val
+      _T2.T2_val_err
+      _T2.Rex_val
+      _T2.Rex_err
+      _T2.Resonance_ID
+      _T2.Auth_entity_assembly_ID
+      _T2.Auth_seq_ID
+      _T2.Auth_comp_ID
+      _T2.Auth_atom_ID
+      _T2.Entry_ID
+      _T2.Heteronucl_T2_list_ID
+
+       1 . 1 1   2   2 ALA N . . 0.212 0.010 . . . . . . . 5080 2 
+       2 . 1 1   3   3 ASP N . . 0.116 0.001 . . . . . . . 5080 2 
+       3 . 1 1   5   5 ALA N . . 0.109 0.003 . . . . . . . 5080 2 
+       4 . 1 1   6   6 ALA N . . 0.108 0.002 . . . . . . . 5080 2 
+       5 . 1 1   7   7 GLY N . . 0.101 0.001 . . . . . . . 5080 2 
+       6 . 1 1   8   8 GLU N . . 0.098 0.003 . . . . . . . 5080 2 
+       7 . 1 1   9   9 LYS N . . 0.097 0.001 . . . . . . . 5080 2 
+       8 . 1 1  10  10 VAL N . . 0.100 0.002 . . . . . . . 5080 2 
+       9 . 1 1  11  11 PHE N . . 0.095 0.002 . . . . . . . 5080 2 
+      10 . 1 1  12  12 GLY N . . 0.098 0.001 . . . . . . . 5080 2 
+      11 . 1 1  13  13 LYS N . . 0.098 0.000 . . . . . . . 5080 2 
+      12 . 1 1  14  14 CYS N . . 0.109 0.005 . . . . . . . 5080 2 
+      13 . 1 1  15  15 LYS N . . 0.101 0.002 . . . . . . . 5080 2 
+      14 . 1 1  16  16 ALA N . . 0.102 0.001 . . . . . . . 5080 2 
+      15 . 1 1  17  17 CYS N . . 0.105 0.002 . . . . . . . 5080 2 
+      16 . 1 1  18  18 HIS N . . 0.101 0.002 . . . . . . . 5080 2 
+      17 . 1 1  19  19 LYS N . . 0.106 0.002 . . . . . . . 5080 2 
+      18 . 1 1  20  20 LEU N . . 0.112 0.002 . . . . . . . 5080 2 
+      19 . 1 1  21  21 ASP N . . 0.091 0.001 . . . . . . . 5080 2 
+      20 . 1 1  22  22 GLY N . . 0.101 0.002 . . . . . . . 5080 2 
+      21 . 1 1  23  23 ASN N . . 0.097 0.001 . . . . . . . 5080 2 
+      22 . 1 1  24  24 ASP N . . 0.112 0.004 . . . . . . . 5080 2 
+      23 . 1 1  25  25 GLY N . . 0.140 0.001 . . . . . . . 5080 2 
+      24 . 1 1  26  26 VAL N . . 0.105 0.002 . . . . . . . 5080 2 
+      25 . 1 1  27  27 GLY N . . 0.102 0.002 . . . . . . . 5080 2 
+      26 . 1 1  29  29 HIS N . . 0.101 0.001 . . . . . . . 5080 2 
+      27 . 1 1  30  30 LEU N . . 0.101 0.002 . . . . . . . 5080 2 
+      28 . 1 1  32  32 GLY N . . 0.099 0.001 . . . . . . . 5080 2 
+      29 . 1 1  33  33 VAL N . . 0.098 0.002 . . . . . . . 5080 2 
+      30 . 1 1  34  34 VAL N . . 0.101 0.001 . . . . . . . 5080 2 
+      31 . 1 1  35  35 GLY N . . 0.097 0.001 . . . . . . . 5080 2 
+      32 . 1 1  36  36 ARG N . . 0.097 0.002 . . . . . . . 5080 2 
+      33 . 1 1  37  37 THR N . . 0.107 0.002 . . . . . . . 5080 2 
+      34 . 1 1  38  38 VAL N . . 0.096 0.001 . . . . . . . 5080 2 
+      35 . 1 1  39  39 ALA N . . 0.101 0.005 . . . . . . . 5080 2 
+      36 . 1 1  40  40 GLY N . . 0.104 0.002 . . . . . . . 5080 2 
+      37 . 1 1  41  41 VAL N . . 0.101 0.001 . . . . . . . 5080 2 
+      38 . 1 1  42  42 ASP N . . 0.106 0.001 . . . . . . . 5080 2 
+      39 . 1 1  43  43 GLY N . . 0.121 0.001 . . . . . . . 5080 2 
+      40 . 1 1  44  44 PHE N . . 0.106 0.002 . . . . . . . 5080 2 
+      41 . 1 1  45  45 ASN N . . 0.114 0.005 . . . . . . . 5080 2 
+      42 . 1 1  46  46 TYR N . . 0.118 0.002 . . . . . . . 5080 2 
+      43 . 1 1  47  47 SER N . . 0.095 0.002 . . . . . . . 5080 2 
+      44 . 1 1  48  48 ASP N . . 0.104 0.002 . . . . . . . 5080 2 
+      45 . 1 1  50  50 MET N . . 0.097 0.001 . . . . . . . 5080 2 
+      46 . 1 1  51  51 LYS N . . 0.096 0.001 . . . . . . . 5080 2 
+      47 . 1 1  52  52 ALA N . . 0.105 0.004 . . . . . . . 5080 2 
+      48 . 1 1  53  53 HIS N . . 0.103 0.001 . . . . . . . 5080 2 
+      49 . 1 1  54  54 GLY N . . 0.112 0.001 . . . . . . . 5080 2 
+      50 . 1 1  55  55 GLY N . . 0.108 0.002 . . . . . . . 5080 2 
+      51 . 1 1  56  56 ASP N . . 0.109 0.001 . . . . . . . 5080 2 
+      52 . 1 1  57  57 TRP N . . 0.113 0.002 . . . . . . . 5080 2 
+      53 . 1 1  58  58 THR N . . 0.105 0.001 . . . . . . . 5080 2 
+      54 . 1 1  60  60 GLU N . . 0.096 0.001 . . . . . . . 5080 2 
+      55 . 1 1  61  61 ALA N . . 0.097 0.001 . . . . . . . 5080 2 
+      56 . 1 1  62  62 LEU N . . 0.095 0.002 . . . . . . . 5080 2 
+      57 . 1 1  63  63 GLN N . . 0.095 0.001 . . . . . . . 5080 2 
+      58 . 1 1  64  64 GLU N . . 0.094 0.002 . . . . . . . 5080 2 
+      59 . 1 1  65  65 PHE N . . 0.093 0.001 . . . . . . . 5080 2 
+      60 . 1 1  66  66 LEU N . . 0.096 0.001 . . . . . . . 5080 2 
+      61 . 1 1  67  67 THR N . . 0.096 0.002 . . . . . . . 5080 2 
+      62 . 1 1  68  68 ASN N . . 0.107 0.001 . . . . . . . 5080 2 
+      63 . 1 1  70  70 LYS N . . 0.102 0.001 . . . . . . . 5080 2 
+      64 . 1 1  72  72 VAL N . . 0.112 0.001 . . . . . . . 5080 2 
+      65 . 1 1  73  73 VAL N . . 0.105 0.001 . . . . . . . 5080 2 
+      66 . 1 1  74  74 LYS N . . 0.116 0.002 . . . . . . . 5080 2 
+      67 . 1 1  75  75 GLY N . . 0.105 0.002 . . . . . . . 5080 2 
+      68 . 1 1  76  76 THR N . . 0.099 0.002 . . . . . . . 5080 2 
+      69 . 1 1  77  77 LYS N . . 0.100 0.002 . . . . . . . 5080 2 
+      70 . 1 1  78  78 MET N . . 0.103 0.001 . . . . . . . 5080 2 
+      71 . 1 1  79  79 ALA N . . 0.102 0.003 . . . . . . . 5080 2 
+      72 . 1 1  80  80 PHE N . . 0.172 0.002 . . . . . . . 5080 2 
+      73 . 1 1  81  81 ALA N . . 0.099 0.006 . . . . . . . 5080 2 
+      74 . 1 1  82  82 GLY N . . 0.125 0.009 . . . . . . . 5080 2 
+      75 . 1 1  83  83 LEU N . . 0.108 0.002 . . . . . . . 5080 2 
+      76 . 1 1  86  86 ILE N . . 0.106 0.002 . . . . . . . 5080 2 
+      77 . 1 1  87  87 GLU N . . 0.097 0.001 . . . . . . . 5080 2 
+      78 . 1 1  88  88 ASP N . . 0.102 0.003 . . . . . . . 5080 2 
+      79 . 1 1  89  89 ARG N . . 0.098 0.001 . . . . . . . 5080 2 
+      80 . 1 1  90  90 ALA N . . 0.097 0.001 . . . . . . . 5080 2 
+      81 . 1 1  91  91 ASN N . . 0.095 0.001 . . . . . . . 5080 2 
+      82 . 1 1  92  92 LEU N . . 0.099 0.000 . . . . . . . 5080 2 
+      83 . 1 1  94  94 ALA N . . 0.096 0.002 . . . . . . . 5080 2 
+      84 . 1 1  95  95 TYR N . . 0.096 0.001 . . . . . . . 5080 2 
+      85 . 1 1  97  97 GLU N . . 0.097 0.001 . . . . . . . 5080 2 
+      86 . 1 1  98  98 GLY N . . 0.099 0.001 . . . . . . . 5080 2 
+      87 . 1 1  99  99 GLN N . . 0.111 0.001 . . . . . . . 5080 2 
+      88 . 1 1 100 100 GLN N . . 0.168 0.007 . . . . . . . 5080 2 
+
+   stop_
+
+save_
+

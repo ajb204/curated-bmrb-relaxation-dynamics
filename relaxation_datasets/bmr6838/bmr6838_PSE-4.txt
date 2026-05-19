@@ -1,0 +1,39 @@
+Title: 1H, 13C and 15N backbone resonance assignment for PSE-4, a 29.5 kDa class A 
+beta-lactamase from Pseudomonas aeruginosa.
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: PSE-4
+Date: 2008-10-08
+Work Authors: Morin, Levesque, Gagne
+
+======
+
+Citations:
+Morin, Gagne. 2009. NMR dynamics of PSE-4 beta-lactamase: an interplay of ps-ns order and mus-ms motions in the active site.Biophys. J., 96, 4681-4691 
+
+C. Slupsky, R. Boyko, V. Booth, B. Sykes. (2003) 
+SMARTNOTEBOOK: A semi-automated approach to protein sequential NMR resonance assignments. 
+J. Biomol. NMR.  vol 27, issue 4, 313-321.
+
+
+B. A. Johnson and R. A. Blevins (1994) 
+NMRView: A computer program for the visualization and analysis of NMR data. 
+J. Biomol. NMR. vol 4, 603-614.
+
+
+F. Delaglio, S. Grzesiek, G. W. Vuister, G. Zhu, J. Pfeifer and A. Bax (1995) 
+NMRPipe: a multidimensional spectral processing system based on UNIX pipes. 
+J. Biomol. NMR. vol 6, 277-293.
+
+
+Newsom, S.W.B. (1969) Carbenicillin-resistant pseudomonas. Lancet. vol 2, 1141.
+
+Lim, D., Sanschagrin, F., Passmore, L., De Castro, L., Levesque, R.C., Strynadka, N.C.  (2001) 
+Insights into the molecular basis for the carbenicillinase activity of PSE-4 beta-lactamase from crystallographic and kinetic studies. 
+Biochemistry. vol 40, issue 2,  395-402.
+
+
+Morin, Gagne, Morin, Levesque, Gagne. 2006. 1H, 13C and 15N backbone resonance assignment for PSE-4, a 29.5 kDa class A 
+beta-lactamase from Pseudomonas aeruginosa.
+.J. Biomol. NMR, 36, 11-11 

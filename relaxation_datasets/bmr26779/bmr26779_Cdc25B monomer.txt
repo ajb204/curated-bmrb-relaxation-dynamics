@@ -1,0 +1,16 @@
+Title: Conformational flexibility of the complete catalytic domain of Cdc25B phosphatases
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: Cdc25B monomer
+Date: 2016-04-14
+Work Authors: Sayegh, Tamaki, Marana, Salinas, Arantes
+
+======
+
+Citations:
+Sayegh. .. Conformational Flexibility of the Catalytic Domain of Cdc25B Phosphatase
+.Not known, ., .-. 
+
+Sayegh, Sayegh, Tamaki, Marana, Salinas, Arantes. 2016. Conformational flexibility of the complete catalytic domain of Cdc25B phosphatases
+.Proteins, 84, 1567-1575 

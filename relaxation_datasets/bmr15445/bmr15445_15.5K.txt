@@ -1,0 +1,11 @@
+Title: Functional implications for a prototypical K-turn binding protein from structural and dynamical studies of 15.5K
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: 15.5K
+Date: 2007-08-27
+Work Authors: Soss, Flynn
+
+======
+
+Citations:
+Soss, Flynn. 2007. Functional implications for a prototypical K-turn binding protein from structural and dynamical studies of 15.5K.Biochemistry, 46, 14979-14986 

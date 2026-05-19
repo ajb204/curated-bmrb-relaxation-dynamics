@@ -1,0 +1,16 @@
+Title: Chemical shift assignments, 3JHNHA coupling constants and secondary structure of
+ HNGAL (Human Neutrophil Gelatinase-Associated Lipocalin) in its apo form.
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: apo-HNGAL Human Neutrophil Gelatinase-Associated Lipocalin
+Date: 1998-11-11
+Work Authors: Coles, Diercks, Muehlenweg, Bartsch, Zoelzer, Tschesche, Kessler
+
+======
+
+Citations:
+Coles, M., Diercks, T., Muehlenweg, B., Bartsch, S., Zoelzer, V., Tschesche, H.,
+and Kessler, H., "The Solution Structure and Dynamics of Human Neutrophil 
+Gelatinase-associated Lipocalin," J. Mol. Biol. 289, 139-157 (1999).
+

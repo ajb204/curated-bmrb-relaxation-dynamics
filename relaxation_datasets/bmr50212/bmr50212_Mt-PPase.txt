@@ -1,0 +1,13 @@
+Title: Backbone resonance assignment and dynamics of 110 kDa hexameric inorganic pyrophosphatase from Mycobacterium tuberculosis
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: Mt-PPase
+Date: 2020-03-18
+Work Authors: Polshakov, Romanov, Efimov
+
+======
+
+Citations:
+Romanov, Mariasina, Efimov, Klochkov, Rodina, Polshakov. 2020. Backbone resonance assignment and dynamics of 110 kDa hexameric inorganic pyrophosphatase from Mycobacterium tuberculosis
+.Biomol. NMR Assignments, 14, 281-287 

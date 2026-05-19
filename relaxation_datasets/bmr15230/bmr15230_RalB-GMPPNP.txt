@@ -1,0 +1,13 @@
+Title: 1H, 13C and 15N resonance assignments for the small G protein RalB in its active conformation
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: RalB-GMPPNP
+Date: 2007-04-30
+Work Authors: Prasannan, Fenwick, Campbell, Evetts, Nietlispach, Owen, Mott
+
+======
+
+Citations:
+Prasannan, Fenwick, Campbell, Evetts, Nietlispach, Owen, Mott. 2007. 1H, 13C and 15N resonance assignments for the small G protein RalB in its active conformation
+.Biomol. NMR Assignments, 1, 147-149 

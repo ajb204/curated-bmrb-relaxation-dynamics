@@ -1,0 +1,31 @@
+Title: Gated electron transfers and electron pathways in azurin: a NMR dynamic study at
+ multiple fields and temperatures
+
+Molecule Type: .
+Polymer Type: .
+Assembly Name: azurin
+Date: 2004-06-11
+Work Authors: Zhuravleva, Korzhnev, Kupce, Billeter, Arseniev, Orekhov
+
+======
+
+Citations:
+Zhuravleva, Korzhnev, Kupce, Arseniev, Billeter, Orekhov. 2004. Gated electron transfers and electron pathways in azurin: a NMR dynamic study at
+ multiple fields and temperatures
+.J. Mol. Biol., 342, 1599-1611 
+
+Delaglio F, Grzesiek S, Vuister GW, Zhu G, Pfeifer J, Bax A.  
+Abstract NMRPipe: a multidimensional spectral processing system based on UNIX pipes.
+J Biomol NMR. 1995 Nov;6(3):277-93.
+
+
+Orekhov, V. Y., Nolde, D. E., Golovanov, A. P., Korzhnev, D. M., Arseniev, A. S. 
+Processing of heteronuclear NMR relaxation data with the new software DASHA.
+Applied Magnetic Resonance 9(4): 581-588. (1995). 
+
+
+Korzhneva DM, Ibraghimov IV, Billeter M, Orekhov VY.  
+Abstract MUNIN: application of three-way decomposition to the analysis of
+heteronuclear NMR relaxation data.
+J Biomol NMR. 2001 Nov;21(3):263-8.
+

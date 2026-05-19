@@ -1,0 +1,15 @@
+Title: Whole-Body Rocking Motion of a Fusion Peptide in Lipid Bilayers from 
+Size-Dispersed 15N NMR Relaxation
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: emagglutinin fusion peptide
+Date: 2015-02-11
+Work Authors: Lorieau, Louis, Bax
+
+======
+
+Citations:
+Lorieau, Louis, Bax. 2011. Whole-Body Rocking Motion of a Fusion Peptide in Lipid Bilayers from 
+Size-Dispersed 15N NMR Relaxation
+.J. Am. Chem. Soc., 133, 14184-14187 

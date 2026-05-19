@@ -1,0 +1,11 @@
+Title: Structure and dynamics of the first archaeal parvulin reveal a new functionally important loop in parvulin-type prolyl isomerases.
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: CsPin
+Date: 2009-11-17
+Work Authors: Zhukov, Jaremko, Jaremko
+
+======
+
+Citations:
+Jaremko, Jaremko, Elfaki, Mueller, Ejchart, Bayer, Zhukov. 2011. Structure and dynamics of the first archaeal parvulin reveal a new functionally important loop in parvulin-type prolyl isomerases..J. Biol. Chem., 286, 6554-6565 

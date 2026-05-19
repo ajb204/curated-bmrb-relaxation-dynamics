@@ -1,0 +1,13 @@
+Title: Three-dimensional solution NMR structure of Apo-L75F-TrpR, a temperature-sensitive mutant of the tryptophan repressor protein.
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: Tryptophan apo-repressor
+Date: 2010-06-19
+Work Authors: Goel
+
+======
+
+Citations:
+Goel, Tripet, Tyler, Nebert, Copie. 2010. Backbone Amide Dynamics Studies of Apo-L75F-TrpR, a Temperature-Sensitive Mutant of the Tryptophan Repressor Protein (TrpR): Comparison with the (15)N NMR Relaxation Profiles of Wild-Type and A77V Mutant Apo-TrpR Repressors..Biochemistry, 49, 8006-8019 
+
+Goel, Tripet, Tyler, Nebert, Copie, Tyler. 2002. Three-dimensional solution NMR structure of Apo-L75F-TrpR, a temperature-sensitive mutant of the tryptophan repressor protein..Biochemistry, 41, 11954-11962 

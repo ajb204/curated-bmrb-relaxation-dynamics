@@ -1,0 +1,11 @@
+Title: Dynamic Requirements for a Functional Protein Hinge
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: WT cTIM homodimer
+Date: 2006-12-05
+Work Authors: Kempf, Jung, Ragain, Sampson, Loria
+
+======
+
+Citations:
+Kempf, Jung, Ragain, Sampson, Loria. 2007. Dynamic Requirements for a Functional Protein Hinge.J. Mol. Biol., 368, 131-149 

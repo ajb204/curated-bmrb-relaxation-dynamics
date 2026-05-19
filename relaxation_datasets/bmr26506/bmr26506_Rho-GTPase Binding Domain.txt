@@ -1,0 +1,15 @@
+Title: Analysis of 15N-1H NMR Relaxation in Proteins by a Combined Experimental and Molecular Dynamics Simulation Approach: 
+Picosecond-Nanosecond Dynamics of the Rho GTPase Binding Domain of Plexin-B1 in the Dimeric State Indicates Allosteric Pathways
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: Rho-GTPase Binding Domain
+Date: 2015-01-29
+Work Authors: Zerbetto, Anderson, Bouguet-Bonnet, Rech, Zhang, Meirovitch, Polimeno, Buck
+
+======
+
+Citations:
+Zerbetto, Anderson, Bouguet-Bonnet, Rech, Zhang, Meirovitch, Polimeno, Buck. 2012. Analysis of 15N-1H NMR Relaxation in Proteins by a Combined Experimental and Molecular Dynamics Simulation Approach: 
+Picosecond-Nanosecond Dynamics of the Rho GTPase Binding Domain of Plexin-B1 in the Dimeric State Indicates Allosteric Pathways
+.J. Phys. Chem. B, 117, 174-184 

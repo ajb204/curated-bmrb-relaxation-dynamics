@@ -1,0 +1,15 @@
+Title: Structure and backbone dynamics of apo- and holo-cellular retinol-binding 
+protein in solution
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: cellular retinol-binding protein type I
+Date: 2002-03-19
+Work Authors: Franzoni, Luecke, Perez, Cavazzini, Rademacher, Ludwig, Spisni, Rossi, Rueterjans
+
+======
+
+Citations:
+Franzoni, Luecke, Perez, Cavazzini, Rademacher, Ludwig, Spisni, Rossi, Rueterjans. 2002. Structure and backbone dynamics of apo- and holo-cellular retinol-binding 
+protein in solution
+.J. Biol. Chem., 277, 21983-21997 

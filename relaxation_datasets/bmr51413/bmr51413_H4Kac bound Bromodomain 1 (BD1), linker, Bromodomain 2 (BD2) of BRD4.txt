@@ -1,0 +1,54 @@
+Title: Bromodomain Interactions with Acetylated Histone 4 Peptides in the BRD4 Tandem Domain: Effects on Domain Dynamics and Internal Flexibility
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: H4Kac bound Bromodomain 1 (BD1), linker, Bromodomain 2 (BD2) of BRD4
+Date: 2022-04-26
+Work Authors: Wernersson, Romel, Flavell, Milbradt, Holdgate, Embrey, Akke
+
+======
+
+Citations:
+Wernersson, Bobby, Flavell, Milbradt, Holdgate, Embrey, Akke. 2022. Bromodomain Interactions with Acetylated Histone 4 Peptides in the BRD4 Tandem Domain: Effects on Domain Dynamics and Internal Flexibility
+.Biochemistry, 61, 2303-2318 
+
+
+
+Key Points:
+	•	BRD4 Function: BRD4 is a member of the BET protein family that recognizes acetylated lysines on histone tails through its two bromodomains (BD1 and BD2). These interactions regulate gene expression and chromatin remodeling.
+	•	Histone Binding: The study focuses on acetylated histone H4 peptides (with lysine acetylation patterns such as K5ac, K8ac, K12ac, and K16ac) and how they bind to BRD4.
+	•	Structural Dynamics:
+	•	Using NMR spectroscopy, the researchers analyzed changes in the structural dynamics of the BRD4 tandem domain upon peptide binding.
+	•	Binding to acetylated peptides reduces internal flexibility and alters domain-domain communication.
+	•	BD1 and BD2 exhibit different binding behaviors and dynamic responses.
+	•	Allosteric Effects: Histone binding to one bromodomain can influence the structure and dynamics of the other, showing an allosteric relationship between BD1 and BD2.
+	•	Biological Implications: The findings suggest that BRD4’s ability to bind and respond to different acetylation patterns may be fine-tuned by the dynamic interplay between its domains, influencing its role in transcription regulation.
+
+
+
+🧪 Experimental Design
+	•	Used [^15N]-labeled BRD4 tandem domains in NMR to track backbone amide chemical shifts.
+	•	Titrated the protein with different acetylated histone H4 peptides:
+	•	H4K5acK8ac
+	•	H4K5acK8acK12ac
+	•	H4K5acK8acK12acK16ac
+	•	Tracked chemical shift perturbations (CSPs) to identify binding sites and changes in conformation.
+	•	Analyzed ^15N relaxation data (R1, R2, and heteronuclear NOE) to assess flexibility and domain dynamics.
+
+⸻
+
+🧠 Key Findings
+	•	BD1 shows stronger peptide binding than BD2, especially to di- and tetra-acetylated peptides.
+	•	CSPs in BD1 and BD2 indicated:
+	•	Direct binding at the canonical acetyl-lysine pockets.
+	•	Allosteric effects between domains: binding to one domain causes subtle shifts in the other.
+	•	Relaxation data revealed:
+	•	Reduced internal flexibility upon peptide binding.
+	•	Interdomain linker flexibility is altered, especially for longer peptides.
+	•	Evidence of concerted motions between domains—suggesting communication via a flexible linker.
+
+⸻
+
+🧬 Biological Insight
+
+Histone peptide binding stabilizes the BRD4 structure, changes internal motions, and reveals allosteric coupling between bromodomains—this may be crucial for BRD4’s chromatin reading functions and a potential target for selective drug design.

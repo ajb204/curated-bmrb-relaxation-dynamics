@@ -1,0 +1,11 @@
+Title: Identification and structural characterization of a CBP/p300-binding domain from the ETS family transcription factor GABP alpha
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: OST domain in GABP alpha
+Date: 2007-08-31
+Work Authors: Kang, Nelson, Mackereth, Schaerpf, Graves, McIntosh
+
+======
+
+Citations:
+Kang, Nelson, Mackereth, Schaerpf, Graves, McIntosh. 2008. Identification and structural characterization of a CBP/p300-binding domain from the ETS family transcription factor GABP alpha.J. Mol. Biol., 377, 636-646 

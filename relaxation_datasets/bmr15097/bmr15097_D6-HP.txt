@@ -1,0 +1,15 @@
+Title: The Isolated Sixth Gelsolin Repeat and Headpiece Domain of Villin Bundle F-Actin
+in the Presence of Calcium and Are Linked by a 40-Residue Unstructured Sequence
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: D6-HP
+Date: 2007-01-08
+Work Authors: Smirnov, Isern, Hoyt, Jiang, McKnight
+
+======
+
+Citations:
+Smirnov, Isern, Jiang, Hoyt, McKnight. 2007. The Isolated Sixth Gelsolin Repeat and Headpiece Domain of Villin Bundle F-Actin
+in the Presence of Calcium and Are Linked by a 40-Residue Unstructured Sequence
+.Biochemistry, 46, 7488-7496 

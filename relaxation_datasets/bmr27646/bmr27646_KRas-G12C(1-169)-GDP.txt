@@ -1,0 +1,17 @@
+CORRECTION:
+Rates units seem wrongly assigned to s-1 . 
+No NOE errors
+
+Title: 1H, 15N backbone assignment and comparative analysis of the wild type and G12C, G12D, G12V mutants of K-Ras bound to GDP at physiological pH
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: KRas-G12C(1-169)-GDP
+Date: 2018-10-12
+Work Authors: Palfy, Vida, Perczel
+
+======
+
+Citations:
+Palfy, Vida, Perczel. 2020. 1H, 15N backbone assignment and comparative analysis of the wild type and G12C, G12D, G12V mutants of K-Ras bound to GDP at physiological pH
+.Biomol. NMR Assignments, 14, 1-7 

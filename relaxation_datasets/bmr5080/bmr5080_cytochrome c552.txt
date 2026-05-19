@@ -1,0 +1,33 @@
+Title: Solution Structure and Dynamics of the Functional Domain of Paracoccus      
+denitrificans Cytochrome c552 in both Redox States  
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: cytochrome c552
+Date: 2001-07-14
+Work Authors: Reincke, Perez, Pristovsek, Luecke, Ludwig, Loehr, Rogov, Ludwig, Rueterjans
+
+======
+
+Citations:
+Reincke, Perez, Pristovsek, Luecke, Ludwig, Loehr, Rogov, Ludwig, Rueterjans. 2001. Solution Structure and Dynamics of the Functional Domain of Paracoccus      
+denitrificans Cytochrome c552 in both Redox States  
+.Biochemistry, 40, 12312-12320 
+
+Luecke, C., Reincke, B., Loehr, F., Pristovsek, P., Ludwig, B. & Rueterjans, H. 
+(2000). Complete 1H, 15N and 13C assignment of the functional domain of 
+Paracoccus denitrificans cytochrome c552 in the oxidized state. 
+J. Biomol. NMR, 18, 365-366.
+
+
+Reincke, B., Thoeny-Meyer, L., Dannehl, C., Odenwald, A., Aidim, M., Witt, H., 
+Rueterjans, H. & Ludwig, B. (1999) Heterologous expression of soluble fragments 
+of cytochrome c552 acting as electron donor to the Paracoccus denitrificans 
+cytochrome c oxidase. 
+Biochim. Biophys. Acta, 1441, 114-120.
+
+
+Turba, A., Jetzek, M. & Ludwig, B. (1995) Purification of Paracoccus 
+denitrificans cytochrome c552 and sequence analysis of the gene. Eur. J. 
+Biochem., 231, 259-265.
+

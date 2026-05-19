@@ -1,0 +1,11 @@
+Title: The Apo-structure of the Low Molecular Weight Protein-tyrosine Phosphatase A (MptpA) from Mycobacterium tuberculosis Allows for Better Target-specific Drug Development
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: MptpA
+Date: 2013-07-25
+Work Authors: Stehle, Sreeramulu, Lohr, Richter, Saxena, Jonker, Schwalbe
+
+======
+
+Citations:
+Stehle, Sreeramulu, Lohr, Richter, Saxena, Jonker, Schwalbe. 2012. The Apo-structure of the Low Molecular Weight Protein-tyrosine Phosphatase A (MptpA) from Mycobacterium tuberculosis Allows for Better Target-specific Drug Development.J. Biol. Chem., 287, 34569-34582 

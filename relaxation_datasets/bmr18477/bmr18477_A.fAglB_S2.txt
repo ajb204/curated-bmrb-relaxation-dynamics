@@ -1,0 +1,11 @@
+Title: Crystallographic and NMR evidence for flexibility in oligosaccharyltransferases and its catalytic significance.
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: A.fAglB_S2
+Date: 2012-05-23
+Work Authors: Nyirenda, Matsumoto, Takashi, Kohda
+
+======
+
+Citations:
+Nyirenda, Matsumoto, Saitoh, Maita, Noda, Inagaki, Kohda. 2013. Crystallographic and NMR evidence for flexibility in oligosaccharyltransferases and its catalytic significance..Structure, 21, 32-41 

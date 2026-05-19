@@ -1,0 +1,13 @@
+Title: Backbone dynamics of the human CC-chemokine eotaxin
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: CC-chemokine eotaxin
+Date: 1999-09-08
+Work Authors: Ye, Mayer, Stone
+
+======
+
+Citations:
+Ye, Mayer, Stone. 1999. Backbone dynamics of the human CC-chemokine eotaxin.J. Biomol. NMR, 15, 115-124 
+
+Interestingly the only dataset expressing units in Hz for rates

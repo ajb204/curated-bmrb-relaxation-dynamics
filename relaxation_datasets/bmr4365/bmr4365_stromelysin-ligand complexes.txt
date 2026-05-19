@@ -1,0 +1,15 @@
+Title: Dynamics of Stromelysin/Inhibitor Interactions Studied by 15N NMR Relaxation 
+Measurements: Comparison of Ligand Binding to the S1-S3 and S1-S3 Subsites
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: stromelysin-ligand complexes
+Date: 1999-06-28
+Work Authors: Yuan, Marshall, Petzold, Poorman, Stockman
+
+======
+
+Citations:
+Yuan, Marshall, Petzold, Poorman, Stockman. 1999. Dynamics of Stromelysin/Inhibitor Interactions Studied by 15N NMR Relaxation 
+Measurements: Comparison of Ligand Binding to the S1-S3 and S1-S3 Subsites
+.J. Biomol. NMR, 15, 55-64 

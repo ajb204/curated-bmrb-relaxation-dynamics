@@ -1,0 +1,13 @@
+Title: Conformational plasticity surrounding the active site of NADH oxidase from Thermus thermophilus
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: NOX
+Date: 2014-06-17
+Work Authors: Mittermaier, Miletti, Levros, Di Trani
+
+======
+
+Citations:
+Miletti, Di Trani, Levros, Mittermaier. 2015. Conformational plasticity surrounding the active site of NADH oxidase from Thermus thermophilus
+.Protein Sci., 24, 1114-1128 

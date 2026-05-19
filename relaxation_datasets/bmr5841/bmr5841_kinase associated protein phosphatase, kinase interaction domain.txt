@@ -1,0 +1,15 @@
+Title: 1H, (13)C and (15)N Resonance Assignments of the Kinase-interacting FHA Domain 
+of Arabidopsis thaliana Kinase-associated Protein Phophatase
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: kinase associated protein phosphatase, kinase interaction domain
+Date: 2003-06-24
+Work Authors: Ding, Lee, Liang, Gallazzi, Van Doren
+
+======
+
+Citations:
+Lee, Li, Walker, Van Doren. 2003. 1H, (13)C and (15)N Resonance Assignments of the Kinase-interacting FHA Domain 
+of Arabidopsis thaliana Kinase-associated Protein Phophatase
+.J. Biomol. NMR, 25, 253-254 

@@ -1,0 +1,15 @@
+Title: PhosphoThr Peptide Binding Globally Rigidifies Much of the FHA Domain from
+Arabidopsis Receptor Kinase-Associated Protein Phosphatase
+
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: KI-FHA domain of KAPP
+Date: 2005-01-30
+Work Authors: Ding, Lee, Liang, Gallazzi, Van Doren
+
+======
+
+Citations:
+Ding, Lee, Liang, Gallazzi, Arunima, Van Doren. 2005. PhosphoThr Peptide Binding Globally Rigidifies Much of the FHA Domain from
+Arabidopsis Receptor Kinase-Associated Protein Phosphatase
+.Biochemistry, 44, 10119-10134 

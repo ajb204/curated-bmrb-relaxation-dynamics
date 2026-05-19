@@ -1,0 +1,14 @@
+CORRECTION:
+Rates units seem wrongly assigned to s . 
+
+Title: NMR structural studies of the first catalytic half-domain of ubiquitin activating enzyme.
+Molecule Type: macromolecule
+Polymer Type: polypeptide(L)
+Assembly Name: First Catalytic Cysteine Half-domain
+Date: 2012-10-03
+Work Authors: Jaremko, Jaremko, Nowakowski, Szczepanowski, Filipek, Wojciechowski, Bochtler, Ejchart
+
+======
+
+Citations:
+Jaremko, Jaremko, Nowakowski, Wojciechowski, Szczepanowski, Panecka, Zhukov, Bochtler, Ejchart. 2014. NMR structural studies of the first catalytic half-domain of ubiquitin activating enzyme..J. Struct. Biol., 185, 69-78 

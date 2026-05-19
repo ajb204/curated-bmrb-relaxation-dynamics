@@ -1,0 +1,13 @@
+Title: Entropy-Entropy Compensation between the Protein, Ligand, and Solvent Degrees of Freedom Fine-Tunes Affinity in Ligand Binding to Galectin-3C
+
+Molecule Type: macromolecule
+Polymer Type: .
+Assembly Name: P-galectin3-C
+Date: 2020-05-20
+Work Authors: Wallerstein, Misini Ignjatovic, Kumar, Caldararu, Peterson, Leffler, Logan, Nilsson, Ryde, Akke
+
+======
+
+Citations:
+Wallerstein, Ekberg, Misini Ignjatovic, Kumar, Caldararu, Peterson, Wernersson, Brath, Leffler, Oksanen, Logan, Nilsson, Ryde, Akke. 2021. Entropy-Entropy Compensation between the Protein, Ligand, and Solvent Degrees of Freedom Fine-Tunes Affinity in Ligand Binding to Galectin-3C
+.JACS Au., 1, 484-500 
