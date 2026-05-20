@@ -1,0 +1,123 @@
+\documentclass[showkeys,aps,prb,prepreint,amssymb, amsmath,nobibnotes]{article}
+\usepackage{bm,setspace}
+\usepackage{graphicx,graphics,booktabs}
+\newlength{\dhatheight}
+\begin{document}
+\section{RelCalc report for spin system: NH}
+Spins: \noindent  N$_1$:$ +\frac{1}{2}$   H$_2$:$ +\frac{1}{2}$  
+
+\noindent\textbf{Interactions:}
+
+Dipolar between H$_2$ and N$_1$ $\beta$= $\beta$ $\alpha$= $0$ distance $R_d$ constant $d=\frac{\mu_0 \hbar\gamma_H\gamma_N}{4\pi (R_d)^3}$, local motion: static
+
+CSA for N$_1$ $\beta$= $\betaC$ $\alpha$= $0$ constant $c_A=\gamma_NB_0 \Delta\delta_{sym}/3$, $\Delta\delta_{sym}=\delta_{zz}-\delta_{yy}$, local motion: static
+
+CSA for H$_2$ $\beta$= $0$ $\alpha$= $0$ constant $c_X=\gamma_HB_0 \Delta\delta_{sym}/3$, $\Delta\delta_{sym}=\delta_{zz}-\delta_{yy}$, local motion: static
+
+\noindent\textbf{Symbolic factors:} 
+
+\noindent\textbf{Legendre polynomials:} 
+ $\beta$: (rank 2; P$_q$) $\betaC$: (rank 2; Q$_q$).
+
+ \noindent Macromolecular terms only:  False
+
+\noindent \textbf{Spectral density functions:} Axially symmetric tumbling, static in the molecular frame (AX-STAT)
+
+$$J\left(q,\omega\right)=\frac{\tau(q)}{1+\omega^2\tau(q)^2} $$     $$ L\left(\beta_1,\alpha_1,\beta_2,\alpha_2,\omega \right) = \sum_{q}^2 y_{q}^2 P_q\left(\cos\beta_1^{\prime} \right) P_q\left(\cos\beta_2^{\prime}\right) \cos\left(q\left(\alpha_1^{\prime} - \alpha_2^{\prime}\right)  \right) J\left(q,\omega\right)  $$ 
+\noindent $L(\beta_1,\beta_2,\omega)$ means $\alpha_1=\alpha_2$
+
+\noindent $L(\beta,\omega)$ means $\alpha_1=\alpha_2$ and $\beta_1=\beta_2$
+
+\noindent For AX-STAT assume molecular frame is pre-aligned with the diffusion frame.\noindent Note: adjust the molecular frame angles from $\beta_{1/2}$ and $\alpha_{1/2}$ into the diffusion frame ($\theta_O,\phi_O$) $\prime$ via (not done automatically). Function p0,cosTheta,sinPhi,cosPhi=GetEffectiveAngles(theta,phi) is provided: 
+\begin{small}
+$$\cos\beta^\prime=\left(\cos(\beta) \cos(\theta_O) - \cos(\alpha + \phi_O) \sin(\beta) \sin(\theta_O)\right)^2 $$
+$$ \sin\alpha^\prime=  \sin\left(\beta\right)\left( \frac{1}{2}\sin\left(\theta_O\right)\sin\left(2\left(\phi_O+\alpha\right)\right)\sin\left(\beta\right)  -  \cos\left(\theta_O\right)\sin\left(\phi_O+\alpha\right)\cos\left(\beta\right) \right) $$
+$$ \cos\alpha^\prime=  \frac{1}{4}\left( \sin\left(2\theta_O\right)\left(3\cos\left(\beta\right)^2-1\right)  +4\left(2\cos\left(\theta_O\right)^2-1\right)\cos\left(\phi_O+\alpha\right)\sin\left(\beta\right)\cos\left(\beta\right) - 2\sin\left(\theta_O\right)\cos\left(\theta_O\right)\cos\left(2\left(\phi_O+\alpha\right)\right)\sin\left(\theta_O\right)^2\right) $$
+\end{small}
+
+
+\noindent \textbf{Timescale:}
+$$\frac{1}{\tau(q)}=\frac{1}{\tau_c} +\frac{q^2}{6}\left(\frac{1}{\tau_\parallel}- \frac{1}{\tau_c} \right) $$
+
+
+\section{Geometry}
+\begin{center}
+\includegraphics[trim= 3cm 1cm 1cm 1cm ,width=0.75\textwidth]{tmp/figNHgeo.1.pdf}
+\includegraphics[trim= 2cm 1cm 2cm 1cm,width=0.49\textwidth]{tmp/figNHgeo.2.pdf}
+\includegraphics[trim= 2cm 1cm 2cm 1cm,width=0.49\textwidth]{tmp/figNHgeo.2a.pdf}
+\includegraphics[trim= 2cm 1cm 2cm 1cm,width=0.49\textwidth]{tmp/figNHgeo.3.pdf}
+\includegraphics[trim= 2cm 1cm 2cm 1cm,width=0.49\textwidth]{tmp/figNHgeo.4.pdf}
+\end{center}
+\begin{small}
+\noindent The geometry of the NH spin system evalulated for current parameters. The AX dipolar interaction from the first spin is used to calculate the geometry. Arrows on the dipolar interactions should indicate direction. Otherwise indicates an error (other than `ext' interactions). Axially symmetric tensoral components are represented by an ellipse. Units are Angstroms.
+\end{small}
+
+
+
+
+\section{Relaxation rates}
+
+\begin{small}
+
+Rate for $N1p$ on $N1p$ :
+\begin{equation}\begin{array}{rl}
+R_{N1p,N1p}=
+& + c_A^2 \left[ +\frac{4}{5} L\left(\betaC,0\right) +\frac{3}{5} L\left(\betaC,\omega_N\right)\right]\\
+& + d^2 \left[ +\frac{1}{5} L\left(\beta,0\right) +\frac{1}{20} L\left(\beta,\omega_H-\omega_N\right) +\frac{3}{20} L\left(\beta,\omega_N\right) +\frac{3}{10} L\left(\beta,\omega_H\right) +\frac{3}{10} L\left(\beta,\omega_H+\omega_N\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+\begin{small}
+
+Rate for $N1z$ on $N1z$ :
+\begin{equation}\begin{array}{rl}
+R_{N1z,N1z}=
+& + c_A^2 \left[ +\frac{6}{5} L\left(\betaC,\omega_N\right)\right]\\
+& + d^2 \left[ +\frac{1}{10} L\left(\beta,\omega_H-\omega_N\right) +\frac{3}{10} L\left(\beta,\omega_N\right) +\frac{3}{5} L\left(\beta,\omega_H+\omega_N\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+\begin{small}
+
+Rate for $H2z$ on $N1z$ :
+\begin{equation}\begin{array}{rl}
+R_{N1z,H2z}=
+& + d^2 \left[ -\frac{1}{10} L\left(\beta,\omega_H-\omega_N\right) +\frac{3}{5} L\left(\beta,\omega_H+\omega_N\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+\begin{small}
+
+Rate for $N1z$ on $H2z$ :
+\begin{equation}\begin{array}{rl}
+R_{H2z,N1z}=
+& + d^2 \left[ -\frac{1}{10} L\left(\beta,\omega_H-\omega_N\right) +\frac{3}{5} L\left(\beta,\omega_H+\omega_N\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+\begin{small}
+
+Rate for $H2z$ on $H2z$ :
+\begin{equation}\begin{array}{rl}
+R_{H2z,H2z}=
+& + c_X^2 \left[ +\frac{6}{5} L\left(0,\omega_H\right)\right]\\
+& + d^2 \left[ +\frac{1}{10} L\left(\beta,\omega_H-\omega_N\right) +\frac{3}{10} L\left(\beta,\omega_H\right) +\frac{3}{5} L\left(\beta,\omega_H+\omega_N\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+Rate calculation time: 0:00:00.000633\section{Parameter index}
+
+\begin{center}
+\begin{tabular}{rll}
+Key & Value & Description\\
+\hline
+d: &  (1.02e-10, 'N', 'H') & dipolar between H$_2$ and N$_1$(distance+nuclei)\\
+beta: &  0.00$^o$ & angle for Legendre polynomials: P\\
+betaC: &  0.00$^o$ & angle for Legendre polynomials: Q\\
+cX: &  (10.0, 'H') & CSA for H$_2$ (ppm+nucleus)\\
+cA: &  (-160.0, 'N') & CSA for N$_1$ (ppm+nucleus)\\
+\end{tabular}
+\end{center}
+\section{Plots at specified values}
+
+\begin{figure}[h]
+\center
+\includegraphics[width=0.75\textwidth]{tmp/figNH_1.pdf}
+\caption[]{Relaxation rates versus correlation time $\tau_c$ for spin system NH. macro=False. $\nu_0$ 500.00 MHz.  AXIAL DIFFUSION: Rotation into diffusion frame, $\theta_O$ 0.25$\pi$, $\phi_O$ 1.00$\pi$, shape factor, 1.00e+01 ns.$\tau_\parallel$ 4.00e+01 ns.$\beta$=0.00$^o$ ($P$ rank 2). $\betaC$=0.00$^o$ ($Q$ rank 2).  Dipolar $d$:  ($\gamma_N$, $\gamma_H$), $R_{d}$=1.02{\AA}, $d$=7.21e+04 rad s$^{-2}$. CSA: $c_A$ ($\gamma_N$) -160.00ppm, $c_A$=1.70e+04 rad s$^{-2}$. CSA: $c_X$ ($\gamma_H$) 10.00ppm, $c_X$=1.05e+04 rad s$^{-2}$.  }
+\end{figure} 
+\end{document}

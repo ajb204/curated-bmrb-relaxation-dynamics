@@ -1,0 +1,906 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.9.6)  4 MAR 2026 18:42
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**summary.tex
+(./summary.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup4
+\symboldletters=\mathgroup5
+\symboldsymbols=\mathgroup6
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen144
+\lightrulewidth=\dimen145
+\cmidrulewidth=\dimen146
+\belowrulesep=\dimen147
+\belowbottomsep=\dimen148
+\aboverulesep=\dimen149
+\abovetopsep=\dimen150
+\cmidrulesep=\dimen151
+\cmidrulekern=\dimen152
+\defaultaddspace=\dimen153
+\@cmidla=\count270
+\@cmidlb=\count271
+\@aboverulesep=\dimen154
+\@belowrulesep=\dimen155
+\@thisruleclass=\count272
+\@lastruleclass=\count273
+\@thisrulewidth=\dimen156
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count274
+\Gm@cntv=\count275
+\c@Gm@tempcnt=\count276
+\Gm@bindingoffset=\dimen157
+\Gm@wd@mp=\dimen158
+\Gm@odd@mp=\dimen159
+\Gm@even@mp=\dimen160
+\Gm@layoutwidth=\dimen161
+\Gm@layoutheight=\dimen162
+\Gm@layouthoffset=\dimen163
+\Gm@layoutvoffset=\dimen164
+\Gm@dimlist=\toks18
+)
+\dhatheight=\skip51
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
+ef
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count277
+\l__pdf_internal_box=\box52
+)
+
+LaTeX Warning: Unused global option(s):
+    [showkeys,aps,prb,prepreint,amssymb,amsmath,nobibnotes].
+
+(./summary.aux)
+\openout1 = `summary.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count278
+\scratchdimen=\dimen165
+\scratchbox=\box53
+\nofMPsegments=\count279
+\nofMParguments=\count280
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count281
+\MPscratchDim=\dimen166
+\MPnumerator=\count282
+\makeMPintoPDFobject=\count283
+\everyMPtoPDFconversion=\toks20
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.s
+ty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=731.23584pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<figraw.pdf, id=1, 361.35pt x 216.81pt>
+File: figraw.pdf Graphic file (type pdf)
+<use figraw.pdf>
+Package pdftex.def Info: figraw.pdf  used on input line 9.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+<fig2raw.pdf, id=2, 361.35pt x 216.81pt>
+File: fig2raw.pdf Graphic file (type pdf)
+<use fig2raw.pdf>
+Package pdftex.def Info: fig2raw.pdf  used on input line 10.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.11 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.11 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.11 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.11 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+<figCorr.pdf, id=3, 361.35pt x 216.81pt>
+File: figCorr.pdf Graphic file (type pdf)
+<use figCorr.pdf>
+Package pdftex.def Info: figCorr.pdf  used on input line 14.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+<fig2Corr.pdf, id=4, 361.35pt x 216.81pt>
+File: fig2Corr.pdf Graphic file (type pdf)
+<use fig2Corr.pdf>
+Package pdftex.def Info: fig2Corr.pdf  used on input line 15.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.16 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.16 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.16 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.16 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+<figJ1.pdf, id=5, 361.35pt x 216.81pt>
+File: figJ1.pdf Graphic file (type pdf)
+<use figJ1.pdf>
+Package pdftex.def Info: figJ1.pdf  used on input line 19.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.20 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.20 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.20 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.20 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 23.
+<fig1.pdf, id=6, 361.35pt x 216.81pt>
+File: fig1.pdf Graphic file (type pdf)
+<use fig1.pdf>
+Package pdftex.def Info: fig1.pdf  used on input line 25.
+(pdftex.def)             Requested size: 159.62085pt x 95.77382pt.
+<fig2.pdf, id=7, 361.35pt x 216.81pt>
+File: fig2.pdf Graphic file (type pdf)
+<use fig2.pdf>
+Package pdftex.def Info: fig2.pdf  used on input line 26.
+(pdftex.def)             Requested size: 159.62085pt x 95.77382pt.
+<fig3.pdf, id=8, 361.35pt x 216.81pt>
+File: fig3.pdf Graphic file (type pdf)
+<use fig3.pdf>
+Package pdftex.def Info: fig3.pdf  used on input line 27.
+(pdftex.def)             Requested size: 159.62085pt x 95.77382pt.
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.28 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.28 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.28 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.28 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+
+
+[1
+
+{/usr/local/texlive/2025basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./
+figraw.pdf> <./fig2raw.pdf
+
+pdfTeX warning: pdflatex (file ./fig2raw.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <./figCorr.pdf
+
+pdfTeX warning: pdflatex (file ./figCorr.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <./fig2Corr.pdf
+
+pdfTeX warning: pdflatex (file ./fig2Corr.pdf): PDF inclusion: multiple pdfs wi
+th page group included in a single page
+> <./figJ1.pdf
+
+pdfTeX warning: pdflatex (file ./figJ1.pdf): PDF inclusion: multiple pdfs with 
+page group included in a single page
+> <./fig1.pdf
+
+pdfTeX warning: pdflatex (file ./fig1.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <./fig2.pdf
+
+pdfTeX warning: pdflatex (file ./fig2.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+> <./fig3.pdf
+
+pdfTeX warning: pdflatex (file ./fig3.pdf): PDF inclusion: multiple pdfs with p
+age group included in a single page
+>]
+<figGlob1.pdf, id=262, 361.35pt x 216.81pt>
+File: figGlob1.pdf Graphic file (type pdf)
+<use figGlob1.pdf>
+Package pdftex.def Info: figGlob1.pdf  used on input line 49.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.50 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.50 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.50 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.50 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+<fig1res.pdf, id=263, 361.35pt x 216.81pt>
+File: fig1res.pdf Graphic file (type pdf)
+<use fig1res.pdf>
+Package pdftex.def Info: fig1res.pdf  used on input line 65.
+(pdftex.def)             Requested size: 159.62085pt x 95.77382pt.
+<fig2res.pdf, id=264, 361.35pt x 216.81pt>
+File: fig2res.pdf Graphic file (type pdf)
+<use fig2res.pdf>
+Package pdftex.def Info: fig2res.pdf  used on input line 66.
+(pdftex.def)             Requested size: 159.62085pt x 95.77382pt.
+<fig3res.pdf, id=265, 361.35pt x 216.81pt>
+File: fig3res.pdf Graphic file (type pdf)
+<use fig3res.pdf>
+Package pdftex.def Info: fig3res.pdf  used on input line 67.
+(pdftex.def)             Requested size: 159.62085pt x 95.77382pt.
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.68 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.68 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.68 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.68 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+<figGlobFree1.pdf, id=266, 361.35pt x 216.81pt>
+File: figGlobFree1.pdf Graphic file (type pdf)
+<use figGlobFree1.pdf>
+Package pdftex.def Info: figGlobFree1.pdf  used on input line 83.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+<figGlobFree2.pdf, id=267, 361.35pt x 216.81pt>
+File: figGlobFree2.pdf Graphic file (type pdf)
+<use figGlobFree2.pdf>
+Package pdftex.def Info: figGlobFree2.pdf  used on input line 84.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.85 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+
+[2 <./figGlob1.pdf> <./fig1res.pdf
+
+pdfTeX warning: pdflatex (file ./fig1res.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <./fig2res.pdf
+
+pdfTeX warning: pdflatex (file ./fig2res.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <./fig3res.pdf
+
+pdfTeX warning: pdflatex (file ./fig3res.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+>]
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.85 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.85 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.85 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+<figGlobFree3.pdf, id=397, 361.35pt x 216.81pt>
+File: figGlobFree3.pdf Graphic file (type pdf)
+<use figGlobFree3.pdf>
+Package pdftex.def Info: figGlobFree3.pdf  used on input line 86.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+<figGlobFree4.pdf, id=398, 361.35pt x 216.81pt>
+File: figGlobFree4.pdf Graphic file (type pdf)
+<use figGlobFree4.pdf>
+Package pdftex.def Info: figGlobFree4.pdf  used on input line 87.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+
+Overfull \hbox (12.38051pt too wide) in paragraph at lines 86--88
+[][] [] 
+ []
+
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.88 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.88 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.88 \end{figure}
+                 
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.88 \end{figure}
+                 
+Things are pretty mixed up, but I think the worst is over.
+
+<figanisoR1R2.1.pdf, id=399, 361.35pt x 216.81pt>
+File: figanisoR1R2.1.pdf Graphic file (type pdf)
+<use figanisoR1R2.1.pdf>
+Package pdftex.def Info: figanisoR1R2.1.pdf  used on input line 103.
+(pdftex.def)             Requested size: 159.62085pt x 95.77382pt.
+<figanisoR1R2.2.pdf, id=400, 361.35pt x 216.81pt>
+File: figanisoR1R2.2.pdf Graphic file (type pdf)
+<use figanisoR1R2.2.pdf>
+Package pdftex.def Info: figanisoR1R2.2.pdf  used on input line 104.
+(pdftex.def)             Requested size: 159.62085pt x 95.77382pt.
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.105 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.105 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.105 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.105 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+<figGlobFreeAx1.pdf, id=401, 361.35pt x 216.81pt>
+File: figGlobFreeAx1.pdf Graphic file (type pdf)
+<use figGlobFreeAx1.pdf>
+Package pdftex.def Info: figGlobFreeAx1.pdf  used on input line 128.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+<figGlobFreeAx2.pdf, id=402, 361.35pt x 216.81pt>
+File: figGlobFreeAx2.pdf Graphic file (type pdf)
+<use figGlobFreeAx2.pdf>
+Package pdftex.def Info: figGlobFreeAx2.pdf  used on input line 129.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.130 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+
+[3 <./figGlobFree1.pdf> <./figGlobFree2.pdf
+
+pdfTeX warning: pdflatex (file ./figGlobFree2.pdf): PDF inclusion: multiple pdf
+s with page group included in a single page
+> <./figGlobFree3.pdf
+
+pdfTeX warning: pdflatex (file ./figGlobFree3.pdf): PDF inclusion: multiple pdf
+s with page group included in a single page
+> <./figGlobFree4.pdf
+
+pdfTeX warning: pdflatex (file ./figGlobFree4.pdf): PDF inclusion: multiple pdf
+s with page group included in a single page
+> <./figanisoR1R2.1.pdf
+
+pdfTeX warning: pdflatex (file ./figanisoR1R2.1.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+> <./figanisoR1R2.2.pdf
+
+pdfTeX warning: pdflatex (file ./figanisoR1R2.2.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+>]
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.130 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.130 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.130 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+<figGlobFreeAx3.pdf, id=578, 361.35pt x 216.81pt>
+File: figGlobFreeAx3.pdf Graphic file (type pdf)
+<use figGlobFreeAx3.pdf>
+Package pdftex.def Info: figGlobFreeAx3.pdf  used on input line 131.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+<figGlobFreeAx4.pdf, id=579, 361.35pt x 216.81pt>
+File: figGlobFreeAx4.pdf Graphic file (type pdf)
+<use figGlobFreeAx4.pdf>
+Package pdftex.def Info: figGlobFreeAx4.pdf  used on input line 132.
+(pdftex.def)             Requested size: 239.42758pt x 143.65744pt.
+
+Overfull \hbox (12.38051pt too wide) in paragraph at lines 131--133
+[][] [] 
+ []
+
+! Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.133 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+! Extra \endgroup.
+\color@endgroup ->\endgraf \@endpefalse \endgroup 
+                                                  
+l.133 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+! Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.133 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+\end  ...end#1\endcsname \@checkend {#1}\endgroup 
+                                                  \UseHook {env/#1/after}\if...
+l.133 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+
+
+[4 <./figGlobFreeAx1.pdf> <./figGlobFreeAx2.pdf
+
+pdfTeX warning: pdflatex (file ./figGlobFreeAx2.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+> <./figGlobFreeAx3.pdf
+
+pdfTeX warning: pdflatex (file ./figGlobFreeAx3.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+> <./figGlobFreeAx4.pdf
+
+pdfTeX warning: pdflatex (file ./figGlobFreeAx4.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+>] (./summary.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 2244 strings out of 474662
+ 37103 string characters out of 5751110
+ 428103 words of memory out of 5000000
+ 25297 multiletter control sequences out of 15000+600000
+ 563427 words of font info for 51 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 57i,6n,65p,225b,120s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb>
+Output written on summary.pdf (4 pages, 633040 bytes).
+PDF statistics:
+ 740 PDF objects out of 1000 (max. 8388607)
+ 494 compressed objects within 5 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+

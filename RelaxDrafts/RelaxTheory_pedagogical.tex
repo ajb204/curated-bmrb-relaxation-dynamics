@@ -1,0 +1,1545 @@
+\documentclass[notitlepage,11pt]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{bm,setspace}
+\usepackage{graphicx,graphics,booktabs,amsmath}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\newlength{\dhatheight}
+\makeatletter
+\newcommand{\hathat}[1]{% 
+\begingroup%
+  \let\macc@kerna\z@%
+  \let\macc@kernb\z@%
+  \let\macc@nucleus\@empty%
+  \hat{\mathchoice%
+    {\raisebox{.35ex}{\vphantom{\ensuremath{\displaystyle #1}}}}%
+    {\raisebox{.35ex}{\vphantom{\ensuremath{\textstyle #1}}}}%
+    {\raisebox{.16ex}{\vphantom{\ensuremath{\scriptstyle #1}}}}%
+    {\raisebox{.14ex}{\vphantom{\ensuremath{\scriptscriptstyle #1}}}}%
+    \smash{\hat{#1}}}%
+\endgroup%
+}
+\makeatother
+\newcommand{\rmi}{\mathrm{i}}
+\newcommand{\rme}{\mathrm{e}}
+\newcommand{\pH}{ \rme^{\rmi \hathat{H^0}t}  }
+\newcommand{\mH}{ \rme^{-\rmi \hathat{H^0}t} }
+
+\title{How do protein dynamics appear in NMR spectra?}
+\author{Oliver Crooks, Andy Baldwin}
+\date{\today}
+
+\begin{document}
+
+
+
+\maketitle
+
+\onehalfspacing
+\begin{abstract}
+  We are taking a stab at a better understanding of protein dynamics. Protein NMR spectroscopy is the only experimental method that provides atomic resolution characterisation of motion within molecules without the need to add external probes. It's potential to provide experimental descriptions of molecuar motions has not been properly unleashed. This is partially due to its complexity, and also limitations with the models that are in routine use. There are two basic observables we get from an NMR experiment. We observe a series of resonances (peaks), where each corresponds to a unique electronic environment in the molecule. Each resonance has two critical features, a position and a width. The peak positions reflects the electronic structure within the molecule, revealing chemical and structural information about the molecule under study. The line width reflects the rate at which the system returns to equilibrium, or \emph{relaxation}. We can design experiments to translate the linewidths into decay curves that we call relaxation rates, and we should be able to map from relaxation rates to molecular motion. NMR is remarkable because the relaxation rates directly report on molecular motion. This document is a primer, to derive the key equations required to make progress with NMR and to understand how molecular motion ends up appearing in relaxation rates. We build things up from the ground, and try to slowly explain to an interested reader how to handle problems in time dependent quantum theory.
+  \end{abstract}
+
+
+\section{Motivation and physical picture}
+
+To make progress with NMR spectroscopy we need time dependent quantum mechanics. To even get started, the basic objects we use to do this are unfamiliar to chemists, biochemists and also most physicists. We will first set out the key equations and strategies used to manipulate them.
+
+
+It is unusual for protein dynamics to appear in relaxation rates in any kind of physical measurement. This rather special property can be understood from Einstein's fundamental considerations for how photons interact with matter. He noted light and matter have three interactions, \emph{absorption}, \emph{spontaneous emission} and \emph{stimulated emission}. Absorption is probably the most familiar, as described by \emph{Fermi's golden rule}, which requires the photon energy to match an energy level difference (as well as certain other symmetry considerations). Following excitation, if there were no processes to return the system back to thermal equilibrium, then thermodynamics would not be a thing (we destroy our universe). So routes must exist to take a system back to thermal equilibrium after a perturbation such as excitation. For most other spectroscopies, the primary route is \emph{spontaneous emission}, where the system gives up the energy via a radiationless transfer. The rate is
+
+\begin{equation}
+  A_{21}=\frac{\omega^3 |\mu_{21}|^2}{3\pi \epsilon_0 \hbar c^3}
+  \label{eq:ein}
+  \end{equation}
+
+where $\omega$ is the angular rate associated with energy level difference (units of radians per second), and $\mu_{21}$ is the transition dipole moment. Typical spontaneous emission rates for atomic optical transitions are 10$^{6}$ to 10$^9$ s$^{-1}$. The transitions in NMR are very low energy (MHz), on the order of radio waves. For a proton in a 600 MHz NMR spectrometer (14.1 T) the rate is 5 $\times$ 10$^{22}$ s$^{-1}$. Which gives a lifetime of 10$^{13}$ years. Which is longer than the age of the universe. So we can safely ignore this as a relaxation mechanism for NMR.
+
+Relaxation in NMR is instead driven by stimulated emission. This is the process more commonly encountered in lasers, where a photon matching the energy level difference to de-excite the system causes the the reverse transition, where the system emits a photon. This means one photon is put in, and two come out of roughly the same energy. The system will not spontaneously achieve this on its own, it needs to be coupled to some kind of background fluctuation or field that drive the transitions that take us back to equilibrium.
+
+Where can these fields come from? For NMR it turns out that the only source of these fields are Feynman's `jigglings and wigglings of atoms'. At an atomic level, nothing is static. The continual motion of atoms leads to movement of charge which generate electromagnetic fields. Sometimes these fields, generated by random motion, are able to hit exactly the right frequency to induce the transitions that return the system to equilibrium.
+
+This might feel far fetched. One would assume that the chance of generating sustained fields for long enough to induce a stimulated emission is going to be a relatively rare event and that such a mechanism should be very inefficient. It turns out that this is exactly the case. Molecule motion and random fluctuations on the order of pico- or nano-seconds generates fields that cause relaxation rates for NMR on the order of seconds. While this mechanism is exceedingly inefficient, it is nevertheless the quickest route open to drive spin systems back to thermal equilibrium, and so is the cause of relaxation for NMR.
+
+For proteins this provides a remarkable opportunity. We have an important and interesting set of molecules whose internal motions set the linewidth of measured resonances in the NMR experiment. What we would like to do is to take these rich and complex observables (relaxation rates) and turn them back into a physical picture characterising molecular motion. This potential has been realised by many, and there already exist a myriad of methods aiming to perform this transform. For a variety of reasons however, the state of the art remains unsatisfactory, the pictures that result can be unphysical, and this experiment is not widely done. We want to fix this.
+
+In order to make progress, we need to understand the beast. This note will do a quick lap of the NMR experiment, and derive key results required to interpret the link between dynamics and relaxation rates. In particular we will derive expressions required to understand not only the peak positions of resonances in spectra, but also their relaxation rates (line-widths). In the final section, we analytically derive key auto relaxation rates $R_1$, $R_2$, and two interesting rates that allow magnetisation to `hop' between atoms that form the basis of structure determination by NMR: the nuclear Overhauser effect (NOE) and the rotating Overhauser effect (ROE). These rates were originally derived by Bloch, Blombergen and Pound (BPP theory), and independently by Redfield (Redfield theory) and illustrate critical features of how molecular motion leads to observable effects in NMR experiments.
+
+With this knowledge we are better placed to understand the data we generate using NMR to help us figure out how we can do better. Because of its potential, NMR should be one of the first method modern experimental science turns to for a dynamical characterisation of molecules. We need high level quantum mechanics to make progress here, which we will introduce as we go. If a section is too dense, we advise skipping ahead as it takes a few goes of this material to get a feel for it. 
+
+
+\subsection{How do we start?}
+
+We need to start with a quantum mechanical picture of the system. In NMR we have the problem that at equilibrium we have a collection of nuclear spins of many different types, sitting in a magnetic field. We cannot describe this with a single wave-function and so we cannot turn the problem over to the Chemist's primary tool, Schrodinger's equation. The equilibrium state is termed a `mixed state'. While Schrodinger's equation and the wave-function provides an ideal description for single particles, it does not easily allow us to handle `mixed states'. 
+
+So the first thing we need to do is `level up' our understanding of quantum mechanics and understand that we need to describe the system using an object called the \emph{density matrix}. This realisation is a touch traumatic for the chemist who has previously been able to rely on the wave-function. But it shouldn't trouble the biochemist, who hasn't met either object (and has the biggest uphill walk to master this material).
+
+
+The equation of motion for NMR can be derived from Schr\"odinger's equation, and is called the Liouville von Neumann equation. This describes the instantaneous time derivative of the density matrix, caused by the action of a \emph{Hamiltonian}, $\hat{H}$ that itself contains information about how the spins interact, including any external fields,
+
+\begin{equation}
+  \frac{\partial}{\partial t}\hat{\rho}(t)=-\rmi[\hat{H}(t),\hat{\rho}(t)]
+  \label{eq:L}
+\end{equation}
+
+If we can integrate this equation, we can work out what the state of the system is at any time ($\hat{\rho}(t)$). It turns out that in the special case where the Hamiltonian is time independent, the solution is relatively simple:
+
+\begin{equation}
+  \hat{\rho}(t)=\rme^{-\rmi \hat{H}t}\hat{\rho}(0) \rme^{+\rmi \hat{H}t}
+  \label{eq:sandwich1}
+  \end{equation}
+
+which is commonly referred to as the `sandwich' formula. In early encounters with NMR theory, one discovers `the vector model' and perhaps even the `product operators'. These two methods are extremely powerful, and both follow fairly directly from equation \ref{eq:sandwich1}.
+
+We have a problem though. In NMR, nothing stays still and the Hamiltonians are time dependent. We have significant work to do to make progress with the time dependence, to  boil everything down to `look' like it's time independent. In what follows, we will first sketch out general methods by which we can handle situations where the Hamiltonian is time dependent. This is helped by an introduction to the `super-operator' notation (which is also normally a fairly traumatic transition for any chemist or biochemist without a background in quantum theory). But it's not that bad once you get to know it, and the reader is encouraged to stick with it. Sometimes, dear reader, life simply is tough but trust in your brain.
+
+This is abstract, and not easy. But you've got this and this note will try to hold your hand. In what follows if parts don't make sense, it will be fine, try not to worry and carry on reading. The next pass of reading will be easier, and eventually this will make sense. This is what I'm telling myself. I've tried for many years to make this accessible. You will tell me if this is true.
+
+\subsubsection{Super-operator notation}
+
+Lets first spell out the notation. There is no agreed way of describing all these objects. Here, a single hat indicates a quantum mechanical operator. In numerical computations these often end up being matrices. They are certainly not real or complex numbers. In particular, as we've seen already (equation \ref{eq:L}) we often need the commutator of two operators,
+
+\begin{equation}
+[\hat{A},\hat{B}]=\hat{A}\hat{B}-\hat{B}\hat{A}
+\end{equation}
+
+If A and B were just numbers, then the result of this is obviously zero. But $\hat{A}$ and $\hat{B}$ are not numbers they are operators, and so whether or not this is zero depends on $\hat{A}$ and $\hat{B}$. Certainly if $\hat{A}=\hat{B}$ then the commutator is zero, and we would say that the two `commute'. The appearance of the commutator is so common that we will make use of \emph{super-operators}, operators that operate on operators, indicated by a double hat. Specifically $\hathat{O}=[\hat{O},\,\cdot\,]$ where the dot marks the slot where an operator will eventually be placed, such as
+
+\begin{equation}
+  \hathat{O}\hat{A}=[\hat{O},\hat{A}]=\hat{O}\hat{A}-\hat{A}\hat{O}
+\end{equation}
+ This notation is compact. It turns out that the super-operators behave as you would expect when we do things like differentiate them, where we can just use the product rule 
+
+\begin{equation}
+\frac{\partial}{\partial t}  \hathat{O}\hat{A} = \left(\frac{\partial}{\partial t}  \hathat{O}\right) \hat{A}+ \hathat{O}\left(\frac{\partial}{\partial t} \hat{A}\right)
+\end{equation}
+
+which you can prove by differentiating the operator form directly. We will also use a compact notation for the exponentials of super-operators
+\begin{equation}
+  \hat{\rho}(t)=\rme^{\rmi\hathat{H}t}\hat{\rho}(0)=\rme^{\rmi\hat{H} t}\hat{\rho}(0)\rme^{-\rmi\hat{H} t}.
+  \label{eq:sandwichS}
+\end{equation}
+
+This notation allows us to re-write our equation of motion (equation \ref{eq:L}) in our new notation
+
+\begin{equation}
+\frac{\partial}{\partial t}\hat{\rho}(t)=-\rmi\hathat{H}(t)\hat{\rho}(t).
+\end{equation}
+
+We can exactly solve this even when the Hamiltonian is fully time dependent, but we end up with an infinite series to evaluate. Formal integration and re-substitution (shown in section \ref{deriv}) shows that in the general case where $\hat{H}$ is time dependent, we can write
+
+\begin{equation}
+\hat{\rho}(t) = \left(\hat{E}  -\rmi \int_0^t dt_1 \hathat{H}(t_1) - \int_0^t dt_1 \int_0^{t_1} d t_2 \hathat{H}(t_1)\hathat{H}(t_2) +  ... \right)\hat{\rho}(0)
+  \label{eq:superDysonF}
+\end{equation}
+
+where $\hat{E}$ is the identity. This is certainly daunting and it's usually inefficient to try and evaluate this numerically. To become familiar with this series, lets switch back to the case where $\hat{H}$ is time independent. This lets us take $\hat{H}$ out of the integral. We then have a series of integrals, where the first two are
+
+\begin{equation}
+  \begin{array}{rl}
+    I_1 & = \int_0^t dt_1 = t \\
+    I_2 & = \int_0^t dt_1\int_0^{t_1}dt_2 =\frac{t^2}{2} \\
+  \end{array}
+  \end{equation}
+
+We call this form `triangular' or `time ordered' where the times on the left hand side of the integral go to longer duration than those to their right. We can see from this that we recover the series for the exponential,
+
+\begin{equation}
+  \hat{\rho}(t) = \left(\hat{E} -\rmi   \hathat{H}t + \frac{1}{2}\left(-\rmi \hathat{H} t \right)^2+  ... \right)\hat{\rho}(0) = \rme^{-\rmi \hathat{H}t} \hat{\rho}(0).
+  \label{eq:DysonSimple}
+\end{equation}
+
+which reveals equation \ref{eq:superDysonF} has collapsed back down to our time independent result, equation \ref{eq:sandwichS}. In a physics course, the solution to this is normally introduced in terms of the `Dyson propagator'. For those that know what that is, what we've done here is reveal equation \ref{eq:superDysonF} to be the Dyson propagator but with explicit time ordering, written in super-operator form. If you've just met this series, then enjoy it. It's incredibly powerful.
+
+To come back to all readers, if we can get our Hamiltonian into a form where it is time independent, then we can use equation \ref{eq:sandwich1} to work out how to evolve the density matrix. This we can often do analytically, and if not, it's trivial to do this numerically. If we have a time dependent Hamiltonian however, we  have to get stuck in and evaluate the infinite series in equation \ref{eq:superDysonF}. This is deeply unpleasant and often impractical.
+
+Physics provides us with a few more tricks to make progress, which we will make use of for our NMR problem. Our first trick is to use a change of reference frame to either remove or attenuate any time dependence (which for NMR we call the rotating frame). The second is to use a perturbation theory to find ways to truncate the series so we need to evaluate only the first few terms.
+
+In the case of NMR, moving to the rotating frame (set by the frequency of the RF field we use for excitation) helps us in both areas. It removes the majority of the time dependence, and what's left over (describing the interactions), is much smaller in magnitude than what we started with, making it amenable to a perturbation treatment. In the next two sections we walk through the rotating frame transform, and open up the remainder as a series that we can truncate. This process comes with some approximations, and so it's always important to know if theses are good or not.
+
+The TLDR for solution NMR is that these approximations really are almost always very good. In solid state NMR these approximations are less good, and can quietly fail. As ever, care is needed to understand the approximations you put into a physical theory.
+
+
+\subsubsection{(Rotating) frame transform}
+
+If a Hamiltonian is time dependent in one reference frame, it might not be time dependent in another. For NMR moving to the RF rotating frame partially accomplishes the removal of time dependence. The rotating frame transform comes with a strong physical intuition. In the rotating frame, you are watching a carousel, while turning at almost the same rate yourself: the fast motion is not gone, but from your moving viewpoint, the carousel's rotation appears much slower.
+
+In quantum mechanics, we can change our reference frame using a similarity transform, performed by a \emph{unitary} operator $U=\rme^{\rmi t \hat{u}}$, where $\hat{u}$ is traceless and hermitian (just like a Hamiltonian). It might not be obvious that a unitary operator can be written this way. We recall that a property of unitary operators is $U U^\dagger = \hat{E}$ where $^\dagger$ indicates a hermitian conjugate (take the transpose and complex conjugate of the operator). Because $u$ is traceless and hermitian then $\rme^{\rmi t \hat{u}}\rme^{-\rmi t \hat{u}}=\rme^{0} = \hat{E}$. Any $U$ constructed in this way can be used as a change of basis. We need to decide what to pick.
+
+If the equation of motion is $\frac{\partial}{\partial t}\rho(t)=-\rmi \hathat{H}(t)\hat{\rho}(t)$, then in the new reference frame our density matrix is
+
+\begin{equation}
+\hat{\rho}_u= \rme^{\rmi t \hathat{u}} \hat{\rho}(t) = U \hat{\rho}(t) U^\dagger
+\end{equation}
+
+If we differentiate this with respect to time and take $\hat{u}$ to be time independent then
+
+\begin{equation}
+\frac{\partial}{\partial t}\hat{\rho}_u= \rmi t \hat{u} \rme^{\rmi t \hathat{u}} \hat{\rho}(t)  -\rmi \rme^{\rmi t \hathat{u}}\frac{\partial }{\partial t} \hat{\rho}(t)  
+\end{equation}
+
+Re-substituting the original equation of motion and converting the density matrix from the old frame to the new one
+
+\begin{equation}
+\frac{\partial}{\partial t}\hat{\rho}_u= \rmi \hat{u} \hat{\rho_u}(t)  + \rme^{it \hathat{u}} \hat{H}(t) \hat{\rho}(t)  
+\end{equation}
+
+which allows us to recover a new equation of motion in the new reference frame
+
+\begin{equation}
+\frac{\partial}{\partial t}\hat{\rho}_u= -\rmi\hathat{H}_u \hat{\rho_u}(t)  
+\end{equation}
+
+where the acting Hamiltonian in the new reference frame is $\hat{H}_u=  \rme^{\rmi t \hathat{u}} \hat{H}(t) - \hat{u}    $
+
+So far, this doesn't make things look a lot easier. In fact it probably looks worse. But lets take an example to show why this can be a good idea. Lets take a case where we have a single spin in a magnetic field with a Zeeman splitting of $\omega$. Lets then apply a circularly polarised RF field of intensity $\omega_1$ at a frequency $\omega_{RF}$. This means our Hamiltonian in the laboratory frame is
+
+\begin{equation}
+\hat{H}=\omega \hat{I}_z+ \omega_1 (\hat{I}_x\cos(\omega_{RF}t)+\hat{I}_y\sin(\omega_{RF}t)))
+\end{equation}
+
+Oh no! It's time dependent! Lets first write the RF in terms of a $z$ rotation (I don't explain this here, I might need to). We note that a motion where we have a cosine on $x$ and a sine on $y$ and the components vary in time is a rotation about the $z$ axis, which can be written
+
+
+\begin{equation}
+\hat{H}=\omega \hat{I}_z+ \omega_1 e^{-\rmi \omega_{RF} \hathat{I}_zt}\hat{I}_x
+\end{equation}
+
+It's clear our `static' Zeeman term is time independent, but our RF is not. Lets propose a transform. We want to make a new Hamiltonian in a new reference frame that is time independent. This means we don't want to introduce any new time dependence in our original Hamiltonian, so our transform must commute with $\hat{I}_z$. Lets try $\hat{u}=+ \omega_{RF} I_z$.
+
+In the new rotating frame the Hamiltonian will be
+
+\begin{equation}
+  \begin{array}{rl}
+  \hat{H}_u&=\rme^{it \omega_{RF} \hat{I}_z} \left(\omega \hat{I}_z+ \omega_1 \rme^{-\rmi \omega_{RF} \hathat{I}_zt}\hat{I}_x\right) - \omega_{RF}\hat{I}_z \\
+  &= (\omega-\omega_{RF})\hat{I}_z + \omega_1 \rme^{\rmi t \omega_{RF} \hat{I}_z} \rme^{-\rmi \omega_{RF} \hathat{I}_zt} \hat{I}_x \\
+  &= (\omega-\omega_{RF})\hat{I}_z + \omega_1 \hat{I}_x \\
+  \end{array}
+  \end{equation}
+
+and we've done it. We have replaced the Zeeman frequency for an \emph{offset}, $\Omega = \omega-\omega_{RF}$ allowing us to write the Hamiltonian in the rotating frame as 
+
+\begin{equation}
+ \hat{H}_u=\Omega \hat{I}_z + \omega_1\hat{I}_x
+  \end{equation}
+
+The Hamiltonian was time dependent in the original static (laboratory) frame, but in the rotating frame, it is time independent. We can do all our computations using equation \ref{eq:sandwich1} provided that we work in this reference frame. For solution NMR, we pick our excitation energies to be close to the Larmor frequency of the nuclei we're hitting, which means our offsets are usually small, on the order of a few kHz. Our $RF$ intensities ($\omega_1$) are typically on the order of 10 kHz, and so in going to the rotating frame we have not just made our Hamiltonian time independent, we have also made it small. Even though the reference frame is going round at maybe hundreds of MHz, our rotating frame is undergoing rotations on the order of 10s of kHz.
+
+This might look like we've basically solved our problem for NMR. We have gone a long way. But. Our RF field is not circularly polarised. Because of how fields get setup by coils, it's linearly polarised, which means that when we do this computation accurately (see later), half of our RF field is time independent, but we still have another half that remains time dependent. This part for solution NMR ends up as something called a `Bloch-Siegert' shift, and doesn't do very much. The rotating frame transform also creates problems as well as solving them. For both scalar coupling and relaxation, our Hamiltonians are relatively static in the laboratory frame. When we move into the rotating frame, we actually introduce new time dependence that appears only in the rotating frame. Going back to the carousel, if we are sitting on a horse on the ride, then an observer sitting outside the carousel (but not on it) look like they are now moving to us. We will see that this creates the mess that we know as `strong' and `weak' coupling; two nuclei of the same type are `strongly' coupled, but in the rotating frame, two nuclei of different types, for solution NMR, are only `weakly' coupled. We need two further mathematical tricks to help us along, the secular approximation, and series truncation. 
+
+For solid-state NMR things things are even worse. 
+
+
+
+
+
+\subsubsection{The secular approximation}
+
+When we have a time dependent Hamiltonian in some reference frame, we can do another common physics trick. We write it as a Fourier series of time independent basis operators $\hat{H}_j$ and frequencies such that
+
+\begin{equation}
+ \hat{H}(t)=\sum_j\hat{H}_{j} \rme^{\rmi \omega_j t}
+\end{equation}
+where the sum is over all frequencies present, $\omega_j$. As we will see for solution NMR, the number of frequencies we have to worry about is small. In a general case we could end up with infinite frequencies, so this approach isn't always a good one. But for solution NMR, it's terrific. As the operators $\hat{H}_j$ are time independent now, the time dependence is all contained in a complex number $\rme^{\rmi \omega_j t}$. We can insert this series into equation \ref{eq:superDysonF} and then pull the operators from the integrals and write
+\begin{equation}
+  \hat{\rho}(t) = \left(\hat{E} -\rmi \sum_j  \hathat{H}_{j}F_j - \sum_{jk} \hathat{H}_{j}\hathat{H}_{k} F_{jk}  +  ... \right)\hat{\rho}(0)
+  \label{eq:superDyson}
+\end{equation}
+
+where we have new Fourier integrals, where the first two are 
+
+\begin{equation}
+\begin{array}{rl}
+  F_j&=\int_0^t \rme^{\rmi \omega_j t_1} dt_1 = \frac{1}{\omega_j}\left(\sin(\omega_j t) + \rmi\left(1-\cos(\omega_j t)\right)  \right)\\
+  F_{jk}&=\int_0^t \rme^{\rmi \omega_j t_1}  dt_1 \int_0^{t_1} \rme^{\rmi \omega_k t_2}  d t_2\\
+  &= \frac{\cos(\omega_jt)}{\omega_k\omega_j}-\frac{\cos(t(\omega_j+\omega_k)) }{\omega_k(\omega_k+\omega_j)}- \frac{1}{\omega_j(\omega_k+\omega_j)}  + \rmi\left(  \frac{\sin(t\omega_j)}{\omega_k\omega_j}- \frac{\sin(t(\omega_j+\omega_k)) }{\omega_k(\omega_k+\omega_j)}\right)
+  \end{array}
+  \end{equation}
+
+In the case where we have no time dependence we can set all frequencies to zero, and the sums contain just one term. The integrals become just the coefficients for the exponential series, and once again the series returns to a single exponential (equation \ref{eq:DysonSimple}), as expected for the time-independent Hamiltonian.
+
+\paragraph{What about the terms in the Hamiltonian that retain time dependence?}
+
+There are two limits where things become relatively straightforward. Where $\omega_j t \ll 1$ (which includes the case where $\omega_j=0$) then the integrals exactly reduce to the coefficients for the exponential series ($t$, $\frac{1}{2}t^2$, ... $\frac{1}{n!}t^n$). The time independent parts and those with  $\omega_j t \ll 1$ in the Hamiltonian merge, and can simply be inserted into equation \ref{eq:DysonSimple} and treated as time independent. The terms then go with $(||\hat{H}||t)^n$.
+
+The opposite limit is $\omega_j t \gg 1$. Here, the integrals go with $(\frac{1}{\omega_j})^n$ and so the terms go with $\left(\frac{||H_j||}{\omega_j}\right)^n$. In the Hamiltonians we have for NMR, we have a mix of time dependent and time independent terms, usually with a similar magnitude. On a term by term basis, the time independent grown with $t^n$ and the time dependent grow with $\frac{1}{\omega_j^n}$. If $\omega_j t \gg 1$ then we guarantee the time independent beat the time dependent. This is the origin of the `secular approximation', where we can say that time dependent terms go to zero.
+
+But great care is needed with this approximation. As we will see, in the lab frame, we have a time dependent RF term and a time independent set of interactions (e.g. Zeeman). The magnitude overall is on the order of 10s or 100s of MHz because of the Zeeman term, as are the frequencies. If we measure on a milli-second time-scale it might appear that we have satisfied $\omega_j t \gg 1$ and we can blindly ignore the time dependent RF. In such a case the terms in the series do not converge quickly, and we get a complex interplay of frequencies in the various terms. If we evaluate deep in to the series we find that RF applied at the frequency that matches the Zeeman we get spin dynamics. The secular approximation seems to have failed us.  Why can't we naively apply the secular approximation in this case?
+
+The problem here is with the convergence rate of the series. The time independent terms scale with $(||\hat{H}||t)^n$, the time dependent terms scale with $(||\hat{H}||\frac{1}{\omega_j})^n$ and if both $\omega$ and $||\hat{H}||$ are on the same order of magnitude (MHz in the case of NMR) we get poor convergence, leaving the opportunity for potentially complex interplay between the various terms. There be dragons.
+
+What we're going to do instead is first move into a rotating frame. This means $||\hat{H}||$ is now kHz, with residual frequencies still of MHz. Then we have a much easier proposition as the time dependent terms scale $(||\hat{H}||\frac{1}{\omega_j})^n$, $||\hat{H}|| \ll \omega_j$ and so the terms drop off to zero very quickly. We only need to inspect a few terms to figure out what will happen.
+
+To use the secular approximation safely for NMR, we need twin conditions. We need the magnitude of our Hamiltonian to be reduced to kHz, which we accomplish with the rotating frame transform. Then the Zeeman splitting (MHz) is reduced to an offset (kHz). The rest of the interactions are in kHz so we're safe. Then any time dependent term with a frequency in MHz, which for solution NMR will be all of the terms left with time dependence, can be safely neglected as to determine if the contributions of the interaction tend to zero, we only need to inspect a few terms. If the first few terms are clearly zero, then effects of the time dependent terms is utterly dominated by the time independent terms. We can safely ignore the time dependent terms.
+
+This is another way of describing resonance. If the driving frequency (here, RF) matches the `natural' frequency of the system (here the Zeeman) we expect to see a large action. If the driving frequency is too high in frequency or too low, then the system will not respond. This is the child on the swing. If you push them at a rate that matches their swinging, you amplify the oscillation and (hopefully) get a happy child. Push to rapidly or to slowly, and the swinging will be less good. 
+
+For solid NMR, life is quite a bit harder: there are more evolution frequencies to worry about, including the physical rotation rate of the sample induced by magic angle spinning. It becomes very risky to blindly apply the secular approximation in this case. Sometimes it will be fine, but more care is needed than in solution NMR, where we can throw the thing around wildly, usually without harm.
+
+In this work we will use the secular approximation on our main evolution RF to make the distinction between `weak' and `strong' scalar coupling depending on if we're working with like, or unlike spins in the rotating frame. We will use it to remove residual time dependence of the RF in the rotating frame. And in the context of relaxation we will use it to select only for certain relaxation pathways induced by the fluctuating fields that are secular. 
+
+\subsubsection{Series truncation (perturbation theory)}
+
+If we can drop time dependent terms using the secular approximation and get a time independent Hamiltonian, then we don't need to go any further. We can use equation \ref{eq:sandwich1} to figure out how the density matrix evolves. But what if we are still curious and want to see what the residual time dependence contributes to the Hamiltonian?
+
+Our next trick is to use perturbation theory, and find ways to truncate the series to retain only low order terms,  a process known as `truncation'.This lets us do a better job than saying `the time dependent terms are simply zero' as we can work out their residual effects, to a level of approximation.
+
+An easy way to see how we can compute the effects of these is to use `average Hamiltonian theory' introduced into NMR by Mariq and Waugh. In their approach, we use another method to handle a time dependent Hamiltonian and use the Sandwich formula to evolve the density matrix via $\hat{\rho}(t)= U \hat{\rho}(0) U^{-1}$, where $U=\rme^{-\rmi t\hat{H}_{\mathrm{eff}}}$. We can use the Magnus expansion to obtain an expression for the `effective' Hamiltonian, $\hat{H}_{\mathrm{eff}}=\sum_{n=1}^\infty \Omega_n$, for which the first three terms are
+
+\begin{equation}
+  \begin{array}{rl}
+    \Omega_1&= \frac{1}{t}\int_0^t \hat{H}(t_1) d t_1 \\
+    \Omega_2&= -\frac{\rmi }{2 t}\int_0^t d t_1\int_0^{t_1} d t_2 [\hat{H}(t_1),\hat{H}(t_2)]  \\
+    \Omega_3&= - \frac{1}{6 t}\int_0^t d t_1\int_0^{t_1} d t_2 \int_0^{t_2} d t_3 \left( [\hat{H}(t_1),[\hat{H}(t_2),\hat{H}(t_3)] + [\hat{H}(t_3),[\hat{H}(t_2),\hat{H}(t_1)]]\right).
+\end{array}
+  \end{equation}
+
+From these results, if $\hat{H}$ is time independent then it will commute with itself. Then all terms above $\Omega_2$ go to zero and $\hat{H}_\mathrm{eff}=\Omega_1=\hat{H}$, which gives us yet another way to show that `life becomes easy if our Hamiltonians are time independent'. Repeating the earlier trick of expanding the time dependent Hamiltonian as a Fourier series then
+
+ \begin{equation}
+  \begin{array}{rl}
+    \Omega_1&= \frac{1}{t}\sum_j F_{j} \hat{H}_{j}  \\
+    \Omega_2&= -\frac{\rmi }{2 t}\sum_{jk} F_{jk} [\hat{H}_{j},\hat{H}_{k}] 
+\end{array}
+  \end{equation}
+
+ and we have a convenient method to compute higher order corrections to the Hamiltonian. Provided $||\hat{H_j}||\frac{1}{\omega_j} \ll 1$, then the series decays quickly and we just need to take the first 1 or 2 terms. In this note we will use the second order terms to obtain a result for both the Bloch-Siegert shift (coming from residual time dependence in the RF field) and relaxation rates using Redfield theory, where we first move to a reference frame (the interaction frame) that guarantees fast series convergence.
+
+\section{Application to NMR}
+
+We have introduce the major tricks needed to make progress with the NMR experiment and understand relaxation: how to evolve the density matrix if the Hamiltonian is time dependent, the rotating frame transform to entirely or partially remove the time dependence and reduce the overall magnitude of the acting Hamiltonian, the secular approximation that allows us to discount terms completely if there are rapid evolutions left over in a reference frame, and series truncation. All that remains is to look at some of the specifics and apply the tricks.
+
+In what follows we first write out the specific Hamiltonians that we have to deal with. We then split the Hamiltonian into two parts by performing a motional average, the evolution part that will determine the peak positions of resonances, and the dissipative part that will describe relaxation. We will transform the master equation of motion into the rotating frame and get it into a form where we can get expressions for relaxation rates.
+
+\subsection{What are the Hamiltonians for NMR?}
+
+Up until now we have concentrated on the `spin' part. For interactions we need to look at our interactions in 'real' three dimensional space to follow the effects on the spin because of specific orientations of molecules with respect to the static field. In general, all interactions relevant for all types of NMR can be reduced to a coupling between two spin operators, $I$ and $S$. These are described by $\hat{I} \cdot A \cdot \hat{S}$ where $\hat{I}=(\hat{I}_x,\hat{I}_y,\hat{I}_z)$, a vector of Cartesian density matrices (same for the $S$ spin), and $A$ is a tensor. We actually have only a few effects to worry about. The instantaneous Hamiltonian contains terms drawn from just four interaction types:
+
+\begin{description}
+\item [Zeeman splitting,] the coupling between the angular momentum of nuclear spin states, and a static magnetic field
+  \item [Shielding,] magnetic fields cause by the induced movement of bonding electrons by the static magnetic field
+\item [Scalar coupling,] a spin-spin coupling mediated by bonding electrons (Fermi-contact).
+\item [Dipolar coupling,] a spin-spin coupling going through-space (spins behaving as bar magnets)
+  \item [Quadrupolar coupling,] a consequence of spins greater than half having asymmetric distribution of `spin', coupling to external electrical fields. 
+  \end{description}
+
+It turns out that molecular motion induces rapid fluctuations that cause these effects to move around, causing fluctuations in field at the spins of interest. These fluctuations are rapid (pico/nano second timescale), and average to zero on our measurement timescales (micro/milli seconds). For the NMR experiment we need to look then at two distinct timescales, short, where molecular motion is leading to field fluctuations, and measurement, where on longer timescales these rapid wiggles have averaged to zero. The two Hamiltonians will need to be treated separately.
+
+NMR signals persist typically for several seconds and we measure them on a micro/milli second timescale. We need therefore an \emph{evolution Hamiltonian} which applies on a timescale where local microscopic fluctuations have averaged out. In solution NMR, the natural motion of molecules does this for us, resulting in all interactions averaging to a much simpler `isotropic' form. This happens quickly, on the order of a few hundred ns (or quicker). The resulting Hamiltonian will govern the coherent evolution of the system and will give our observed peak positions.
+
+For solid NMR we do not have Brownian motional averaging, and we need to consider each spin in each orientation of the molecule as a separate species making life more complicated. A hybrid approach is called `magic angle spinning' (MAS) where we provide mechanical rotation of a sample. This leads the sample sample behaving as though it has been motionally averaged, though via mechanical action rather than Brownian motion.
+
+A convenient fact is that both molecular tumbling and MAS average both the dipolar and quadrupolar interactions to zero. The resulting peak positions are determined only by the isoptropic chemical shift (combination of Zeeman and shielding) and scalar couplings. This simplicity in the final spectra is a major reason for why solution NMR is used to analyse molecules: the structure of the resulting spectra is relatively simple.
+
+We cannot however neglect the other interactions, and we will also need the \emph{dissipation Hamiltonian}, which is associated with relaxation. Here, we cannot rely on motional averaging and we need to follow the fluctuations of fields at timescales fast enough to induce transitions (pico and nano second timescales). However, the motional fluctuations occur at a rate that is far too rapid to cause any appreciable change caused by the evolution Hamiltonian. The random motions lead to variation in time of the fields experienced by nuclear spins and via \emph{stimulated emission} can drive the system back to equilibrium.
+
+We need then an isotropic evolution Hamiltonian, averaged on a microsecond timescale, and an an-isotropic dissipative Hamiltonian where the characteristic timescales of the underlying molecular motion set the timescale on where these effects go to zero, and hence determine our relaxation rates. We next look at the specific forms of the two Hamiltonians.
+
+\subsubsection{The evolution Hamiltonian $\hat{H}^0$.} For both solution NMR and MAS solid NMR, the motional averaging means the evolution Hamiltonian retains only the trace of $A$ (the isotropic value) of the interaction. This allows us to represent the interaction as $\mathrm{Tr}(A)\hat{I}\cdot\hat{S}$ where $\mathrm{Tr}(A)$ is an interaction strength, a real scalar value (like chemical shift or scalar coupling constant). The dipolar and quadrupolar interactions inherently have a zero trace and under the motional average cannot contribute to $\hat{H}^0$. 
+
+Two terms survive the motional average. The first term is the isotropic chemical shift, comes from the combination of the Zeeman splitting and the trace of the shielding tensor, $\sigma$. This is equal to $\omega= \gamma B_0(1-\sigma)$ where $B_0$ is the static magnetic field strength and $\gamma$ is the gyromagnetic ratio of the spin under study. The shielding effect is small compared with the Zeeman splitting (on the order of 100s of parts per million). This leads to the following contribution to the Hamiltonian (where we take the direction of the static field to be the $z$ axis in the laboratory frame), and the sum is over all distinguishable spins
+
+\begin{equation}
+\hat{H}_Z= \sum_i \omega_i \hat{I}_{i,z}.
+  \end{equation}
+
+The second is scalar coupling. If we define the isotropic interaction constant $J$ (presently in units of radians per second) as the trace of the scalar coupling tensor then 
+
+\begin{equation}
+\hat{H}_J= \sum_i\sum_{j>i} J_{ij} \sum_{k=x,y,z} \hat{I}_{i,k}\hat{I}_{j,k}
+  \end{equation}
+
+where the coupling between spins $I$ and $S$ would be written $J_{IS}(\hat{I}_x\hat{S}_x+\hat{I}_y\hat{S}_y+\hat{I}_z\hat{S}_z)$. 
+
+Finally we have to consider the RF field. RF fields get turned on and off for different spins over the course of an experiment to orchestrate various transfers between states that varies experiment to experiment. The applied RF fields we create in our probes are linearly polarised and have the form
+
+\begin{equation}
+\hat{H}_{RF} = \sum_i \hat{I}_{i,x} 2\omega_{i,1} \cos(\omega_{i,RF}t+\phi_i)
+\end{equation}
+
+where the intensity is measured by the field strength $\omega_{i,1}$. The field has a characteristic energy, $\omega_{i,RF}$ and phase in the xy plane $\phi_i$. The field generated will hit all spins of the same type. This interaction is very conspicuously time dependent.
+
+If we only have linearly polarised RF and Zeeman terms, we can solve the time dependent motion in the laboratory frame, and obtain the `Rabi' formula. For NMR though we need additional interactions and relaxation so cannot go this route. We are in the `weak driving' limit defined by Rabi, as our RF intensity ($\omega_{i,1}$, 10s of kHz) is less than our driving frequenciy ($\omega_{i,RF}$, 10s of MHz).
+
+
+\subsubsection{The dissipative Hamiltonian $\hat{H}^1$.}
+
+This is the part that will cause relaxation. All isotropic parts of the interactions by this point have been factored out and included in the evolution Hamiltonian. The remaining an-isotropic parts (the rank 1 and rank 2 parts of the interaction tensor) will survive. These will then be subject to fluctuations due to molecular motion that will cause the field at a nuclear spin to vary in time. This will induce transitions and lead the density matrix back to equilibrium via stimulated emission. There are 3 major interactions that cause fields large enough to cause relaxation. We write the dissipative Hamiltonian in the form $\sum_kq_k(t)\hat{Q}_k$ where $q_k$ are time dependent coefficients, and $\hat{Q}_k$ are time independent operators.
+
+Looking ahead, we chose to represent the interactions in the dissipative Hamiltonian in a basis of operators $\hat{Q}_k$ that will be easy for us to do the rotating frame transform. The single-spin operators that satisfy this property under $\hat{H}_{\mathrm{rot}}=\omega \hat{I}_z$ are the \emph{shift operators} $\hat{I}_+,\hat{I}_z,\hat{I}_-$, which are related to the Cartesian operators by $\hat{I}_\pm=\hat{I}_x\pm\rmi\hat{I}_y$. These are eigenoperators of the commutator with $\hat{I}_z$:
+\begin{equation}
+[\hat{I}_z,\hat{I}_\pm]=\pm\hat{I}_\pm,\qquad [\hat{I}_z,\hat{I}_z]=0,
+\end{equation}
+this means under the rotating frame transform we pick up a complex number describing the evolution, such as $\rme^{\rmi\hathat{I}_z\theta}\hat{I}_\pm=\rme^{\pm\rmi\theta}\hat{I}_\pm$ and $\rme^{\rmi\hathat{I}_z\theta}\hat{I}_z=\hat{I}_z$. The integer $\pm 1$ or $0$ sitting in the exponent is called the \emph{coherence order} $q$ of the operator, and tells us how the operator transforms under a $z$-rotation. Operators with $q\neq 0$ correspond to off-diagonal elements of the density matrix (single- or multi-quantum coherences); operators with $q=0$ will include populations, such as $\hat{I}_z$.
+
+For a multi-spin operator describing an relationship between two spins, we use tensor products such as $\hat{I}_+\hat{S}_-$. Under the rotating frame transform, we simply add the coherence orders. $\hat{I}_+\hat{S}_-$ has $q_I=+1$, $q_S=-1$, and \emph{total} coherence order $q=0$. Under the rotating-frame transformation, a generic product picks up
+\begin{equation}
+\rme^{\rmi \hathat{H}_{\mathrm{rot}}t} \hat{Q}_k = \hat{Q}_k\,\rme^{\rmi t \sum_j q_{kj}\,\omega_{j,\mathrm{RF}}},
+\end{equation}
+where $q_{kj}$ is the coherence order of operator $\hat{Q}_k$ on spin $j$. So if we define
+\begin{equation}
+\omega_{k,\mathrm{RF}} \;=\; \sum_j q_{kj}\,\omega_{j,\mathrm{RF}},
+\end{equation}
+then $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}\hat{Q}_k=\rme^{\rmi\omega_{k,\mathrm{RF}}t}\hat{Q}_k$. As examples: $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}\hat{I}_+\hat{S}_+ = \rme^{\rmi(\omega_{I,\mathrm{RF}}+\omega_{S,\mathrm{RF}})t}\hat{I}_+\hat{S}_+$ ($q=2$), $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}\hat{I}_+\hat{S}_z = \rme^{\rmi \omega_{I,\mathrm{RF}}t}\hat{I}_+\hat{S}_z$ ($q=1$) while $\hat{I}_z\hat{S}_z$ commutes with $\hat{H}_{\mathrm{rot}}$ and so are unchanged ($q=0$).
+
+The dipolar interaction represents a coupling between two spins. It is a strictly axially symmetric interaction of rank 2, and so averages to zero under the motional average. This is the usually the largest interaction after the Zeeman and dominates relaxation. A dipolar interaction between two spins $I$ and $S$ will be described by a linear combination of the following 9 bi-linear operators
+
+\begin{equation}
+\hat{I}_+\hat{S}_+,\;\hat{I}_+\hat{S}_z,\;\hat{I}_z\hat{S}_+,\;\hat{I}_+\hat{S}_-,\;\hat{I}_-\hat{S}_+,\;\hat{I}_z\hat{S}_z,\;\hat{I}_-\hat{S}_z,\;\hat{I}_z\hat{S}_-,\;\hat{I}_-\hat{S}_-
+    \end{equation}
+
+The chemical shift anisotropy can be thought of as the `rest' of the chemical shift tensor, once the isotropic part has been subtracted. This arises from the fact that the specific shielding experienced by a nucleus because of its bonding electrons depends on the specific angle of the electrons with respect to the magnetic field, and so depends on orientation. As the molecule tumbles and moves around, the instantaneous shielding varies, which is a source of field fluctuation that can drive relaxation. The more asymmetric the electron distribution, the larger the CSA. The interaction will be a linear combination of these three linear operators (taking the $S$ spin to be aligned with the $z$ axis) then
+
+\begin{equation}
+\hat{I}_+,\;\hat{I}_z,\;\hat{I}_-
+\end{equation}
+
+The final interaction, for completeness, is the quadrupolar coupling. For spin halves, the structure of the nuclei make them behave, for the purposes of spin, as perfect ball bearings. They rotate without friction. Where the spins is greater than half, the way it gets packed into the nuclei is asymmetric. This means that as a nuclear spin rotates, it the motion is slightly `lumpy', and couples to external electric fields from the bonding electrons leading to field fluctuations as it rotates. The isotropic average of this effect is zero, and so for solution NMR where we have motional averaging, the trace goes to zero so this doesn't affect the coherent evolution of the density matrix. But at short timescales this interaction is live, can in fact be very large, and contributes to relaxation rates. The quadrupolar interaction is written as a sum of 9 quadratic single-spin operators
+
+\begin{equation}
+\hat{I}_+\hat{I}_+,\;\hat{I}_+\hat{I}_z,\;\hat{I}_z\hat{I}_+,\;\hat{I}_+\hat{I}_-,\;\hat{I}_-\hat{I}_+,\;\hat{I}_z\hat{I}_z,\;\hat{I}_-\hat{I}_z,\;\hat{I}_z\hat{I}_-,\;\hat{I}_-\hat{I}_-
+\end{equation}
+
+If the electric field (bonding electrons) are symmetric (e.g. a perfect tetrahedral arrangement) then this effect goes to zero. If this isn't the case, then the quadrupolar term is usually quite large. This has a few interesting consequences, like `self-decoupling' where you do not see the scalar coupling to halogens in organic molecules, even though they have high spin, you don't see the coupling. The origin of this turns out to be that the relaxation rates are so large for magnetisation when it gets near the quadrupole that it dwarfs the scalar coupling, making it effectively disappear. For this reason in solution NMR we almost never need to worry about quadrupoles, as its nature makes its effects rarely impact spectra.
+
+As implied by the discussion, for solution NMR, rotational Brownian motion (and molecular motion) is the biggest mechanical driver for modulating the interactions in the dissipative Hamiltonian that lead to relaxation. 
+
+
+\subsection{How do we evolve the density matrix for NMR?}
+
+By this point we have split the Hamiltonian into two, and worked out the form of the Hamiltonians in the laboratory frame. In the laboratory frame we have we have some irritating time dependence, the RF in $\hat{H}^0$, and the an-isotropic interactions modulated by motion in $\hat{H}^1$. We need to develop an equation of motion that removes the time dependence using the tricks we talked about earlier. Firstly, we are going to handle the dissipative interactions. We will do this via a series of approximations that rely on the following:
+
+\begin{description}
+    \item[Weak perturbation/Born approximation.] the rapidly fluctuating dissipative Hamiltonian is small compared with the evolution Hamiltonian: $\|\hat{H}^1\|\ll \|\hat{H}^0\|$. This allows us to evaluate its effects using a second-order truncation. 
+    \item[Stationary noise.] The statistical properties of the molecular motion do not depend on absolute time, only on time differences. We will write correlation (memory) functions can be written as a different since time, $g(\tau)$ rather than depending on a specific start and finish time, $g(t,t')$.
+    \item[Short memory/Markov approximation.] Molecular motion loses the memory quickly (on the pico/nano second timescale). The correlation function describing molecular orientation decays on a time $\tau_c$ much shorter than the time over which the spin density matrix changes under $\hat{H}^0$. This lets us hold $\hat{\rho}$ constant when taking averages over molecular motion.
+\end{description}
+
+These together allow us to develop the Redfield equation. As shown in section~\ref{deriv}, after some slog these assumptions allow us to write our equation of motion, as the laboratory frame Redfield equation
+
+\begin{equation}
+\frac{\partial}{\partial t}\hat{\rho}(t)= -\rmi \hathat{H}^0(t)\rho(t) - \hathat{\Gamma}\big(\hat{\rho}(t)-\hat{\rho}_{\mathrm{eq}}\big).
+  \end{equation}
+
+where $\hathat{H}^0$ describes the time independent evolution Hamiltonian (in the absence of RF) and $\hathat{\Gamma}$ is the relaxation super-operator, describing the effects of the dissipative Hamiltonian subject to the assumptions above. In brief, we obtain this result by first writing the Hamiltonian
+
+\begin{equation}
+\hat{H}=\hat{H}^0+\hat{H}^1(t)
+\end{equation}
+
+Then transforming into the `interaction frame' where we perform a change of basis using $\hat{u}=\hat{H}^0$. This allows us to evaluate the evolution under $\hat{H}^1(t)$ in this new reference frame where $\hat{H}^0$ has disappeared and perform the 2nd order truncation of the Hamiltonian (Born approximation). During this process we expand the dissipative Hamiltonian (in the laboratory frame) as a series $\hat{H}^1(t)=\sum_k q_k(t)\hat{Q}_k$ where $\hat{Q}_k$ are time-independent spin operators (the things that act on the density matrix) and $q_k(t)$ are time-dependent stochastic scalar coefficients (the random orientation factors set by molecular tumbling). Applying the remaining assumptions above allows us to write
+
+    \begin{equation}
+\hathat{\Gamma}= \sum_{km}\int_0^\infty g_{km}(\tau)    \left[\hat{Q}_k ,\left[ \rme^{ \rmi \hathat{H}^0 \tau}\hat{Q}_m^\dagger, \,.\, \right]\right] d\tau
+\label{eqMain1}
+    \end{equation}
+
+    where $g_{km}(\tau)=\langle q_k(0)q_m^*(\tau)\rangle$ is the spatial correlation function (assuming stationary noise). The next step is to transport the equation of motion into the rotating frame and evaluate it. Looking ahead, there are two more approximations we are going to make, 
+    
+\begin{description}
+    \item[High-field.] We can approximate the $\hat{H}^0$ evolution in $\Gamma$ using just the the Zeeman splitting where we neglect interactions and RF.
+    \item [Secular approximation.] Remaining terms that oscillate rapidly in the rotating frame will average to zero.
+\end{description}
+
+
+We have made some progress, but we still have time dependence in $\hat{H}^0$ because of the RF. We will now move both into the rotating frame (a frame rotating with the RF field), which will not be a magic bullet: it will introduce NEW time dependence in both $\hat{Q}$ terms. We will be able to set this to zero however under the secular approximation. Lets now do the rotating frame transformation.
+
+
+\subsection{Transforming the evolution Hamiltonian into the rotating frame.}
+We select a transformation $\hat{u}=\hat{H}_\mathrm{rot}=\sum_i \omega_{i,\mathrm{RF}} \hat{I}_{z,i}$, where $\omega_{i,\mathrm{RF}}$ are called the \emph{carrier frequencies} of the RF. These are just the RF frequencies generated in the coils of the NMR experiment for the purposes of excitation. As each nucleus is hit by a different RF field, the rotating frame is better described as a `multiply' rotating frame, as for each type of spin, we will end up rotating at a different frequency. Our density matrix in the (multiply) rotating frame will be 
+\begin{equation}
+\hat{\rho}_R(t)=\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}\hat{\rho}(t)
+\end{equation}
+
+As seen already our evolution Hamiltonian in the rotating frame will be
+\begin{equation}
+  \hat{H}^0_R = \rme^{\rmi\hathat{H}_{\mathrm{rot}}t}\hat{H}^0 - \hat{H}_{\mathrm{rot}}.
+  \label{eq:rotatingFrame}
+\end{equation}
+
+As shown in detail in section \ref{rotty} this will have the effect of swapping the Zeeman/shielding term in the laboratory frame, $\hat{H}^0=\sum_i \omega_i \hat{I}_{i,z}$, for an offset in the rotating frame $\hat{H}^0_R=\sum_i \Omega_i I_{i,z}$ where $\Omega_i=\omega_i-\omega_{i,RF}$. This is because $I_{i,z}$ and $\hat{H}^0_{\mathrm{rot}}$ commute.
+
+For scalar coupling, the effects are more complex. Analysing the coupling between two spins $I$ and $S$, in the rotating frame we end up with
+
+\begin{equation}
+  \hat{H}^0_J= J_{IS} \left(\hat{I}_z\hat{S}_z+\frac{1}{2}\left(\hat{I}_-\hat{S}_+\rme ^{-\rmi t(\omega_{I,RF}-\omega_{S,RF})}+\hat{I}_+\hat{S}_-\rme ^{+\rmi t(\omega_{I,RF}-\omega_{S,RF})} \right)\right)
+  \end{equation}
+
+where we have introduced time dependence. Oh no! If $I$ and $S$ are of the same isotope, then $\omega_{I,RF}=\omega_{S,RF}$,the time dependence goes away and the Hamiltonian takes on the `strong' form $J_{IS}(\hat{I}_z\hat{S}_z+\hat{I}_y\hat{S}_y+\hat{I}_x\hat{S}_x)$. It was not affected by the rotating frame transform. If $I$ and $S$ are not of the same isotope, then we can set the time dependent terms to zero under the secular approximation (as the evolution frequencies are in MHz). With the time dependent terms vanishing we retain only $J_{IS}\hat{I}_z\hat{S}_z$, which we call `weak' scalar coupling.
+
+Something complicated happens to the RF Hamiltonian when we go into the rotating frame. Because the RF field is linearly polarised, it behaves like two circularly polarised fields, each going in opposite directions. When we move into the  rotating frame for a single spin we have
+
+\begin{equation}
+\hat{H}^0_{RF}= \omega_1\left(\hat{I}_x\cos\phi + \hat{I}_y \sin\phi\right) + \frac{\omega_1}{2}\left(\hat{I}_+ \rme^{-2\omega_{RF}t} + \hat{I}_- \rme^{+2\omega_{RF}t} \right) 
+\end{equation}
+
+And again, oh no! We have time dependence! Has the rotating frame transform failed us? Half of the RF field has been rendered time independent, but the other half is now rotating at a rate of 2$\omega_{RF}$ in the rotating frame. We could naively set this to zero under the secular approximation. This is what we usually do. But lets be thorough here.A more detailed treatment reveals this effect leads to an adjustment of the chemical shift equal to $-\frac{\omega_{1^2}}{4\omega_{RF}}$, termed a `Bloch-Siegert' shift (section \ref{sec:bloch}). For high field NMR these are on the order of a few Hz and so are barely detectable, making this transformation quite safe. For solids-NMR this term cannot be handled so easily.
+
+In practical terms for solution NMR, the rotating frame transform on the background Hamiltonian does produce a time independent Hamiltonian. We need to remember that we're working at high magnetic field strengths, so we manually apply either strong or weak coupling Hamiltonians in calculations in the like and unlike spin cases, respectively. The rotating frame did not get rid of all time dependence in the RF, but the Bloch-Siergert shift is tiny so we can pretend that it worked perfectly, to a  very good approximation.
+
+\subsection{Transforming the relaxation super-operator into the rotating frame.}
+
+     When we move into the rotating frame, we pick up a multiplicative factor of $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}$ on the outside (the factor that conjugates $\hat{\rho}$, which is now $\hat{\rho}_R$ in the rotating frame, doesn't simplify away because the $\hat{Q}_k$ inside don't commute with $\hat{H}_{\mathrm{rot}}$ in general). The result is
+
+    \begin{equation}
+    \hathat{\Gamma}_R= \rme^{\rmi \hathat{H}_{\mathrm{rot}}t}\sum_{km}\int_0^\infty g_{km}(\tau)    \left[\hat{Q}_k ,\left[ \rme^{ \rmi \hathat{H}^0 \tau}\hat{Q}_m^\dagger, \,.\,\right]\right] d\tau.
+\label{eqMainRot}
+    \end{equation}
+
+We have introduced some time-dependence into the rotating-frame relaxation super-operator. The rotating-frame relaxation super-operator $\hathat{\Gamma}_R$ contains two distinct exponentials acting on the spin operators $\hat{Q}_k$ and $\hat{Q}_m^\dagger$:
+
+\begin{itemize}
+    \item An outer factor $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}$, generated by the rotating-frame transformation. The relevant timescale is the experiment time $t$ (milliseconds), and the relevant frequencies are the RF carrier frequencies (hundreds of MHz).
+    \item An inner factor $\rme^{\rmi\hathat{H}^0\tau}$ inside the memory integral, generated by the original master equation. The relevant timescale is $\tau\sim\tau_c$ (nanoseconds and below), and the relevant frequency for each operator is whatever frequency the operator picks up under the laboratory-frame Hamiltonian.
+\end{itemize}
+
+The dissipative Hamiltonian is in a basis where we can evaluate the exponentials simply according to
+    \begin{equation}
+\begin{array}{rl}
+  \rme^{\rmi\hathat{H}^0 t}\hat{Q}_k &= \rme^{\rmi \hat{H}^0t}\hat{Q}_k\rme^{-\rmi \hat{H}^0t}\approx \rme^{\rmi \omega_kt} \hat{Q}_k, \\
+  \rme^{\rmi \hathat{H}_{\mathrm{rot}}t}\hat{Q}_k &= \rme^{\rmi \hat{H}_{\mathrm{rot}}t}\hat{Q}_k\rme^{-\rmi \hat{H}_{\mathrm{rot}}t}= \rme^{\rmi \omega_k t} \hat{Q}_k,
+  \end{array}
+      \end{equation}
+i.e.\ each $\hat{Q}_k$ is an eigenoperator of both $\hathat{H}^0$ and $\hathat{H}_{\mathrm{rot}}$, picking up a single frequency factor under each. (The approximation in the first line, replacing the full $\hat{H}^0$ evolution by its Zeeman content, is justified shortly.)
+
+Using $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}\hat{Q}_k=\rme^{\rmi\omega_{k,\mathrm{RF}}t}\hat{Q}_k$ on each of the two operators inside the rotating-frame relaxation super-operator gives
+    
+\begin{equation}
+\begin{array}{rl}
+  \hathat{\Gamma}_R & =  \sum_{km}\int_0^\infty g_{km}(\tau)    \left[\rme^{-\rmi \omega_{k,\mathrm{RF}} t}\hat{Q}_k ,\left[\rme^{\rmi \omega_{m,\mathrm{RF}} t} \rme^{\rmi \hathat{H}^0 \tau} \hat{Q}_m^\dagger, \,. \right]\right] d\tau  \\
+    & =  \sum_{km}\rme^{\rmi(\omega_{m,\mathrm{RF}}- \omega_{k,\mathrm{RF}}) t} \int_0^\infty g_{km} (\tau)  \left[\hat{Q}_k ,\left[\rme^{\rmi \hathat{H}^0 \tau}\hat{Q}_m^\dagger, \,. \right]\right] d\tau \\
+\end{array}
+\end{equation}
+
+The sign of the first phase factor flips because the outer commutator picks up $\rme^{-\rmi\omega_{k,\mathrm{RF}}t}$ when $\hat{Q}_k$ appears in the ``minus'' position of the commutator. We will see that we can drop terms under the secular approximation unless $\omega_{k,\mathrm{RF}}=\omega_{m,\mathrm{RF}}$.
+
+\paragraph{The inner exponential.} We now turn to the second time evolution, $\rme^{\rmi\hathat{H}^0\tau}\hat{Q}_m^\dagger$. The crucial point is that $\hat{H}^0$ is the laboratory-frame Hamiltonian, and the integrand $g_{km}(\tau)$ decays in a few nanoseconds. We therefore only need to know what $\rme^{\rmi\hathat{H}^0\tau}\hat{Q}_m^\dagger$ looks like for $\tau$ up to a few tens of nanoseconds at most.
+
+The timescale heuristic is: a term in $\hat{H}^0$ of strength $A$ won't have meaningfully evolved an operator over time $\tau$ if $A\tau\ll 1$. The Zeeman term is by far the largest, between tens of MHz and a few GHz in solution NMR. Smaller contributions to $\hat{H}^0$ — scalar couplings (Hz to kHz), chemical shifts (kHz), residual dipolar effects — all have $1/A\gg\tau_c$ and so can be neglected during the memory integral. For 1 kHz, $1/A=160\,\mu$s; even at 100 kHz, $1/A=1.6\,\mu$s, both far longer than $\tau_c\sim$~ns.
+
+This assumption begins to become unsafe at low field, or when the correlation time exceeds a few hundred ns. This leads to broad peaks and solid-state regimes that fall outside the scope of standard solution-NMR Redfield theory.
+
+To a good approximation, then, only the Zeeman part of $\hat{H}^0$ matters during the inner integral, and we can write $\rme^{\rmi\hathat{H}^0\tau}\hat{Q}_k=\rme^{\rmi\omega_k\tau}\hat{Q}_k$ where $\omega_k$ is the (laboratory-frame) Zeeman frequency picked up by the operator. This gives
+
+\begin{equation}
+\begin{array}{rl}
+  \hathat{\Gamma}_R & =  \sum_{km} \rme^{\rmi(\omega_{m,\mathrm{RF}}- \omega_{k,\mathrm{RF}}) t} \int_0^\infty g_{km}(\tau) \left[\hat{Q}_k ,\left[\rme^{\rmi \omega_m \tau}\hat{Q}_m^\dagger, \,.\right]\right] d\tau \\
+\end{array}
+\end{equation}
+
+The frequency that enters the inner exponential is, strictly, the frequency picked up under the full $\hat{H}^0$, but on an axis of MHz the offset and coupling corrections are negligible — we may use the carrier frequency.
+
+\paragraph{Defining the spectral density.} The integral over $\tau$ now contains $g_{km}(\tau)\rme^{\rmi\omega_m\tau}$, which is a one-sided Fourier transform of the correlation function. Taking the Markov approximation means we can take the density matrix outside of the integral and define the spectral density
+
+\begin{equation}
+J_{km}(\omega_m)=\int_0^\infty g_{km}(\tau)\rme^{\rmi\omega_m\tau}d\tau.
+\end{equation}
+
+This is the power available in the random motion at frequency $\omega_m$. With this definition,
+
+\begin{equation}
+\begin{array}{rl}
+  \hathat{\Gamma}_R & =  \sum_{km}\rme^{\rmi(\omega_{m,\mathrm{RF}}- \omega_{k,\mathrm{RF}}) t}    J_{km} \left[\hat{Q}_k ,\left[\hat{Q}_m^\dagger, \,. \right]\right]  \\
+\end{array}
+\end{equation}
+
+Because the only frequencies entering the secular factor are RF carrier frequencies, we now drop the ``RF'' subscript without ambiguity, writing $\omega_k$ for $\omega_{k,\mathrm{RF}}$:
+
+\begin{equation}
+\begin{array}{rl}
+  \hathat{\Gamma}_R & =  \sum_{km} \rme^{\rmi(\omega_{m}- \omega_{k}) t}    J_{km} \left[\hat{Q}_k ,\left[\hat{Q}_m^\dagger, \,. \right]\right].  \\
+\end{array}
+\end{equation}
+
+When we use this to compute relaxation rates we will require $\omega_{m}= \omega_{k}$, otherwise the term will go to zero under the secular approximation. The double commutator and the secular approximation select for which relaxation pathways are allowed. The spectral density measures how much power there is from random motion to drive that relaxation pathway. Between the two, we have excellent description of relaxation by stimulated emission relevant for NMR.
+
+\paragraph{The secular approximation in relaxation.}
+The secular approximation for relaxation, because of the assumption of stationary noise takes on a slightly different form. We have to evaluate
+
+\begin{equation}
+F_{mk} = \int_0^\infty \rme^{\rmi \Delta_{mk} t}  dt 
+\end{equation}
+
+where $\Delta_{mk}=\omega_{m,\mathrm{RF}}- \omega_{k,\mathrm{RF}}$. At this point the important issue is no longer molecular memory but \emph{phase averaging}. Two terms that rotate relative to one another with frequency difference $\Delta$ repeatedly change sign on the timescale $1/\Delta$. If many such oscillations occur before relaxation builds up, the contribution of that pair to the time-integrated relaxation is essentially zero. To compete with time dependent parts, we need this term to be comparable with the timescale on which we're evaluating, $t$. We can then look at the following ratio:
+
+\begin{equation}
+\frac{1}{t}\mathrm{Re}\left(F_{mk}\right) =  \mathrm{sinc}(\Delta t).
+\end{equation}
+
+If this ratio is less than 1, the term can get dropped under the secular approximation. Taking a value of $\Delta$ as 10 MHz, this factor is still appreciable in 10 ns, but has fallen to zero in 100 ns. The relevant time to consider for the secular intergral is the measurement timesecale, on the micro/milli second timescale. In which case the secular approximation is highly effect and so this secular factor removes from consideration many possible relaxation pathways, the only ones being allowed have $\omega_{m,\mathrm{RF}}= \omega_{k,\mathrm{RF}}$ which sets the sinc function to 1 (meaing `pathway allowed').
+
+\subsection{The equation of motion in the rotating frame}
+
+Bringing this together, we have the master equation of motion for NMR in the rotating frame
+
+\begin{equation}
+  \frac{\partial}{\partial t}\hat{\rho}_R(t) = -\rmi \hathat{H}^0_R \hat{\rho}_R(t) - \hathat{\Gamma}_R (\hat{\rho}_R(t)-\hat{\rho}_{R,\mathrm{eq}})
+\label{eqMainRotShort}
+\end{equation}
+
+The equilibrium density operator commutes with the rotating-frame transform (it is a function of $\hat{I}_{i,z}$ only), so $\hat{\rho}_{R,\mathrm{eq}}=\hat{\rho}_{\mathrm{eq}}$. 
+
+We have a coherent term, $\hathat{H}^0_R$ containing the isotropic chemical shift and scalar couplings, that under the secular approximation are converted into weak and strong depending on if we have like or unlike spins. The RF term can be included here where needed, which has been rendered time independent under the rotating frame transform and secular approximation. And we have the relaxation super-operator, which also has a secular selection term that allows only particular relaxation pathways.
+
+What remains is to actually compute some relaxation rates using this formalism.
+
+
+
+
+\section{Calculation of relaxation rates}
+
+\paragraph{From operators to coefficients (Liouville space).} For numerical work it is convenient to expand the density matrix in a fixed basis of time-independent ortho-normal operators $\{\hat{\sigma}_i\}$ — for example normalised version of the shift basis $\{\hat{I}_+,\hat{I}_-,\hat{I}_z,\hat{E},\ldots\}$ extended over all spins — and put all the time dependence into scalar coefficients $b_i(t)$:
+\begin{equation}
+\hat{\rho}(t)=\sum_i b_i(t)\hat{\sigma}_i.
+\end{equation}
+This is just a change of representation: instead of a matrix, the density operator becomes a column vector $\hat{b}=(b_1,b_2,\ldots)^T$. In this representation the equation of motion is linear in $\hat{b}$,
+\begin{equation}
+\frac{d\hat{b}(t)}{dt}=L\hat{b}(t),\qquad \hat{b}(t)=\rme^{Lt}\hat{b}(0),
+\label{louvB}
+\end{equation}
+where $L$ is a finite matrix called the \emph{Liouvillian}. The space of operators (with this kind of column-vector representation) is called \emph{Liouville space}: super-operators on Hilbert space become ordinary matrices on Liouville space.
+
+The major advantage of this equation is how easily we can solve it. The solution to  equation \ref{louvB} is
+
+\begin{equation}
+  \hat{b}(t)=\rme^{Lt} \hat{b}(0)
+\label{eq:prop}
+  \end{equation}
+
+where $\rme^{Lt}$ is a matrix exponential (very easy to compute numerically) and $\hat{b}(0)$ and $\hat{b}(t)$ are vectors. So propagation of the density matrix becomes (after a matrix exponential) a matrix/vector product. There are some fancy mathematical tricks known as \emph{Krylov} methods that let us work this out without having to go all in and compute the full matrix exponential but at this point we touch specific numerical tricks to help us solve these sorts of equations easily in a computer. Which is a field in of itself. 
+
+
+\paragraph{Getting matrix elements by projection.} Once the basis operators are normalised so that $\langle\hat{\sigma}_i^\dagger\hat{\sigma}_j\rangle=\mathrm{Tr}(\hat{\sigma}_i^\dagger\hat{\sigma}_j)=\delta_{ij}$, the matrix elements of any super-operator $\hat{\hat{O}}$ are extracted by sandwiching:
+    \begin{equation}
+      \begin{array}{rl}
+      H_{ij} &= \langle \hat{\sigma}_i^\dagger \hathat{H}^0_R\hat{\sigma}_j  \rangle =\mathrm{Tr}\left( \hat{\sigma}_i^\dagger \hathat{H}^0_R\hat{\sigma}_j \right), \\
+      R_{ij} &= \langle \hat{\sigma}_i^\dagger \hathat{\Gamma}_R\hat{\sigma}_j  \rangle =\mathrm{Tr}\left( \hat{\sigma}_i^\dagger  \hathat{\Gamma}_R \hat{\sigma}_j \right).
+      \end{array}
+      \end{equation}
+The Liouvillian matrix elements are then $L_{ij}=-\rmi H_{ij}-R_{ij}$, splitting cleanly into a coherent (Hamiltonian) part and a dissipative (relaxation) part.
+
+\paragraph{The relaxation rate as a traced double commutator.} Substituting $\hathat{\Gamma}_R$ from the previous subsection,
+
+\begin{equation}
+\begin{array}{rl}
+  R_{ij}=\langle \hat{\sigma}_i^\dagger \hathat{\Gamma}_R  \hat{\sigma}_j \rangle &= \sum_{km} \langle \rme^{\rmi (\omega_m-\omega_k) t}\rangle  J_{km}    \mathrm{Tr}\left(\hat{\sigma}_i^\dagger  \left[\hat{Q}_k ,\left[\hat{Q}_m^\dagger,\hat{\sigma}_j\right]\right]  \right).
+\end{array}
+\end{equation}
+
+The structure here is worth pausing on: the time evolution due to molecular motion is now entirely contained in the spectral density $J_{km}$, while everything to do with the operators is in the trace. Once we assume carrier frequencies of different nuclei are separated by MHz (so the secular average is either 1 or 0), we can replace the ensemble average by a Kronecker delta:
+
+\begin{equation}
+\begin{array}{rl}
+  R_{ij}= \sum_{km} \delta_{\omega_m,\omega_k}   J_{km}    \mathrm{Tr}\left(\sigma_i^\dagger  \left[\hat{Q}_k ,\left[\hat{Q}_m^\dagger,\sigma_j\right]\right]  \right).
+\label{rate}
+\end{array}
+\end{equation}
+
+
+\subsection{The Redfield Kite}
+
+The Redfield kite is a way to describe the types of liouvillian operators that can relax together. It says that \emph{the coherence orders of $\hat{\sigma}_i$ and $\hat{\sigma}_j$ must be identical for $R_{ij}$ to be non-zero.}
+
+This has some important consequences: the NOE is a cross relaxation between two longitudinal operators, a transfer described by $\hat{I}_z\rightarrow \hat{S}_{z}$. The coherence order of these two operators is zero (these two operators describe populations, not coherences). This means according to the Redfield Kite rule, because these two operators have the same coherence order, they can cross-relax.
+
+What about the following transfer, $\hat{I}_z\rightarrow \hat{S}_+$? This is a cross-relaxation between a longitudinal operator $\hat{I}_z$ and a transverse operator with coherence order +1, $\hat{S}_+$. This is not allowed according to the Redfield kite. So when we compute relaxation matrix elements $R_{ij}$ we can first test to makes sure the coherence order of $\sigma_i$ and $\sigma_k$ is the same.
+
+This is necessary, but not sufficient. For example, the following cross-relaxation $\hat{I}_+\rightarrow \hat{S}_+$ is allowed, because we transfer from coherence order 1 to coherence order 1. However, under the secular approximation we will see shortly that while this can always occur, it doesn't occur where $I$ and $S$ are unlike spins because the frequencies are not matched by the secular approximation. In the case of like spins, where $I$ and $S$ are of the same type, their frequencies are matched, and this transfer is both allowed by the Redfield kite rule, and also has a non-zero rate. This transfer is called a rotating Overhauser effect or ROE.
+
+It is interesting to note that the secular approximation is applied to pairs of operators in the fluctuating Hamiltonian — i.e.\ which $\hat{Q}_k$ and $\hat{Q}_m^\dagger$ can pair up. This is a different statement to the Redfield kite, which is about pairs of basis operators that can be linked by relaxation. It turns out that the Redfield kite follows on from the secular approximation (section \ref{deriv:kite}), and so that as soon as we apply the secular approximation, we massively limit the types of fluctuations that can lead to relaxation.
+
+We will next compute a few relaxation rates to illustrate how they look.
+
+
+\subsection{Example relaxation rates}
+
+Lets take a pair of dipolar coupled spins, both protons. Then the specific form of $\hat{H}^1=\sum_kq_k\hat{Q}_k$ is
+
+\begin{small}
+\begin{equation}
+\hat{H}^1 =  \frac{\sqrt{6}}{2} d\left( \hat{H}^1_+\hat{H}^2_+ + \hat{H}^1_-\hat{H}^2_-  + \hat{H}^1_z\hat{H}^2_+  + \hat{H}^1_+\hat{H}^2_z  + \hat{H}^1_z\hat{H}^2_-  + \hat{H}^1_-\hat{H}^2_z +  \sqrt{\frac{8}{3}}\left(\hat{H}^1_z\hat{H}^2_z  -\left(\frac{1}{4}\hat{H}^1_+\hat{H}^2_-  +\hat{H}^1_-\hat{H}^2_+\right)\right)\right)
+\label{eq:dip}
+\end{equation}
+\end{small}
+
+where $d=\frac{\mu_0\hbar\gamma_I\gamma_S}{4\pi R^3}$, the dipolar coupling constant for two spins separated by distance $R$. We need to do a double sum over all pairs of interactions. When writing the dissipation Hamiltonian this way, we are removing factors necessary to handle rotations. For more detail here you can see e.g. the RelCalc paper where everything is treated explicitly. When writing the Hamiltonian in precisely this form, the spatial orientations have been already averaged out and this happened behind the scenes.
+
+Under the secular approximation we need to match pairs of terms in equation \ref{eq:dip} with equal and opposite evolution frequency, such as $\hat{H}^1_+\hat{H}^2_+$ and $\hat{H}^1_-\hat{H}^2_-$. The spectral density function associated with such a pair will be proportional to $J(\omega_{\hat{H}^1_+}+\omega_{\hat{H}^2_+})$ where for isotropic tumbling the reduced spectral density function $J(\omega)=\tau_c/(1+\omega^2\tau_c^2)$, with rotational correlation time $\tau_c$.  
+
+The complete calculation is written out in a manner that can be done by hand in section~\ref{sec:ex}. There are four particular rates that are interesting to note, those for $R_1$, $R_2$, the NOE and the ROE. The first three are given, for the homonuclear case as
+
+\begin{small}
+  \begin{equation}\begin{array}{rl}
+R_1= R_{\hat{H}^1_z,\hat{H}^1_z} =
+& + d^2 \left[ +\frac{1}{10} \tau_c +\frac{3}{10} J\left(\omega_H\right) +\frac{3}{5} J\left(2\omega_H\right)\right]\\
+R_2=R_{\hat{H}^1_x,\hat{H}^1_x}=
+& + d^2 \left[ +\frac{1}{4} \tau_c +\frac{9}{20} J\left(\omega_H\right) +\frac{3}{10} J\left(2\omega_H\right)\right]\\
+\sigma_{zz}= R_{\hat{H}^1_z,\hat{H}^2_z}=
+& + d^2 \left[ -\frac{1}{10} \tau_c +\frac{3}{5} J\left(2\omega_H\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+
+These three are the same whether we are looking at either like or unlike spins, where the only difference is a change in the frequencies of the spectral density functions. For $R_2$, some of the $J(0)=\tau_c$ is split into zero quantum $|\omega_I-\omega_S|$ in the unlike-spin case. This means that these four rates are comprised of terms where, under the secular approximation, there is no difference between the pairings in the like and unlike case.
+
+An interesting counter-example is the ROE rate, given by
+
+\begin{small}
+\begin{equation}\begin{array}{rl}
+    \sigma_{++}= R_{\hat{H}^1_x,\hat{H}^2_x}=
+& + d^2 \left[ +\frac{1}{5} \tau_c +\frac{3}{10} J\left(\omega_H\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+
+This is formed only from pairs of terms in the like-spin case that would be non-secular in the heteronuclear case, for example $\hat{H}^1_z\hat{H}^2_z$ and $\hat{H}^1_+\hat{H}^2_-$. In the un-like spins case, this combination is set to zero in the secular approximation, but is non-zero for the like spin case.
+
+This means that transfer between transverse terms is allowed between like-spins, but is not allowed for unlike-spins.
+
+To complete the NMR discussion, we next recover Liouvillian equations of motion that allow computation of how magnetisation flows in NMR experiments which includes a quantum mechanical derivation of Bloch's equation.
+
+
+\subsection{Recovering Bloch's equation}
+
+Bloch's equation is the classical phenomenological description of relaxation: a single spin precessing in a static field $\Omega_z$ along $z$ and an oscillating $B_1$ field with components $\omega_x,\omega_y$, with magnetisation decaying back to equilibrium with rates $R_1$ (longitudinal) and $R_2$ (transverse). It is the right answer in the limit where you don't care about coherence transfer between spins. We can derive this as a special case of our master equation.
+
+Take a single spin with no scalar couplings, $\hat{H}^0_R= \omega_x \hat{I}_x + \omega_y \hat{I}_y + \Omega_z \hat{I}_z$. Computing a relaxation rate requires \emph{some} fluctuating Hamiltonian (e.g.\ dipolar coupling to a second spin elsewhere in the molecule, or CSA), but those interactions live in $\hat{H}^1$, are motionally averaged to zero, and don't appear in $\hat{H}^0_R$. Take the basis operators to be the normalised versions of $\hat{E},\hat{I}_x,\hat{I}_y,\hat{I}_z$, and assume cross-relaxation via NOE is negligible (i.e.\ ignore $\sigma_{zz}$ off-diagonal terms). The resulting Liouvillian is
+
+    \begin{equation}
+     \frac{d}{dt} \left(\begin{array}{c}  b_x \\ b_y \\ b_z \\ 1  \end{array}\right) = \left(\begin{array}{cccc} -R_2 &  -\Omega_z & \omega_y &  0 \\ \Omega_z & -R_2 & -\omega_x & 0 \\ -\omega_y & \omega_x & -R_1 & M_0 R_1 \\ 0&0&0&0\end{array} \right)
+       \left(\begin{array}{c}  b_x \\ b_y \\ b_z \\ 1  \end{array}\right)
+      \end{equation}
+
+The coefficient on the identity, $b_E=1$, is conserved; the equilibrium magnetisation $M_0$ enters via the column coupling $b_z$ to the identity, encoding the fact that at equilibrium $b_z\to M_0$. The relaxation rates are projections of $\hathat{\Gamma}$ onto the relevant operators: $R_2 = \mathrm{Tr}(\sigma_x^\dagger \hathat\Gamma \sigma_x) = \mathrm{Tr}(\sigma_y^\dagger \hathat\Gamma \sigma_y)$ (transverse decay, equal for $x$ and $y$) and $R_1=\mathrm{Tr}(\sigma_z^\dagger \hathat\Gamma \sigma_z)$ (longitudinal decay). 
+
+If we drop relaxation altogether ($R_1=R_2=0$) and remove the identity row/column, the remaining $3\times 3$ matrix is anti-symmetric. Defining the field vector $\hat{\omega}=(\omega_x,\omega_y,\Omega_z)$, we have $\frac{d\hat{b}}{dt}= \hat{\omega} \times \hat{b}$ — the classical equation for the rate of change of magnetisation in a magnetic field. With relaxation reinstated, this becomes the full Bloch equation.
+
+\paragraph{The shift basis as a diagonalising basis for free precession.} Repeating the same calculation in the single-element shift basis $\hat{I}_+,\hat{I}_-,\hat{I}_\alpha,\hat{I}_\beta$, in the absence of an applied field ($\omega_x=\omega_y=0$), gives
+
+    \begin{equation}
+     \frac{d}{dt} \left(\begin{array}{c}  b_+ \\ b_- \\ b_\alpha \\ b_\beta  \end{array}\right) = \left(\begin{array}{cccc} -R_2 - \rmi \Omega_z &  0 & 0 &  0 \\ 0 & -R_2+ \rmi \Omega_z  & 0 & 0 \\0 & 0 & \frac{1}{2}(-1+M_0)R_1 & \frac{1}{2}(1+M_0)R_1 \\ 0&0& -\frac{1}{2}(-1+M_0)R_1& -\frac{1}{2}(1+M_0)R_1\end{array} \right)
+       \left(\begin{array}{c}  b_+ \\ b_- \\ b_\alpha \\ b_\beta  \end{array}\right)
+      \end{equation}
+
+The key feature is that the $\hat{I}_+$ and $\hat{I}_-$ subspaces have decoupled and acquired pure imaginary diagonal elements $\mp\rmi\Omega_z$. This is what makes the shift basis convenient for $z$-rotations: $\hat{I}_z$ and the identity commute with $\hat{H}_{\mathrm{rot}}$ trivially, so in this basis the rotating-frame transformation only needs to accrue phase on $\hat{I}_\pm$ — and the Liouvillian is already diagonal there.
+
+These Liouvillian evolution equations are straightforward for a computer to analyse. Expanding them to cover multiple spins is an exercise, the only downside being that for spin halves, the size of the matrices will be $4^N$ $\times$ $4^N$. There's a trick we can do with the identity that pulls this back to $3^N+1$ $\times$ $3^N+1$, but things still get big, and fast. If we include the effects of chemical exchange, as often we must, this takes our matrix of whatever size, and doubles the dimension (for 2 site exchange), triples it (for 3 site exchange), and so on.
+
+We can, however, get a bit clever and figure out of there is symmetry present. If we can block-diagonalise $L$ in some way, we massively reduce the dimension of the problem. If, for example, we know we only have transverse magnetisation, if we're careful with our basis choice we can easily make the matrix block diagonal. Pulses however present more of a pain because they tend to mix everything around. If our problem allows us to ignore most of the terms (as in our experiment they are not populated and our interactions don't mix everything) we can take instead a \emph{subspace}. This means retaining only the parts from $L$ that will act on the density matrix that has been restricted to reflect a specific problem. We will look at a couple of examples of this.
+
+
+\subsection{The NOESY/ROESY problem}
+
+The NOESY/ROESY distinction is a useful place to see why all the careful bookkeeping above matters. Both experiments measure cross-relaxation between two spins, but they probe different operator subspaces. NOESY transfer is longitudinal: $\hat{I}_z\to\hat{S}_z$. ROESY transfer is transverse: $\hat{I}_x\to\hat{S}_x$, or equivalently $\hat{I}_+\to\hat{S}_+$. The secular approximation treats these pathways differently — and the difference depends critically on whether $I$ and $S$ are the same isotope or not.
+
+\paragraph{Building the evolution matrix in practice.} To predict how a NOESY or ROESY experiment evolves, we build a Liouvillian $L$ in the shift basis, where evolution frequencies are well defined per operator. For a single-element basis matrix with a 1 in row $a$ and column $b$, $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}\sigma_i = \rme^{\rmi(a-b)\omega t}\sigma_i$ where $\omega$ is the relevant carrier frequency for that spin. The secular approximation is then trivially evaluated for any nucleus of any spin.
+
+Cross-relaxation rates between operators that evolve at different frequencies are set to zero (the secular truncation), and all others come from equation~\ref{rate}. In principle there are small corrections to the rates depending on whether RF is applied — these would enter through the argument of the spectral density. In solution NMR, however, all interactions are small compared to the Zeeman term and correlation functions decay in nanoseconds, so including them amounts at most to a tiny fluctuation around the central frequency, which we ignore.
+
+Operationally, this means: first compute $R_{ij}$ and $H_{ij}$ for the case with no RF applied. Their sum is the free-evolution Liouvillian, valid in any experiment. Then add any RF Hamiltonian applied during a particular pulse sequence on top of this, and propagate (use equation \ref{eq:prop}).
+
+\paragraph{NOESY: longitudinal cross-relaxation.} Restricting to the $\hat{I}_z,\hat{S}_z$ subspace, the evolution matrix is
+
+\begin{equation}
+\frac{d}{dt}  \left(\begin{array}{c} I_z \\ S_z \end{array} \right) = 
+\left( \begin{array}{cc} - R_{1,I} & -\sigma_{zz} \\ -\sigma_{zz} &  -R_{1,S} \end{array}\right)
+ \left(\begin{array}{c} I_z \\ S_z \end{array} \right).
+  \end{equation}
+
+This same form applies regardless of whether $I$ and $S$ are the same or different isotopes — both $\hat{I}_z$ and $\hat{S}_z$ are coherence-order zero, so the secular approximation never kills the cross-relaxation rate $\sigma_{zz}$. The detailed value of $\sigma_{zz}$ does depend on the frequency difference (entering through the spectral density), and as a result the homonuclear NOE is typically much larger in magnitude than the heteronuclear NOE. But the structure of the equation is identical.
+
+\paragraph{ROESY: transverse cross-relaxation and the secular ambush.} Restricting to the $\hat{I}_+,\hat{S}_+$ subspace, the evolution matrix in free precession (no scalar coupling, no RF) is
+
+\begin{equation}
+\frac{d}{dt}  \left(\begin{array}{c} I_+ \\ S_+ \end{array} \right) = 
+\left( \begin{array}{cc}  -\rmi \Omega_I - R_{2,I} & -\sigma_{++} \\ -\sigma_{++} &  -\rmi \Omega_S -  R_{2,S} \end{array}\right)
+ \left(\begin{array}{c} I_+ \\ S_+ \end{array} \right).
+  \end{equation}
+
+Two regimes matter. In the heteronuclear case, the secular approximation (applied to $\hat{H}^1$, not to this evolution matrix) sets $\sigma_{++}=0$: $\hat{I}_+$ and $\hat{S}_+$ have different rotating-frame carrier frequencies separated by hundreds of MHz, so the underlying flip-flop pairings that would couple them are killed by the time average. There is no heteronuclear ROE.
+
+In the homonuclear case, $\sigma_{++}$ is non-zero and was computed above. However, the diagonal frequencies $\Omega_I,\Omega_S$ in the matrix above differ by their chemical shifts ($|\Omega_I-\Omega_S|\sim$~kHz), and provided $|\Omega_I-\Omega_S|\gg\sigma_{++}$, the off-diagonal couplings have negligible effect on the eigenvectors and the cross-relaxation transfer is suppressed. The way ROESY ``rescues'' transfer is by applying a strong continuous-wave spin-lock RF, which in the rotating frame around the spin-lock axis brings the effective evolution frequencies of both spins to (near) zero. With $\Omega_I=\Omega_S=0$, the off-diagonal $\sigma_{++}$ couplings now drive observable transfer. This regime emerges automatically in a Liouville-space simulation that includes both the relaxation rates and the spin-lock RF Hamiltonian.
+
+\paragraph{TROSY: differential transverse relaxation.} A related effect arises in heteronuclear two-spin systems. Take an $I,S$ pair (e.g.\ $H,N$) with scalar coupling $J$, and project onto the doublet states $\hat{I}_+\hat{S}_\alpha$ and $\hat{I}_+\hat{S}_\beta$. Under free precession,
+
+\begin{equation}
+  \frac{d}{dt}  \left(\begin{array}{c} I_+S_\alpha \\ I_+S_\beta \end{array} \right) = 
+\left( \begin{array}{cc}  -\rmi (\Omega_I+ \frac{1}{2}J) - R_{I_+S_\alpha} & -\sigma_{\alpha\beta} \\ -\sigma_{\alpha\beta} &  -\rmi (\Omega_I-\frac{1}{2}J) -  R_{I_+S_\beta} \end{array}\right)
+ \left(\begin{array}{c} I_+S_\alpha \\ I_+ S_\beta \end{array} \right)
+  \end{equation}
+
+The two states evolve at different frequencies (the two halves of the $I$ doublet), and they have different transverse relaxation rates because cross-correlation between dipolar and CSA mechanisms causes them to interfere constructively for one component and destructively for the other. If $R_{I_+S_\alpha}\gg R_{I_+S_\beta}$ (or vice versa), the two pathways must be tracked separately — that's the TROSY effect, where one component of the doublet is selectively narrow. The cross-relaxation $\sigma_{\alpha\beta}$ mixes the two states and degrades the TROSY selection. For an NH pair in a protein, external proton spins contribute significantly to $\sigma_{\alpha\beta}$ via cross-relaxation; perdeuterating the protein removes most of those external protons and is essential for high-quality TROSY.
+
+
+
+
+
+
+
+
+    
+
+\section{Master equation derivation}
+\label{deriv}
+
+This section fills in the algebra behind equation~\ref{eqMain1}. The presentation draws on several sources. Knowing which frame of reference we are in at each step is critical, so the steps are explicitly tagged.
+
+\paragraph{Roadmap.} The derivation has five stages:
+\begin{enumerate}
+    \item Move from the Schr\"odinger picture (where operators are static and states evolve) to the \emph{interaction picture} (where the trivial part of the evolution under $\hat{H}^0$ is rotated away, leaving only the effects of $\hat{H}^1$).
+    \item Truncate the resulting equation at second order in $\hat{H}^1$ (Born approximation).
+    \item Take an ensemble average over realisations of the random motion.
+    \item Replace the memory integral by a local-in-time expression (Markov approximation).
+    \item Return to the Schr\"odinger picture and write the result in Hilbert space.
+\end{enumerate}
+
+\paragraph{Step 0: starting point.} We begin in the laboratory frame:
+
+  \begin{equation}
+\frac{d\hat{\rho}(t)}{dt} = - \rmi \left[ \hathat{H}^0+ \hathat{H}^1(t) \right]\hat{\rho}(t)
+  \end{equation}
+
+where $\hathat{H}^0$ is the time-independent part of the Hamiltonian and $\hathat{H}^1(t)$ is the time-dependent fluctuating part driven by random molecular motion. The double-hat notation means $\hathat{O}\hat{A}=[\hat{O},\hat{A}]$. We assume $\hathat{H}^1$ has a zero ensemble average, $\langle\hathat{H}^1(t)\rangle=0$. This is not a restriction: any non-zero average can be absorbed into $\hat{H}^0$.
+
+\paragraph{Step 1: interaction picture.}
+The interaction picture is a change of variables that ``factors out'' the trivial coherent evolution under $\hat{H}^0$, so that the only thing left to compute is what $\hat{H}^1$ does. Define
+
+  \begin{equation}
+    \begin{array}{rl}
+    \hat{\rho}_I(t) &= \rme^{\rmi \hathat{H}^0 t}\hat{\rho}(t)\\
+    \hathat{H}^{1}_I(t) &= \rme^{\rmi \hat{H}^0 t} \hathat{H}^1(t) \rme^{-\rmi \hat{H}^0 t}
+    \end{array}
+    \end{equation}
+
+ The second line, written as a super-operator product, is $\hathat{H}^{1}_I(t)=\rme^{\rmi\hathat{H}^0 t}\hathat{H}^1(t)$. This is a change of basis, as the original $\hat{H}^0$ term commutes with $\rme^{\rmi \hat{H}^0 t}$, which is then nullified by the residual $-\hat{H}^0$ coming from the basis change (equation \ref{eq:rotatingFrame}). Differentiating $\hat{\rho}_I$ with respect to $t$ and using the Schr\"odinger equation gives
+    
+    \begin{equation}
+      \frac{\partial }{\partial t}\hat{\rho}_I (t) = -\rmi \hathat{H}^{1}_I(t) \hat{\rho}_I(t)
+    \end{equation}
+
+The key feature of this basis change is that $\hat{H}^0$ has disappeared from the right-hand side. All evolution in the interaction picture is driven by the fluctuating part alone.
+
+\paragraph{Step 2: second-order (Born) truncation.} We integrate the previous equation formally,
+
+\begin{equation}
+\hat{\rho}_I(t) = \hat{\rho}_I(0) - \rmi \int_0^t \hathat{H}^{1}_I(t_1)\hat{\rho}_I(t_1)\,dt_1,
+\end{equation}
+
+and substitute the result back into the right-hand side of the same equation. This gives an exact equation in which $\rho_I(t_1)$ appears under one integral, and $\rho_I(0)$ appears explicitly:
+
+    \begin{equation}
+      \frac{\partial}{\partial t}\rho_I(t)  = -\rmi \hathat{H}^{1}_I(t)\rho_I(0) - \int_0^t \hathat{H}^{1}_I(t)  \hathat{H}^{1}_I(t_1) \rho_I(t_1) dt_1
+\label{eq:early}
+      \end{equation}
+
+    We can continue this process and after infinitely many substitutions,
+
+    \begin{equation}
+      \hat{\rho}_I(t) = \left(\hat{E} -\rmi \int_0^t dt_1 \hathat{H}^{1}_I(t_1) - \int_0^t dt_1 \int_0^{t_1} d t_2 \hathat{H}^{1}_I(t_1)\hathat{H}^{1}_I(t_2) +  ... \right)\hat{\rho}_I(0).
+\label{eq:sub}
+      \end{equation}
+    If the Hamiltonian is time dependent, then the integrals are triangular and this reduces to
+\begin{equation}
+     \hat{\rho}_I(t)=\left(\hat{E} + (- \rmi \hathat{H}^{1}_It) + \frac{1}{2}(-\rmi \hathat{H}^{1}_It)^2....\right)\hat{\rho}_I(0)  = \rme^{-\rmi \hathat{H}^{1}_It}\hat{\rho}_I(0)
+\end{equation}
+which reveals equation \ref{eq:sub} to be the super-operator form of the Dyson propagator with explicit time ordering. Our Hamiltonian is however time dependent. Using Leibniz rule on the outer derivative, we obtain
+\begin{equation}
+  \begin{array}{rl}
+      \frac{\partial}{\partial t} \hat{\rho}_I(t) &= -\rmi  \hathat{H}^{1}_I(t)\hat{\rho}_I(0) -  \int_0^{t} d t_1 \hathat{H}^{1}_I(t)\hathat{H}^{1}_I(t_1)\hat{\rho}_I(0) +....\\
+      \end{array}
+      \end{equation}
+
+where we can have a series that pulls $\rho_I(0)$ forwards in time and aligns it with $\frac{\partial}{\partial t}\rho_I(t)$. Later we are going to assume the fluctuations are so fast as to not lead to a change in $\rho$, allowing us to substitute $\rho_I(0)$ for $\rho_I(t)$. Consistent with this, because we have a weak perturbation and are considering short times and so $ |\hat{H}^1(t)t| \ll 1 $, we can safely truncate the series. Because the first order term will go to zero, we will truncate at second order in $\hat{H}^1$ 
+
+\paragraph{Step 3: ensemble average.} We now average over realisations of the random motion. The first term on the right vanishes:
+
+    \begin{equation}
+      \langle \hathat{H}^{1}_I(t) \hat{\rho}_I(0) \rangle =\pH \langle \hathat{H}^1(t) \rangle \mH \hat{\rho}_I(0) =0
+    \end{equation}
+
+This works because $\rho_I(0)=\rho(0)$ is fixed (so it comes out of the ensemble average), $\hat{H}^0$ is deterministic (so the conjugating exponentials come out too), and $\langle\hat{H}^1(t)\rangle=0$ by assumption. We are left with
+
+    \begin{equation}
+\frac{\partial }{\partial t} \langle \rho_I(t) \rangle  =  -\Big\langle \int_0^t \hathat{H}^{1}_I(t)  \hathat{H}^{1}_I(t_1) \rho_I(0) dt_1\Big\rangle
+      \end{equation}
+
+\paragraph{Step 4: separate spin operators from random coefficients.} The fluctuating Hamiltonian can be expanded as a sum of products of \emph{deterministic} spin operators $\hat{Q}_k$ and \emph{random} scalar coefficients $q_k(t)$:
+
+    \begin{equation}
+\hathat{H}^1(t) = \sum_k q_k(t) \hathat{Q}_k = \sum_m q_m^*(t) \hathat{Q}_m^\dagger
+      \end{equation}
+
+The two forms are identical because $\hat{H}^1$ is Hermitian: it can equally well be written as a sum or as the conjugate of the same sum, with the index relabelled. For NMR, $q_k$ will end up being elements of Wigner rotation matrices encoding molecular orientation, and $\hat{Q}_k$ will be irreducible spherical tensor operators. In the interaction picture, $\hathat{Q}_k^I(t)=\rme^{\rmi\hathat{H}^0 t}\hathat{Q}_k$ is deterministic. Substituting both expansions into the integrand gives
+
+    \begin{equation}
+\frac{\partial }{\partial t}\langle \hat{\rho}_I(t) \rangle  = - \sum_{km}\int_0^t \langle q_k(t) q_m^*(t_1) \hathat{Q}_k^I(t) \hathat{Q}_m^{I \dagger}(t_1) \hat{\rho}_I(0) \rangle\, dt_1
+      \end{equation}
+
+Because the $\hathat{Q}_k^I(t)$ are deterministic, the only random objects under the average are $q_k$, $q_m^*$, and $\rho_I(t_1)$ (which depends on the realisation through the equation of motion). To make further progress we now \emph{assume} that the spin density matrix is uncorrelated with the random coefficients ($|\hat{H}^1|\ll|\hat{H}^0|$, so the spin system has not had time to feel the noise it is about to be averaged against). This lets us factor the average:
+
+    \begin{equation}
+\langle q_k(t) q_m^*(t_1) \hathat{Q}_k^I(t) \hathat{Q}_m^{I \dagger}(t_1) \rho_I(t_1) \rangle = \langle q_k(t) q_m^*(t_1)\rangle  \hathat{Q}_k^I(t) \hathat{Q}_m^{I\dagger}(t_1) \langle \rho_I(0) \rangle
+      \end{equation}
+
+We now identify $\langle q_k(t) q_m^*(t_1) \rangle = g_{km}(t,t_1)$ as the two-time correlation function of the random coefficients. The \emph{stationary} assumption is that this depends only on the time difference, $g_{km}(t,t_1)=g_{km}(t-t_1)$. Substituting,
+
+    \begin{equation}
+\frac{\partial }{\partial t}\langle \rho_I(t) \rangle  = - \sum_{km} \int_0^t g_{km}(t-t_1) \hathat{Q}_k^I(t) \hathat{Q}_m^{I \dagger}(t_1)  \langle \rho_I(0) \rangle dt_1
+      \end{equation}
+
+\paragraph{Step 5: Markov (short-memory) approximation.} The correlation function $g_{km}(\tau)$ decays on the rotational correlation time $\tau_c$, which for typical solution-NMR samples is in the picosecond to nanosecond range. The spin density matrix evolves on the much longer timescale $1/R$ (millisecond and slower). On the timescale that $g_{km}$ is non-negligible, $\langle\rho_I\rangle$ has barely changed.
+
+Operationally, this means two things. First, replace $\langle\rho_I(0)\rangle$ inside the integral by $\langle\rho_I(t)\rangle$, which we then pull outside (we could have done the same derivation using equation \ref{eq:early} and equivalent replaced $\langle\rho_I(t_1)\rangle$ by $\langle\rho_I(t)\rangle$, which reveals the effect of the 2nd order truncation). Second, change variables from $t_1$ to $\tau=t-t_1$, so that $dt_1=-d\tau$ and the limits become $\tau\in[0,t]$. The integrand contains $g_{km}(\tau)$, which has decayed to zero long before $\tau=t$, so we may safely extend the upper limit to $\infty$:
+
+    \begin{equation}
+\frac{\partial \langle \rho_I(t) \rangle }{\partial t} = \left[- \sum_{km} \int_0^\infty g_{km}(\tau) \hathat{Q}_k^I(t) \hathat{Q}_m^{I \dagger}(t-\tau)  d\tau \right] \langle \rho_I(t) \rangle 
+      \end{equation}
+
+\paragraph{Step 6: return to the Schr\"odinger picture.}
+We now undo the interaction-picture transformation by acting with $\rme^{-\rmi\hathat{H}^0 t}$ on both sides. The two key identities are
+\begin{equation}
+\rme^{-\rmi\hathat{H}^0 t}\,\frac{\partial\rho_I}{\partial t} = \frac{\partial\rho}{\partial t} + \rmi\hathat{H}^0\rho,
+\qquad
+\rme^{-\rmi\hathat{H}^0 t}\,\hathat{Q}_k^I(t) = \hathat{Q}_k\,\rme^{-\rmi\hathat{H}^0 t},
+\end{equation}
+the second of which works because $\rme^{\rmi\hathat{H}^0 t}\hathat{Q}_k\rme^{-\rmi\hathat{H}^0 t}\cdot\rme^{-\rmi\hathat{H}^0 t}=\hathat{Q}_k\rme^{-\rmi\hathat{H}^0 t}$ trivially, and similarly for $\hathat{Q}_m^{I\dagger}(t-\tau)$ once the explicit $t$ dependence is unwound. After this transformation, factors of $\rme^{\pm\rmi\hathat{H}^0 t}$ cancel between consecutive operators, leaving an explicit $\rme^{-\rmi\hathat{H}^0\tau}$ between $\hathat{Q}_k$ and $\hathat{Q}_m^\dagger$:
+
+    \begin{equation}
+\frac{\partial}{\partial t}\rho(t) =  -\rmi \hathat{H}^0\rho(t) - \sum_{km} \int_0^\infty g_{km}(\tau) \hathat{Q}_k \rme^{-\rmi \hathat{H}^0\tau} \hathat{Q}_m^\dagger d\tau\, \rho(t)
+      \end{equation}
+    
+Defining the relaxation super-operator
+
+\begin{equation}
+\hathat{\Gamma} = \sum_{km} \int_0^\infty g_{km}(\tau) \hathat{Q}_k \rme^{-\rmi \hathat{H}^0\tau} \hathat{Q}_m^\dagger d\tau,
+\end{equation}
+
+we have
+
+    \begin{equation}
+      \frac{\partial}{\partial t}\rho(t) = -\rmi \hathat{H}^0\rho(t) - \hathat{\Gamma}\rho(t).
+    \end{equation}
+
+\paragraph{Step 7: forcing the equilibrium.} The derivation as it stands has $\rho\to 0$ as $t\to\infty$, not $\rho\to\rho_{\mathrm{eq}}$. This is a well-known shortcoming of weak-coupling perturbation theory: by treating the bath as a source of unbiased noise, we have lost the information that the bath is at finite temperature and therefore prefers some spin states over others. The standard fix is to replace $\rho$ on the right-hand side by $\rho-\rho_{\mathrm{eq}}$, so that the relaxation operator vanishes at equilibrium by construction:
+
+    \begin{equation}
+      \frac{\partial}{\partial t}\rho(t) = -\rmi \hathat{H}^0\rho(t) - \hathat{\Gamma}\big(\rho(t)-\rho_{\mathrm{eq}}\big)
+    \end{equation}
+
+This step can be done formally, which requires the creation of a set of operators the couple the system to the bath, and doing a partial trace over the bath. It is correct in the high-temperature limit relevant to NMR. But for here, we simply state the result.
+
+\paragraph{Step 8: write in Hilbert space.}
+The final form, written out as nested commutators in Hilbert space, is
+
+    \begin{equation}
+\frac{\partial}{\partial t}\rho(t) = -\rmi \left[\hat{H}^0,\rho(t)\right] - \sum_{km} \int_0^\infty g_{km}(\tau) \left[\hat{Q}_k ,\left[\rme^{\rmi \hat{H}^0\tau} \hat{Q}_m^\dagger \rme^{-\rmi \hat{H}^0 \tau},\rho(t)-\rho_{\mathrm{eq}}\right]\right]\,d\tau
+      \end{equation}
+
+This is equation~\ref{eqMain1}. The two nested commutators are the Hilbert-space rendering of the two super-operators $\hathat{Q}_k$ and $\hathat{Q}_m^\dagger$ acting in succession; the inner exponentials $\rme^{\pm\rmi\hat{H}^0\tau}$ are the Hilbert-space rendering of $\rme^{-\rmi\hathat{H}^0\tau}$.
+
+\subsection{What to remember}
+
+The derivation can be summarised in four physical statements.
+\begin{enumerate}
+    \item Relaxation requires fluctuations. A static Hamiltonian gives coherent evolution, not relaxation.
+    \item Molecular motion has a memory time. This is encoded in the correlation function, and its Fourier transform gives the spectral density.
+    \item The rotating frame makes the secular approximation visible. Terms that rotate rapidly relative to one another average away.
+    \item The Redfield kite is the Liouville-space expression of this averaging rule. Only basis operators with compatible coherence order remain coupled by the secular Redfield relaxation super-operator.
+\end{enumerate}
+
+
+
+\section{The rotating frame transform}
+\label{rotty}
+We briefly show the effects of this transformation on $\hat{H}^0$. We can split the Hamiltonian for solution NMR into a Zeeman term which includes the isotropic chemical shift (the largest term), a scalar coupling term, and an RF term.
+\begin{equation}
+\hat{H}^0= \hat{H}_Z^0+\hat{H}_J^0+\hat{H}_{RF}^0
+\end{equation}
+In the laboratory frame, $\hat{H}_Z^0$ and $\hat{H}_J^0$ are time independent, but $\hat{H}_{RF}^0$ is not. Taking on the isotropic parts of the chemical shift tensor then
+\begin{equation}
+  \begin{array}{rl}
+    \hat{H}^0_Z   &= \sum_i \omega_i \hat{I}_{i,z} \\
+    \hat{H}^0_J   &= \sum_i \sum_{j>i} \sum_{k=x,y,z} J_{ij} \hat{I}_{i,k}\hat{I}_{j,k}\\
+    \hat{H}^0_{RF} &= \sum_i 2\omega_{i,1}\left(\hat{I}_{i,x} \cos(\omega_{i,RF}t+\phi_i) \right)
+    \end{array}
+  \end{equation}
+
+where the $RF$ term examines a linear polarised (a combination of two circularly polarised) transverse RF field in the xy plane with intensity $\omega_{i,1}$ with a frequency $\omega_{i,RF}$ and polarisation angle $\phi_i$. We will consider the transformation of each into the rotating frame. The primary motivation of this transform is to allow us to treat the effect of RF pulses on the density matrix. This will have the effect of taking some terms which are time independent in the laboratory frame, into time dependent terms in the rotating frame.
+
+\paragraph{Zeeman / chemical shift.} The frequency $\omega_i$ in the laboratory effect includes both the Zeeman splitting because of the $B$ field, and shielding effects because of neighbouring electrons that give rise to the chemical shift. Because $\hat{I}_{i,z}$ commutes with $\hat{H}_\mathrm{rot}$ and so $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t} \left(\sum_i \omega_i \hat{I}_{i,z}\right)-  \hat{H}_{\mathrm{rot}}=\sum_i\Omega_i\hat{I}_{i,z}$ where the offset $\Omega_i=\omega_i-\omega_{i,RF}$. 
+
+\paragraph{Scalar coupling.}
+The isotropic scalar coupling between spins $I$ and $S$, is $J (\hat{I}_x\hat{S}_x+\hat{I}_y\hat{S}_y+\hat{I}_z\hat{S}_z)$. Moving this into the shift basis yields
+  \begin{equation}
+\hat{H}^0_J=    J (\hat{I}_x\hat{S}_x+\hat{I}_y\hat{S}_y+\hat{I}_z\hat{S}_z) =     J \left(\frac{1}{2}\left(\hat{I}_+\hat{S}_-+\hat{I}_-\hat{S}_+\right)+\hat{I}_z\hat{S}_z\right) 
+  \end{equation}
+which transforms into the rotating frame as
+\begin{equation}
+\hat{H}^0_{R,J}= J \left(\frac{1}{2}\left(\hat{I}_+\hat{S}_-\rme^{\rmi(\omega_{I,RF}-\omega_{S,RF})t} +\hat{I}_-\hat{S}_+\rme^{\rmi(-\omega_{I,RF}+\omega_{S,RF})t}\right)+\hat{I}_z\hat{S}_z\right) 
+\end{equation}
+In the homo-nuclear case, $\omega_{I,RF}=\omega_{S,RF}$, and the scalar coupling Hamiltonian is unchanged by the rotating frame transform. We call this the `strong coupling' case. For a hetero-nuclear case, the difference in frequency can be many MHz, and so the term with time dependence will decay rapidly to zero under the secular approximation and $\hat{H}^0_{R,J}=J\hat{I}_z\hat{S}_z$, which is the `weak coupling' limit.
+
+\paragraph{RF.} This is slightly more complex. First, noting $\hat{I}_x=\frac{1}{2}(\hat{I}_++\hat{I}_-)$ and expanding the cosine
+
+\begin{equation}
+  \begin{array}{rl}
+    \hat{H}^0_{R,RF} &= \sum_i\frac{1}{2} \omega_{i,1}\rme^{\rmi \omega_{i,RF} t\hathat{I}_z}\left(\rme^{+\rmi (\omega_{i,RF} t+\phi_i)}+\rme^{-\rmi (\omega_{i,RF} t+\phi_i)}\right)\left(\hat{I}_{i,-}+\hat{I}_{i,+}\right)\\
+    &= \sum_i \frac{1}{2}\omega_{i,1}\left(\hat{I}_{i,-}\left(\rme^{+\rmi \phi_i}+\rme^{-\rmi (2\omega_{i,RF}t+\phi_i)}\right)+ \hat{I}_{i,+}\left(\rme^{+\rmi (2\omega_{i,RF}t+\phi_i)}+\rme^{-\rmi \phi_i)}\right) \right)\\
+    &= \sum_i \frac{1}{2}\omega_{i,1}\left(  \hat{I}_{i,-}\rme^{+\rmi (\phi_i)}+ \hat{I}_{i,+}\rme^{-\rmi (\phi_i)} +\hat{I}_{i,-}\rme^{-\rmi (2\omega_{i,RF} t+\phi_i)}  +\hat{I}_{i,+}\rme^{\rmi (2\omega_{i,RF} t+\phi_i)}  \right)\\
+    &= \sum_i \omega_{i,1}\left(  \hat{I}_x \cos\phi_i + \hat{I}_y \sin\phi_i   +\frac{1}{2}\left(\hat{I}_{i,-}\rme^{+\rmi (2\omega_{i,RF} t+\phi_i)}  +\hat{I}_{i,+}\rme^{-\rmi (2\omega_{i,RF} t+\phi_i)}\right) \right)
+  \end{array}
+  \end{equation}
+  
+And we have turned half of the energy into a contribution that is time independent in the rotating frame, and the other half (the counter-rotating field) has picked up even more rapid time dependence in the rotating frame. The terms with time dependence will rapidly decay to zero under the secular approximation and are neglected. They can give rise to `Bloch Siegert shifts', which can lead to shifts on the order of a few Hz.
+
+\paragraph{Overall result.} The coherent Hamiltonian in the rotating frame is typically stated as
+
+\begin{equation}
+\begin{array}{rl}
+  \hat{H}^0_{R,Z} &= \sum_i \Omega_i I_{i,z}  \\
+  \hat{H}^0_{R,J}  &= \sum_i \sum_{j>i} J_{ij}(I_{i,z}I_{j,z}+I_{i,x}I_{j,x}+I_{i,y}I_{j,y})  \\
+  \hat{H}^0_{R,RF} &= \sum_i \omega_{i,1}\left(  I_x \cos\phi_i + I_y \sin\phi_i \right)  \\
+\end{array}
+\end{equation}
+
+for the homo-nuclear case (strong coupling), and the $I_{i,x}I_{j,x}+I_{i,y}I_{j,y}$ terms getting dropped if the two spins are hetero-nuclear (weak coupling). These terms are dropped as in the rotating frame they have picked up time dependence, as have the terms from the RF rotating at $2\omega_{i,RF}$. The reason why we can drop terms with time dependence in the rotating frame both in $\hat{H}^0_R$ and in the relaxation Hamiltonian with time dependence is the `secular approximation'.
+
+
+
+
+\section{Bloch-Siegert shifts}
+\label{sec:bloch}
+We can do a slightly better job of evaluating corrections to the effective Hamiltonian. Noting that from the approach with the Magnus expansion we can write our effective acting Hamiltonian as $\hat{H}_{\mathrm{eff}}=\sum_{n=1}^\infty \Omega_n$. Expanding the time dependent Hamiltonian as a Fourier series yields
+
+ \begin{equation}
+  \begin{array}{rl}
+    \Omega_1&= \frac{1}{t}\sum_j F_{j}  \hat{H}^0_{j,R}  \\
+    \Omega_2&= -\frac{\rmi }{2 t}\sum_{jk} F_{jk} [\hat{H}^0_{j,R},\hat{H}^0_{k,R}] 
+\end{array}
+  \end{equation}
+
+ as shown already. For the second order term, because $\hat{H}^0_R$ is Hermitian, for any time dependent evolution at frequency $\omega$ there will be another term evolving at $-\omega$. This leads to a special case where we can group terms with $\omega_k=-\omega_j$. The contribution to the Hamiltonian will be
+\begin{equation}
+  -\frac{\rmi}{2t} F_{1-1}=\frac{1}{2\omega}-\frac{\sin(\omega t)}{2t\omega^2}  + \rmi\frac{1}{2t\omega^2}\left(\cos(\omega t)-1\right)
+\end{equation}
+
+In the RF rotating frame Hamiltonian we have a time dependent term of the form
+
+\begin{equation}
+  \omega_1\frac{1}{2}\left(\hat{I}_- e^{+2\omega_{RF}t}+\hat{I}_+ e^{-2\omega_{RF}t}\right)
+\end{equation}
+and so if we group the oppositely rotating pairs of terms, where in the double integral we have partial cancellation of their evolution, then
+
+\begin{equation}
+  \Omega_2 =-\frac{\omega_1^2}{4} \left(\frac{\rmi }{2 t} \left(F_{-+}[\hat{I}_-,\hat{I}_+] + F_{+-}[\hat{I}_+,\hat{I}_-]\right)\right)
+  \end{equation}
+
+Because $[\hat{I}_+,\hat{I}_-]=2\hat{I}_z$, switching the order switches the sign, as does the sign in the integral when we keep only the leading term in $\rmi F_{jk}$ then
+
+\begin{equation}
+  \begin{array}{rl}
+    \Omega_ 2&=- \frac{\omega_1^2}{4}\left(\frac{1 }{2 } \left(\frac{1}{2\omega_{RF}} 2\hat{I}_z + \frac{1}{2\omega_{RF}} 2 \hat{I}_z\right)\right)\\
+    &= -\frac{\omega_1^2}{4 \omega_{RF}}  \hat{I}_z
+    \end{array}
+  \end{equation}
+This term shares the same operator as chemical shift $\hat{I}_z$ and so this Bloch-Siegert shift causes a small reduction in the chemical shift. For solution NMR this is tiny. For a $\omega_1$ field of 10 kHz applied in a rotating frame of 10 MHz we get a Bloch Siergert shift of 2.5 Hz, which is barely detectable and certainly negligible. For a proton in chemical shift terms this is on the order of 4 parts per billion (with chemical shifts normally measured in parts per million). This is a more thorough treatment than `just setting the time dependent term to zero' and helps to see that the assumption is safe.
+
+
+
+
+
+In the hetero-nuclear scalar coupling case we get another shift on the order of $\frac{J^2}{4(\omega_{I,RF}-\omega_{S,RF})}$. Given $J$ is a few hundred Hz, and the frequency difference is 10s of MHz this term is utterly negligible.
+
+
+
+\section{Derivation of the Redfield kite}
+\label{deriv:kite}
+   The proof below is bookkeeping, but the physical idea is simple. Coherence order tells us how an operator rotates under a $z$-rotation. Operators with different coherence order acquire different phases in the rotating frame. If those phases drift apart rapidly, the corresponding relaxation pathway averages to zero. The algebra below shows that this phase-averaging rule forces the Liouville-space relaxation matrix to connect only basis operators with matching coherence order.
+
+   \paragraph{Step 1: write the matrix element as a traced double commutator.}
+
+
+   For a relaxation rate to be non-zero we need elements like this
+   \begin{equation}
+R_{ij}=\sum_{kl}R_{ij}^{kl}= \sum_{kl}  \delta_{\omega_l,\omega_k}   J_{kl}  S_{ij}^{kl}
+   \end{equation}
+
+   to be non-zero. To evaluate this we need to calculate a number of traced double commutators,
+
+   \begin{equation}
+S_{ij}^{kl}=  \mathrm{Tr}\left(\sigma_j^\dagger \left[Q_k,\left[Q_l^\dagger,\sigma_i\right]\right]\right)
+\end{equation}
+
+\paragraph{Step 2: reduce the problem to products of basis elements.}
+To make the algebra tractable, relabel the four operators with single letters: let $A=Q_k$, $B=\sigma_i$, $C=Q_l^\dagger$, $D=\sigma_j$. Expanding the double commutator gives four terms,
+
+   \begin{equation}
+\begin{split}
+  S_{ij}^{kl}=  &\mathrm{Tr}\left(D^\dagger \left[C,\left[A^\dagger,B\right]\right]\right) \\
+  = & \mathrm{Tr}\left(D^\dagger CA^\dagger B \right) - \mathrm{Tr}\left(D^\dagger  CBA^\dagger  \right)+  \mathrm{Tr}\left(D^\dagger  BA^\dagger C \right) - \mathrm{Tr}\left(D^\dagger  A^\dagger BC \right).
+\end{split}
+\label{eq:ABCD}
+\end{equation}
+
+Each operator in $A,B,C,D$ acts on every spin in the system. The relaxing-Hamiltonian operators $A$ and $C$ involve at most two non-trivial spins (one for CSA/quadrupolar, two for dipolar); on every other spin they act as the identity.
+
+\paragraph{Outer-product representation in the Zeeman basis.} The cleanest way to track which products of $A,B,C,D$ are zero is to write each operator in the multi-spin Zeeman basis $\{|m_1,m_2,\ldots\rangle\}$. Each shift-basis operator on a single spin has exactly \emph{one} non-zero matrix element (e.g.\ $\hat{I}_+ = |\!\uparrow\rangle\langle\downarrow\!|$, $\hat{I}_z = \tfrac{1}{2}(|\!\uparrow\rangle\langle\uparrow\!|-|\!\downarrow\rangle\langle\downarrow\!|)$ — a sum of two diagonal terms; $\hat{I}_+\hat{I}_-=|\!\uparrow\rangle\langle\uparrow\!|=\hat{I}_\alpha$, etc.). Each multi-spin operator we encounter is a tensor product of such single-spin elements (or a sum of tensor products, one for each ``element'' in the basis), and we can write
+
+   \begin{equation}
+     A = \prod_i \otimes |A_{a}^i\rangle\langle A_{b}^i|
+     \end{equation}
+
+where the product is the Kronecker product over all spins. The labels $A_a^i$ and $A_b^i$ are the eigenvalues of $\hat{I}_z$ for spin $i$ — the $z$-component of angular momentum on each side of the outer product. (Strictly we should also carry the total angular momentum quantum number for each spin, but as long as we only multiply operators acting within the same total-$I$ block, this is automatic and we omit it for clarity.)
+
+\paragraph{Products via inner products.} Multiplying two such operators,
+
+   \begin{equation}
+     B A = \prod_i \otimes |B_{a}^i\rangle\langle B_{b}^i | A_{a}^i\rangle\langle A_{b}^i|,
+     \end{equation}
+
+and using orthonormality $\langle a|b\rangle=\delta_{a,b}$, gives
+
+   \begin{equation}
+     B A = \prod_i \delta_{B_{b}^i,A_{a}^i}\, |B_{a}^i\rangle\langle A_{b}^i|.
+   \end{equation}
+
+Two consequences. First, the product $BA$ is non-zero only if $A_a^i = B_b^i$ on \emph{every} spin — the ``outgoing'' Zeeman index of $A$ must match the ``incoming'' Zeeman index of $B$, for every spin. Second, defining the coherence order of an operator as $A_c=\sum_i (A_a^i - A_b^i)$, we have $A_c^\dagger=-A_c$ (taking the Hermitian conjugate swaps $a$ and $b$), and the coherence order of a product of operators is the sum of their coherence orders, $(BA)_c = B_c+A_c$ (when the product is non-zero).
+
+\paragraph{Step 3: impose the secular constraint.}
+The secular approximation requires $\langle\rme^{\rmi(\omega_k-\omega_l)t}\rangle=0$, which forces $\omega_k=\omega_l$, where these are the rotating-frame frequencies picked up by $Q_k=A^\dagger$ and $Q_l^\dagger=C$. Writing this out spin by spin, the constraint becomes
+
+\begin{equation}
+ \sum_i \big((C_a^i-C_b^i)-(A_a^i-A_b^i)\big)\,\omega_i = 0,
+  \end{equation}
+
+where $\omega_i$ is the rotating-frame carrier frequency for spin $i$. To apply this restraint for a given coefficient $S_{ij}^{kl}$, we look at the specific operators $A$ and $C$. If $A$ and $C$ are both the identity for some spin, the contribution from that spin to the constraint vanishes automatically (because $A_a=A_b$ and $C_a=C_b$ for the identity).
+
+Let $N$ be the number of spins where $A$ or $C$ is \emph{not} the identity. For NMR-type interactions, $N$ is at most 4 (cross-correlated dipolar relaxation) and is more typically 1 or 2. Among those $N$ spins, let $M$ be the size of any group that all share the same carrier frequency (the ``degenerate case'' arises when an interaction couples two nuclei of the same isotope). For each unique frequency, the secular restraint becomes
+
+\begin{equation}
+  \sum_i^M C_a^{i}-C_b^{i}-A_a^{i}+A_b^{i} = 0,
+  \label{eq:sel}
+  \end{equation}
+   
+i.e.\ the coherence orders of $A$ and $C$ summed over the $M$ degenerate spins must match.
+
+From the four terms in equation~\ref{eq:ABCD}, each is a product of permutations of $A,B,C,D$. For each term to be non-zero (using the cyclic property of the trace and the coherence-order rule above), the total coherence order around the trace must vanish:
+
+\begin{equation}
+D_c^\dagger +C_c+A_c^\dagger + B_c=0.
+\end{equation}
+
+For spins where $A$ and $C$ are both the identity, the secular constraint is vacuous but $C_c=A_c=0$ for those spins, so we still need $B_c=D_c$ on each such spin. For spins where $A$ or $C$ is not the identity, the secular constraint forces $C_c=A_c$ over each degenerate group, which again requires $B_c=D_c$ over that group. So overall, $S_{ij}^{kl}\neq 0$ requires $B_c=D_c$ — exactly the form of the Redfield kite.
+
+\paragraph{Step 4: check the result explicitly using the delta functions.}
+ We can also show this by brute forcing equation \ref{eq:ABCD}. The expression breaks into four independent products
+
+\begin{equation}
+  \begin{split}
+    S_{ij}^{kl} = 
+    & + \prod_i \delta_{A_a^i,B_a^i} \delta_{A_b^i,C_b^i} \delta_{B_b^i,D_b^i} \delta_{C_a^i,D_a^i}  \\
+    & - \prod_i \delta_{A_b^i,B_b^i} \delta_{B_a^i,C_b^i} \delta_{A_a^i,D_b^i} \delta_{C_a^i,D_a^i}   \\
+    & + \prod_i \delta_{A_a^i,B_a^i} \delta_{B_b^i,C_a^i} \delta_{A_b^i,D_a^i} \delta_{C_b^i,D_b^i}   \\
+    & -  \prod_i \delta_{A_b^i,B_b^i} \delta_{A_a^i,C_a^i} \delta_{B_a^i,D_a^i} \delta_{C_b^i,D_b^i}   
+    \label{eq:oppy}
+  \end{split}
+     \end{equation}
+
+
+If the components of $A$ and $C$ for any spin are both equal to the identity, then the 4 delta functions reduce simply to $\delta_{B_a,D_a}\delta_{B_b,D_b}$. From this it follows that if $A$ and $C$ are the identity overall, then $S_{ij}^{kl}=0$ and the term does not contribute to relaxation. As $\mathcal{H}^1$ is traceless by construction this will never happen. But this does mean that for spins of the density matrix unaffected by $A$ and $C$, then the overall relaxation rate will be zero unless the components of $B$ and $D$ exactly match. This is not a consequence of the secular approximation.
+
+We can then consider the secular approximation as applied to spins where either $A$ or $C$ is not the identity, split into groups with unique evolution frequencies of degeneracy $M$ (equation \ref{eq:sel}). We can explicitly evaluate how this result interacts with the four terms in equation \ref{eq:oppy}. We do this by substituting in the delta functions attempting to turn the restraint from something written in terms of the perturbing Hamiltonian ($AC$) into something in terms of the basis operators ($BD$). We obtain the following restraints on the matrix elements. Explicitly numbering the 4 terms in $S_{ij}^{kl}$ as 1-4, we obtain:
+
+\begin{equation}
+\begin{array}{lrlcrl}
+1 & \sum_i^M B_a^{i} =& \sum_i^M D_a^{i}  &  & B_b^i& =D_b^i (i=1..M)\\
+2 & \sum_i^M  B_a^{i}-B_b^{i}=&\sum_i^M D_a^{i}-D_b^{i}  & & &\\
+3 & \sum_i^M  B_a^{i}-B_b^{i}=&\sum_i^MD_a^{i}-D_b^{i}  & & &\\
+4 & \sum_i^M B_b^{i} =& \sum_i^M D_b^{i}  &  & B_a^i & = D_a^i (i=1..M)
+\end{array}
+\end{equation}
+
+Where for terms 1 and 4, the `extra' relation on the right hand side comes from a specific delta function relating $B$ and $D$ that is not present for terms 2 and 3. 
+
+These are an interesting set of relations. The rules for 2 and 3 directly require that the overall coherence order, summed over the degenerate spins, must be equal for $B$ and $D$. We can inter convert between different operators $B$ and $D$ provided that the coherence orders are matched. This is exactly anticipated by the 'Redfield Kite'. For terms 1 and 4, if we add the two restraints together we can see that in all cases the following must be satisfied for a non-zero relaxation rate under the secular approximation,
+
+\begin{equation}
+\sum_i^M  B_a^{i}-B_b^{i}=\sum_i^M D_a^{i}-D_b^{i} 
+\end{equation}
+
+Terms 1 and 4 satisfy this, but also carry a further, more stringent requirement that terms 2 and 3 do not. This is the key result. This is the Redfield kite. Under the secular approximation, basis elements $B$ and $D$ are linked by relaxation if and only if their coherence orders match. This is not the only condition for a non-zero relaxation rate — the other delta-function constraints relating all of $A,B,C,D$ must also be satisfied — but the coherence-order rule must be satisfied. Phrased differently: putting limits on the operators describing the fluctuating Hamiltonian ($A,C$) restricts the types of operators that can have non-zero relaxation rates in a Liouville-space evolution matrix ($B,D$).
+
+Lets look at explicit computations for relaxation rates between two dipolar coupled spins, giving us $R_1$, $R_2$, the NOE rate and the ROE rate.
+
+
+
+
+\section{Example rate computations}
+\label{sec:ex}
+
+The purpose of this section is not just to derive the standard formulae. It is to show how the general selection rules become concrete relaxation rates. Each surviving term corresponds to a relaxation pathway that is both algebraically allowed (the double commutator is non-zero) and dynamically allowed (the secular approximation does not kill it). Terms can disappear for two different reasons: either the spin-operator algebra gives zero, or the rotating-frame phase evolution averages the pathway away.
+
+\paragraph{Setup: shorthand and the spin-half operator basis.} We will compute $R_1$, $R_2$, NOE and ROE cross-relaxation rates using equation~\ref{eq:oppy} for a single pair of dipolar-coupled spins-half. The calculations involve a lot of two-spin products and traces, so it pays to introduce a compact shorthand and two pre-computed tables.
+
+The single-spin operators that appear throughout are the shift-basis operators $\sigma_+,\sigma_z,\sigma_-$ and the identity $\sigma_E$. As $2\times 2$ matrices in the Zeeman basis $\{|\!\uparrow\rangle,|\!\downarrow\rangle\}$ they are
+\begin{equation}
+\sigma_+=\begin{pmatrix}0&1\\0&0\end{pmatrix},\quad \sigma_-=\begin{pmatrix}0&0\\1&0\end{pmatrix},\quad \sigma_z=\tfrac{1}{2}\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad \sigma_E=\begin{pmatrix}1&0\\0&1\end{pmatrix}.
+\end{equation}
+We will also use the single-element population operators $\sigma_\alpha=|\!\uparrow\rangle\langle\uparrow|$ and $\sigma_\beta=|\!\downarrow\rangle\langle\downarrow|$, related to $\sigma_z$ by $\sigma_z=\tfrac{1}{2}(\sigma_\alpha-\sigma_\beta)$ and to the identity by $\sigma_E=\sigma_\alpha+\sigma_\beta$.
+
+\paragraph{Multi-spin shorthand.} For a multi-spin operator like $\hat{I}_x$ in a two-spin system, we should be explicit: this is the operator $x$ on spin $I$, identity on spin $S$, written as a Kronecker product $\hat{I}_x=\sigma_x\otimes\sigma_E$. We will compress this to the string \texttt{xE}, where each character is the single-spin operator on each spin in turn. Likewise $\hat{I}_x\hat{S}_y$ becomes \texttt{xy}, $\hat{S}_z$ becomes \texttt{Ez}, and so on. We use \texttt{p} for $\sigma_+$, \texttt{m} for $\sigma_-$, and \texttt{a}, \texttt{b} for $\sigma_\alpha$, $\sigma_\beta$.
+
+\paragraph{Single-spin product table.} Two operations show up everywhere in evaluating $S_{ij}^{kl}$: products and traces. For products, we just need to know what each pair of single-spin operators multiplies to. The full multiplication table for the basis $\{\sigma_z,\sigma_E,\sigma_+,\sigma_-\}$ on a single spin-half is
+
+\begin{equation}
+  \begin{array}{c|cccc}
+A.B    &  \texttt{z}             & \texttt{E}  & \texttt{p}            & \texttt{m} \\ 
+\hline
+\texttt{z.}        &  \frac{1}{4}\texttt{E}  & \texttt{z}  & \frac{1}{2}\texttt{p} & -\frac{1}{2}\texttt{m}   \\
+\texttt{E.}        &  \texttt{z}             & \texttt{E}  & \texttt{p}         & \texttt{m} \\
+\texttt{p.}        &  -\frac{1}{2} \texttt{p} & \texttt{p}  & 0            & \texttt{a} \\
+\texttt{m.}        &   \frac{1}{2} \texttt{m} & \texttt{m}  & \texttt{b}            & 0 \\
+  \end{array}
+  \end{equation}
+
+This is just the Pauli algebra written out. For example, $\sigma_+\sigma_-=|\!\uparrow\rangle\langle\downarrow|\downarrow\rangle\langle\uparrow|=|\!\uparrow\rangle\langle\uparrow|=\sigma_\alpha$.
+
+For a multi-spin product, we apply the table spin by spin and Kronecker-multiply the results. As a 3-spin example, to compute $\hat{I}_z\hat{S}_z\cdot\hat{I}_z\hat{S}_z\hat{T}_z=\texttt{zzE}\cdot\texttt{zzz}$, we work spin by spin: \texttt{z.z}$=\tfrac{1}{4}E$ on spin 1, \texttt{z.z}$=\tfrac{1}{4}E$ on spin 2, \texttt{E.z}$=z$ on spin 3, giving $\tfrac{1}{16}\,\texttt{EEz}=\tfrac{1}{16}\hat{T}_z$.
+
+\paragraph{Traces.} For a multi-spin operator written in the shorthand, the trace factorises spin by spin. The single-spin traces are: $\mathrm{Tr}(\sigma_E)=2$, $\mathrm{Tr}(\sigma_\alpha)=\mathrm{Tr}(\sigma_\beta)=1$, and $\mathrm{Tr}(\sigma_z)=\mathrm{Tr}(\sigma_+)=\mathrm{Tr}(\sigma_-)=0$. Because the trace of the product is the product of the traces, a single zero-trace operator anywhere in the string sends the whole thing to zero. In our example, $\mathrm{Tr}(\tfrac{1}{16}\hat{T}_z)=\tfrac{1}{16}\,\mathrm{Tr}(\texttt{E})\mathrm{Tr}(\texttt{E})\mathrm{Tr}(\texttt{z})=\tfrac{1}{16}\cdot 2\cdot 2\cdot 0=0$. By contrast, $\mathrm{Tr}(\frac{1}{16}\hat{T}_\alpha)=\tfrac{1}{16}\cdot 2\cdot 2\cdot 1=\tfrac{1}{4}$.
+
+\paragraph{Double-commutator table.} The relaxation calculation needs commutators $[A,B]$ where $A$ is taken from $\hat{H}^1$. Since $\hat{H}^1$ acts non-trivially on at most two spins, only those spins can change type under the commutator; the others are pure tensor-product passengers. Furthermore, the relaxing Hamiltonians use only $\sigma_+,\sigma_-,\sigma_z$ for their non-identity entries. So we can pre-tabulate all single-spin (or two-spin) commutators of the form $[\,\text{thing from }\hat{H}^1,\,\text{anything in basis}\,]$ once and read off results when we need them. The resulting ``monster'' table (used internally by RelCalc) is below.
+
+\begin{tiny}\begin{equation}\begin{array}{c|ccccccccccccccc}
+& \mathbf{\left.mm\right]}& \mathbf{\left.Em\right]}& \mathbf{\left.mE\right]}& \mathbf{\left.zm\right]}& \mathbf{\left.mz\right]}& \mathbf{\left.zz\right]}& \mathbf{\left.Ez\right]}& \mathbf{\left.zE\right]}& \mathbf{\left.pm\right]}& \mathbf{\left.mp\right]}& \mathbf{\left.Ep\right]}& \mathbf{\left.pE\right]}& \mathbf{\left.zp\right]}& \mathbf{\left.pz\right]}& \mathbf{\left.pp\right]}\\
+\hline
+\mathbf{\left[mm,\right.}& & & & & & &  \cellcolor{blue!25} mm &  \cellcolor{blue!25} mm & & &  \cellcolor{blue!15} -2mz &  \cellcolor{blue!15} -2zm &  \cellcolor{blue!15} \frac{1}{2}mE &  \cellcolor{blue!15} \frac{1}{2}Em &  \cellcolor{green!25} -2za-2bz \\
+\hline
+\mathbf{\left[Em,\right.}& & & & &  \cellcolor{blue!25} mm &  \cellcolor{blue!15} zm &  \cellcolor{blue!15} Em & & &  \cellcolor{blue!15} -2mz &  \cellcolor{green!25} -2Ez & &  \cellcolor{green!25} -2zz &  \cellcolor{green!25} pm &  \cellcolor{red!15} -2pz \\
+\mathbf{\left[zm,\right.}& & &  \cellcolor{blue!25} -mm & & &  \cellcolor{blue!15} \frac{1}{4}Em &  \cellcolor{blue!15} zm & & &  \cellcolor{blue!15} -\frac{1}{2}mE &  \cellcolor{green!25} -2zz &  \cellcolor{green!25} pm &  \cellcolor{green!25} -\frac{1}{2}Ez & &  \cellcolor{red!15} \frac{1}{2}pE \\
+\hline
+\mathbf{\left[zz,\right.}& &  \cellcolor{blue!15} -zm &  \cellcolor{blue!15} -mz &  \cellcolor{blue!15} -\frac{1}{4}Em &  \cellcolor{blue!15} -\frac{1}{4}mE & & & & & &  \cellcolor{red!15} zp &  \cellcolor{red!15} pz &  \cellcolor{red!15} \frac{1}{4}Ep &  \cellcolor{red!15} \frac{1}{4}pE & \\
+\mathbf{\left[Ez,\right.}&  \cellcolor{blue!25} -mm &  \cellcolor{blue!15} -Em & &  \cellcolor{blue!15} -zm & & & & &  \cellcolor{green!25} -pm &  \cellcolor{green!25} mp &  \cellcolor{red!15} Ep & &  \cellcolor{red!15} zp & &  \cellcolor{red!25} pp \\
+\mathbf{\left[pm,\right.}& & &  \cellcolor{blue!15} 2zm & &  \cellcolor{blue!15} \frac{1}{2}Em & &  \cellcolor{green!25} pm &  \cellcolor{green!25} -pm & &  \cellcolor{green!25} -Ez+zE &  \cellcolor{red!15} -2pz & &  \cellcolor{red!15} -\frac{1}{2}pE & & \\
+\hline
+\mathbf{\left[Ep,\right.}&  \cellcolor{blue!15} 2mz &  \cellcolor{green!25} 2Ez & &  \cellcolor{green!25} 2zz &  \cellcolor{green!25} -mp &  \cellcolor{red!15} -zp &  \cellcolor{red!15} -Ep & &  \cellcolor{red!15} 2pz & & & & &  \cellcolor{red!25} -pp & \\
+\mathbf{\left[zp,\right.}&  \cellcolor{blue!15} -\frac{1}{2}mE &  \cellcolor{green!25} 2zz &  \cellcolor{green!25} -mp &  \cellcolor{green!25} \frac{1}{2}Ez & &  \cellcolor{red!15} -\frac{1}{4}Ep &  \cellcolor{red!15} -zp & &  \cellcolor{red!15} \frac{1}{2}pE & & &  \cellcolor{red!25} pp & & & \\
+\hline
+\mathbf{\left[pp,\right.}&  \cellcolor{green!25} 2za+2bz &  \cellcolor{red!15} 2pz &  \cellcolor{red!15} 2zp &  \cellcolor{red!15} -\frac{1}{2}pE &  \cellcolor{red!15} -\frac{1}{2}Ep & &  \cellcolor{red!25} -pp &  \cellcolor{red!25} -pp & & & & & & & \\
+\end{array}\end{equation}\end{tiny}
+
+To use the table, construct the relevant commutator from the non-identity portion from the $\hat{H}^1$ operator on the left hand side (rows), and join it with the elements from the relevant spins that match up on the right hand side (columns). All other elements in the result will be identical to whatever was on the right hand side. The non-zero results are coloured by total coherence order. The summed coherence order of the left and right hand side are summed, which gives the coherence order of the result. These values range from +2 (red) to 0 (green) to -2 (blue). The order of the two elements can be switched, noting that the order of the operators in the result (and column taken to complete the commutator) must also be switched. If a combination is not present in the table, its value is zero, such as $[\texttt{zz},\texttt{zz}]=0$.
+
+Lets take an example, and say we want to compute from a 3 spin system $[I_zS_z,I_xS_zT_z]$. First we write in our shorthand
+
+\begin{equation}
+[I_zS_z,I_+S_zT_z] = [\texttt{zzE},\texttt{pzz}]
+\end{equation}
+
+Then we note that for the third spin because the left hand operator has the identity (the left hand operator can at a maximum span two spins because of how the interactions work) we take it out of the commutator and take the product of the identity parts with the right hand operator
+
+\begin{equation}
+[I_zS_z,I_+S_zT_z] = [\texttt{zz},\texttt{pz}] \otimes\texttt{z}
+\end{equation}
+
+The total coherence order of the result will be 1, because if we sum the coherence order of the two operators, we get 1. Using the table we can see that the  $[\texttt{zz},\texttt{pz}]=\frac{1}{4}\texttt{pE}$ and so:
+
+\begin{equation}
+[I_zS_z,I_+S_zT_z] = \frac{1}{4}pE \otimes \texttt{z} = \frac{1}{4}\texttt{pEz} = \frac{1}{4} I_+ T_z
+\end{equation}
+
+To use the table, build the relevant commutator from the non-identity portion of the $\hat{H}^1$ operator on the left-hand side (rows), and join it with the elements from the matching spins on the right-hand side (columns). All other elements in the result are inherited unchanged from the right-hand side. Non-zero results are coloured by total coherence order (the sum of the coherence orders of the two operators), ranging from $+2$ (red) through $0$ (green) to $-2$ (blue). The order of the two operators in the commutator can be swapped, but if so the sign and column lookup must also be swapped. Combinations not in the table are zero — for example, $[\texttt{zz},\texttt{zz}]=0$.
+
+\paragraph{Worked example.} Consider $[\hat{I}_z\hat{S}_z,\,\hat{I}_+\hat{S}_z\hat{T}_z]$ in a 3-spin system. In the shorthand,
+
+\begin{equation}
+[I_zS_z,I_+S_zT_z] = [\texttt{zzE},\texttt{pzz}].
+\end{equation}
+
+The third spin in the left-hand operator is the identity, so it factors out of the commutator and acts by simple multiplication on the right-hand operator's third-spin entry:
+
+\begin{equation}
+[I_zS_z,I_+S_zT_z] = [\texttt{zz},\texttt{pz}] \otimes \texttt{z}.
+\end{equation}
+
+The table tells us $[\texttt{zz},\texttt{pz}]=\tfrac{1}{4}\texttt{pE}$, so
+
+\begin{equation}
+[I_zS_z,I_+S_zT_z] = \tfrac{1}{4}\texttt{pE} \otimes \texttt{z} = \tfrac{1}{4}\,\texttt{pEz} = \tfrac{1}{4}\,\hat{I}_+\hat{T}_z.
+\end{equation}
+
+The total coherence order of the result is $+1$, consistent with summing the coherence orders of the two input operators ($0+1=1$). The table is formidable at first glance, but lets you steam through commutator computations once you get used to it.
+
+\paragraph{The dipolar Hamiltonian for a homonuclear pair.} Now lets compute some relaxation rates. We consider two dipolar-coupled spins-half, both protons, labelled $\hat{H}^1$ and $\hat{H}^2$. After rotational averaging (assuming isotropic tumbling), the relaxing Hamiltonian in the shift basis takes the form
+
+\begin{small}
+\begin{equation}
+\hat{H}^1 =  \frac{\sqrt{6}}{2} d\left( \hat{H}^1_+\hat{H}^2_+ + \hat{H}^1_-\hat{H}^2_-  + \hat{H}^1_z\hat{H}^2_+  + \hat{H}^1_+\hat{H}^2_z  + \hat{H}^1_z\hat{H}^2_-  + \hat{H}^1_-\hat{H}^2_z +  \sqrt{\frac{8}{3}}\left(\hat{H}^1_z\hat{H}^2_z  -\left(\frac{1}{4}\hat{H}^1_+\hat{H}^2_-  +\hat{H}^1_-\hat{H}^2_+\right)\right)\right)
+\label{eq:dip2}
+\end{equation}
+\end{small}
+
+There are 9 individual terms — the maximum number any NMR-relevant interaction will produce. All terms are bilinear: they contain exactly two single-spin operators, so even in a many-spin system any single term in $\hat{H}^1$ touches at most two spins.
+
+The numerical prefactors look untidy, but they have a clean origin. The original spherical-tensor form of the dipolar interaction has neat coefficients in the spherical-tensor basis (used to handle rotations and rotational averaging). Converting to the shift basis we use here for relaxation calculations introduces basis-change factors. The product of these factors gives the numbers in equation~\ref{eq:dip} (see the RelCalc paper for full derivation).
+
+\paragraph{Decomposing into RelCalc factors.} This Hamiltonian is already of the form $\hat{H}^1=\sum q_k\hat{Q}_k$. To match the pre-factors, write each $q_k=\sqrt{r(r+1)}\,A_k\,o_k$, where:
+\begin{itemize}
+    \item $A_k$ is an interaction strength (here $d=\frac{\mu_0\hbar\gamma_I\gamma_S}{4\pi R^3}$, the dipolar coupling constant for two spins separated by $R$);
+    \item $r$ is the rank of the interaction (rank-2 for dipolar, CSA, quadrupolar);
+    \item $o_k$ is a basis-change factor relating the $k$-th shift-basis operator to the spherical tensor basis.
+\end{itemize}
+The values of $o_k$ for the dipolar interaction are: $\tfrac{1}{2}\sqrt{\tfrac{8}{3}}$ for the $\hat{I}_z\hat{S}_z$ operator, $-\tfrac{1}{8}\sqrt{\tfrac{8}{3}}$ for zero quautm $\hat{I}_+\hat{S}_-$ or $\hat{I}_-\hat{S}_+$, and $\tfrac{1}{2}$ for any single- or double-quantum term. The factor $\sqrt{6}=\sqrt{r(r+1)}$ in front of the bracket comes from $r=2$, reflecting the dipolar interaction being rank 2.
+
+\paragraph{The relaxation rate formula.} With $\hat{H}^1$ in this form, the relaxation rate becomes
+
+\begin{equation}
+R_{ij}= \sum_{kl} \frac{r_k(r_k+1)}{2r_k+1} A_kA_lo_ko_l \delta_{\omega_k,\omega_l} \delta_{r_k,r_l} J(\omega_k) S_{ij}^{kl}
+\end{equation}
+
+where the double sum pairs every term in $\hat{H}^1$ with every other term and tests whether each pair can drive relaxation. The new factor $\tfrac{1}{2r+1}$ comes from> the angular average over molecular orientations (assuming rigid isotropic tumbling), and is what makes the simple Lorentzian $J(\omega)=\tau_c/(1+\omega^2\tau_c^2)$ the right form to use here. The Kronecker delta $\delta_{r_k,r_l}$ enforces that only operators of the same tensor rank can pair (a dipolar term cannot pair with a CSA term).
+
+\paragraph{Reading off pre-factors.} The factor $r(r+1)/(2r+1)$ for rank 2 is $6/5$. For two zero-quantum terms (each contributing $-\tfrac{1}{8}\sqrt{\tfrac{8}{3}}$ to $o_k$), the prefactor is $\tfrac{6}{5}\cdot\tfrac{1}{8^2}\cdot\tfrac{8}{3}=\tfrac{1}{20}$. This factor will appear repeatedly. In gory detail, the relaxation rate between any two normalised basis operators $\sigma_i,\sigma_j$ is:
+
+\begin{equation}
+\begin{array}{rl}
+  R_{ij}  = \sum_{kl} R_{ij}^{kl} =&+\frac{4}{5}\langle \sigma_i^\dagger [\hat{H}^2_z\hat{H}^1_z,[\hat{H}^2_z\hat{H}^1_z,\sigma_j]] \rangle J\left(0\right)d^2 \\
+& +\frac{1}{20}\langle \sigma_i^\dagger [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_+ \hat{H}^1_- ,\sigma_j]] \rangle J\left(0\right)d^2 \\
+& +\frac{1}{20}\langle \sigma_i^\dagger [\hat{H}^2_+ \hat{H}^1_- ,[\hat{H}^2_- \hat{H}^1_+ ,\sigma_j]] \rangle J\left(0\right)d^2 \\
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_z\hat{H}^1_- ,[\hat{H}^2_z\hat{H}^1_+ ,\sigma_j]] \rangle J\left(\omega_H\right)d^2\\ 
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_z\hat{H}^1_+ ,[\hat{H}^2_z\hat{H}^1_- ,\sigma_j]] \rangle J\left(\omega_H\right)d^2 \\
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_- \hat{H}^1_z,[\hat{H}^2_+ \hat{H}^1_z,\sigma_j]] \rangle J\left(\omega_H\right)d^2 \\
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_+ \hat{H}^1_z,[\hat{H}^2_- \hat{H}^1_z,\sigma_j]] \rangle J\left(\omega_H\right)d^2 \\
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_- \hat{H}^1_- ,[\hat{H}^2_+ \hat{H}^1_+ ,\sigma_j]] \rangle J\left(2\omega_H\right)d^2\\ 
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_+ \hat{H}^1_+ ,[\hat{H}^2_- \hat{H}^1_- ,\sigma_j]] \rangle J\left(2\omega_H\right)d^2 \\
+\hline
+ &-\frac{1}{5}\langle \sigma_i^\dagger [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_z\hat{H}^1_z,\sigma_j]] \rangle J\left(0\right)d^2  \\
+& -\frac{1}{5}\langle \sigma_i^\dagger [\hat{H}^2_+ \hat{H}^1_- ,[\hat{H}^2_z\hat{H}^1_z,\sigma_j]] \rangle J\left(0\right)d^2 \\
+& -\frac{1}{5}\langle \sigma_i^\dagger [\hat{H}^2_z\hat{H}^1_z,[\hat{H}^2_+ \hat{H}^1_- ,\sigma_j]] \rangle J\left(0\right)d^2 \\
+& -\frac{1}{5}\langle \sigma_i^\dagger [\hat{H}^2_z\hat{H}^1_z,[\hat{H}^2_- \hat{H}^1_+ ,\sigma_j]] \rangle J\left(0\right)d^2 \\
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_- \hat{H}^1_z,[\hat{H}^2_z\hat{H}^1_+ ,\sigma_j]] \rangle J\left(\omega_H\right)d^2\\ 
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_+ \hat{H}^1_z,[\hat{H}^2_z\hat{H}^1_- ,\sigma_j]] \rangle J\left(\omega_H\right)d^2 \\
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_z\hat{H}^1_- ,[\hat{H}^2_+ \hat{H}^1_z,\sigma_j]] \rangle J\left(\omega_H\right)d^2 \\
+& +\frac{3}{10}\langle \sigma_i^\dagger [\hat{H}^2_z\hat{H}^1_+ ,[\hat{H}^2_- \hat{H}^1_z,\sigma_j]] \rangle J\left(\omega_H\right)d^2 
+\end{array}
+\end{equation}
+
+The terms above the horizontal line show pairs of terms from the dipolar interaction that are secular for both the homonuclear and the heteronuclear cases. The terms below the line are secular only in the homonuclear case — for example $\hat{I}_+\hat{S}_-$ and $\hat{I}_z\hat{S}_z$ can pair up only if $I$ and $S$ have the same frequency in the rotating frame (i.e.\ the same isotope). We will see in a moment that these below-the-line terms contribute to the ROE, but not to $R_1$, $R_2$, or the NOE. To compute any specific relaxation rate, we choose values of $\sigma_i$ and $\sigma_j$ relevant to that rate, then evaluate every double commutator and trace and see what survives. The kite tells us that $\sigma_i$ and $\sigma_j$ must share the same coherence order, so we don't have to bother trying pairs that don't.
+
+This leaves 17 expressions to evaluate in the homonuclear case, and 9 in the heteronuclear case, for any single relaxation rate. It's now apparent why these calculations are normally delegated to a program rather than done by hand.
+
+Lets take one example, a term that contributes to both $R_1$ and the NOE. Recall that $R_1$ corresponds to $\sigma_i=\sigma_j=\hat{I}_z$ (auto-relaxation: how fast $\hat{I}_z$ decays back to equilibrium) and the NOE corresponds to $\sigma_i=\hat{S}_z$, $\sigma_j=\hat{I}_z$ (cross-relaxation: how $z$-magnetisation on spin $I$ feeds across to spin $S$). We pick the ``flip-flop'' term involving the zero-quantum operators from $\hat{H}^1$ — so called because one of the two operators raises the coherence on spin 1 and lowers it on spin 2 (a ``flip'' on one, a ``flop'' on the other), with the partner doing the opposite. We fix $\sigma_j=\hat{H}^1_z$ and leave $\sigma_i$ open for now. In the shorthand,
+
+\begin{equation}
+\begin{array}{rl}
+  R_{ij}^{kl}&= +\frac{1}{20}\langle \sigma_i^\dagger [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_+ \hat{H}^1_- ,\hat{H}^1_z]] \rangle J\left(0\right)d^2 \\
+  &= +\frac{1}{20}\langle \sigma_i^\dagger [\texttt{mp},[\texttt{pm} ,\texttt{zE}]] \rangle J\left(0\right)d^2 \\
+\end{array}
+\end{equation}
+
+Evaluating the inner commutator $[\texttt{pm},\texttt{zE}]$ from the table gives $-\texttt{pm}$ (entry where row \texttt{pm} meets column \texttt{zE}), so:
+
+\begin{equation}
+\begin{array}{rl}
+  R_{ij}^{kl}
+  &= +\frac{1}{20}\langle \sigma_i^\dagger [\texttt{mp},\texttt{-pm}] \rangle J\left(0\right)d^2 \\
+  &= +\frac{1}{20}\langle \sigma_i^\dagger (\texttt{-Ez+zE})\rangle J\left(0\right)d^2 \\
+\end{array}
+\end{equation}
+
+(The outer commutator $[\texttt{mp},\texttt{pm}]$ from the table gives $\texttt{-Ez+zE}$; we have absorbed the leading minus sign from the inner commutator into this.)
+
+There are two values of $\sigma_i$ where the final trace is non-zero. If $\sigma_i=\hat{I}_z=\texttt{zE}$ (so we are computing a contribution to $R_1$):
+
+\begin{equation}
+\begin{array}{rl}
+  R_{ij}^{kl}&= +\frac{1}{20}\langle (\hat{H}^1_z)^{\dagger} [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_+ \hat{H}^1_- ,\hat{H}^1_z]] \rangle J\left(0\right)d^2 \\
+  &= \frac{1}{20}\langle \texttt{zE (-Ez+zE)} \rangle J\left(0\right)d^2 \\
+  &= \frac{1}{20}\langle \texttt{-zz} + \frac{1}{4}\texttt{EE }\rangle J\left(0\right)d^2 \\
+  &= \frac{1}{20}\left( -\mathrm{Tr}(\texttt{z})\mathrm{Tr}(\texttt{z}) + \frac{1}{4}\mathrm{Tr}(\texttt{E})\mathrm{Tr}(\texttt{E}) \right) J\left(0\right)d^2 \\
+  &= \frac{1}{20}\left(- 0 + 1\right) J\left(0\right)d^2 \\
+  &= \frac{1}{20} J\left(0\right)d^2 \\
+\end{array}
+\end{equation}
+
+
+This term contributes to $R_1$. Now the case $\sigma_i=\hat{S}_z=\texttt{Ez}$ (a contribution to the NOE):
+
+\begin{equation}
+\begin{array}{rl}
+  R_{ij}^{kl}&= +\frac{1}{20}\langle (\hat{H}^2_z)^{\dagger} [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_+ \hat{H}^1_- ,\hat{H}^1_z]] \rangle J\left(0\right)d^2 \\
+  &= \frac{1}{20}\langle \texttt{ Ez (-Ez+zE)} \rangle J\left(0\right)d^2 \\
+  &= \frac{1}{20}\langle -\frac{1}{4}\texttt{EE} + \texttt{zz} \rangle J\left(0\right)d^2 \\
+  &= \frac{1}{20}\left( - \frac{1}{4}\mathrm{Tr}(\texttt{E})\mathrm{Tr}(\texttt{E}) + \mathrm{Tr}(\texttt{z})\mathrm{Tr}(\texttt{z})  \right) J\left(0\right)d^2 \\
+  &= \frac{1}{20}\left( -1 + 0\right) J\left(0\right)d^2 \\
+  &= -\frac{1}{20} J\left(0\right)d^2 \\
+\end{array}
+\end{equation}
+
+The same pair of operators from $\hat{H}^1$ can drive $\hat{I}_z\to\hat{I}_z$ (a contribution to $R_1$) and $\hat{I}_z\to\hat{S}_z$ (a contribution to NOE cross-relaxation). The sign has flipped: positive for the auto-relaxation, negative for the cross-relaxation. This sign change is the algebraic origin of polarisation transfer between coupled spins. The computations themselves are not difficult, but they are fiddly: each rate requires evaluating up to 17 such expressions and seeing which survive. RelCalc automates exactly this.
+
+\paragraph{The four homonuclear dipolar relaxation rates.} We now compute $R_1$, $R_2$, the NOE and the ROE rates, all driven by the dipolar coupling between two protons.
+
+\paragraph{Longitudinal relaxation rate $R_1$.} $R_1$ is the auto-relaxation of $z$-magnetisation: how fast $\hat{I}_z$ decays back to thermal equilibrium. We set $\sigma_i=\sigma_j=\hat{H}^1_z$ and identify which of the 17 candidate terms gives a non-zero $S_{ij}^{kl}$:
+
+\begin{small}\begin{equation*}\begin{array}{rl} +\frac{1}{20}\langle (\hat{H}^1_z)^{\dagger} [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_+ \hat{H}^1_- ,\hat{H}^1_z]] \rangle J\left(0\right)d^2 &= ( +\frac{1}{20})( + 1)J\left(0\right) d^2 =  +\frac{1}{20}J\left(0\right) d^2\\
+
+ +\frac{1}{20}\langle (\hat{H}^1_z)^{\dagger} [\hat{H}^2_+ \hat{H}^1_- ,[\hat{H}^2_- \hat{H}^1_+ ,\hat{H}^1_z]] \rangle J\left(0\right)d^2 &= ( +\frac{1}{20})( + 1)J\left(0\right) d^2 =  +\frac{1}{20}J\left(0\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_z)^{\dagger} [\hat{H}^2_z\hat{H}^1_- ,[\hat{H}^2_z\hat{H}^1_+ ,\hat{H}^1_z]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{2})J\left(\omega_H\right) d^2 =  +\frac{3}{20}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_z)^{\dagger} [\hat{H}^2_z\hat{H}^1_+ ,[\hat{H}^2_z\hat{H}^1_- ,\hat{H}^1_z]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{2})J\left(\omega_H\right) d^2 =  +\frac{3}{20}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_z)^{\dagger} [\hat{H}^2_- \hat{H}^1_- ,[\hat{H}^2_+ \hat{H}^1_+ ,\hat{H}^1_z]] \rangle J\left(2\omega_H\right)d^2 &= ( +\frac{3}{10})( + 1)J\left(2\omega_H\right) d^2 =  +\frac{3}{10}J\left(2\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_z)^{\dagger} [\hat{H}^2_+ \hat{H}^1_+ ,[\hat{H}^2_- \hat{H}^1_- ,\hat{H}^1_z]] \rangle J\left(2\omega_H\right)d^2 &= ( +\frac{3}{10})( + 1)J\left(2\omega_H\right) d^2 =  +\frac{3}{10}J\left(2\omega_H\right) d^2\\
+
+\end{array}\end{equation*}\end{small}
+
+Leading to:
+
+
+\begin{small}
+  \begin{equation}\begin{array}{rl}
+R_1= R_{H1z,H1z}=
+& + d^2 \left[ +\frac{1}{10} \tau_c +\frac{3}{10} J\left(\omega_H\right) +\frac{3}{5} J\left(2\omega_H\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+
+The three contributions correspond to flip-flop transitions ($J(0)$), single-quantum transitions ($J(\omega_H)$), and double-quantum transitions ($J(2\omega_H)$) — so $R_1$ samples the spectral density at zero, the Larmor frequency, and twice the Larmor frequency. All pairs of terms that contribute are secular for both homo- and heteronuclear cases, so the heteronuclear $R_1$ has the same structure with the appropriate frequencies swapped in.
+
+\paragraph{Transverse relaxation rate $R_2$.} $R_2$ is the auto-relaxation of transverse magnetisation: how fast $\hat{I}_x$ (or equivalently $\hat{I}_y$) loses phase coherence. We set $\sigma_i=\sigma_j=\hat{H}^1_x$:
+
+
+\begin{small}\begin{equation*}\begin{array}{rl}
+      +\frac{4}{5}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_z\hat{H}^1_z,[\hat{H}^2_z\hat{H}^1_z,\hat{H}^1_x]] \rangle J\left(0\right)d^2 &= ( +\frac{4}{5})( +\frac{1}{4})J\left(0\right) d^2 =  +\frac{1}{5}J\left(0\right) d^2\\
+
+ +\frac{1}{20}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_+ \hat{H}^1_- ,\hat{H}^1_x]] \rangle J\left(0\right)d^2 &= ( +\frac{1}{20})( +\frac{1}{2})J\left(0\right) d^2 =  +\frac{1}{40}J\left(0\right) d^2\\
+
+ +\frac{1}{20}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_+ \hat{H}^1_- ,[\hat{H}^2_- \hat{H}^1_+ ,\hat{H}^1_x]] \rangle J\left(0\right)d^2 &= ( +\frac{1}{20})( +\frac{1}{2})J\left(0\right) d^2 =  +\frac{1}{40}J\left(0\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_z\hat{H}^1_- ,[\hat{H}^2_z\hat{H}^1_+ ,\hat{H}^1_x]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{4})J\left(\omega_H\right) d^2 =  +\frac{3}{40}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_z\hat{H}^1_+ ,[\hat{H}^2_z\hat{H}^1_- ,\hat{H}^1_x]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{4})J\left(\omega_H\right) d^2 =  +\frac{3}{40}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_- \hat{H}^1_z,[\hat{H}^2_+ \hat{H}^1_z,\hat{H}^1_x]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{2})J\left(\omega_H\right) d^2 =  +\frac{3}{20}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_+ \hat{H}^1_z,[\hat{H}^2_- \hat{H}^1_z,\hat{H}^1_x]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{2})J\left(\omega_H\right) d^2 =  +\frac{3}{20}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_- \hat{H}^1_- ,[\hat{H}^2_+ \hat{H}^1_+ ,\hat{H}^1_x]] \rangle J\left(2\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{2})J\left(2\omega_H\right) d^2 =  +\frac{3}{20}J\left(2\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^1_x)^{\dagger} [\hat{H}^2_+ \hat{H}^1_+ ,[\hat{H}^2_- \hat{H}^1_- ,\hat{H}^1_x]] \rangle J\left(2\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{2})J\left(2\omega_H\right) d^2 =  +\frac{3}{20}J\left(2\omega_H\right) d^2\\
+
+\end{array}\end{equation*}\end{small}
+
+Leading to:
+
+\begin{small}
+\begin{equation}\begin{array}{rl}
+R_2=R_{H1x,H1x}=
+& + d^2 \left[ +\frac{1}{4} \tau_c +\frac{9}{20} J\left(\omega_H\right) +\frac{3}{10} J\left(2\omega_H\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+
+
+
+
+And once again, all the pairs of terms in the relaxing Hamiltonian are secular for both homo- and heteronuclear cases, so the only difference between the two is which frequencies appear in $J$. In the extreme narrowing limit (small molecules, $\omega\tau_c\ll 1$), $J(\omega)\approx\tau_c$ for any of the relevant frequencies, and we get $R_1=R_2$. In the macromolecular limit ($\omega\tau_c\gg 1$), $J(\omega)\approx 0$ unless $\omega=0$, and the homonuclear ratio becomes $R_2/R_1=2.5$. In the heteronuclear case, the would-be $J(0)$ contribution arises from zero-quantum terms whose true argument is the difference frequency $\omega_N-\omega_H$ rather than zero, and so the lowest frequency entering $R_1$ becomes $J(\omega_N-\omega_H)$. Because $\omega_N-\omega_H$ is still in the MHz range at high field, $J(\omega_N-\omega_H)$ is small, and $R_2\gg R_1$ — exactly what is seen for backbone amides in proteins.
+
+\paragraph{Longitudinal cross-relaxation rate $\sigma_{zz}$ (NOE).} The NOE rate $\sigma_{zz}$ measures how fast longitudinal magnetisation transfers between two spins: $\sigma_i=\hat{H}^2_z$, $\sigma_j=\hat{H}^1_z$. This is the rate that gives the famous NOE cross-peaks in NOESY. Using equation~\ref{eq:oppy}, the surviving terms are:
+
+\begin{small}\begin{equation*}\begin{array}{rl} +\frac{1}{20}\langle (\hat{H}^2_z)^{\dagger} [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_+ \hat{H}^1_- ,\hat{H}^1_z]] \rangle J\left(0\right)d^2 &= ( +\frac{1}{20})( - 1)J\left(0\right) d^2 =  -\frac{1}{20}J\left(0\right) d^2\\
+
+ +\frac{1}{20}\langle (\hat{H}^2_z)^{\dagger} [\hat{H}^2_+ \hat{H}^1_- ,[\hat{H}^2_- \hat{H}^1_+ ,\hat{H}^1_z]] \rangle J\left(0\right)d^2 &= ( +\frac{1}{20})( - 1)J\left(0\right) d^2 =  -\frac{1}{20}J\left(0\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^2_z)^{\dagger} [\hat{H}^2_- \hat{H}^1_- ,[\hat{H}^2_+ \hat{H}^1_+ ,\hat{H}^1_z]] \rangle J\left(2\omega_H\right)d^2 &= ( +\frac{3}{10})( + 1)J\left(2\omega_H\right) d^2 =  +\frac{3}{10}J\left(2\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^2_z)^{\dagger} [\hat{H}^2_+ \hat{H}^1_+ ,[\hat{H}^2_- \hat{H}^1_- ,\hat{H}^1_z]] \rangle J\left(2\omega_H\right)d^2 &= ( +\frac{3}{10})( + 1)J\left(2\omega_H\right) d^2 =  +\frac{3}{10}J\left(2\omega_H\right) d^2\\
+
+\end{array}\end{equation*}\end{small}
+
+  All pairs that contribute are secular in both homo- and heteronuclear cases, so the heteronuclear NOE (between an $H$ and an $X$ spin) has the same structure with appropriate frequency relabelling. The result is
+
+\begin{small}
+\begin{equation}\begin{array}{rl}
+\sigma_{zz}= R_{H1z,H2z}=
+& + d^2 \left[ -\frac{1}{10} \tau_c +\frac{3}{5} J\left(2\omega_H\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+
+The two contributions have opposite signs. The negative $J(0)$ contribution comes from flip-flop transitions: these conserve total $z$-magnetisation but exchange it between spins, so they appear as a positive $R_1$ but a negative cross-relaxation. The positive $J(2\omega_H)$ contribution comes from double-quantum transitions, which add or remove total $z$-magnetisation in equal measure on both spins. The sign of $\sigma_{zz}$ therefore depends on $\tau_c$: in the extreme narrowing limit ($J(\omega)\approx\tau_c$ for all $\omega$), $\sigma_{zz}\propto -\tfrac{1}{10}+\tfrac{3}{5}=+\tfrac{1}{2}$, so the NOE is positive for small molecules. For large molecules ($J(2\omega_H)\to 0$), $\sigma_{zz}\propto -\tfrac{1}{10}<0$, so the NOE inverts sign for proteins. The crossover is the famous ``NOE zero crossing'' near $\omega_H\tau_c\approx 1$, around 1 ns at 600 MHz.
+
+\paragraph{Transverse cross-relaxation rate $\sigma_{++}$ (ROE).} The ROE is the cross-relaxation analogue for transverse magnetisation: $\sigma_i=\hat{H}^2_x$, $\sigma_j=\hat{H}^1_x$. Unlike the NOE, the ROE has \emph{only} contributions from below the line in equation~\ref{eq:oppy} — it is built entirely from cross-correlated pairings between the $\hat{I}_+\hat{S}_-$/$\hat{I}_-\hat{S}_+$ and $\hat{I}_z\hat{S}_z$ terms of the dipolar Hamiltonian. The non-zero contributions are:
+
+
+\begin{small}\begin{equation*}\begin{array}{rl}
+      -\frac{1}{5}\langle (\hat{H}^2_x)^{\dagger} [\hat{H}^2_- \hat{H}^1_+ ,[\hat{H}^2_z\hat{H}^1_z,\hat{H}^1_x]] \rangle J\left(0\right)d^2 &= ( -\frac{1}{5})( -\frac{1}{4})J\left(0\right) d^2 =  +\frac{1}{20}J\left(0\right) d^2\\
+
+ -\frac{1}{5}\langle (\hat{H}^2_x)^{\dagger} [\hat{H}^2_+ \hat{H}^1_- ,[\hat{H}^2_z\hat{H}^1_z,\hat{H}^1_x]] \rangle J\left(0\right)d^2 &= ( -\frac{1}{5})( -\frac{1}{4})J\left(0\right) d^2 =  +\frac{1}{20}J\left(0\right) d^2\\
+
+ -\frac{1}{5}\langle (\hat{H}^2_x)^{\dagger} [\hat{H}^2_z\hat{H}^1_z,[\hat{H}^2_+ \hat{H}^1_- ,\hat{H}^1_x]] \rangle J\left(0\right)d^2 &= ( -\frac{1}{5})( -\frac{1}{4})J\left(0\right) d^2 =  +\frac{1}{20}J\left(0\right) d^2\\
+
+ -\frac{1}{5}\langle (\hat{H}^2_x)^{\dagger} [\hat{H}^2_z\hat{H}^1_z,[\hat{H}^2_- \hat{H}^1_+ ,\hat{H}^1_x]] \rangle J\left(0\right)d^2 &= ( -\frac{1}{5})( -\frac{1}{4})J\left(0\right) d^2 =  +\frac{1}{20}J\left(0\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^2_x)^{\dagger} [\hat{H}^2_- \hat{H}^1_z,[\hat{H}^2_z\hat{H}^1_+ ,\hat{H}^1_x]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{4})J\left(\omega_H\right) d^2 =  +\frac{3}{40}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^2_x)^{\dagger} [\hat{H}^2_+ \hat{H}^1_z,[\hat{H}^2_z\hat{H}^1_- ,\hat{H}^1_x]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{4})J\left(\omega_H\right) d^2 =  +\frac{3}{40}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^2_x)^{\dagger} [\hat{H}^2_z\hat{H}^1_- ,[\hat{H}^2_+ \hat{H}^1_z,\hat{H}^1_x]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{4})J\left(\omega_H\right) d^2 =  +\frac{3}{40}J\left(\omega_H\right) d^2\\
+
+ +\frac{3}{10}\langle (\hat{H}^2_x)^{\dagger} [\hat{H}^2_z\hat{H}^1_+ ,[\hat{H}^2_- \hat{H}^1_z,\hat{H}^1_x]] \rangle J\left(\omega_H\right)d^2 &= ( +\frac{3}{10})( +\frac{1}{4})J\left(\omega_H\right) d^2 =  +\frac{3}{40}J\left(\omega_H\right) d^2\\
+
+\end{array}\end{equation*}\end{small}
+
+\begin{small}
+\begin{equation}\begin{array}{rl}
+    \sigma_{++}= R_{H1x,H2x}=
+& + d^2 \left[ +\frac{1}{5} \tau_c +\frac{3}{10} J\left(\omega_H\right)\right]\\
+\end{array}\end{equation}
+\end{small}
+
+
+None of the surviving terms are secular in the heteronuclear case — they all involve pairing a homonuclear $\hat{I}_+\hat{S}_-$/$\hat{I}_-\hat{S}_+$ operator with $\hat{I}_z\hat{S}_z$, which the secular approximation kills unless the two spins share a frequency. The ROE therefore exists \emph{only} in the homonuclear case.
+
+The leading factor in equation~\ref{eq:oppy} carries a negative sign for the $J(0)$ terms because they couple a $zz$ operator (positive $o_k$) to a zero-quantum operator (negative $o_k$). The double commutator also carries a negative sign, so the overall ROE rate is positive. Note also that, unlike the NOE, the ROE never changes sign: it is always positive, regardless of $\tau_c$. This is one of the practical reasons ROESY experiments are useful for medium-sized molecules near the NOE zero crossing.
+
+
+
+  
+  
+
+
+
+
+%In the laboratory frame, spin operators precess at the full Larmor frequency, hundreds of MHz to a GHz. Tracking these enormous deterministic phases is wasteful: they are exactly the same for every spin of the same isotope and contain no useful information once we have chosen our reference.
+
+
+
+%The second term, $-\hathat{\Gamma}_R(\hat{\rho}_R-\hat{\rho}_{\mathrm{eq}})$, is relaxation. Two distinct time dependencies live inside it. The first is the short-time molecular memory, of order $\tau_c$, encoded in $g_{km}(\tau)$. The second is the longer-time phase evolution generated by $\rme^{\rmi\hathat{H}_{\mathrm{rot}}t}$ acting on the outer $\hat{Q}_k$: these are the phase factors that the secular approximation will eventually average to zero. Redfield theory combines the two: molecular motion supplies the fluctuating power, and spin evolution selects which frequencies of that power can act.
+
+%\paragraph{Why this basis works for NMR interactions.} The Hamiltonians that drive relaxation in NMR — dipolar couplings, quadrupolar couplings, chemical shift anisotropy — are all rank-2 tensorial interactions. Under molecular tumbling, they rotate as rank-2 spherical tensors, and the cleanest way to track that rotation is to expand them in an irreducible spherical tensor operator basis.
+The rotational dynamics then live in the Wigner $D$-matrix elements $D^{(2)}_{m,m'}(\Omega(t))$, which become the stochastic coefficients $q_k(t)$. This separation of ``rotation in space'' from ``operators in spin space'' is the entire reason for using spherical tensors.
+
+
+%\paragraph{Physical meaning of the secular step.}
+%At this point the important issue is no longer molecular memory but \emph{phase averaging}. Two terms that rotate relative to one another with frequency difference $\Delta=\omega_{m,\mathrm{RF}}-\omega_{k,\mathrm{RF}}$ repeatedly change sign on the timescale $1/\Delta$. If many such oscillations occur before relaxation builds up, the contribution of that pair to the time-integrated relaxation is essentially zero. The secular approximation is therefore a time-averaging statement, not an algebraic mystery.
+
+%Concretely, when $\omega_{m,\mathrm{RF}}\neq\omega_{k,\mathrm{RF}}$, the prefactor $\rme^{\rmi\Delta t}$ is genuinely time-dependent in the rotating frame. We replace it by its time average over the relevant observation window:
+%\begin{equation}
+%\langle\rme^{\rmi\Delta t}\rangle = \frac{1}{t}\int_0^{t}\rme^{\rmi\Delta t'}dt'.
+%\end{equation}
+%The real part of this average is
+%\begin{equation}
+%\mathrm{Re}\big(\langle\rme^{\rmi\Delta t}\rangle\big) = \mathrm{sinc}(\Delta t).
+%\end{equation}
+
+%Numerically, with $t$ taken to be one millisecond, this is close to 1 for $\Delta$ up to about 100 Hz and is essentially zero by $\Delta\sim 500$ Hz. So pairs of operators are kept if their rotating-frame frequencies match (or are within $\sim 100$ Hz of each other) and are dropped if they differ by more than $\sim 500$ Hz. For the dipolar interaction in a homonuclear pair, the carrier frequency of both spins is the same and $\Delta=0$ exactly: terms like $\hat{I}_z\hat{S}_z$ and $\hat{I}_+\hat{S}_-$ can pair up to drive relaxation, provided the double commutator is non-zero. In a heteronuclear case, $\Delta$ is hundreds of MHz and any such pairing is dropped — homonuclear and heteronuclear relaxation rates therefore have different structure.
+
+%\paragraph{What does and does not enter the secular approximation.} Scalar coupling (strong or weak) and the magnitude of any applied RF do not affect this transformation. The only frequencies that matter for the secular step are the RF carrier frequencies used to define the rotating frame.
+
+
+
+
+\end{document}
+
+
