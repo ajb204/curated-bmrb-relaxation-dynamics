@@ -1,0 +1,452 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,bm,mathtools}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\tr}{\mathrm{Tr}}
+\newcommand{\cC}{\mathcal{C}}
+
+\begin{document}
+
+
+\section{Rotational diffusion formulation and conditional probability propagator}
+
+We begin from the rotational Smoluchowski equation describing the stochastic
+reorientation of a rigid body undergoing rotational Brownian motion. The
+orientation of the body is described by the Euler angles
+\[
+\Omega \equiv (\alpha,\beta,\gamma),
+\]
+or equivalently by the rotation operator \(R(\Omega)\).
+
+Let
+\[
+P(\Omega,t \mid \Omega_0,0)
+\]
+denote the conditional probability density that the molecule has orientation
+\(\Omega\) at time \(t\), given that it had orientation \(\Omega_0\) at
+\(t=0\). The propagator satisfies the rotational diffusion equation
+\[
+\frac{\partial}{\partial t}
+P(\Omega,t\mid\Omega_0,0)
+=
+-\hat{\Gamma}\,
+P(\Omega,t\mid\Omega_0,0),
+\]
+with initial condition
+\[
+P(\Omega,0\mid\Omega_0,0)
+=
+\delta(\Omega-\Omega_0).
+\]
+
+For anisotropic rotational diffusion the diffusion operator is
+\[
+\hat{\Gamma}
+=
+D_x \hat{J}_x^2
++
+D_y \hat{J}_y^2
++
+D_z \hat{J}_z^2,
+\]
+where \(\hat{J}_i\) are the angular momentum operators acting on functions
+defined on the rotation group \(SO(3)\). The diffusion coefficients
+\(D_x,D_y,D_z\) are the principal-axis rotational diffusion constants.
+
+The eigenfunctions of the rotational diffusion operator are the Wigner
+rotation matrix elements
+\[
+D^l_{mn}(\Omega),
+\]
+which form a complete orthogonal basis on \(SO(3)\):
+\[
+\int d\Omega\,
+D^{l*}_{mn}(\Omega)\,
+D^{l'}_{m'n'}(\Omega)
+=
+\frac{8\pi^2}{2l+1}
+\delta_{ll'}
+\delta_{mm'}
+\delta_{nn'}.
+\]
+
+The conditional probability propagator can therefore be expanded as
+\[
+P(\Omega,t\mid\Omega_0,0)
+=
+\sum_{lmnm'n'}
+\frac{2l+1}{8\pi^2}
+D^{l*}_{mn}(\Omega_0)
+D^l_{m'n'}(\Omega)
+G^{(l)}_{mn,m'n'}(t),
+\]
+where
+\[
+G^{(l)}(t)=e^{-H^{(l)}t}
+\]
+is the matrix exponential of the rank-\(l\) diffusion generator.
+
+The rotational correlation function is then obtained by averaging over the
+equilibrium isotropic distribution of initial orientations:
+\[
+\left\langle
+D^{l*}_{ab}(0)\,
+D^l_{cd}(t)
+\right\rangle
+=
+\int d\Omega_0
+\int d\Omega\,
+D^{l*}_{ab}(\Omega_0)
+D^l_{cd}(\Omega)
+P(\Omega,t\mid\Omega_0,0)
+P_{\mathrm{eq}}(\Omega_0),
+\]
+with
+\[
+P_{\mathrm{eq}}(\Omega_0)=\frac{1}{8\pi^2}.
+\]
+
+Using orthogonality of the Wigner functions gives
+\[
+\boxed{
+\left\langle
+D^{l*}_{ab}(0)\,
+D^l_{cd}(t)
+\right\rangle
+=
+\frac{1}{2l+1}\,
+\delta_{ac}\,
+\left[e^{-H^{(l)}t}\right]_{bd}
+}
+\]
+which for \(l=2\) becomes
+\[
+\boxed{
+\left\langle
+D^{2*}_{ab}(0)\,
+D^2_{cd}(t)
+\right\rangle
+=
+\frac15\,
+\delta_{ac}\,
+\left[e^{-Ht}\right]_{bd}.
+}
+\]
+
+The remainder of this document derives the explicit closed-form expression
+for the rank-2 anisotropic propagator and demonstrates its reduction to the
+axially symmetric and isotropic limits.
+
+
+\begin{center}
+{\Large Rank-2 tumbling autocorrelation for anisotropic rotational diffusion}\[0.5em]
+\end{center}
+
+\section*{1. Definition}
+
+Let
+\begin{equation}
+\cC_{ab,cd}(t)
+\equiv
+\big\langle D^{2*}_{ab}(0)\,D^2_{cd}(t)\big\rangle,
+\qquad a,c,b,d\in\{-2,-1,0,1,2\},
+\end{equation}
+be the rank-2 Wigner-$D$ autocorrelation tensor.  For an isotropic equilibrium distribution of initial orientations, the space-fixed indices are diagonal and one may write
+\begin{equation}
+\cC_{ab,cd}(t)=\frac{1}{5}\,\delta_{ac}\,E_{bd}(t),
+\end{equation}
+where $E(t)=\e^{-Ht}$ is the $5\times 5$ propagator acting on the body-fixed index.
+
+Throughout, we order the complex Wigner basis as
+\begin{equation}
+(m)=(2,1,0,-1,-2).
+\end{equation}
+
+\section*{2. Anisotropic generator in the $l=2$ representation}
+
+Let $D_x,D_y,D_z$ be the principal-axis rotational diffusion constants.  In the above basis the rank-2 generator is
+\begin{equation}
+H=
+\begin{pmatrix}
+A & 0 & U & 0 & 0 \\
+0 & B & 0 & V & 0 \\
+U & 0 & C & 0 & U \\
+0 & V & 0 & B & 0 \\
+0 & 0 & U & 0 & A
+\end{pmatrix},
+\end{equation}
+with
+\begin{align}
+S &\equiv D_x+D_y, & \Delta &\equiv D_x-D_y, \\
+A &\equiv S+4D_z, & B &\equiv \frac{5}{2}S+D_z, & C &\equiv 3S, \\
+U &\equiv \frac{\sqrt{6}}{2}\,\Delta, & V &\equiv \frac{3}{2}\,\Delta.
+\end{align}
+The correlation tensor is then
+\begin{equation}
+\boxed{\cC_{ab,cd}(t)=\frac{1}{5}\,\delta_{ac}\,[\e^{-Ht}]_{bd}.}
+\end{equation}
+
+\section*{3. Block diagonalization}
+
+It is convenient to split the $m$-space into odd and even parity sectors.
+
+\subsection*{3.1 Odd sector: $m=\pm1$}
+
+In the basis $\{|1\rangle,|-1\rangle\}$,
+\begin{equation}
+H_{\mathrm{odd}}=
+\begin{pmatrix}
+B & V\\
+V & B
+\end{pmatrix}.
+\end{equation}
+Since this is a $2\times 2$ symmetric matrix, its exponential is elementary:
+\begin{equation}
+\e^{-H_{\mathrm{odd}}t}
+=
+\e^{-Bt}
+\begin{pmatrix}
+\cosh(Vt) & -\sinh(Vt)\\
+-\sinh(Vt) & \cosh(Vt)
+\end{pmatrix}.
+\end{equation}
+Equivalently, the odd-sector eigenvalues are $B\pm V$.
+
+\subsection*{3.2 Even sector: $m=2,0,-2$}
+
+Introduce the symmetric and antisymmetric combinations
+\begin{equation}
+|s\rangle=\frac{|2\rangle+|-2\rangle}{\sqrt{2}},
+\qquad
+|a\rangle=\frac{|2\rangle-|-2\rangle}{\sqrt{2}}.
+\end{equation}
+In the basis $\{|s\rangle,|0\rangle,|a\rangle\}$, the even-sector generator becomes
+\begin{equation}
+H_{\mathrm{even}}=
+\begin{pmatrix}
+A & \sqrt{3}\,\Delta & 0\\
+\sqrt{3}\,\Delta & C & 0\\
+0 & 0 & A
+\end{pmatrix}.
+\end{equation}
+The antisymmetric state $|a\rangle$ decouples immediately, while the $\{|s\rangle,|0\rangle\}$ block is a $2\times2$ symmetric matrix.  Define
+\begin{align}
+\mu &\equiv \frac{A+C}{2}=2(D_x+D_y+D_z),\\
+\alpha &\equiv \frac{A-C}{2}=2D_z-(D_x+D_y),\\
+\beta &\equiv \sqrt{3}\,\Delta,\\
+\kappa &\equiv \sqrt{\alpha^2+\beta^2}
+=2\sqrt{D_x^2+D_y^2+D_z^2-D_xD_y-D_yD_z-D_zD_x}.
+\end{align}
+Then
+\begin{equation}
+H_{s0}=
+\begin{pmatrix}
+A & \beta\\
+\beta & C
+\end{pmatrix}
+=\mu I_2+
+\begin{pmatrix}
+\alpha & \beta\\
+\beta & -\alpha
+\end{pmatrix}.
+\end{equation}
+Using $(M^2=\kappa^2 I_2)$ for the traceless part $M$, we obtain the exact closed form
+\begin{equation}
+\e^{-H_{s0}t}
+=
+\e^{-\mu t}
+\left[
+\cosh(\kappa t)\,I_2
+-
+\frac{\sinh(\kappa t)}{\kappa}
+\begin{pmatrix}
+\alpha & \beta\\
+\beta & -\alpha
+\end{pmatrix}
+\right].
+\label{eq:hs0exp}
+\end{equation}
+This is the safest way to write the result, because the factor $\sinh(\kappa t)/\kappa$ has a well-defined limit as $\kappa\to 0$:
+\begin{equation}
+\frac{\sinh(\kappa t)}{\kappa}=t+O(\kappa^2).
+\end{equation}
+The apparent division by zero is therefore removable.
+
+\section*{4. Propagator in the original Wigner basis}
+
+Returning to the original basis $(2,1,0,-1,-2)$, define the following scalar entries:
+\begin{align}
+E_a(t) &\equiv \e^{-At}, \\
+E_{ss}(t) &\equiv \e^{-\mu t}\left[\cosh(\kappa t)-\frac{\alpha}{\kappa}\sinh(\kappa t)\right],\\
+E_{s0}(t) &\equiv -\e^{-\mu t}\,\frac{\beta}{\kappa}\sinh(\kappa t),\\
+E_{00}(t) &\equiv \e^{-\mu t}\left[\cosh(\kappa t)+\frac{\alpha}{\kappa}\sinh(\kappa t)\right].
+\end{align}
+Note that $E_{s0}(t)/\sqrt{2}$ is finite even when $\kappa\to 0$ because $\beta\to0$ simultaneously in all physically relevant limits discussed below.
+
+The even-sector propagator in the original $\{|2\rangle,|0\rangle,|-2\rangle\}$ ordering is
+\begin{equation}
+E_{\mathrm{even}}(t)=
+\begin{pmatrix}
+\dfrac{E_a+E_{ss}}{2} & \dfrac{E_{s0}}{\sqrt{2}} & \dfrac{E_{ss}-E_a}{2}\\[1.2ex]
+\dfrac{E_{s0}}{\sqrt{2}} & E_{00} & \dfrac{E_{s0}}{\sqrt{2}}\\[1.2ex]
+\dfrac{E_{ss}-E_a}{2} & \dfrac{E_{s0}}{\sqrt{2}} & \dfrac{E_a+E_{ss}}{2}
+\end{pmatrix}.
+\end{equation}
+Combining this with the odd sector gives the full propagator in the basis $(2,1,0,-1,-2)$:
+\begin{equation}
+E(t)=
+\begin{pmatrix}
+E_{22} & 0 & E_{20} & 0 & E_{2,-2}\\
+0 & E_{11} & 0 & E_{1,-1} & 0\\
+E_{20} & 0 & E_{00} & 0 & E_{20}\\
+0 & E_{1,-1} & 0 & E_{11} & 0\\
+E_{2,-2} & 0 & E_{20} & 0 & E_{22}
+\end{pmatrix},
+\end{equation}
+where
+\begin{align}
+E_{22}(t) &= \frac12\left[E_a(t)+E_{ss}(t)\right], \\
+E_{2,-2}(t) &= \frac12\left[E_{ss}(t)-E_a(t)\right], \\
+E_{20}(t) &= \frac{1}{\sqrt{2}}\,E_{s0}(t)
+= -\frac{\beta}{\sqrt{2}\,\kappa}\,\e^{-\mu t}\sinh(\kappa t), \\
+E_{00}(t) &= \e^{-\mu t}\left[\cosh(\kappa t)+\frac{\alpha}{\kappa}\sinh(\kappa t)\right], \\
+E_{11}(t) &= \e^{-Bt}\cosh(Vt), \\
+E_{1,-1}(t) &= -\e^{-Bt}\sinh(Vt).
+\end{align}
+All omitted entries vanish by symmetry.
+
+Hence the final autocorrelation tensor is
+\begin{equation}
+\boxed{
+\big\langle D^{2*}_{ab}(0)\,D^2_{cd}(t)\big\rangle
+=
+\frac{1}{5}\,\delta_{ac}\,E_{bd}(t).
+}
+\end{equation}
+
+\section*{5. Scalar trace-average}
+
+If one needs the scalar trace-average,
+\begin{equation}
+C(t)\equiv \frac{1}{5}\,\tr E(t),
+\end{equation}
+then
+\begin{equation}
+\boxed{
+C(t)=\frac15\left[
+\e^{-At}
++2\,\e^{-\mu t}\cosh(\kappa t)
++2\,\e^{-Bt}\cosh(Vt)
+\right].
+}
+\end{equation}
+
+\section*{6. Axially symmetric limit}
+
+Now set
+\begin{equation}
+D_x=D_y\equiv D_\perp,
+\qquad
+D_z\equiv D_\parallel.
+\end{equation}
+Then
+\begin{equation}
+\Delta=0,\qquad \beta=0,\qquad V=0.
+\end{equation}
+Therefore the odd block becomes diagonal immediately:
+\begin{equation}
+E_{11}(t)=e^{-(5D_\perp+D_\parallel)t},
+\qquad
+E_{1,-1}(t)=0.
+\end{equation}
+
+For the even block,
+\begin{equation}
+S=2D_\perp,
+\qquad
+A=2D_\perp+4D_\parallel,
+\qquad
+C=6D_\perp,
+\qquad
+\alpha=2(D_\parallel-D_\perp).
+\end{equation}
+Since $\beta=0$, the $\{|s\rangle,|0\rangle\}$ block is already diagonal.  The expression \eqref{eq:hs0exp} must be read by continuity; using $\kappa=|\alpha|$ one has
+\begin{equation}
+\e^{-\mu t}\left[\cosh(\kappa t)- \frac{\alpha}{\kappa}\sinh(\kappa t)\right]=\e^{-At},
+\qquad
+\e^{-\mu t}\left[\cosh(\kappa t)+ \frac{\alpha}{\kappa}\sinh(\kappa t)\right]=\e^{-Ct},
+\end{equation}
+with $A=\mu+\alpha$ and $C=\mu-\alpha$.  No division by zero occurs because the limit is taken before setting the block to its degenerate form.
+
+Thus, in the axial case the full propagator becomes diagonal in the Wigner basis:
+\begin{equation}
+E(t)=\operatorname{diag}\!
+\Big(
+\e^{-(2D_\perp+4D_\parallel)t},
+\e^{-(5D_\perp+D_\parallel)t},
+\e^{-6D_\perp t},
+\e^{-(5D_\perp+D_\parallel)t},
+\e^{-(2D_\perp+4D_\parallel)t}
+\Big).
+\end{equation}
+Hence
+\begin{equation}
+\boxed{
+C(t)=\frac15\Big(
+\e^{-6D_\perp t}
++2\,\e^{-(5D_\perp+D_\parallel)t}
++2\,\e^{-(2D_\perp+4D_\parallel)t}
+\Big).
+}
+\end{equation}
+
+\section*{7. Isotropic limit}
+
+Finally set
+\begin{equation}
+D_x=D_y=D_z\equiv D_R.
+\end{equation}
+Then
+\begin{equation}
+\Delta=0,\qquad \alpha=0,\qquad \beta=0,\qquad \kappa=0,\qquad V=0,
+\end{equation}
+and
+\begin{equation}
+A=B=\mu=6D_R.
+\end{equation}
+The entire generator collapses to a scalar multiple of the identity:
+\begin{equation}
+H=6D_R\,I_5,
+\end{equation}
+so that
+\begin{equation}
+E(t)=\e^{-6D_R t}I_5.
+\end{equation}
+Therefore
+\begin{equation}
+\boxed{
+\big\langle D^{2*}_{ab}(0)\,D^2_{cd}(t)\big\rangle
+=
+\frac15\,\delta_{ac}\delta_{bd}\,\e^{-6D_R t},
+}
+\end{equation}
+and the scalar average is simply
+\begin{equation}
+\boxed{C(t)=\e^{-6D_R t}.}
+\end{equation}
+
+\section*{8. Practical note on removable singularities}
+
+The formulas above contain ratios such as $\sinh(\kappa t)/\kappa$ and $\alpha/\kappa$.  These should always be interpreted by continuity.  The only safe way to evaluate the isotropic or nearly isotropic limit is to expand the matrix exponential, not the individual prefactors in isolation.
+
+The relevant small-$\kappa$ limits are
+\begin{equation}
+\frac{\sinh(\kappa t)}{\kappa}=t+O(\kappa^2),
+\qquad
+\cosh(\kappa t)=1+O(\kappa^2).
+\end{equation}
+Thus, when $\kappa\to0$ the apparent singularities cancel and the propagator reduces smoothly to the correct degenerate form.
+
+\end{document}

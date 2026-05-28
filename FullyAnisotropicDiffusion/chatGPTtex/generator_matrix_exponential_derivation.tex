@@ -1,0 +1,301 @@
+
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,bm,physics}
+\usepackage[a4paper,margin=1in]{geometry}
+
+\title{Origin of the Generator \(H^{(l)}\) and the Matrix Exponential in Rotational Diffusion}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+In the theory of rotational diffusion one frequently encounters the relation
+\[
+G^{(l)}(t)=e^{-H^{(l)}t},
+\]
+where \(G^{(l)}(t)\) is the propagator in the rank-\(l\) Wigner basis and
+\(H^{(l)}\) is a finite-dimensional matrix called the rotational diffusion
+generator.
+
+The purpose of this note is to explain carefully:
+
+\begin{enumerate}
+\item where the matrix \(H^{(l)}\) comes from,
+\item why the propagator becomes a matrix exponential,
+\item how the infinite-dimensional diffusion equation reduces to a finite
+matrix problem for fixed angular momentum rank \(l\).
+\end{enumerate}
+
+\section{Rotational diffusion equation}
+
+The orientation of a rigid body is described by Euler angles
+\[
+\Omega=(\alpha,\beta,\gamma).
+\]
+
+The conditional probability density
+\[
+P(\Omega,t\mid\Omega_0,0)
+\]
+gives the probability density of finding the molecule at orientation
+\(\Omega\) at time \(t\), given that it started at orientation
+\(\Omega_0\) at time \(0\).
+
+Rotational Brownian motion is governed by the rotational Smoluchowski
+equation
+\[
+\frac{\partial}{\partial t}
+P(\Omega,t\mid\Omega_0,0)
+=
+-\hat{\Gamma}\,
+P(\Omega,t\mid\Omega_0,0),
+\]
+with initial condition
+\[
+P(\Omega,0\mid\Omega_0,0)
+=
+\delta(\Omega-\Omega_0).
+\]
+
+For anisotropic rotational diffusion the diffusion operator is
+\[
+\hat{\Gamma}
+=
+D_x \hat{J}_x^2
++
+D_y \hat{J}_y^2
++
+D_z \hat{J}_z^2,
+\]
+where \(\hat{J}_x,\hat{J}_y,\hat{J}_z\) are angular momentum operators acting
+on functions defined on the rotation group \(SO(3)\), and
+\(D_x,D_y,D_z\) are the principal-axis rotational diffusion constants.
+
+This equation is the rotational analogue of the translational diffusion
+equation
+\[
+\frac{\partial P}{\partial t}=D\nabla^2 P.
+\]
+
+\section{Wigner functions as a basis}
+
+The natural basis functions on \(SO(3)\) are the Wigner rotation matrix
+elements
+\[
+D^l_{mn}(\Omega).
+\]
+
+These satisfy the orthogonality relation
+\[
+\int d\Omega\,
+D^{l*}_{mn}(\Omega)\,
+D^{l'}_{m'n'}(\Omega)
+=
+\frac{8\pi^2}{2l+1}
+\delta_{ll'}
+\delta_{mm'}
+\delta_{nn'}.
+\]
+
+The key fact is that the diffusion operator preserves angular momentum rank
+\(l\).  In other words, when \(\hat{\Gamma}\) acts on a Wigner function of
+rank \(l\), the result is always a linear combination of Wigner functions of
+the same rank:
+\[
+\hat{\Gamma} D^l_{mn}
+=
+\sum_{n'}
+H^{(l)}_{nn'} D^l_{mn'}.
+\]
+
+This equation defines the matrix \(H^{(l)}\).
+
+The operator \(\hat{\Gamma}\) acts on an infinite-dimensional function space,
+but once we restrict to fixed rank \(l\), the problem reduces to a
+finite-dimensional vector space of dimension \(2l+1\).
+
+For fixed \(l\), the functions
+\[
+\{D^l_{m,-l},\ldots,D^l_{ml}\}
+\]
+form a basis.  The diffusion operator therefore becomes an ordinary matrix.
+
+\section{How the matrix elements are obtained}
+
+The matrix elements of \(H^{(l)}\) are simply the representation of the
+operator \(\hat{\Gamma}\) in the Wigner basis:
+\[
+H^{(l)}_{nn'}
+=
+\frac{2l+1}{8\pi^2}
+\int d\Omega\,
+D^{l*}_{mn}(\Omega)\,
+\hat{\Gamma}D^l_{mn'}(\Omega).
+\]
+
+The matrix is independent of \(m\) because the diffusion operator acts only
+on the body-fixed index.
+
+For anisotropic diffusion,
+\[
+\hat{\Gamma}
+=
+D_x\hat{J}_x^2
++
+D_y\hat{J}_y^2
++
+D_z\hat{J}_z^2,
+\]
+so
+\[
+H^{(l)}
+=
+D_x J_x^{(l)2}
++
+D_y J_y^{(l)2}
++
+D_z J_z^{(l)2},
+\]
+where \(J_i^{(l)}\) are the ordinary angular momentum matrices for angular
+momentum \(l\).
+
+Thus \(H^{(l)}\) is nothing more than the matrix representation of the
+rotational diffusion operator in the rank-\(l\) irreducible representation of
+\(SO(3)\).
+
+\section{Example: rank \(l=2\)}
+
+For \(l=2\), the space has dimension \(5\), corresponding to
+\[
+m=-2,-1,0,1,2.
+\]
+
+In the ordered basis
+\[
+(2,1,0,-1,-2),
+\]
+the generator becomes the \(5\times5\) matrix
+\[
+H=
+\begin{pmatrix}
+A & 0 & U & 0 & 0 \\
+0 & B & 0 & V & 0 \\
+U & 0 & C & 0 & U \\
+0 & V & 0 & B & 0 \\
+0 & 0 & U & 0 & A
+\end{pmatrix},
+\]
+where
+\[
+A=D_x+D_y+4D_z,
+\]
+\[
+B=\frac52(D_x+D_y)+D_z,
+\]
+\[
+C=3(D_x+D_y),
+\]
+\[
+U=\frac{\sqrt6}{2}(D_x-D_y),
+\]
+\[
+V=\frac32(D_x-D_y).
+\]
+
+\section{Why the propagator is a matrix exponential}
+
+Suppose we expand the propagator in the Wigner basis:
+\[
+P(\Omega,t\mid\Omega_0,0)
+=
+\sum_{nn'}
+D^l_{mn}(\Omega)\,
+G^{(l)}_{nn'}(t)\,
+D^{l*}_{mn'}(\Omega_0).
+\]
+
+Substituting this expansion into the diffusion equation gives
+\[
+\frac{d}{dt}G^{(l)}(t)
+=
+-H^{(l)}G^{(l)}(t).
+\]
+
+This is now an ordinary matrix differential equation.
+
+The initial condition comes from
+\[
+P(\Omega,0\mid\Omega_0,0)=\delta(\Omega-\Omega_0),
+\]
+which implies
+\[
+G^{(l)}(0)=I.
+\]
+
+Therefore the solution is
+\[
+\boxed{
+G^{(l)}(t)=e^{-H^{(l)}t}.
+}
+\]
+
+This is exactly analogous to the scalar ordinary differential equation
+\[
+\frac{dx}{dt}=-ax,
+\]
+whose solution is
+\[
+x(t)=e^{-at}x(0).
+\]
+
+The matrix exponential is defined by the convergent power series
+\[
+e^{-H^{(l)}t}
+=
+\sum_{n=0}^\infty
+\frac{(-t)^n}{n!}
+(H^{(l)})^n.
+\]
+
+\section{Physical interpretation}
+
+The eigenvalues of \(H^{(l)}\) are rotational relaxation rates.
+
+If
+\[
+H^{(l)}v_i=\lambda_i v_i,
+\]
+then each eigenmode decays exponentially:
+\[
+e^{-H^{(l)}t}v_i=e^{-\lambda_i t}v_i.
+\]
+
+Thus anisotropic rotational diffusion is ultimately a superposition of
+exponential relaxation modes.
+
+In the isotropic case,
+\[
+D_x=D_y=D_z=D_R,
+\]
+the generator becomes proportional to the identity:
+\[
+H^{(l)}=l(l+1)D_R\,I,
+\]
+and therefore
+\[
+G^{(l)}(t)
+=
+e^{-l(l+1)D_R t}I.
+\]
+
+For \(l=2\),
+\[
+G^{(2)}(t)=e^{-6D_R t}I_5.
+\]
+
+\end{document}
